@@ -51,9 +51,11 @@
           <!-- Landing page content here -->
           <h1>Welcome to Mushroom Finder</h1>
           <p>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed
-            malesuada, neque eu luctus dictum, libero urna lobortis quam, quis
-            facilisis massa lectus vel dui.
+            There are lots of interesting mushrooms to discover all around where we live. I've seen at least 10
+            different species in my back yard the last month or so. Only one of those is edible. Mushroom
+            identification is tricky. There are often only subtle differences between something delicious and a day
+            or two of "severe gastrointestinal distress". One to two species can kill you, but it's a week before
+            you start to feel symptoms.
           </p>
         </main>
       </div>
