@@ -35,11 +35,20 @@
             <input v-model="text">
             <h3>Time of Year</h3>
             <input v-model="text">
+            <h3>Tags</h3>
+            <input v-model="tagInput">  
             <br>
-            <button>Apply Filters</button>
+            <button @click="filterMushrooms">Apply Filters</button>
           </div>
           <hr>
           <div id="mushroom-name">
+            <h2>Filtered Results</h2>
+              <ul>
+                <li v-for="mushroom in filteredMushrooms" :key="mushroom.id">
+                  <h3>{{ mushroom.common_names }}</h3>
+                  <p>{{ mushroom.description }}</p>
+                </li>
+              </ul>
             <h2>Mushroom Name</h2>
             <h3>Edibility: Safe</h3>
             <button>View Details</button>
@@ -63,6 +72,29 @@
   </template>
   
   <script setup>
+  import { ref, onMounted } from 'vue'
+  import mushroomData from '~/data/sampledata.js'
+
+  const mushrooms = ref([]);
+  const filteredMushrooms = ref([]);
+  const tagInput = ref('');
+
+  //assign data to 'mushrooms' array
+  onMounted(() => {
+    mushrooms.value = mushroomData;
+  });
+
+  //applies tag filters 
+  const applyTagFilter = (tag) => {
+    return mushrooms.value.filter((mushroom) => mushroom.tags.includes(tag));
+  };
+
+  //passes tag inputs to applyTagFilter
+  const filterMushrooms = () => {
+    filteredMushrooms.value = applyTagFilter(tagInput.value);
+  };
+
+
   </script>
   
   <style scoped>
