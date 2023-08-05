@@ -36,22 +36,24 @@
             <h3>Time of Year</h3>
             <input v-model="text">
             <h3>Tags</h3>
-            <input v-model="tagInput">  
+            <select v-model="selectedTags" multiple>
+              <option v-for="tag in availableTags" :key="tag" :value="tag">{{ capitalize(tag) }}</option>
+            </select>
             <br>
             <button @click="filterMushrooms">Apply Filters</button>
           </div>
           <hr>
           <div id="mushroom-name">
-            <h2>Filtered Results</h2>
-              <ul>
+            <h2 v-if="filteredMushrooms.length > 0">Filtered Results</h2>
+              <ul v-if="filteredMushrooms.length > 0">
                 <li v-for="mushroom in filteredMushrooms" :key="mushroom.id">
-                  <h3>{{ mushroom.common_names }}</h3>
+                  <h2>{{ mushroom.common_names }}</h2>
                   <p>{{ mushroom.description }}</p>
+                  <p>Edibility: {{ mushroom.edibility }}</p>
+                  <button>View Details</button>
                 </li>
               </ul>
-            <h2>Mushroom Name</h2>
-            <h3>Edibility: Safe</h3>
-            <button>View Details</button>
+              <p v-else>No filter selected</p>
           </div>
         </aside>
   
@@ -77,24 +79,42 @@
 
   const mushrooms = ref([]);
   const filteredMushrooms = ref([]);
+  const selectedTags = ref([]);
+
+  //tag data
   const tagInput = ref('');
+  //predefined tags
+  const tagOptions = ["edible", "poisonous", "psychoactive"]
 
   //assign data to 'mushrooms' array
   onMounted(() => {
     mushrooms.value = mushroomData;
   });
 
-  //applies tag filters 
-  const applyTagFilter = (tag) => {
-    return mushrooms.value.filter((mushroom) => mushroom.tags.includes(tag));
+  //applies tag filters
+  const applyTagFilter = () => {
+    return mushrooms.value.filter((mushroom) => 
+    selectedTags.value.every((tag) => mushroom.tags.includes(tag))
+    );
   };
 
   //passes tag inputs to applyTagFilter
   const filterMushrooms = () => {
-    filteredMushrooms.value = applyTagFilter(tagInput.value);
+    //no tags selected -> display all mushrooms
+    if(selectedTags.value.length === 0){
+      filteredMushrooms.value = mushrooms.value;
+    } else{
+      filteredMushrooms.value = applyTagFilter();
+    }
   };
+  
+  //List of predefined tags
+  const availableTags = ['edible', 'poisonous', 'psychoactive']
 
-
+  //Capitalize tags for user without changing data
+  const capitalize = (str) => {
+    return str.charAt(0).toUpperCase() + str.slice(1);
+  };
   </script>
   
   <style scoped>
