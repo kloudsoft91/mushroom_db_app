@@ -27,14 +27,41 @@
           </div>
           <div id="advanced-search">
             <h2>Advanced Search</h2>
-            <h3>Size</h3>
-            <input v-model="text">
-            <h3>Colour</h3>
-            <input v-model="text">
-            <h3>Environment</h3>
-            <input v-model="text">
-            <h3>Time of Year</h3>
-            <input v-model="text">
+            <h3>Size: {{ selected }}</h3>
+            <select v-model="selected">
+              <option></option>
+              <option>0-1cm</option>
+              <option>1-2cm</option>
+              <option>3-5cm</option>
+              <option>5-10cm</option>
+              <option>10+cm</option>
+            </select>
+            <h3>Colour: {{ selected }}</h3>
+            <select v-model="selected">
+              <option></option>
+              <option>Brown</option>
+              <option>White</option>
+              <option>Red</option>
+              <option>Orange</option>
+              <option>Grey</option>
+            </select>
+            <h3>Environment: {{ selected }}</h3>
+            <select v-model="selected">
+              <option></option>
+              <option>Under Tree</option>
+              <option>On Tree/Log</option>
+              <option>Open Field</option>
+              <option>Manure</option>
+              <option>Soil</option>
+            </select>
+            <h3>Time of Year: {{ selected }}</h3>
+            <select v-model="selected">
+              <option></option>
+              <option>Spring</option>
+              <option>Summer</option>
+              <option>Autumn</option>
+              <option>Winter</option>
+            </select>
             <h3>Tags</h3>
             <select v-model="selectedTags" multiple>
               <option v-for="tag in availableTags" :key="tag" :value="tag">{{ capitalize(tag) }}</option>
