@@ -14,4 +14,11 @@ export default {
       component: 'pages/about.vue'
     },
   ],
+  //Cloudinary config
+  modules: ['@nuxt/image-edge'],
+  image:{
+    cloudinary:{
+      baseURL: 'https://res.cloudinary.com/dcyxj3dqt/image/upload/',
+    },
+  },
 }
