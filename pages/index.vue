@@ -62,7 +62,8 @@
     
   </template>
 
-  <script>
+<!-- old script -->
+<!--  <script>
 import MushroomCard from '@/components/MushroomCard.vue';
 
 export default {
@@ -80,7 +81,20 @@ export default {
     };
   }
 };
+</script>-->
+
+<script setup>
+import MushroomCard from '@/components/MushroomCard.vue';
+
+const sampleMushroom = {
+  imageUrl: 'assets/images/mushroom.jpg',
+  commonName: 'Coprinus Comatus',
+  latinName: 'Shaggy Mane',
+  edibility: 'Edible'
+};
 </script>
+
+
   
   <style scoped>
     /* Global styles */

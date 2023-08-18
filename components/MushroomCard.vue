@@ -9,7 +9,8 @@
   </div>
 </template>
 
-<script>
+<!-- old script-->
+<!--<script>
 export default {
   name: 'MushroomCard',
   props: {
@@ -20,6 +21,20 @@ export default {
       this.$router.push({ name: 'mushroom-detail' });
     }
   }
+};
+</script>-->
+
+<script setup>
+import { useRouter } from 'vue-router';
+
+const props = defineProps({
+  mushroom: Object
+});
+
+const router = useRouter();
+
+const navigateToDetail = () => {
+  router.push({ name: 'mushroom-detail' });
 };
 </script>
 
