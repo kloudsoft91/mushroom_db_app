@@ -124,15 +124,9 @@
   };
 
   const searchMushrooms = () => {
-    console.log(JSON.parse(JSON.stringify(mushrooms.value)));
     var data = JSON.parse(JSON.stringify(mushrooms.value));
-    //var searchedMushrooms = data.filter(d => d.id === 4);
     var searchedMushrooms = data.filter(d => d.common_names.includes(text.value) || d.latin_names.includes(text.value));
-    console.log(searchedMushrooms);
-    //searchedMushrooms has JSON data of all matching entries, static test method used id=1, actual should take multiple dynamic parameters at same time
-    //how to display data? Try to match Tag function
     filteredMushrooms.value = searchedMushrooms;
-    //displays filtered value correctly, now for dynamic multi-search version in searchedMushrooms, .filter needs an inner function 
   };
   </script>
   
