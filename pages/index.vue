@@ -28,13 +28,14 @@
           <div id="advanced-search">
             <h2>Advanced Search</h2>
             <h3>Size</h3>
-            <input v-model="text">
+            <input v-model="text2">
             <h3>Colour</h3>
-            <input v-model="text">
+            <input v-model="text3">
             <h3>Environment</h3>
-            <input v-model="text">
+            <input v-model="text4">
             <h3>Time of Year</h3>
-            <input v-model="text">
+            <input v-model="text5">
+            <button @click="searchMushrooms">Test Search Button</button>
             <h3>Tags</h3>
             <select v-model="selectedTags" multiple>
               <option v-for="tag in availableTags" :key="tag" :value="tag">{{ capitalize(tag) }}</option>
@@ -81,6 +82,12 @@
   const filteredMushrooms = ref([]);
   const selectedTags = ref([]);
 
+  const text = ref("");
+  const text2 = ref("");
+  const text3 = ref("");
+  const text4 = ref("");
+  const text5 = ref("");
+
   //tag data
   const tagInput = ref('');
   //predefined tags
@@ -114,6 +121,18 @@
   //Capitalize tags for user without changing data
   const capitalize = (str) => {
     return str.charAt(0).toUpperCase() + str.slice(1);
+  };
+
+  const searchMushrooms = () => {
+    console.log(JSON.parse(JSON.stringify(mushrooms.value)));
+    var data = JSON.parse(JSON.stringify(mushrooms.value));
+    //var searchedMushrooms = data.filter(d => d.id === 4);
+    var searchedMushrooms = data.filter(d => d.common_names.includes(text.value) || d.latin_names.includes(text.value));
+    console.log(searchedMushrooms);
+    //searchedMushrooms has JSON data of all matching entries, static test method used id=1, actual should take multiple dynamic parameters at same time
+    //how to display data? Try to match Tag function
+    filteredMushrooms.value = searchedMushrooms;
+    //displays filtered value correctly, now for dynamic multi-search version in searchedMushrooms, .filter needs an inner function 
   };
   </script>
   
