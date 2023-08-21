@@ -1,21 +1,29 @@
-
 <template>
-    <div>
-      <!-- Navbar -->
-      <nav class="navbar">
-        <div class="navbar-links">
-          <a href="/">Home</a>
-          <a href="/about">About</a>
+  <div>
+    <!--Main Navbar-->
+    <nav class ="main-navbar">
+      <div class="main-navbar-container">
+        <div class ="main-navbar">
+          
         </div>
-        <div class="navbar-header">
-          <h1 class="navbar-title">Mushroom Finder</h1>
-        </div>
-        
-        <div class="navbar-search">
-          <input type="text" placeholder="Search...">
-          <button>Search</button>
-        </div>
-      </nav>
+      </div>
+    </nav>
+
+    
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+      </div>
+      <div class="navbar-header">
+        <h1 class="navbar-title">Mushy Match</h1>
+      </div>
+      <div class="navbar-search">
+        <input type="text" placeholder="Search Mushy Match">
+        <button class="search-button">Search</button>
+      </div>
+    </nav>
   
       <!-- Main content -->
       <div class="main-content">
