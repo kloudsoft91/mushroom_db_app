@@ -125,8 +125,10 @@
 
   const searchMushrooms = () => {
     var data = JSON.parse(JSON.stringify(mushrooms.value));
-    var searchedMushrooms = data.filter(d => d.common_names.includes(text.value) || d.latin_names.includes(text.value));
+    //The filter function should include d.JSONObject.includes(constValue) and || OR or && AND to add more search parameters. Includes() is just for string objects.
+    var searchedMushrooms = data.filter(d => (d.common_names.includes(text.value) || d.latin_names.includes(text.value)) && d.cap_features.diameter.includes(text2.value) && d.cap_features.colour.includes(text3.value) && d.environment.includes(text4.value));
     filteredMushrooms.value = searchedMushrooms;
+    console.log(text2.value);
   };
   </script>
   
