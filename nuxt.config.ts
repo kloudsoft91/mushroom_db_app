@@ -14,4 +14,7 @@ export default {
       component: 'pages/about.vue'
     },
   ],
+  modules: [
+    '@nuxtjs/tailwindcss'
+  ]
 }
