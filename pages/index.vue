@@ -1,16 +1,7 @@
 <template>
+  <NavigationBar />
   <div>
-    <!--Main Navbar-->
-    <nav class ="main-navbar">
-      <div class="main-navbar-container">
-        <div class ="main-navbar">
-          
-        </div>
-      </div>
-    </nav>
-
-    
-    <!-- Navbar -->
+<!-- Navbar -->
     <nav class="navbar">
       <div class="navbar-links">
         <a href="/">Home</a>
