@@ -15,10 +15,14 @@ export default {
     },
   ],
   //Cloudinary config
-  modules: ['@nuxt/image-edge', '@nuxtjs/tailwindcss'],
+  modules: ['@nuxt/image-edge'],
   image:{
     cloudinary:{
       baseURL: 'https://res.cloudinary.com/dcyxj3dqt/image/upload/',
     },
   },
+  //Tailwind CSS config
+  TailwindModules: [
+    '@nuxtjs/tailwindcss'
+  ]
 }
