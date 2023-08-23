@@ -21,4 +21,8 @@ export default {
       baseURL: 'https://res.cloudinary.com/dcyxj3dqt/image/upload/',
     },
   },
+  //Tailwind CSS config
+  TailwindModules: [
+    '@nuxtjs/tailwindcss'
+  ]
 }
