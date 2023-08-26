@@ -88,11 +88,6 @@
   const text4 = ref("");
   const text5 = ref("");
 
-  //tag data
-  const tagInput = ref('');
-  //predefined tags
-  const tagOptions = ["edible", "poisonous", "psychoactive"]
-
   //assign data to 'mushrooms' array
   onMounted(() => {
     mushrooms.value = mushroomData;
@@ -126,9 +121,10 @@
   const searchMushrooms = () => {
     var data = JSON.parse(JSON.stringify(mushrooms.value));
     //The filter function should include d.JSONObject.includes(constValue) and || OR or && AND to add more search parameters. Includes() is just for string objects.
-    var searchedMushrooms = data.filter(d => (d.common_names.includes(text.value) || d.latin_names.includes(text.value)) && d.cap_features.diameter.includes(text2.value) && d.cap_features.colour.includes(text3.value) && d.environment.includes(text4.value));
+    var searchedMushrooms = data.filter(d => (d.common_names.toLowerCase().includes(text.value.toLowerCase()) || d.latin_names.toLowerCase().includes(text.value.toLowerCase())) && d.cap_features.diameter.includes(text2.value) && d.cap_features.colour.includes(text3.value) && d.environment.includes(text4.value));
     filteredMushrooms.value = searchedMushrooms;
     console.log(text2.value);
+    console.log(searchedMushrooms);
   };
   </script>
   
