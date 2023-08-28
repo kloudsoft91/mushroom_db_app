@@ -1,3 +1,23 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .button {
+        @apply flex-1 text-white text-sm rounded-lg px-2 py-1;
+    }
+
+    @screen tablet {
+        .button {
+            @apply text-base;
+        }
+    }
+
+    @screen desktop {
+        .button {
+            @apply rounded-none;
+            @apply text-xl;
+            @apply font-semibold;
+        }
+    }
+}
