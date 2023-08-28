@@ -1,6 +1,6 @@
 <template>
+  <HeaderBar />
   <NavigationBar />
-
   </template>
   
   <script setup>
