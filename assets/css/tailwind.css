@@ -10,6 +10,7 @@
     @screen tablet {
         .button {
             @apply text-base;
+            @apply rounded-none;
         }
     }
 

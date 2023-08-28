@@ -1,4 +1,5 @@
 <template>
+  <HeaderBar />
   <NavigationBar />
   <div>
 <!-- Navbar -->
