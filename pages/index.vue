@@ -23,12 +23,40 @@
         <aside class="filter-panel">
           <div id="mushroom-identification">
             <h2>Mushroom Identification</h2>
-            <input v-model="text">
+            <input v-model="text" @input="applyAllFilters">
           </div>
           <div id="advanced-search">
             <h2>Advanced Search</h2>
-            <h3>Size</h3>
-            <input v-model="text2">
+            <h3>Stipe Parameters</h3>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4>Min Diameter (cm)</h4>
+            <input v-model="minStipeDiam">
+            <h4>Max Diameter (cm)</h4>
+            <input v-model="maxStipeDiam" style="margin-right: 20px;">
+            <h4>Min Length (cm)</h4>
+            <input v-model="textLen1">
+            <h4>Max Length (cm)</h4>
+            <input v-model="textLen2" style="margin-right: 20px;">
+            <h4>Min Height (cm)</h4>
+            <input v-model="textHei1">
+            <h4>Max Height (cm)</h4>
+            <input v-model="textHei2" style="margin-right: 20px;">
+            <h4>Stipe Colour</h4>
+            <input v-model="textStiCol">
+            </div>
+            <h3>Cap Parameters</h3>
+            <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4>Min Diameter (cm)</h4>
+            <input v-model="textCapDiam1">
+            <h4>Max Diameter (cm)</h4>
+            <input v-model="textCapDiam2" style="margin-right: 20px;">
+            <h4>Min Thickness (cm)</h4>
+            <input v-model="textCapThi1">
+            <h4>Max Thickness (cm)</h4>
+            <input v-model="textCapThi2" style="margin-right: 20px;">
+            <h4>Cap Colour</h4>
+            <input v-model="textCapCol">
+            </div>
             <h3>Colour</h3>
             <input v-model="text3">
             <h3>Environment</h3>
@@ -37,11 +65,11 @@
             <input v-model="text5">
             <button @click="searchMushrooms">Test Search Button</button>
             <h3>Tags</h3>
-            <select v-model="selectedTags" multiple>
+            <select v-model="selectedTags" multiple @change="applyAllFilters">
               <option v-for="tag in availableTags" :key="tag" :value="tag">{{ capitalize(tag) }}</option>
             </select>
             <br>
-            <button @click="filterMushrooms">Apply Filters</button>
+            <button @click="applyAllFilters">Apply Filters</button>
           </div>
           <hr>
           <div id="mushroom-name">
@@ -54,7 +82,7 @@
                   <button>View Details</button>
                 </li>
               </ul>
-              <p v-else>No filter selected</p>
+              <p v-else>No Mushrooms Found</p>
           </div>
         </aside>
   
@@ -81,51 +109,87 @@
   const mushrooms = ref([]);
   const filteredMushrooms = ref([]);
   const selectedTags = ref([]);
-
+  
   const text = ref("");
-  const text2 = ref("");
+
+  const minStipeDiam = ref("");
+  const maxStipeDiam = ref("");
+
   const text3 = ref("");
   const text4 = ref("");
   const text5 = ref("");
 
-  //assign data to 'mushrooms' array
+  //Load data
   onMounted(() => {
     mushrooms.value = mushroomData;
+    //This will display all mushrooms in results initially 
+    filteredMushrooms.value = mushrooms.value;
   });
 
-  //applies tag filters
-  const applyTagFilter = () => {
-    return mushrooms.value.filter((mushroom) => 
-    selectedTags.value.every((tag) => mushroom.tags.includes(tag))
-    );
+  //Tag Filter
+  const filterByTags = (data) => {
+    //if no input - no data change
+    if (selectedTags.value.length === 0) {
+      return data;
+    }
+    //otherwise filter by selected tag
+    return data.filter(mushroom =>
+      selectedTags.value.every(tag => mushroom.tags.includes(tag))
+      );
   };
 
-  //passes tag inputs to applyTagFilter
-  const filterMushrooms = () => {
-    //no tags selected -> display all mushrooms
-    if(selectedTags.value.length === 0){
-      filteredMushrooms.value = mushrooms.value;
-    } else{
-      filteredMushrooms.value = applyTagFilter();
+  //Name Filter
+  const filterByName = (data) => {
+    //if no input - no data change
+    if (!text.value) {
+      return data;
     }
+    //otherwise filter data by input against latin & common names
+    return data.filter(d =>
+      d.common_names.toLowerCase().includes(text.value.toLowerCase()) ||
+      d.latin_names.toLowerCase().includes(text.value.toLowerCase())
+      );
   };
-  
-  //List of predefined tags
+
+  //Stipe Diameter Filter (can pretty much copy paste this for all other min/max int inputs)
+  const filterByStipeDiameter = (data, min, max) => {
+    //if no inputs - no data change
+    if(!min && !max){
+      return data;
+    }
+    //otherwise filter by stipe diameter
+    return data.filter(d => {
+      if (!d.stipe_features) return false;
+      //change string inputs to ints
+      const intMin = +min;
+      const intMax = +max;
+
+      //check & filter data within input range
+      let withinMin = min ? d.stipe_features.diameter_min >= intMin : true;
+      let withinMax = max ? d.stipe_features.diameter_min <= intMax : true;
+      return withinMin && withinMax;
+    })
+  }
+
+  //Apply all of the Filters (Have to decide when this is called
+  //currently called on filter button press, tag select, and when typing in Name search
+  const applyAllFilters = () => {
+    let results = mushrooms.value;
+    //pull results from each filter function
+    results = filterByTags(results);
+    results = filterByName(results);
+    results = filterByStipeDiameter(results, minStipeDiam.value, maxStipeDiam.value)
+    //assign results to filteredMushrooms array
+    filteredMushrooms.value = results;
+    //debug log
+    console.log('Filtered Results:', filteredMushrooms.value);
+  };
+
+  //predefined tags
   const availableTags = ['edible', 'poisonous', 'psychoactive']
 
-  //Capitalize tags for user without changing data
-  const capitalize = (str) => {
-    return str.charAt(0).toUpperCase() + str.slice(1);
-  };
-
-  const searchMushrooms = () => {
-    var data = JSON.parse(JSON.stringify(mushrooms.value));
-    //The filter function should include d.JSONObject.includes(constValue) and || OR or && AND to add more search parameters. Includes() is just for string objects.
-    var searchedMushrooms = data.filter(d => (d.common_names.toLowerCase().includes(text.value.toLowerCase()) || d.latin_names.toLowerCase().includes(text.value.toLowerCase())) && d.cap_features.diameter.includes(text2.value) && d.cap_features.colour.includes(text3.value) && d.environment.includes(text4.value));
-    filteredMushrooms.value = searchedMushrooms;
-    console.log(text2.value);
-    console.log(searchedMushrooms);
-  };
+  //capitalize tags for display
+  const capitalize = (str) => str.charAt(0).toUpperCase() + str.slice(1);
   </script>
   
   <style scoped>
