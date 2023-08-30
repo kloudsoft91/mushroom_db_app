@@ -23,39 +23,29 @@
         <aside class="filter-panel">
           <div id="mushroom-identification">
             <h2>Mushroom Identification</h2>
-            <input v-model="text" @input="applyAllFilters">
+            <input v-model="nameSearch" @input="applyAllFilters">
           </div>
           <div id="advanced-search">
             <h2>Advanced Search</h2>
             <h3>Stipe Parameters</h3>
             <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h4>Min Diameter (cm)</h4>
-            <input v-model="minStipeDiam">
-            <h4>Max Diameter (cm)</h4>
-            <input v-model="maxStipeDiam" style="margin-right: 20px;">
-            <h4>Min Length (cm)</h4>
-            <input v-model="textLen1">
-            <h4>Max Length (cm)</h4>
-            <input v-model="textLen2" style="margin-right: 20px;">
-            <h4>Min Height (cm)</h4>
-            <input v-model="textHei1">
-            <h4>Max Height (cm)</h4>
-            <input v-model="textHei2" style="margin-right: 20px;">
+            <h4>Diameter (cm)</h4>
+            <input v-model="stipeDiam">
+            <h4>Length (cm)</h4>
+            <input v-model="stipeLen">
+            <h4>Height (cm)</h4>
+            <input v-model="stipeHgt">
             <h4>Stipe Colour</h4>
-            <input v-model="textStiCol">
+            <input v-model="stipeColour">
             </div>
             <h3>Cap Parameters</h3>
             <div style="display: flex; justify-content: space-between; align-items: center;">
-            <h4>Min Diameter (cm)</h4>
-            <input v-model="textCapDiam1">
-            <h4>Max Diameter (cm)</h4>
-            <input v-model="textCapDiam2" style="margin-right: 20px;">
-            <h4>Min Thickness (cm)</h4>
-            <input v-model="textCapThi1">
-            <h4>Max Thickness (cm)</h4>
-            <input v-model="textCapThi2" style="margin-right: 20px;">
+            <h4>Diameter (cm)</h4>
+            <input v-model="capDiam">
+            <h4>Thickness (cm)</h4>
+            <input v-model="capThickness">
             <h4>Cap Colour</h4>
-            <input v-model="textCapCol">
+            <input v-model="capColour">
             </div>
             <h3>Colour</h3>
             <input v-model="text3">
@@ -106,14 +96,19 @@
   import { ref, onMounted } from 'vue'
   import mushroomData from '~/data/sampledata.js'
 
+  //JSON data
   const mushrooms = ref([]);
   const filteredMushrooms = ref([]);
-  const selectedTags = ref([]);
-  
-  const text = ref("");
 
-  const minStipeDiam = ref("");
-  const maxStipeDiam = ref("");
+  //Inputs
+  const selectedTags = ref([]);
+  const nameSearch = ref("");
+
+  const stipeDiam = ref("");
+  const stipeLen = ref("");
+  const stipeHgt = ref("");
+  const capDiam = ref("");
+  const capThickness = ref("");
 
   const text3 = ref("");
   const text4 = ref("");
@@ -141,34 +136,33 @@
   //Name Filter
   const filterByName = (data) => {
     //if no input - no data change
-    if (!text.value) {
+    if (!nameSearch.value) {
       return data;
     }
     //otherwise filter data by input against latin & common names
     return data.filter(d =>
-      d.common_names.toLowerCase().includes(text.value.toLowerCase()) ||
-      d.latin_names.toLowerCase().includes(text.value.toLowerCase())
+      d.common_names.toLowerCase().includes(nameSearch.value.toLowerCase()) ||
+      d.latin_names.toLowerCase().includes(nameSearch.value.toLowerCase())
       );
   };
 
-  //Stipe Diameter Filter (can pretty much copy paste this for all other min/max int inputs)
-  const filterByStipeDiameter = (data, min, max) => {
+  //Generic range filter: applied to all int range inputs (diam/len/height/thickness)
+  const filterByRange = (data, value, propertyMin, propertyMax) => {
     //if no inputs - no data change
-    if(!min && !max){
+    if(!value){
       return data;
     }
-    //otherwise filter by stipe diameter
+    //otherwise filter by range
     return data.filter(d => {
-      if (!d.stipe_features) return false;
+      //check that properties exist first ~~(Need a catch if we end up with a mushroom without one of these fields)
+      if (d[propertyMin.split('.')[0]][propertyMin.split('.')[1]] === null) return false;
       //change string inputs to ints
-      const intMin = +min;
-      const intMax = +max;
+      const intValue= +value;
 
       //check & filter data within input range
-      let withinMin = min ? d.stipe_features.diameter_min >= intMin : true;
-      let withinMax = max ? d.stipe_features.diameter_min <= intMax : true;
-      return withinMin && withinMax;
-    })
+      return d[propertyMin.split('.')[0]][propertyMin.split('.')[1]] <= intValue &&
+             d[propertyMax.split('.')[0]][propertyMax.split('.')[1]] >= intValue;
+    });
   }
 
   //Apply all of the Filters (Have to decide when this is called
@@ -178,11 +172,15 @@
     //pull results from each filter function
     results = filterByTags(results);
     results = filterByName(results);
-    results = filterByStipeDiameter(results, minStipeDiam.value, maxStipeDiam.value)
+    results = filterByRange(results, stipeDiam.value, 'stipe_features.diameter_min', 'stipe_features.diameter_max');
+    results = filterByRange(results, stipeLen.value, 'stipe_features.length_min', 'stipe_features.length_max');
+    results = filterByRange(results, stipeHgt.value, 'stipe_features.height_min', 'stipe_features.height_max');
+    results = filterByRange(results, capDiam.value, 'cap_features.diameter_min', 'cap_features.diameter_max');
+    results = filterByRange(results, capThickness.value,'cap_features.thickness_min', 'cap_features.thickness_max');
     //assign results to filteredMushrooms array
     filteredMushrooms.value = results;
-    //debug log
-    console.log('Filtered Results:', filteredMushrooms.value);
+    //debug log 
+    console.log('Filtered Results:', filteredMushrooms.value.map(mushroom => mushroom.common_names));
   };
 
   //predefined tags
