@@ -6,9 +6,9 @@
         </div>
         <div class="sm:mb-0 self-center">
           <a ref class="ml-5 text-gray-500 text-lg">Home</a>
-          <a ref class="ml-5 text-gray-500 text-lg">About Us</a>
+          <a ref class="ml-5 text-gray-500 text-lg">About</a>
           <a ref class="ml-5 text-gray-500 text-lg">News</a>
-          <a ref class="ml-5 text-gray-500 text-lg">Contact Us</a>
+          <a ref class="ml-5 text-gray-500 text-lg">Contact</a>
         </div>
       </nav>
     </header>
