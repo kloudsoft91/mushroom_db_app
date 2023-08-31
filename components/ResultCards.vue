@@ -10,11 +10,19 @@
         >
           <div class="relative overflow-hidden bg-cover bg-no-repeat">
             <img class="rounded-t-lg" src="~/assets/images/mushy.jpg" alt="this is a pic of a mushy" />
+            <!-- Adds a warning label for toxic mushrooms -->
+            <span
+              v-if="mushroom.edibility.includes('toxic')"
+              class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-semibold"
+              >
+              Warning: Toxic
+            </span>
           </div>
           <div class="p-4 flex-grow">
             <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
               {{ mushroom.common_names }}
             </h5>
+            <!-- Table with mushroom info -->
             <table class="text-xs my-3">
                 <tbody><tr>
                     <td class="px-2 py-2 text-gray-500 font-semibold max-w-[50%] truncate align-top">Latin name</td>
