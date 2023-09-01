@@ -44,13 +44,16 @@
               >
                 Details
               </a>
-              <a
-                type="button"
-                href="#"
-                class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal text-emerald-500 hover:text-emerald-800 focus:text-purple-600"
-              >
-                Lookalikes
-              </a>
+              <!-- Only shows Lookalike button if the mushroom has lookalikes -->
+              <span v-if="mushroom.lookalikes">
+                <a
+                  type="button"
+                  href="#"
+                  class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal text-emerald-500 hover:text-emerald-800 focus:text-purple-600"
+                >
+                  Lookalikes
+                </a>
+              </span>
             </div>
           </div>
         </div>
