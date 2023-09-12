@@ -211,5 +211,57 @@ describe('MushroomFinder', () => {
 
     expect(filteredMushrooms).toHaveLength(0)
   })
+
+  it('filters mushrooms based on cap colour', async () => {
+    const mockMushrooms = [
+      { 
+        id: 1, 
+        cap_features: {colour: ['White']}, 
+      },
+      { 
+        id: 2, 
+        cap_features: {colour: ['White', 'Brown']}, 
+      },
+      { 
+        id: 3, 
+        cap_features: {colour: ['Red']} 
+      }
+    ]
+
+    // Set search inputs
+    wrapper.vm.capColour = 'White'
+
+    // Trigger filterByRange method
+    const filteredMushrooms = wrapper.vm.filterByCapColour(mockMushrooms)
+
+    expect(filteredMushrooms).toHaveLength(2)
+    expect(filteredMushrooms[0].id).toBe(1)
+    expect(filteredMushrooms[1].id).toBe(2)
+  })
+
+  it('displays no results found within range', async () => {
+    const mockMushrooms = [
+      { 
+        id: 1, 
+        cap_features: {colour: ['White']}, 
+      },
+      { 
+        id: 2, 
+        cap_features: {colour: ['White', 'Brown']}, 
+      },
+      { 
+        id: 3, 
+        cap_features: {colour: ['Red']} 
+      }
+    ]
+
+    // Set search inputs
+    wrapper.vm.capColour = 'Yellow'
+
+    // Trigger filterByRange method
+    const filteredMushrooms = wrapper.vm.filterByCapColour(mockMushrooms)
+
+    expect(filteredMushrooms).toHaveLength(0)
+  })
   
 })
