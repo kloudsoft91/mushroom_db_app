@@ -1,9 +1,11 @@
 import { mount } from '@vue/test-utils';
 import MushroomFinder from 'pages/index.vue';
 
+
 describe('MushroomFinder', () => {
+// Test for selected tags
   it('filters mushrooms based on selected tags', async () => {
-    const wrapper = mount(MushroomFinder)
+    const wrapper = mount(MushroomFinder);
 
     // Mock some mushroom data
     const mockMushrooms = [
@@ -11,24 +13,22 @@ describe('MushroomFinder', () => {
       { id: 2, common_names: 'Mushroom 2', tags: ['poisonous'] },
       { id: 3, common_names: 'Mushroom 3', tags: ['edible'] },
     ]
-    wrapper.vm.mushrooms = mockMushrooms
-    await wrapper.vm.$nextTick()
 
     // Select a tag
-    wrapper.vm.selectedTags = ['edible']
-    await wrapper.vm.$nextTick()
-
-    // Trigger filterMushrooms method
-    wrapper.vm.filterMushrooms()
-
+    wrapper.vm.selectedTags = ['edible'];
+    
+    // Trigger filterByTags method
+    const filteredMushrooms = wrapper.vm.filterByTags(mockMushrooms)
+   
     // Check if filtered mushrooms match the selected tag
-    expect(wrapper.vm.filteredMushrooms).toHaveLength(2)
-    expect(wrapper.vm.filteredMushrooms[0].common_names).toBe('Mushroom 1')
-    expect(wrapper.vm.filteredMushrooms[1].common_names).toBe('Mushroom 3')
+    expect(filteredMushrooms).toHaveLength(2)
+    expect(filteredMushrooms[0].common_names).toBe('Mushroom 1')
+    expect(filteredMushrooms[1].common_names).toBe('Mushroom 3')
   })
 
+// Test for no tags selected
   it('displays all mushrooms when no tags are selected', async () => {
-    const wrapper = mount(MushroomFinder)
+    const wrapper = mount(MushroomFinder);
 
     // Mock some mushroom data
     const mockMushrooms = [
@@ -36,65 +36,111 @@ describe('MushroomFinder', () => {
       { id: 2, common_names: 'Mushroom 2', tags: ['poisonous'] },
       { id: 3, common_names: 'Mushroom 3', tags: ['edible'] },
     ]
-    wrapper.vm.mushrooms = mockMushrooms
-    await wrapper.vm.$nextTick()
 
-    // No tags have been selected
-    wrapper.vm.selectedTags = []
-    await wrapper.vm.$nextTick()
-
-    // Trigger filterMushrooms method
-    wrapper.vm.filterMushrooms()
-
-    // Check if all mushrooms are displayed
-    expect(wrapper.vm.filteredMushrooms).toHaveLength(3)
-    expect(wrapper.vm.filteredMushrooms[0].common_names).toBe('Mushroom 1')
-    expect(wrapper.vm.filteredMushrooms[1].common_names).toBe('Mushroom 2')
-    expect(wrapper.vm.filteredMushrooms[2].common_names).toBe('Mushroom 3')
+    // Select a tag
+    wrapper.vm.selectedTags = [];
+    
+    // Trigger filterByTags method
+    const filteredMushrooms = wrapper.vm.filterByTags(mockMushrooms)
+    
+    // Check if filtered mushrooms match the selected tag
+    expect(filteredMushrooms).toHaveLength(3)
+    expect(filteredMushrooms[0].common_names).toBe('Mushroom 1')
+    expect(filteredMushrooms[1].common_names).toBe('Mushroom 2')
+    expect(filteredMushrooms[2].common_names).toBe('Mushroom 3')
   })
 
-  it('filters mushrooms based on search inputs', async () => {
+// Test for common name provided
+  it('filters mushrooms based on common name', async () => {
     const wrapper = mount(MushroomFinder)
 
     // Mock some mushroom data
     const mockMushrooms = [
       {
         id: 1,
-        common_names: 'Edible Mushroom 1',
-        latin_names: 'Latin Edible 1',
-        cap_features: { diameter: 'Small', colour: 'Brown' },
-        environment: 'Forest',
+        common_names: 'Shaggy Mane',
+        latin_names: 'Coprinus comatus',
       },
       {
         id: 2,
-        common_names: 'Poisonous Mushroom 2',
-        latin_names: 'Latin Poisonous 2',
-        cap_features: { diameter: 'Large', colour: 'Red' },
-        environment: 'Garden',
-      },
-      {
-        id: 3,
-        common_names: 'Edible Mushroom 3',
-        latin_names: 'Latin Edible 3',
-        cap_features: { diameter: 'Medium', colour: 'White' },
-        environment: 'Field',
+        common_names: 'Fly Agaric',
+        latin_names: 'Amanita muscaria',
       },
     ]
+
     wrapper.vm.mushrooms = mockMushrooms
-    await wrapper.vm.$nextTick()
 
     // Set search inputs
-    wrapper.vm.text = 'Edible'
-    wrapper.vm.text2 = 'Small'
-    wrapper.vm.text3 = 'Brown'
-    wrapper.vm.text4 = 'Forest'
-    await wrapper.vm.$nextTick()
+    wrapper.vm.nameSearch = 'Shaggy'
 
     // Trigger searchMushrooms method
-    wrapper.vm.searchMushrooms()
+    const filteredMushrooms = wrapper.vm.filterByName(mockMushrooms)
 
     // Check if mushrooms are filtered based on search inputs
-    expect(wrapper.vm.filteredMushrooms).toHaveLength(1)
-    expect(wrapper.vm.filteredMushrooms[0].common_names).toBe('Edible Mushroom 1')
+    expect(filteredMushrooms).toHaveLength(1)
+    expect(filteredMushrooms[0].common_names).toBe('Shaggy Mane')
+  })
+
+  // Test for latin name provided
+  it('filters mushrooms based on latin name', async () => {
+    const wrapper = mount(MushroomFinder)
+
+    // Mock some mushroom data
+    const mockMushrooms = [
+      {
+        id: 1,
+        common_names: 'Shaggy Mane',
+        latin_names: 'Coprinus comatus',
+      },
+      {
+        id: 2,
+        common_names: 'Fly Agaric',
+        latin_names: 'Amanita muscaria',
+      },
+    ]
+
+    wrapper.vm.mushrooms = mockMushrooms
+
+    // Set search inputs
+    wrapper.vm.nameSearch = 'Amanita'
+
+    // Trigger searchMushrooms method
+    const filteredMushrooms = wrapper.vm.filterByName(mockMushrooms)
+
+    // Check if mushrooms are filtered based on search inputs
+    expect(filteredMushrooms).toHaveLength(1)
+    expect(filteredMushrooms[0].latin_names).toBe('Amanita muscaria')
+  })
+
+// Test for no name provided
+  it('displays all mushrooms when no name is provided', async () => {
+    const wrapper = mount(MushroomFinder)
+
+    // Mock some mushroom data
+    const mockMushrooms = [
+      {
+        id: 1,
+        common_names: 'Shaggy Mane',
+        latin_names: 'Coprinus comatus',
+      },
+      {
+        id: 2,
+        common_names: 'Fly Agaric',
+        latin_names: 'Amanita muscaria',
+      },
+    ]
+
+    wrapper.vm.mushrooms = mockMushrooms
+
+    // Set search inputs
+    wrapper.vm.nameSearch = ""
+
+    // Trigger searchMushrooms method
+    const filteredMushrooms = wrapper.vm.filterByName(mockMushrooms)
+
+    // Check if mushrooms are filtered based on search inputs
+    expect(filteredMushrooms).toHaveLength(2)
+    expect(filteredMushrooms[0].id).toBe(1)
+    expect(filteredMushrooms[1].id).toBe(2)
   })
 })
