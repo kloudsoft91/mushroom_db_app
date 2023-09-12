@@ -143,4 +143,55 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms[0].id).toBe(1)
     expect(filteredMushrooms[1].id).toBe(2)
   })
+
+// Test for range - ****DOES THIS APPLY TO CAP OR STIPE OR BOTH?? MAY NEED TO CHANGE THIS****
+  it('filters mushrooms based on range', async () => {
+    const wrapper = mount(MushroomFinder)
+
+    // Mock some mushroom data
+    const mockMushrooms = [
+      { id: 1, 
+        stipe_features: {diameter_min: '1', diameter_max: '3'}, 
+        cap_features: {diameter_min: '1', diameter_max: '2'} 
+      },
+      { id: 2, 
+        stipe_features: {diameter_min: '4', diameter_max: '5'}, 
+        cap_features: {diameter_min: '3', diameter_max: '4'} 
+      }
+    ]
+
+    wrapper.vm.mushrooms = mockMushrooms
+
+    // Trigger searchMushrooms method
+    const filteredMushrooms = wrapper.vm.filterByRange(mockMushrooms, '5', 'stipe_features.diameter_min', 'stipe_features.diameter_max')
+
+    // Check if mushrooms are filtered based on search inputs
+    expect(filteredMushrooms).toHaveLength(1)
+    expect(filteredMushrooms[0].id).toBe(2)
+  })
+
+// Test if no results found within range  
+  it('displays no results if no mushrooms are found', async () => {
+    const wrapper = mount(MushroomFinder)
+
+    // Mock some mushroom data
+    const mockMushrooms = [
+      { id: 1, 
+        stipe_features: {diameter_min: '1', diameter_max: '3'}, 
+        cap_features: {diameter_min: '1', diameter_max: '2'} 
+      },
+      { id: 2, 
+        stipe_features: {diameter_min: '4', diameter_max: '5'}, 
+        cap_features: {diameter_min: '3', diameter_max: '4'} 
+      }
+    ]
+
+    wrapper.vm.mushrooms = mockMushrooms
+
+    // Trigger searchMushrooms method
+    const filteredMushrooms = wrapper.vm.filterByRange(mockMushrooms, '9', 'stipe_features.diameter_min', 'stipe_features.diameter_max')
+
+    // Check if mushrooms are filtered based on search inputs
+    expect(filteredMushrooms).toHaveLength(0)
+  })
 })
