@@ -159,4 +159,57 @@ describe('MushroomFinder', () => {
 
     expect(filteredMushrooms).toHaveLength(0)
   })
+
+  it('filters mushrooms based on stipe colour', async () => {
+    const mockMushrooms = [
+      { 
+        id: 1, 
+        stipe_features: {colour: ['White']}, 
+      },
+      { 
+        id: 2, 
+        stipe_features: {colour: ['White', 'Brown']}, 
+      },
+      { 
+        id: 3, 
+        stipe_features: {colour: ['Red']} 
+      }
+    ]
+
+    // Set search inputs
+    wrapper.vm.stipeColour = 'White'
+
+    // Trigger filterByRange method
+    const filteredMushrooms = wrapper.vm.filterByStipeColour(mockMushrooms)
+
+    expect(filteredMushrooms).toHaveLength(2)
+    expect(filteredMushrooms[0].id).toBe(1)
+    expect(filteredMushrooms[1].id).toBe(2)
+  })
+
+  it('displays no results found within range', async () => {
+    const mockMushrooms = [
+      { 
+        id: 1, 
+        stipe_features: {colour: ['White']}, 
+      },
+      { 
+        id: 2, 
+        stipe_features: {colour: ['White', 'Brown']}, 
+      },
+      { 
+        id: 3, 
+        stipe_features: {colour: ['Red']} 
+      }
+    ]
+
+    // Set search inputs
+    wrapper.vm.stipeColour = 'Yellow'
+
+    // Trigger filterByRange method
+    const filteredMushrooms = wrapper.vm.filterByStipeColour(mockMushrooms)
+
+    expect(filteredMushrooms).toHaveLength(0)
+  })
+  
 })
