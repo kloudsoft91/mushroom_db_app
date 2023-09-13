@@ -118,8 +118,29 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms[1].id).toBe(2)
   })
 
-// Test for range - ****DOES THIS APPLY TO CAP OR STIPE OR BOTH?? MAY NEED TO CHANGE THIS****
-  it('filters mushrooms based on range', async () => {
+  it('displays all mushrooms if no range value is provided', async () => {
+    const mockMushrooms = [
+      { 
+        id: 1, 
+        stipe_features: {diameter_min: '1', diameter_max: '3'}, 
+        cap_features: {diameter_min: '1', diameter_max: '2'} 
+      },
+      { 
+        id: 2, 
+        stipe_features: {diameter_min: '4', diameter_max: '5'}, 
+        cap_features: {diameter_min: '3', diameter_max: '4'} 
+      }
+    ]
+
+    // Trigger filterByRange method
+    const filteredMushrooms = wrapper.vm.filterByRange(mockMushrooms)
+
+    expect(filteredMushrooms).toHaveLength(2)
+    expect(filteredMushrooms[0].id).toBe(1)
+    expect(filteredMushrooms[1].id).toBe(2)
+  })
+
+  it('filters mushrooms based on stipe features range', async () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -140,7 +161,7 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms[0].id).toBe(2)
   })
 
-  it('displays no results found within range', async () => {
+  it('displays no results found within stipe features range', async () => {
     const mockMushrooms = [
       {
         id: 1, 
@@ -158,6 +179,75 @@ describe('MushroomFinder', () => {
     const filteredMushrooms = wrapper.vm.filterByRange(mockMushrooms, '9', 'stipe_features.diameter_min', 'stipe_features.diameter_max')
 
     expect(filteredMushrooms).toHaveLength(0)
+  })
+
+  it('filters mushrooms based on cap features range', async () => {
+    const mockMushrooms = [
+      { 
+        id: 1, 
+        stipe_features: {diameter_min: '1', diameter_max: '3'}, 
+        cap_features: {diameter_min: '1', diameter_max: '2'} 
+      },
+      { 
+        id: 2, 
+        stipe_features: {diameter_min: '4', diameter_max: '5'}, 
+        cap_features: {diameter_min: '3', diameter_max: '4'} 
+      }
+    ]
+
+    // Trigger filterByRange method
+    const filteredMushrooms = wrapper.vm.filterByRange(mockMushrooms, '3', 'cap_features.diameter_min', 'cap_features.diameter_max')
+
+    expect(filteredMushrooms).toHaveLength(1)
+    expect(filteredMushrooms[0].id).toBe(2)
+  })
+
+  it('displays no results found within cap features range', async () => {
+    const mockMushrooms = [
+      {
+        id: 1, 
+        stipe_features: {diameter_min: '1', diameter_max: '3'}, 
+        cap_features: {diameter_min: '1', diameter_max: '2'} 
+      },
+      { 
+        id: 2, 
+        stipe_features: {diameter_min: '4', diameter_max: '5'}, 
+        cap_features: {diameter_min: '3', diameter_max: '4'} 
+      }
+    ]
+
+    // Trigger filterByRange method
+    const filteredMushrooms = wrapper.vm.filterByRange(mockMushrooms, '9', 'cap_features.diameter_min', 'cap_features.diameter_max')
+
+    expect(filteredMushrooms).toHaveLength(0)
+  })
+
+  it('displays all mushrooms if no stipe colour is provided', async () => {
+    const mockMushrooms = [
+      { 
+        id: 1, 
+        stipe_features: {colour: ['White']}, 
+      },
+      { 
+        id: 2, 
+        stipe_features: {colour: ['White', 'Brown']}, 
+      },
+      { 
+        id: 3, 
+        stipe_features: {colour: ['Red']} 
+      }
+    ]
+
+    // Set search inputs
+    wrapper.vm.stipeColour = ""
+
+    // Trigger filterByStipeColour method
+    const filteredMushrooms = wrapper.vm.filterByStipeColour(mockMushrooms)
+
+    expect(filteredMushrooms).toHaveLength(3)
+    expect(filteredMushrooms[0].id).toBe(1)
+    expect(filteredMushrooms[1].id).toBe(2)
+    expect(filteredMushrooms[2].id).toBe(3)
   })
 
   it('filters mushrooms based on stipe colour', async () => {
@@ -212,6 +302,34 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms).toHaveLength(0)
   })
 
+  it('displays all mushrooms if no cap colour is provided', async () => {
+    const mockMushrooms = [
+      { 
+        id: 1, 
+        stipe_features: {colour: ['White']}, 
+      },
+      { 
+        id: 2, 
+        stipe_features: {colour: ['White', 'Brown']}, 
+      },
+      { 
+        id: 3, 
+        stipe_features: {colour: ['Red']} 
+      }
+    ]
+
+    // Set search inputs
+    wrapper.vm.capColour = ""
+
+    // Trigger filterByCapColour method
+    const filteredMushrooms = wrapper.vm.filterByCapColour(mockMushrooms)
+
+    expect(filteredMushrooms).toHaveLength(3)
+    expect(filteredMushrooms[0].id).toBe(1)
+    expect(filteredMushrooms[1].id).toBe(2)
+    expect(filteredMushrooms[2].id).toBe(3)
+  })
+
   it('filters mushrooms based on cap colour', async () => {
     const mockMushrooms = [
       { 
@@ -239,7 +357,7 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms[1].id).toBe(2)
   })
 
-  it('displays no results found within range', async () => {
+  it('displays no results found with that colour', async () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -262,6 +380,81 @@ describe('MushroomFinder', () => {
     const filteredMushrooms = wrapper.vm.filterByCapColour(mockMushrooms)
 
     expect(filteredMushrooms).toHaveLength(0)
+  }) 
+
+
+  // PUT FILTER BY MONTH HERE
+
+  it('filter based on season', async () => {
+    const mockMushrooms = [
+      {
+        id: 1,
+        common_names: 'Mushroom 1',
+        time_of_year: 'Late spring to autumn (October to April in the Southern Hemisphere)'
+      },
+      {
+        id: 2,
+        common_names: 'Mushroom 2',
+        time_of_year: 'Late summer (March to June in the Southern Hemisphere)'
+      }
+    ]
+
+    // Set search inputs
+    wrapper.vm.seasonSearch = "Autumn"
+
+    // Trigger filterByName method
+    const filteredMushrooms = wrapper.vm.filterBySeason(mockMushrooms)
+
+    expect(filteredMushrooms).toHaveLength(1)
+    expect(filteredMushrooms[0].id).toBe(1)
   })
-  
+
+  it('filter based on month', async () => {
+    const mockMushrooms = [
+      {
+        id: 1,
+        common_names: 'Mushroom 1',
+        time_of_year: 'Late spring to autumn (October to April in the Southern Hemisphere)'
+      },
+      {
+        id: 2,
+        common_names: 'Mushroom 2',
+        time_of_year: 'Late summer (March to June in the Southern Hemisphere)'
+      }
+    ]
+
+    // Set search inputs
+    wrapper.vm.seasonSearch = "October"
+
+    // Trigger filterByName method
+    const filteredMushrooms = wrapper.vm.filterBySeason(mockMushrooms)
+
+    expect(filteredMushrooms).toHaveLength(1)
+    expect(filteredMushrooms[0].id).toBe(1)
+  })
+
+  it('filter based on month within range', async () => {
+    const mockMushrooms = [
+      {
+        id: 1,
+        common_names: 'Mushroom 1',
+        time_of_year: 'Late spring to autumn (October to April in the Southern Hemisphere)'
+      },
+      {
+        id: 2,
+        common_names: 'Mushroom 2',
+        time_of_year: 'Late summer (March to June in the Southern Hemisphere)'
+      }
+    ]
+
+    // Set search inputs
+    wrapper.vm.seasonSearch = "April"
+
+    // Trigger filterByName method
+    const filteredMushrooms = wrapper.vm.filterBySeason(mockMushrooms)
+
+    expect(filteredMushrooms).toHaveLength(2)
+    expect(filteredMushrooms[0].id).toBe(1)
+    expect(filteredMushrooms[1].id).toBe(2)
+  })
 })
