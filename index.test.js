@@ -386,6 +386,26 @@ describe('MushroomFinder', () => {
 
   // PUT FILTER BY MONTH HERE
 
+  it('should return correct integer for the given month', async () => {
+    expect(wrapper.vm.monthToInt('january')).toBe(1);
+    expect(wrapper.vm.monthToInt('february')).toBe(2);
+    expect(wrapper.vm.monthToInt('march')).toBe(3);
+    expect(wrapper.vm.monthToInt('april')).toBe(4);
+    expect(wrapper.vm.monthToInt('may')).toBe(5);
+    expect(wrapper.vm.monthToInt('june')).toBe(6);
+    expect(wrapper.vm.monthToInt('july')).toBe(7);
+    expect(wrapper.vm.monthToInt('August')).toBe(8);
+    expect(wrapper.vm.monthToInt('september')).toBe(9);
+    expect(wrapper.vm.monthToInt('october')).toBe(10);
+    expect(wrapper.vm.monthToInt('november')).toBe(11);
+    expect(wrapper.vm.monthToInt('december')).toBe(12);
+  });
+
+  it('should return undefined for an invalid month', () => {
+    expect(wrapper.vm.monthToInt('invalid')).toBeUndefined();
+  });
+
+
   it('filter based on season', async () => {
     const mockMushrooms = [
       {
