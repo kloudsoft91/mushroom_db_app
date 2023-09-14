@@ -3,9 +3,13 @@ import MushroomFinder from 'pages/index.vue';
 
 
 describe('MushroomFinder', () => {
-  const wrapper = mount(MushroomFinder);
+  let wrapper;
 
-  it('filters mushrooms based on selected tags', async () => {
+  beforeEach(() => {
+    wrapper = mount(MushroomFinder);
+  });
+
+  it('should filter based on selected tags', () => {
     const mockMushrooms = [
       { id: 1, common_names: 'Mushroom 1', tags: ['edible'] },
       { id: 2, common_names: 'Mushroom 2', tags: ['poisonous'] },
@@ -24,7 +28,7 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms[1].common_names).toBe('Mushroom 3');
   })
 
-  it('displays all mushrooms when no tags are selected', async () => {
+  it('should display all mushrooms when no tags are selected', () => {
     const mockMushrooms = [
       { id: 1, common_names: 'Mushroom 1', tags: ['edible'] },
       { id: 2, common_names: 'Mushroom 2', tags: ['poisonous'] },
@@ -44,7 +48,7 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms[2].common_names).toBe('Mushroom 3');
   })
 
-  it('filters mushrooms based on common name', async () => {
+  it('should filter based on common name', () => {
     const mockMushrooms = [
       {
         id: 1,
@@ -69,7 +73,7 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms[0].common_names).toBe('Shaggy Mane');
   })
 
-  it('filters mushrooms based on latin name', async () => {
+  it('should filter based on latin name', () => {
     const mockMushrooms = [
       {
         id: 1,
@@ -89,11 +93,12 @@ describe('MushroomFinder', () => {
     // Trigger filterByName method
     const filteredMushrooms = wrapper.vm.filterByName(mockMushrooms);
 
+    // Check if mushrooms are filtered based on latin name
     expect(filteredMushrooms).toHaveLength(1);
     expect(filteredMushrooms[0].latin_names).toBe('Amanita muscaria');
   })
 
-  it('displays all mushrooms when no name is provided', async () => {
+  it('should display all when no name is provided', () => {
     const mockMushrooms = [
       {
         id: 1,
@@ -114,12 +119,13 @@ describe('MushroomFinder', () => {
     // Trigger filterByName method
     const filteredMushrooms = wrapper.vm.filterByName(mockMushrooms);
 
+    // Check all mushrooms are displayed
     expect(filteredMushrooms).toHaveLength(2);
     expect(filteredMushrooms[0].id).toBe(1);
     expect(filteredMushrooms[1].id).toBe(2);
   })
 
-  it('displays all mushrooms if no range value is provided', async () => {
+  it('should display all if no range value is provided', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -136,12 +142,13 @@ describe('MushroomFinder', () => {
     // Trigger filterByRange method
     const filteredMushrooms = wrapper.vm.filterByRange(mockMushrooms);
 
+    // Check all mushrooms are displayed
     expect(filteredMushrooms).toHaveLength(2);
     expect(filteredMushrooms[0].id).toBe(1);
     expect(filteredMushrooms[1].id).toBe(2);
   })
 
-  it('filters mushrooms based on stipe features range', async () => {
+  it('should filter based on stipe features range', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -158,11 +165,12 @@ describe('MushroomFinder', () => {
     // Trigger filterByRange method
     const filteredMushrooms = wrapper.vm.filterByRange(mockMushrooms, '5', 'stipe_features.diameter_min', 'stipe_features.diameter_max');
 
+    // Check mushrooms are filtered based on given range
     expect(filteredMushrooms).toHaveLength(1);
     expect(filteredMushrooms[0].id).toBe(2);
   })
 
-  it('displays no results found within stipe features range', async () => {
+  it('should display none found within stipe features range', () => {
     const mockMushrooms = [
       {
         id: 1, 
@@ -182,7 +190,7 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms).toHaveLength(0);
   })
 
-  it('filters mushrooms based on cap features range', async () => {
+  it('should filter based on cap features range', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -203,7 +211,7 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms[0].id).toBe(2);
   })
 
-  it('displays no results found within cap features range', async () => {
+  it('should display none found within cap features range', () => {
     const mockMushrooms = [
       {
         id: 1, 
@@ -223,7 +231,7 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms).toHaveLength(0);
   })
 
-  it('displays all mushrooms if no stipe colour is provided', async () => {
+  it('should display all if no stipe colour is provided', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -251,7 +259,7 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms[2].id).toBe(3);
   })
 
-  it('filters mushrooms based on stipe colour', async () => {
+  it('should filter based on stipe colour', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -270,7 +278,7 @@ describe('MushroomFinder', () => {
     // Set search inputs
     wrapper.vm.stipeColour = 'White';
 
-    // Trigger filterByRange method
+    // Trigger filterByStipeColour method
     const filteredMushrooms = wrapper.vm.filterByStipeColour(mockMushrooms);
 
     expect(filteredMushrooms).toHaveLength(2);
@@ -278,7 +286,7 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms[1].id).toBe(2);
   })
 
-  it('displays no results found within range', async () => {
+  it('should display none found with stipe colour provided', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -297,13 +305,13 @@ describe('MushroomFinder', () => {
     // Set search inputs
     wrapper.vm.stipeColour = 'Yellow';
 
-    // Trigger filterByRange method
+    // Trigger filterByStipeColour method
     const filteredMushrooms = wrapper.vm.filterByStipeColour(mockMushrooms);
 
     expect(filteredMushrooms).toHaveLength(0);
   })
 
-  it('displays all mushrooms if no cap colour is provided', async () => {
+  it('should display all if no cap colour is provided', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -331,7 +339,7 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms[2].id).toBe(3);
   })
 
-  it('filters mushrooms based on cap colour', async () => {
+  it('should filter based on cap colour', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -350,7 +358,7 @@ describe('MushroomFinder', () => {
     // Set search inputs
     wrapper.vm.capColour = 'White';
 
-    // Trigger filterByRange method
+    // Trigger filterByCapColour method
     const filteredMushrooms = wrapper.vm.filterByCapColour(mockMushrooms);
 
     expect(filteredMushrooms).toHaveLength(2);
@@ -358,7 +366,7 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms[1].id).toBe(2);
   })
 
-  it('displays no results found with that colour', async () => {
+  it('should display none found with cap colour provided', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -377,7 +385,7 @@ describe('MushroomFinder', () => {
     // Set search inputs
     wrapper.vm.capColour = 'Yellow';
 
-    // Trigger filterByRange method
+    // Trigger filterByCapColour method
     const filteredMushrooms = wrapper.vm.filterByCapColour(mockMushrooms);
 
     expect(filteredMushrooms).toHaveLength(0);
@@ -386,7 +394,7 @@ describe('MushroomFinder', () => {
 
   // PUT FILTER BY MONTH HERE
 
-  it('should return correct integer for the given month', async () => {
+  it('should return correct integer for the given month', () => {
     expect(wrapper.vm.monthToInt('january')).toBe(1);
     expect(wrapper.vm.monthToInt('february')).toBe(2);
     expect(wrapper.vm.monthToInt('march')).toBe(3);
@@ -406,7 +414,7 @@ describe('MushroomFinder', () => {
   });
 
 
-  it('filter based on season', async () => {
+  it('should filter based on season', () => {
     const mockMushrooms = [
       {
         id: 1,
@@ -423,14 +431,14 @@ describe('MushroomFinder', () => {
     // Set search inputs
     wrapper.vm.seasonSearch = "Autumn";
 
-    // Trigger filterByName method
+    // Trigger filterBySeason method
     const filteredMushrooms = wrapper.vm.filterBySeason(mockMushrooms);
 
     expect(filteredMushrooms).toHaveLength(1);
     expect(filteredMushrooms[0].id).toBe(1);
   })
 
-  it('filter based on month', async () => {
+  it('should filter based on month', () => {
     const mockMushrooms = [
       {
         id: 1,
@@ -447,14 +455,14 @@ describe('MushroomFinder', () => {
     // Set search inputs
     wrapper.vm.seasonSearch = "October";
 
-    // Trigger filterByName method
+    // Trigger filterBySeason method
     const filteredMushrooms = wrapper.vm.filterBySeason(mockMushrooms);
 
     expect(filteredMushrooms).toHaveLength(1);
     expect(filteredMushrooms[0].id).toBe(1);
   })
 
-  it('filter based on month within range', async () => {
+  it('should filter based on month within range', () => {
     const mockMushrooms = [
       {
         id: 1,
@@ -479,8 +487,8 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms[1].id).toBe(2);
   })
 
-  /* NEEDS WORK - DOESN'T PASS TESTS AT THE MOMENT
-  it('applies all filters correctly', () => {
+  // NEEDS WORK - xit means this test will be skipped
+  xit('should apply all filters correctly', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -527,5 +535,5 @@ describe('MushroomFinder', () => {
 
     expect(wrapper.vm.filteredMushrooms).toHaveLength(2);
     expect(wrapper.vm.filteredMushrooms[0].common_names).toBe('Mushroom 1');
-  });*/
+  });
 })
