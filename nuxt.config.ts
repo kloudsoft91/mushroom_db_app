@@ -15,6 +15,7 @@ export default {
     },
   ],
   modules: [
-    '@nuxtjs/tailwindcss'
+    '@nuxt/ui',
+    'vue3-carousel-nuxt'
   ]
 }

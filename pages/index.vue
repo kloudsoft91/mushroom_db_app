@@ -2,10 +2,9 @@
   <HeaderBar />
   <NavigationBar />
   <FooterBar />
+  <SlideOver />
+  <BottomFrame />
   </template>
-  
-  <script setup>
-  </script>
   
   <style scoped>
 

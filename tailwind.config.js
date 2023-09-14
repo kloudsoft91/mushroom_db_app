@@ -4,7 +4,9 @@
 const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
-  content: [],
+  content: [
+    
+  ],
   theme: {
     screens: {
       'tablet': '481px',
@@ -21,6 +23,9 @@ module.exports = {
     },
     extend: {},
   },
-  plugins: [],
+  plugins: [
+    
+  ]
+  
 }
 
