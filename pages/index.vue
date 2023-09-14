@@ -302,6 +302,11 @@
   };
   </script>
   
+  <FooterBar />
+  <SlideOver />
+  <BottomFrame />
+  </template>
+  
   <style scoped>
 
   </style>

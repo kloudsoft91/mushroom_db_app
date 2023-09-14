@@ -27,7 +27,11 @@ export default {
     },*/
   ],
   //Cloudinary config
-  modules: ['@nuxt/image-edge'],
+  modules: [
+    '@nuxt/image-edge',
+    '@nuxt/ui',
+    'vue3-carousel-nuxt'
+  ],
   image:{
     cloudinary:{
       baseURL: 'https://res.cloudinary.com/dcyxj3dqt/image/upload/',
