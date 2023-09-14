@@ -487,9 +487,8 @@ describe('MushroomFinder', () => {
     expect(filteredMushrooms[1].id).toBe(2);
   })
 
-  // NEEDS WORK - xit means this test will be skipped
-  xit('should apply all filters correctly', () => {
-    const mockMushrooms = [
+  it('should apply all filters correctly', () => {
+    wrapper.vm.mushrooms = [
       { 
         id: 1, 
         tags: ['edible'],
@@ -519,21 +518,22 @@ describe('MushroomFinder', () => {
       }
     ];
 
-    wrapper.vm.mushrooms = mockMushrooms;
-    console.log('mushrooms', wrapper.vm.mushrooms);
-    wrapper.vm.selectedTags = ['edible'];
-    wrapper.vm.nameSearch = 'Mushroom';
+    // Set inputs
+    wrapper.vm.tags = ['edible'];
+    wrapper.vm.common_name = 'Mushroom';
     wrapper.vm.stipeDiam = '2';
+    wrapper.vm.stipeLen = '';
+    wrapper.vm.stipeHgt = '';
     wrapper.vm.capDiam = '1';
+    wrapper.vm.capThickness = '';
     wrapper.vm.stipeColour = 'Brown';
+    wrapper.vm.capColour = '';
     wrapper.vm.seasonSearch = 'summer';
 
-    console.log('Filtered Mushs', wrapper.vm.results);
-
+    // Trigger applyAllFilters method
     wrapper.vm.applyAllFilters();
-    console.log('Filtered Mushs', wrapper.vm.results);
 
-    expect(wrapper.vm.filteredMushrooms).toHaveLength(2);
-    expect(wrapper.vm.filteredMushrooms[0].common_names).toBe('Mushroom 1');
+    expect(wrapper.vm.filteredMushrooms).toHaveLength(1);
+    expect(wrapper.vm.filteredMushrooms[0].common_name).toBe('Mushroom 2');
   });
 })
