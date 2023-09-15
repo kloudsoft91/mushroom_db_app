@@ -2,6 +2,9 @@
 export default {
   // Configuration options here
   devtools: { enabled: true },
+  colorMode: {
+    preference: 'light'
+  },
   routes: [
     {
       name: 'home',

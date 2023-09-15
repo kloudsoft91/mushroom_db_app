@@ -5,6 +5,18 @@
         {{ item.description }}
       </p>
     </template>
+    <template #default="{ item, index, open }">
+      <UButton color="white" variant="solid" class=" bg-emerald-500 text-white text-xl font-semibold hover:bg-emerald-400" :ui="{ rounded :'rounded-none', padding: { sm:'p-3' } }">
+        <span class="truncate">{{ item.label }}</span>
+        <template #trailing>
+          <UIcon
+            name="i-heroicons-chevron-right-20-solid"
+            class="w-5 h-5 ms-auto transform transition-transform duration-200"
+            :class="[open && 'rotate-90']"
+          />
+        </template>
+      </UButton>
+    </template>
     <template #ecology>
       <div class="grid grid-cols-3 gap-4 place-items-center text-gray-900 text-center">
         <div class="">
@@ -23,6 +35,9 @@
     </template>
     <template #capshape>
       <CapCarousel />
+    </template>
+    <template #attachment>
+      <AttachmentCarousel />
     </template>
     <template #stipe>
       <div class="flex flex-row space-x-4  text-gray-900 text-center">
@@ -60,11 +75,18 @@ const items = [{
   defaultOpen: false,
   multiple: true,
   slot: 'capshape'
+},
+{
+  label: 'Attachment',
+  icon: 'i-heroicons-arrow-down-tray',
+  defaultOpen: false,
+  multiple: true,
+  slot: 'attachment',
 }, {
   label: 'Stipe',
   icon: 'i-heroicons-eye-dropper',
   defaultOpen: false,
   multiple: true,
-  slot: 'stipe'
+  slot: 'stipe',
 }];
 </script>

@@ -2,13 +2,12 @@
 
 /*sets bottom sheet to sit above footer bar*/
 .bottom-sheet {
-    bottom: 80px !important;
+    bottom: 80px !important;  
 }
 /*sets bottom sheet to sit above footer bar*/
 .bottom-sheet__content {
     height: auto !important;
     width: 100%;
-    
 }
 
 /*hides header and cursor of the bottom sheet*/
@@ -20,6 +19,10 @@
 /*hides slide up/down thumb*/
 .bottom-sheet__draggable-thumb {
     height: 0px !important;
+}
+
+.bottom-sheet__main {
+  overflow-y: visible !important;
 }
 </style>
 

@@ -17,11 +17,11 @@
       <!--Button Bar / Quick Links (Custom style in tailwind.css file)-->
       <div class="tablet:bg-white desktop:bg-white rounded-lg w-11/12 desktop:w-3/4 desktop:p-2 absolute left-0 right-0 mx-auto mt-6 tablet:-mt-6 desktop:-mt-5 tablet:shadow-md desktop:shadow-md">
         <div class="flex flex-wrap gap-2 desktop:gap-0 tablet:gap-0 p-2 desktop:p-0 tablet:p-2 w-full">
-          <button class="button bg-blue-500">Edible</button>
-          <button class="button bg-orange-500 ">Gourmet</button>
-          <button class="button bg-red-500">Poisonous</button>
-          <button class="button bg-purple-500">Psychoactive</button>
-          <button class="button bg-yellow-500">Lookalike</button>
+          <button class="button bg-[#515A47]">Edible</button>
+          <button class="button  bg-[#1048b9]">Gourmet</button>
+          <button class="button bg-[#b91048]">Poisonous</button>
+          <button class="button bg-[#9DCBBA]">Psychoactive</button>
+          <button class="button bg-[#b98110]">Lookalike</button>
         </div>
       </div>
   </div>
