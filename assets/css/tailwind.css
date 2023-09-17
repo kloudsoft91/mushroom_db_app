@@ -4,7 +4,15 @@
 
 @layer components {
     .button {
-        @apply flex-1 text-white text-sm rounded-lg px-2 py-1;
+        @apply flex-1 text-white text-base font-semibold rounded-lg px-2 py-1 min-w-[80px];
+    }
+
+    .mush-slide {
+        @apply flex flex-col items-center mt-2 text-lg font-semibold text-emerald-600;
+    }
+
+    .cap-image {
+        @apply w-20 h-20 border-double border-4 border-emerald-600 rounded-full;
     }
 
     @screen tablet {

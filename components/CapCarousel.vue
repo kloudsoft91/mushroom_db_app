@@ -1,64 +1,63 @@
 <template>
-
-    <Carousel :items-to-show="5" :wrap-around="true" v-model="currentSlide">
+    <Carousel :items-to-show="3.5" :wrap-around="true">
         <Slide :key="1">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/campanulate.png" alt="Campanulate">
-                <p class="text-lg font-bold text-slate-500">Campanulate</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/campanulate.png" alt="Campanulate">
+                <p>Campanulate</p>
             </div>
         </Slide>
         <Slide :key="2">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/conical.png" alt="Conical">
-                <p class="text-lg font-bold text-slate-500">Conical</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/conical.png" alt="Conical">
+                <p>Conical</p>
             </div>
          </Slide>
          <Slide :key="3">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/convex.png" alt="Convex" >
-                <p class="text-lg font-bold text-slate-500">Convex</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/convex.png" alt="Convex" >
+                <p>Convex</p>
             </div>
         </Slide>
         <Slide :key="4">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/depressed.png" alt="Depressed">
-                <p class="text-lg font-bold text-slate-500">Depressed</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/depressed.png" alt="Depressed">
+                <p>Depressed</p>
             </div>
         </Slide>
         <Slide :key="5">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/flat.png" alt="Flat">
-                <p class="text-lg font-bold text-slate-500">Flat</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/flat.png" alt="Flat">
+                <p>Flat</p>
             </div>
         </Slide>
         <Slide :key="6">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/infundibuliform.png" alt="Infundibuliform" >
-                <p class="text-lg font-bold text-slate-500">Infundibuliform</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/infundibuliform.png" alt="Infundibuliform" >
+                <p>Infundibuliform</p>
             </div>
         </Slide>
         <Slide :key="7">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/offset.png" alt="Offset">
-                <p class="text-lg font-bold text-slate-500">Offset</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/offset.png" alt="Offset">
+                <p>Offset</p>
             </div>
         </Slide>
         <Slide :key="8">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/ovate.png" alt="Ovate">
-                <p class="text-lg font-bold text-slate-500">Ovate</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/ovate.png" alt="Ovate">
+                <p>Ovate</p>
             </div>
         </Slide>
         <Slide :key="9">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/umbillicate.png" alt="Umbillicate" >
-                <p class="text-lg font-bold text-slate-500">Umbillicate</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/umbillicate.png" alt="Umbillicate" >
+                <p>Umbillicate</p>
             </div>
         </Slide>
         <Slide :key="10">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/umbonate.png" alt="Umbonate" >
-                <p class="text-lg font-bold text-slate-500">Umbonate</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/umbonate.png" alt="Umbonate" >
+                <p>Umbonate</p>
             </div>
         </Slide>
         <!--<Carousel :items-to-show="10" :wrap-around="true">

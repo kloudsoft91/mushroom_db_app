@@ -1,57 +1,57 @@
 <template>
-    <Carousel :items-to-show="3" :wrap-around="true">
+    <Carousel :items-to-show="3.5" :wrap-around="true">
         <Slide :key="1">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/adnate.png" alt="Adnate">
-                <p class="text-lg font-bold text-slate-500">Adnate</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/adnate.png" alt="Adnate">
+                <p>Adnate</p>
             </div>
         </Slide>
         <Slide :key="2">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/adnexed.png" alt="Adnexed">
-                <p class="text-lg font-bold text-slate-500">Adnexed</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/adnexed.png" alt="Adnexed">
+                <p>Adnexed</p>
             </div>
          </Slide>
          <Slide :key="3">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/decurrent.png" alt="Decurrent" >
-                <p class="text-lg font-bold text-slate-500">Decurrent</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/decurrent.png" alt="Decurrent" >
+                <p>Decurrent</p>
             </div>
         </Slide>
         <Slide :key="4">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/emarginate.png" alt="Emarginate">
-                <p class="text-lg font-bold text-slate-500">Emarginate</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/emarginate.png" alt="Emarginate">
+                <p>Emarginate</p>
             </div>
         </Slide>
         <Slide :key="5">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/free.png" alt="Free">
-                <p class="text-lg font-bold text-slate-500">Free</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/free.png" alt="Free">
+                <p>Free</p>
             </div>
         </Slide>
         <Slide :key="6">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/seceding.png" alt="Seceding" >
-                <p class="text-lg font-bold text-slate-500">Seceding</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/seceding.png" alt="Seceding" >
+                <p>Seceding</p>
             </div>
         </Slide>
         <Slide :key="7">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/sinuate.png" alt="Sinuate">
-                <p class="text-lg font-bold text-slate-500">Sinuate</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/sinuate.png" alt="Sinuate">
+                <p>Sinuate</p>
             </div>
         </Slide>
         <Slide :key="8">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/subdecurrent.png" alt="Subdecurrent">
-                <p class="text-lg font-bold text-slate-500">Subdecurrent</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/subdecurrent.png" alt="Subdecurrent">
+                <p>Subdecurrent</p>
             </div>
         </Slide>
         <Slide :key="9">
-            <div class="">
-                <img class="border-2 border-emerald-900 rounded-full" src="components/images/no-gills.png" alt="No Attachment" >
-                <p class="text-lg font-bold text-slate-500">None</p>
+            <div class="mush-slide">
+                <img class="cap-image" src="components/images/no-gills.png" alt="No Attachment" >
+                <p>None</p>
             </div>
         </Slide>
   
