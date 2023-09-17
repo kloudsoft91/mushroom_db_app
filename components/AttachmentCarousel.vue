@@ -1,5 +1,4 @@
 <template>
-
     <Carousel :items-to-show="3" :wrap-around="true">
         <Slide :key="1">
             <div class="">
@@ -55,13 +54,6 @@
                 <p class="text-lg font-bold text-slate-500">None</p>
             </div>
         </Slide>
-        <!--<Carousel :items-to-show="10" :wrap-around="true">
-            <Slide v-for="data in whateverData" :key="data.name">
-                ... other stuff using data in here i guess?
-            </Slide>-->
-            
-
-
   
       <template #addons>
         <Navigation />
@@ -82,5 +74,8 @@
       Slide,
       Navigation,
     },
+    data: () => ({
+      currentSlide: 0,
+    }),
   })
   </script>

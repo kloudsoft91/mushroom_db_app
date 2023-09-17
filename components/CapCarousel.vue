@@ -1,6 +1,6 @@
 <template>
 
-    <Carousel :items-to-show="3" :wrap-around="true">
+    <Carousel :items-to-show="5" :wrap-around="true" v-model="currentSlide">
         <Slide :key="1">
             <div class="">
                 <img class="border-2 border-emerald-900 rounded-full" src="components/images/campanulate.png" alt="Campanulate">
@@ -88,7 +88,8 @@
       Slide,
       Navigation,
     },
+    data: () => ({
+      currentSlide: 0,
+    }),
   })
   </script>
-
- 

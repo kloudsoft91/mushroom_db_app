@@ -65,27 +65,23 @@
 <script setup>
 const items = [{
   label: 'Ecology',
-  icon: 'i-heroicons-information-circle',
-  defaultOpen: false,
+  defaultOpen: true,
   multiple: true,
   slot: 'ecology'
 }, {
   label: 'Cap Shape',
-  icon: 'i-heroicons-arrow-down-tray',
-  defaultOpen: false,
+  defaultOpen: true,
   multiple: true,
   slot: 'capshape'
 },
 {
   label: 'Attachment',
-  icon: 'i-heroicons-arrow-down-tray',
-  defaultOpen: false,
+  defaultOpen: true,
   multiple: true,
   slot: 'attachment',
 }, {
   label: 'Stipe',
-  icon: 'i-heroicons-eye-dropper',
-  defaultOpen: false,
+  defaultOpen: true,
   multiple: true,
   slot: 'stipe',
 }];
