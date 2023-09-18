@@ -80,7 +80,7 @@
           <!-- Landing page content here -->
           <h1>Welcome to Mushroom Finder</h1>
           <div>
-              <MushroomCard :mushroom="sampleMushroom" />
+              <!--<MushroomCard :mushroom="sampleMushroom" /> -->
           </div>
         </main>
       </div>
@@ -90,7 +90,7 @@
   <script setup>
   import { ref, onMounted } from 'vue'
   import mushroomData from '~/data/sampledata.js'
-  import MushroomCard from '@/components/MushroomCard.vue';
+  //import MushroomCard from '@/components/MushroomCard.vue';
 
   //JSON data
   const mushrooms = ref([]);
@@ -189,37 +189,26 @@
     switch (month) {
       case "january":
       return 1;
-      break;
       case "february":
       return 2;
-      break;
       case "march":
       return 3;
-      break;
       case "april":
       return 4;
-      break;
       case "may":
       return 5;
-      break;
       case "june":
       return 6;
-      break;
       case "july":
       return 7;
-      break;
       case "August":
       return 8;
-      break;
       case "september":
       return 9;
-      break;
       case "october":
       return 10;
-      break;
       case "november":
       return 11;
-      break;
       case "december":
       return 12;
     }
@@ -376,60 +365,59 @@
       background-color: #482b1f;
     }
 
-    
   
-    /* Filter panel styles */
-    .filter-panel {
-      background-color: #ede6dd;
-      padding: 1rem;
-    }
-  
-    .filter-panel div {
-      background-color: #f5f1ec;
-      padding: 1rem;
-      margin-bottom: 1rem;
-    }
-  
-    .filter-panel h2 {
-      margin-bottom: 0.5rem;
-    }
-  
-    .filter-panel input {
-      padding: 0.5rem;
-      border-radius: 5px;
-      border: 1px solid #ccc;
-      width: 93%;
-      margin: 0 auto;
-    }
-  
-    .filter-panel button {
-      padding: 0.5rem 1rem;
-      border-radius: 5px;
-      background-color: #603e2c;
-      color: #fff;
-      border: none;
-      cursor: pointer;
-      width: 100%;
-      margin-top: 0.5rem
-    }
-  
-    .filter-panel button:hover {
-      background-color: #482b1f;
-    }
-  
-    /* Main content styles */
-    .main-content {
-      display: flex;
-      gap: 2rem;
-      max-width: 100%;
-      padding: 2rem;
-    }
-  
-    .landing-content {
-      flex: 1;
-      background-color: #fff;
-      padding: 2rem;
-      border: 1px solid #ccc;
-    }
-  </style>
-  
+
+  /* Filter panel styles */
+  .filter-panel {
+    background-color: #ede6dd;
+    padding: 1rem;
+  }
+
+  .filter-panel div {
+    background-color: #f5f1ec;
+    padding: 1rem;
+    margin-bottom: 1rem;
+  }
+
+  .filter-panel h2 {
+    margin-bottom: 0.5rem;
+  }
+
+  .filter-panel input {
+    padding: 0.5rem;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    width: 93%;
+    margin: 0 auto;
+  }
+
+  .filter-panel button {
+    padding: 0.5rem 1rem;
+    border-radius: 5px;
+    background-color: #603e2c;
+    color: #fff;
+    border: none;
+    cursor: pointer;
+    width: 100%;
+    margin-top: 0.5rem
+  }
+
+  .filter-panel button:hover {
+    background-color: #482b1f;
+  }
+
+  /* Main content styles */
+  .main-content {
+    display: flex;
+    gap: 2rem;
+    max-width: 100%;
+    padding: 2rem;
+  }
+
+  .landing-content {
+    flex: 1;
+    background-color: #fff;
+    padding: 2rem;
+    border: 1px solid #ccc;
+  }
+</style>
