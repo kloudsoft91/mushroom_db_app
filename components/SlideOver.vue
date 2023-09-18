@@ -2,8 +2,8 @@
 <template>
   <div>
     <!-- add class="bg-white" to the end of the button label to hide buttons for testing-->
-    <UButton label="Open" @click="isOpen = true" class="bg-white"/>
-    <USlideover v-model="isOpen" :overlay="false">
+    <UButton label="Open" @click="isOpen = true"  class=""/>
+    <USlideover v-model="isOpen" :overlay="false" side="left" :ui='{"wrapper": "mt-[59px]"}'>
       <FilterBar/>
     </USlideover>
   </div>
@@ -12,3 +12,4 @@
 <script setup>
 const isOpen = ref(false)
 </script>
+
