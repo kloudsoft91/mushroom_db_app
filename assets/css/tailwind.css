@@ -4,7 +4,7 @@
 
 @layer components {
     .tag-button {
-        @apply flex-1 bg-emerald-700 text-white text-base font-semibold rounded-lg px-2 py-1 min-w-[80px];
+        @apply flex-1 bg-emerald-500 text-white text-base font-semibold rounded-lg px-2 py-1 min-w-[80px];
     }
 
     .mush-slide {

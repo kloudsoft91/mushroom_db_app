@@ -2,7 +2,7 @@
 <template>
   <div>
     <!-- add class="bg-white" to the end of the button label to hide buttons for testing-->
-    <UButton label="Open" @click="isOpen = true"/>
+    <UButton label="Open" @click="isOpen = true" class="bg-white"/>
     <USlideover v-model="isOpen" :overlay="false">
       <FilterBar/>
     </USlideover>

@@ -6,7 +6,7 @@
       </p>
     </template>
     <template #default="{ item, index, open }">
-      <UButton color="white" variant="solid" class=" bg-emerald-500 text-white text-base font-semibold hover:bg-emerald-400" :ui="{ rounded :'rounded-none' }">
+      <UButton color="white" variant="solid" class=" bg-emerald-700 text-white text-base font-semibold hover:bg-emerald-400" :ui="{ rounded :'rounded-none' }">
         <span class="truncate">{{ item.label }}</span>
         <template #trailing>
           <UIcon

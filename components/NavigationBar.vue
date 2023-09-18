@@ -4,13 +4,13 @@
   <!--Mobile + Tablet + Desktop-->
 <div class=" bg-gray-100" >
     <!--Main banner-->
-    <div class=" bg-emerald-500 relative py-14 tablet:py-24 desktop:py-28 shadow-md">
+    <div class=" bg-emerald-700 relative py-14 tablet:py-24 desktop:py-28 shadow-md">
         <h1 class="flex w-11/12 desktop:w-3/4 absolute left-0 right-0 mx-auto tablet:-mt-8 desktop:-mt-14 font-bold text-white text-lg tablet:text-2xl laptop:text-3xl desktop:text-5xl">Know what you're looking for?</h1>
         <!--Search Bar-->  
         <div class="flex w-11/12 desktop:w-3/4 absolute left-0 right-0 mx-auto mt-9 tablet:mt-4 desktop:mt-4 shadow-md bg-white rounded-lg px-2 py-1 tablet:py-0 tablet:px-2">
-            <input class="text-sm tablet:text-base text-emerald-900 flex-grow outline-none px-1 tablet:px-2" type="text" placeholder="Search all mushrooms" />
+            <input class="text-sm tablet:text-base text-emerald-600 flex-grow outline-none px-1 tablet:px-2" type="text" placeholder="Search all mushrooms" />
             <div class="flex py-1 rounded-lg">
-              <button class="bg-emerald-500 text-white text-sm tablet:text-base rounded-lg px-3 py-1 tablet:px-2 tablet:py-1 desktop:px-3 desktop:py-2 font-semibold desktop:tracking-wide">Search</button>
+              <button class="bg-emerald-700 text-white text-sm tablet:text-base rounded-lg px-3 py-1 tablet:px-2 tablet:py-1 desktop:px-3 desktop:py-2 font-semibold desktop:tracking-wide">Search</button>
             </div>
           </div>   
       </div>
