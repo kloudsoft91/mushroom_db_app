@@ -7,6 +7,92 @@
   <!--Bottomframe for small screens only-->
   <!--Should pop out when clicking the "Discover" button on footerbar-->
   <BottomFrame />
+  
+  <div>
+    <!-- Navbar -->
+    <nav class="navbar">
+      <div class="navbar-links">
+        <a href="/">Home</a>
+        <a href="/about">About</a>
+      </div>
+      <div class="navbar-header">
+        <h1 class="navbar-title">Mushroom Finder</h1>
+      </div>
+      
+      <div class="navbar-search">
+        <input type="text" placeholder="Search...">
+        <button>Search</button>
+      </div>
+    </nav>
+
+    <!-- Main content -->
+    <div class="main-content">
+      <!-- Filter panel -->
+      <aside class="filter-panel">
+        <div id="mushroom-identification">
+          <h2>Mushroom Identification</h2>
+          <input v-model="nameSearch" @input="applyAllFilters">
+        </div>
+        <div id="advanced-search">
+          <h2>Advanced Search</h2>
+          <h3>Stipe Parameters</h3>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h4>Diameter (cm)</h4>
+          <input v-model="stipeDiam" @input="applyAllFilters">
+          <h4>Length (cm)</h4>
+          <input v-model="stipeLen" @input="applyAllFilters">
+          <h4>Height (cm)</h4>
+          <input v-model="stipeHgt" @input="applyAllFilters">
+          <h4>Stipe Colour</h4>
+          <input v-model="stipeColour" @input="applyAllFilters">
+          </div>
+          <h3>Cap Parameters</h3>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+          <h4>Diameter (cm)</h4>
+          <input v-model="capDiam" @input="applyAllFilters">
+          <h4>Thickness (cm)</h4>
+          <input v-model="capThickness" @input="applyAllFilters">
+          <h4>Cap Colour</h4>
+          <input v-model="capColour" @input="applyAllFilters">
+          </div>
+          <h3>Other Parameters</h3>
+          <div style="display: flex; justify-content: space-between; align-items: center;">
+            <h4>Season/Month</h4>
+            <input v-model="seasonSearch" @input="applyAllFilters">
+          </div>
+          <!-- <button @click="searchMushrooms">Test Search Button</button> -->
+          <h3>Tags</h3>
+          <select v-model="selectedTags" multiple @change="applyAllFilters">
+            <option v-for="tag in availableTags" :key="tag" :value="tag">{{ capitalize(tag) }}</option>
+          </select>
+          <br>
+          <button @click="applyAllFilters">Apply Filters</button>
+        </div>
+        <hr>
+        <div id="mushroom-name">
+          <h2 v-if="filteredMushrooms.length > 0">Filtered Results</h2>
+            <ul v-if="filteredMushrooms.length > 0">
+              <li v-for="mushroom in filteredMushrooms" :key="mushroom.id">
+                <h2>{{ mushroom.common_names }}</h2>
+                <p>{{ mushroom.description }}</p>
+                <p>Edibility: {{ mushroom.edibility }}</p>
+                <button>View Details</button>
+              </li>
+            </ul>
+            <p v-else>No Mushrooms Found</p>
+        </div>
+      </aside>
+
+      <!-- Main content section -->
+      <main class="landing-content">
+        <!-- Landing page content here -->
+        <h1>Welcome to Mushroom Finder</h1>
+        <div>
+            <MushroomCard :mushroom="sampleMushroom" />
+        </div>
+      </main>
+    </div>
+  </div>
 </template>
 
   <script setup>
