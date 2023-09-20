@@ -4,7 +4,8 @@
     <div class="mushroom-info">
       <h3 class="mushroom-name">{{ mushroom.commonName }}</h3>
       <p class="latin-name">{{ mushroom.latinName }}</p>
-      <div class="edibility-tag">{{ mushroom.edibility }}</div>
+      <!--Just changed this to common_names to test the correct results are displaying-->
+      <div class="edibility-tag">{{ mushroom.common_names }}</div>
     </div>
   </div>
 </template>
