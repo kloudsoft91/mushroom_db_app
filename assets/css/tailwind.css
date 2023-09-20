@@ -7,6 +7,19 @@
         @apply flex-1 text-white text-sm rounded-lg px-2 py-1;
     }
 
+    .mush-slide {
+        @apply flex flex-col items-center mt-2 text-base font-semibold text-emerald-700;
+    }
+
+    .cap-image {
+        @apply w-20 h-20 border-double border-4 border-emerald-700 rounded-full;
+    }
+
+
+    .quick-link {
+        @apply flex flex-col items-center text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700;
+      }
+
     @screen tablet {
         .button {
             @apply text-base;
