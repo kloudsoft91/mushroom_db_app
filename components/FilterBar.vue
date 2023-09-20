@@ -20,15 +20,15 @@
     <template #ecology>
       <div class="flex items-center justify-around">
         <div class="mush-slide tablet:pl-8">
-            <img class="cap-image" src="components/images/mycorrhizal.png" alt="mycorrhizal">
+            <img class="cap-image" src="./images/mycorrhizal.png" alt="mycorrhizal">
             <p>Mycorrhizal</p>
         </div>
         <div class="mush-slide">
-            <img class="cap-image" src="components/images/saprotrophic.png" alt="saprotrophic">
+            <img class="cap-image" src="./images/saprotrophic.png" alt="saprotrophic">
             <p>Saprotrophic</p>
         </div>
         <div class="mush-slide tablet:pr-10">
-            <img class="cap-image" src="components/images/parasitic.png" alt="parasitic" >
+            <img class="cap-image" src="./images/parasitic.png" alt="parasitic" >
             <p>Parasitic</p>
         </div>
       </div>
@@ -44,19 +44,19 @@
     <template #stipe>
       <div class="flex justify-around">
         <div class="mush-slide">
-            <img class="cap-image" src="components/images/bare.png" alt="Bare Stipe">
+            <img class="cap-image" src="./images/bare.png" alt="Bare Stipe">
             <p>Bare</p>
         </div>
         <div class="mush-slide">
-            <img class="cap-image" src="components/images/Ring.png" alt="Ring Stipe">
+            <img class="cap-image" src="./images/Ring.png" alt="Ring Stipe">
             <p>Ring</p>
         </div>
         <div class="mush-slide">
-            <img class="cap-image" src="components/images/volva.png" alt="Volva Stipe" >
+            <img class="cap-image" src="./images/volva.png" alt="Volva Stipe" >
             <p>Volva</p>
         </div>
         <div class="mush-slide">
-            <img class="cap-image" src="components/images/volvaring.png" alt="Volva & Ring Stipe" >
+            <img class="cap-image" src="./images/volvaring.png" alt="Volva & Ring Stipe" >
             <p>Both</p>
         </div>
       </div>
