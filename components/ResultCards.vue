@@ -43,6 +43,7 @@
                 class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal text-emerald-500 hover:text-emerald-800 focus:text-purple-600"
               >
                 Details
+                <!-- ADD POP UP WINDOW FOR FURTHER DETAILS -->
               </a>
               <!-- Only shows Lookalike button if the mushroom has lookalikes -->
               <span v-if="mushroom.lookalikes">
@@ -52,6 +53,7 @@
                   class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal text-emerald-500 hover:text-emerald-800 focus:text-purple-600"
                 >
                   Lookalikes
+                  <!-- ADD POP UP WINDOW OR SOMETHING FOR LOOKALIKE SHROOMS -->
                 </a>
               </span>
             </div>
@@ -62,6 +64,8 @@
 
   </template>
   
+
+  <!-- THIS WILL NEED TO BE CHANGED - to filteredMushrooms once index.vue is complete -->
   <script setup>
     import mushroomData from '~/data/sampledata.js'
   </script>
