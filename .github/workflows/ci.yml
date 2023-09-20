@@ -50,6 +50,6 @@ jobs:
       - name: Build
         run: npm run build
         
-      #- name: Test - can add once we have written a test script
-       # run: npm test
+      - name: Test
+        run: npm test
         
