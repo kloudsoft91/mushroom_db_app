@@ -1,3 +1,37 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer components {
+    .tag-button {
+        @apply flex-grow tablet:flex-nowrap bg-emerald-500 hover:bg-emerald-700 text-white text-base font-semibold rounded-lg tablet:rounded-none px-2 py-1 min-w-[90px] tablet:min-w-[60px];
+    }
+
+    .mush-slide {
+        @apply flex flex-col items-center mt-2 text-base font-semibold text-emerald-700;
+    }
+
+    .cap-image {
+        @apply w-20 h-20 border-double border-4 border-emerald-700 rounded-full;
+    }
+
+
+    .quick-link {
+        @apply flex flex-col items-center text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700;
+      }
+
+    @screen tablet {
+        .button {
+            @apply text-base;
+            @apply rounded-none;
+        }
+    }
+
+    @screen desktop {
+        .button {
+            @apply rounded-none;
+            @apply text-xl;
+            @apply font-semibold;
+        }
+    }
+}

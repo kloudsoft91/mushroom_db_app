@@ -2,6 +2,9 @@
 export default {
   // Configuration options here
   devtools: { enabled: true },
+  colorMode: {
+    preference: 'light'
+  },
   routes: [
     {
       name: 'home',
@@ -26,8 +29,12 @@ export default {
       component: '~/pages/mushroom-detail.vue'
     },*/
   ],
+  modules: [
+    '@nuxt/ui',
+    'vue3-carousel-nuxt',
+    '@nuxt/image-edge'
+  ],
   //Cloudinary config
-  modules: ['@nuxt/image-edge'],
   image:{
     cloudinary:{
       baseURL: 'https://res.cloudinary.com/dcyxj3dqt/image/upload/',
