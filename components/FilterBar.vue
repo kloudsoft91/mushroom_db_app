@@ -17,6 +17,30 @@
         </template>
       </UButton>
     </template>
+    <template #sizefilter>
+      <div class="flex items-center justify-around">
+        <!--Stipe Length-->
+        <div class="">
+          <p class="text-emerald-600 font-semibold text-base">Stipe Length</p>
+          <input class="border-solid border-2 border-emerald-500 outline-none font-mono" type="text" placeholder="...cm" />
+        </div>
+        <!--Stipe Diameter-->
+        <div class="">
+          <p class="text-emerald-600 font-semibold text-base">Stipe Width</p>
+          <input class="border-solid border-2 border-emerald-500 outline-none font-mono" type="text" placeholder="...cm" />
+        </div>
+        <!--Cap Diameter-->
+        <div class="">
+          <p class="text-emerald-600 font-semibold text-base">Cap Diameter</p>
+          <input class="border-solid border-2 border-emerald-500 outline-none font-mono" type="text" placeholder="...cm" />
+        </div>
+        <!--Cap Thickness-->
+        <div class="">
+          <p class="text-emerald-600 font-semibold text-base">Cap Thickness</p>
+          <input class="border-solid border-2 border-emerald-500 outline-none font-mono" type="text" placeholder="...cm" />
+        </div>
+      </div>
+    </template>
     <template #ecology>
       <div class="flex items-center justify-around">
         <div class="mush-slide tablet:pl-8">
@@ -66,6 +90,11 @@
 
 <script setup>
 const items = [{
+  label: 'Size',
+  defaultOpen: true,
+  multiple: true,
+  slot: 'sizefilter'
+}, {
   label: 'Ecology',
   defaultOpen: true,
   multiple: true,
