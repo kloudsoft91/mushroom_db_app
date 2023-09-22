@@ -13,7 +13,7 @@
       <h1 class="flex w-11/12 desktop:w-3/4 absolute left-0 right-0 mx-auto tablet:-mt-8 desktop:-mt-14 font-bold text-white text-lg tablet:text-2xl laptop:text-3xl desktop:text-5xl">Know what you're looking for?</h1>
       <!--Search Bar-->  
       <div class="flex w-11/12 desktop:w-3/4 absolute left-0 right-0 mx-auto mt-9 tablet:mt-4 desktop:mt-4 shadow-md bg-white rounded-lg px-2 py-1 tablet:py-0 tablet:px-2">
-            <input v-model="searchInput" class="text-sm tablet:text-base text-gray-400 flex-grow outline-none px-1 tablet:px-2" type="text" placeholder="Search all mushrooms" />
+            <input v-model="searchInput" @input="search()" class="text-sm tablet:text-base text-gray-400 flex-grow outline-none px-1 tablet:px-2" type="text" placeholder="Search all mushrooms" />
             <div class="flex py-1 rounded-lg">
               <button @click="search()" class="bg-emerald-500 text-white text-sm tablet:text-base rounded-lg px-3 py-1 tablet:px-2 tablet:py-1 desktop:px-3 desktop:py-2 font-thin desktop:font-semibold desktop:tracking-wide">Search</button>
             </div>
@@ -32,14 +32,35 @@
   </div>
 </template>
 
-<script setup>
-import { searchInput } from '../store/store.js';
+<script>
+import { ref } from 'vue';
 
-const { toggleTag, filterByName } = defineProps(['toggleTag', 'filterByName']);
-
-
-//called when the search button is clicked (not necessary atm because the filtering is reactive to input)
-const search = () => {
-  filterByName(searchInput.value);
-}
+//const { toggleTag, filterByName } = defineProps(['toggleTag', 'filterByName']);
+export default {
+  data() {
+    return {
+      searchInput: '',
+      selectedTags: [],
+    };
+  },
+  methods: {
+    search() {
+      console.log("Search navbar Exec");
+      //emit event to notify Index of input change
+      this.$emit('search', this.searchInput);
+    },
+    //Populates selectedTags[] by input (currently toggles on/off, so you can have multiple tags on, will need to style buttons to show that a tag is toggled/pressed)
+    //Note: this function is not responsible for changing the results data
+    toggleTag(tag) {
+      console.log("tag navbar exec");
+      const index = this.selectedTags.indexOf(tag);
+      if (index === -1) {
+        this.selectedTags.push(tag);
+      } else {
+        this.selectedTags.splice(index, 1);
+      }
+      this.$emit('toggleTag', this.selectedTags);
+    }
+  },
+};
 </script>

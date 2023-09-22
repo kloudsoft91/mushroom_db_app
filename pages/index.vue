@@ -1,6 +1,6 @@
 <template>
   <HeaderBar />
-  <NavigationBar :toggleTag="toggleTag" :filterByName="filterByName" :searchInput="searchInput"/>
+  <NavigationBar @search="handleSearch" @toggleTag="handleTags"/>
   <FooterBar />
   <div>
     <ul>
@@ -20,45 +20,35 @@
 import { ref, watch } from 'vue'
 import mushroomData from '~/data/sampledata.js'
 import MushroomCard from '~/components/MushroomCard.vue';
-import { searchInput } from '../store/store.js';
+//import { searchInput } from '../store/store.js';
 
 export default{
   data(){
     return{
-      mushrooms: ref([]),
-      filteredMushrooms: ref([]),
-      selectedTags: ref([]),
+      mushrooms: [],
+      filteredMushrooms: [],
+      selectedTags: [],
+      searchInput: '',
     };
   },
 
   methods:{
-
     //Apply all of the Filters (Have to decide when this is called
     //currently called on filter button press, tag select, and when typing in Name search
-    applyAllFilters(newSearchInput) {
-    let results = this.mushrooms;
-    //pull results from each filter function
-    results = this.filterByTags(results);
-    results = this.filterByName(results, newSearchInput);
-    //assign results to filteredMushrooms array
-    if(this.filteredMushrooms){
+    applyAllFilters() {
+      console.log("APPLY FILTERS RUN")
+      let results = this.mushrooms;
+      //pull results from each filter function
+      results = this.filterByTags(results);
+      results = this.filterByName(results, this.searchInput);
+      //assign results to filteredMushrooms array
+      //if(this.filteredMushrooms){
       this.filteredMushrooms = results;
-      //debug log 
-      console.log('Filtered Results:', this.filteredMushrooms.map(mushroom => mushroom.common_names));
-    }
-    console.log("Selected tags: ", this.selectedTags);
-    //console.log("Search input: ", searchInput.value);
-    },
-    //Populates selectedTags[] by input (currently toggles on/off, so you can have multiple tags on, will need to style buttons to show that a tag is toggled/pressed)
-    //Note: this function is not responsible for changing the results data
-    toggleTag(tag) {
-      const index = this.selectedTags.indexOf(tag);
-      if (index === -1) {
-        this.selectedTags.push(tag);
-      } else {
-        this.selectedTags.splice(index, 1);
-      }
-      this.applyAllFilters();
+        //debug log 
+        //console.log('Filtered Results:', this.filteredMushrooms.map(mushroom => mushroom.common_names));
+      //}
+      console.log("Selected tags: ", this.selectedTags);
+      console.log("Search input: ", this.searchInput);
     },
     //Filters results based on current selectedTags[]
     filterByTags(data) {
@@ -70,30 +60,36 @@ export default{
     );
     },
     //Reactive Name Filter
-    filterByName(data, newSearchInput) {
+    filterByName(data, searchInput) {
     //if no input - no data change
-    if (!newSearchInput) {
-      console.log("NO NAME SEARCH INPUT = ", newSearchInput)
+    if (!searchInput) {
+      console.log("NO NAME SEARCH INPUT = ", searchInput)
       return data;
     }
-    console.log("NAMES SEARCH: ", newSearchInput)
+    console.log("NAMES SEARCH: ", searchInput)
     //otherwise filter data by input against latin & common names
     return data.filter(d =>
-      d.common_names.toLowerCase().includes(newSearchInput.toLowerCase()) ||
-      d.latin_names.toLowerCase().includes(newSearchInput.toLowerCase())
+      d.common_names.toLowerCase().includes(searchInput.toLowerCase()) ||
+      d.latin_names.toLowerCase().includes(searchInput.toLowerCase())
     );
     },
+
+    //Event handlers
+    handleSearch(searchInput) {
+      this.searchInput = searchInput;
+      this.applyAllFilters();
+    },
+    handleTags(selectedTags) {
+      this.selectedTags = selectedTags;
+      this.applyAllFilters();
+    }
+
   },
   //Load data
   mounted() {
     this.mushrooms = mushroomData;
     //display all results initially
     this.filteredMushrooms = this.mushrooms;
-    //watch effect reactively trigger applyAllFilters
-    watch(searchInput, (newSearchInput) => {
-      this.applyAllFilters(newSearchInput);
-    });
-    this.applyAllFilters();
   },
 };
 </script>
