@@ -13,7 +13,7 @@
   <SlideOver />
   <!--Bottomframe for small screens only-->
   <!--Should pop out when clicking the "Discover" button on footerbar-->
-  <BottomFrame />
+  <BottomFrame @selectedCapShape="handleCapShape"/>
 </template>
 
 <script>
@@ -27,6 +27,7 @@ export default{
       filteredMushrooms: [],
       selectedTags: [],
       searchInput: '',
+      selectedCapShape: '',
     };
   },
 
@@ -38,6 +39,7 @@ export default{
       //pull results from each filter function
       results = this.filterByTags(results);
       results = this.filterByName(results, this.searchInput);
+      results = this.filterByCapShape(results)
       //assign results to filteredMushrooms array
       this.filteredMushrooms = results;
       //debug log 
@@ -68,6 +70,19 @@ export default{
     );
     },
 
+    //Carousel Filters
+    //Cap Shape Filter
+    filterByCapShape(data){
+      //check if defined
+      if (!this.selectedCapShape) {
+        console.log("filterCapShape null");
+        return data;
+      }
+      console.log("Filtering (Index) cap shape by: ", this.selectedCapShape);
+      return data.filter((mushroom) => 
+      mushroom.cap_features.shape.includes(this.selectedCapShape));
+    },
+
     //Event handlers
     //receives search input events
     handleSearch(searchInput) {
@@ -78,7 +93,12 @@ export default{
     handleTags(selectedTags) {
       this.selectedTags = selectedTags;
       this.applyAllFilters();
-    }
+    },
+    //receives cap shape button events
+    handleCapShape(selectedCapShape) {
+      this.selectedCapShape = selectedCapShape;
+      this.applyAllFilters();
+    },
 
   },
   //Load data
