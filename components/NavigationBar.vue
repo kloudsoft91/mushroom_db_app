@@ -33,9 +33,6 @@
 </template>
 
 <script>
-import { ref } from 'vue';
-
-//const { toggleTag, filterByName } = defineProps(['toggleTag', 'filterByName']);
 export default {
   data() {
     return {
@@ -44,15 +41,13 @@ export default {
     };
   },
   methods: {
+    //emits search events on input and button click
     search() {
-      console.log("Search navbar Exec");
       //emit event to notify Index of input change
       this.$emit('search', this.searchInput);
     },
-    //Populates selectedTags[] by input (currently toggles on/off, so you can have multiple tags on, will need to style buttons to show that a tag is toggled/pressed)
-    //Note: this function is not responsible for changing the results data
+    //populates the selectedTags[] and emits event on tag button click
     toggleTag(tag) {
-      console.log("tag navbar exec");
       const index = this.selectedTags.indexOf(tag);
       if (index === -1) {
         this.selectedTags.push(tag);
