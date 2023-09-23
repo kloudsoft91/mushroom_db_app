@@ -13,7 +13,7 @@
   <SlideOver />
   <!--Bottomframe for small screens only-->
   <!--Should pop out when clicking the "Discover" button on footerbar-->
-  <BottomFrame @selectedCapShape="handleCapShape"/>
+  <BottomFrame @selectedCapShape="handleCapShape" @selectedEcology="handleEcology" @selectedStipe="handleStipe"/>
 </template>
 
 <script>
@@ -28,6 +28,8 @@ export default{
       selectedTags: [],
       searchInput: '',
       selectedCapShape: '',
+      selectedEcology: '',
+      selectedStipe: '',
     };
   },
 
@@ -39,7 +41,9 @@ export default{
       //pull results from each filter function
       results = this.filterByTags(results);
       results = this.filterByName(results, this.searchInput);
-      results = this.filterByCapShape(results)
+      results = this.filterByCapShape(results);
+      results = this.filterByEcology(results);
+      results = this.filterByStipe(results);
       //assign results to filteredMushrooms array
       this.filteredMushrooms = results;
       //debug log 
@@ -82,6 +86,26 @@ export default{
       return data.filter((mushroom) => 
       mushroom.cap_features.shape.includes(this.selectedCapShape));
     },
+    filterByEcology(data){
+      //check if defined
+      if (!this.selectedEcology) {
+        console.log("filterEcology null");
+        return data;
+      }
+      console.log("Filtering (Index) cap shape by: ", this.selectedEcology);
+      return data.filter((mushroom) => 
+      mushroom.ecology.includes(this.selectedEcology));
+    },
+    filterByStipe(data){
+      //check if defined
+      if (!this.selectedStipe) {
+        console.log("filterStipe null");
+        return data;
+      }
+      console.log("Filtering (Index) cap shape by: ", this.selectedStipe);
+      return data.filter((mushroom) => 
+      mushroom.stipe.includes(this.selectedStipe));
+    },
 
     //Event handlers
     //receives search input events
@@ -97,6 +121,14 @@ export default{
     //receives cap shape button events
     handleCapShape(selectedCapShape) {
       this.selectedCapShape = selectedCapShape;
+      this.applyAllFilters();
+    },
+    handleEcology(selectedEcology) {
+      this.selectedEcology = selectedEcology;
+      this.applyAllFilters();
+    },
+    handleStipe(selectedStipe) {
+      this.selectedStipe = selectedStipe;
       this.applyAllFilters();
     },
 

@@ -19,15 +19,15 @@
     </template>
     <template #ecology>
       <div class="flex items-center justify-around">
-        <div class="mush-slide tablet:pl-8">
+        <div @click="emitEcology('mycorrhizal')" class="mush-slide tablet:pl-8">
             <img class="cap-image" src="./images/mycorrhizal.png" alt="mycorrhizal">
             <p>Mycorrhizal</p>
         </div>
-        <div class="mush-slide">
+        <div @click="emitEcology('saprotrophic')" class="mush-slide">
             <img class="cap-image" src="./images/saprotrophic.png" alt="saprotrophic">
             <p>Saprotrophic</p>
         </div>
-        <div class="mush-slide tablet:pr-10">
+        <div @click="emitEcology('parasitic')" class="mush-slide tablet:pr-10">
             <img class="cap-image" src="./images/parasitic.png" alt="parasitic" >
             <p>Parasitic</p>
         </div>
@@ -43,19 +43,19 @@
     </template>
     <template #stipe>
       <div class="flex justify-around">
-        <div class="mush-slide">
+        <div @click="emitStipe('barestipe')" class="mush-slide">
             <img class="cap-image" src="./images/bare.png" alt="Bare Stipe">
             <p>Bare</p>
         </div>
-        <div class="mush-slide">
+        <div @click="emitStipe('ringstipe')" class="mush-slide">
             <img class="cap-image" src="./images/Ring.png" alt="Ring Stipe">
             <p>Ring</p>
         </div>
-        <div class="mush-slide">
+        <div @click="emitStipe('volvastipe')" class="mush-slide">
             <img class="cap-image" src="./images/volva.png" alt="Volva Stipe" >
             <p>Volva</p>
         </div>
-        <div class="mush-slide">
+        <div @click="emitStipe('volvaringstipe')" class="mush-slide">
             <img class="cap-image" src="./images/volvaring.png" alt="Volva & Ring Stipe" >
             <p>Both</p>
         </div>
@@ -68,6 +68,8 @@
 export default {
   data() {
     return {
+      selectedEcology: '',
+      selectedStipe: '',
       items: [
         {
           label: 'Ecology',
@@ -103,6 +105,18 @@ export default {
       console.log("Event emitted from FilterBar: ", capShape);
       //emit event to parent component (BottomFrame.vue)
       this.$emit('selectedCapShape', capShape);
+    },
+    emitEcology(ecology) {
+      this.selectedEcology = ecology;
+      console.log("Event emitted from FilterBar: ", ecology);
+      //emit event to parent component (BottomFrame.vue)
+      this.$emit('selectedEcology', ecology);
+    },
+    emitStipe(stipe) {
+      this.selectedStipe = stipe;
+      console.log("Event emitted from FilterBar: ", stipe);
+      //emit event to parent component (BottomFrame.vue)
+      this.$emit('selectedStipe', stipe);
     },
   }
 };
