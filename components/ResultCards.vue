@@ -34,7 +34,7 @@
                 </tr>
             </tbody></table>
           </div>
-          <!-- Links for further details -->
+          <!-- Pop up for further details -->
           <div class="p-4 ">
             <div class="flex justify-center space-x-4">
               <a
