@@ -39,7 +39,7 @@
             <div class="flex justify-center space-x-4">
               <a
                 type="button"
-                class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal text-emerald-500 hover:text-emerald-800 focus:text-purple-600"
+                class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal bg-emerald-700 text-white rounded-full px-4 py-2 hover:bg-emerald-600 focus:bg-purple-600"
                 @click="openPopup(mushroom)"
               >
                 Details
@@ -49,7 +49,7 @@
                 <a
                   type="button"
                   href="#"
-                  class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal text-emerald-500 hover:text-emerald-800 focus:text-purple-600"
+                  class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal bg-emerald-700 text-white rounded-full px-4 py-2 hover:bg-emerald-600 focus:bg-purple-600"
                 >
                   Lookalikes
                   <!-- ADD POP UP WINDOW OR SOMETHING FOR LOOKALIKE SHROOMS -->
