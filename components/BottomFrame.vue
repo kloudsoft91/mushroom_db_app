@@ -34,7 +34,7 @@
       <vue-bottom-sheet ref="myBottomSheet" :can-swipe="false" overlay-color="#00000000" :max-width="9999999999999">
         <div class=" border-solid border-2">
             
-            <FilterBar @selectedCapShape="emitCapShape"/>    
+            <FilterBar @selectedCapShape="emitCapShape" @selectedEcology="emitEcology" @selectedStipe="emitStipe"/>    
         </div>
 
         

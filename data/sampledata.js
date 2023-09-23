@@ -21,7 +21,8 @@ export default [
       "height_min": null,
       "height_max": null,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "No volva, ring, or veil present"
+      "volva_ring": "No volva, ring, or veil present",
+      "type": "Ring"
     },
     "gills": {
       "colour": "Initially white, then turning black",
@@ -38,6 +39,7 @@ export default [
       "shape": "Elongated and bullet-shaped when young, opening up and becoming wavy at maturity"
     },
     "environment": "Commonly found in grassy areas, lawns, and meadows, as well as along roadsides and waste areas.",
+    "ecology": "Saprotrophic",
     "time_of_year": "Late spring to autumn (October to April in the Southern Hemisphere)",
     "native_or_introduced": "Introduced to New Zealand",
     "genus": "Coprinus",
@@ -66,7 +68,8 @@ export default [
       "height_min": 5,
       "height_max": 20,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "Has a volva at the base of the stipe, and a distinctive ring on the upper part."
+      "volva_ring": "Has a volva at the base of the stipe, and a distinctive ring on the upper part.",
+      "type": "Ring"
     },
     "gills": {
       "colour": "White",
@@ -83,6 +86,7 @@ export default [
       "shape": "convex"
     },
     "environment": "Often found in association with various trees, especially pines and birches.",
+    "ecology": "mycorrhizal",
     "time_of_year": "Late summer to autumn (March to June in the Southern Hemisphere)",
     "native_or_introduced": "Introduced to New Zealand",
     "genus": "Amanita",
@@ -111,7 +115,8 @@ export default [
       "height_min": 5,
       "height_max": 15,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "No volva, but often has a fibrous ring on the upper part."
+      "volva_ring": "No volva, but often has a fibrous ring on the upper part.",
+      "type": "Ring"
     },
     "gills": {
       "colour": "Orange-brown",
@@ -128,6 +133,7 @@ export default [
       "shape": "convex"
     },
     "environment": "Frequently found on dead wood, particularly logs and stumps.",
+    "ecology": "saprotrophic",
     "time_of_year": "Autumn (March to May in the Southern Hemisphere)",
     "native_or_introduced": "Introduced to New Zealand",
     "genus": "Gymnopilus",
@@ -156,7 +162,8 @@ export default [
       "height_min": 5,
       "height_max": 15,
       "bruising_colour": "Blueish bruising when handled",
-      "volva_ring": "No volva, ring, or veil present"
+      "volva_ring": "No volva, ring, or veil present",
+      "type": "Bare"
     },
     "gills": {
       "colour": "Pale brown when young, becoming dark purple-brown",
@@ -173,6 +180,7 @@ export default [
       "shape": "conical"
     },
     "environment": "Found in grassy areas, wood chips, and soils with rich organic matter.",
+    "ecology": "",
     "time_of_year": "Late summer to autumn (February to May in the Southern Hemisphere)",
     "native_or_introduced": "Native to New Zealand",
     "genus": "Psilocybe",
@@ -201,7 +209,8 @@ export default [
       "height_min": 10,
       "height_max": 25,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "No volva, ring, or veil present"
+      "volva_ring": "No volva, ring, or veil present",
+      "type": ""
     },
     "gills": {
       "colour": "White",
@@ -218,6 +227,7 @@ export default [
       "shape": "Bell-shaped, flattening with a central bump"
     },
     "environment": "Frequently found in grassy areas, pastures, and open woodlands.",
+    "ecology": "",
     "time_of_year": "Autumn (March to June in the Southern Hemisphere)",
     "native_or_introduced": "Introduced to New Zealand",
     "genus": "Lepiota",
@@ -246,7 +256,8 @@ export default [
       "height_min": 8,
       "height_max": 20,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "No volva, but often has a partial veil that leaves remnants on the stipe."
+      "volva_ring": "No volva, but often has a partial veil that leaves remnants on the stipe.",
+      "type": ""
     },
     "gills": {
       "colour": "Initially white, then rusty-brown",
@@ -263,6 +274,7 @@ export default [
       "shape": "convex to flat"
     },
     "environment": "Often found in beech forests and other mixed woodlands.",
+    "ecology": "",
     "time_of_year": "Autumn (March to June in the Southern Hemisphere)",
     "native_or_introduced": "Native to New Zealand",
     "genus": "Cortinarius",
@@ -291,7 +303,8 @@ export default [
       "height_min": null,
       "height_max": null,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "No volva"
+      "volva_ring": "No volva",
+      "type": ""
     },
     "gills": {
       "colour": "White pores that later turn grey",
@@ -308,6 +321,7 @@ export default [
       "shape": "Hemispherical to flat at the top"
     },
     "environment": "Under birch trees like Betula pendula",
+    "ecology": "",
     "time_of_year": "late summer into autumn (February to June)",
     "native_or_introduced": "Introduced",
     "genus": "Leccinum",
@@ -336,7 +350,8 @@ export default [
       "height_min": 3,
       "height_max": 10,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "No volva"
+      "volva_ring": "No volva",
+      "type": ""
     },
     "gills": {
       "colour": "",
@@ -353,6 +368,7 @@ export default [
       "shape": "Round body on a stalk"
     },
     "environment": "Dead wood, woods, grassy areas, and along roads",
+    "ecology": "",
     "time_of_year": "Autumn (March to May)",
     "native_or_introduced": "Introduced",
     "genus": "Lycoperdon",
@@ -381,7 +397,8 @@ export default [
       "height_min": null,
       "height_max": null,
       "bruising_colour": "No bruising",
-      "volva_ring": "No volva"
+      "volva_ring": "No volva",
+      "type": ""
     },
     "gills": {
       "colour": "White or cream",
@@ -398,6 +415,7 @@ export default [
       "shape": "fan or oyster shaped"
     },
     "environment": "Dead or dying trees, forests",
+    "ecology": "",
     "time_of_year": "Spring, autumn (April to July)",
     "native_or_introduced": "Introduced",
     "genus": "Pleurotus",
@@ -426,7 +444,8 @@ export default [
       "height_min": null,
       "height_max": null,
       "bruising_colour": "None",
-      "volva_ring": "None"
+      "volva_ring": "None",
+      "type": ""
     },
     "gills": {
       "colour": "None",
@@ -443,6 +462,7 @@ export default [
       "shape": "Bundle of branches"
     },
     "environment": "Dead, decaying wood",
+    "ecology": "",
     "time_of_year": "(March to July)",
     "native_or_introduced": "Native",
     "genus": "Hericium",
@@ -471,7 +491,8 @@ export default [
       "height_min": 3,
       "height_max": 10,
       "bruising_colour": "dingy reddish brown",
-      "volva_ring": "None"
+      "volva_ring": "None",
+      "type": ""
     },
     "gills": {
       "colour": "initially pink, then red-brown and finally a dark brown",
@@ -488,6 +509,7 @@ export default [
       "shape": "convex"
     },
     "environment": "fields, grassy areas, lawns",
+    "ecology": "",
     "time_of_year": "(March to May)",
     "native_or_introduced": "Introduced",
     "genus": "Agaricus",
@@ -516,7 +538,8 @@ export default [
       "height_min": null,
       "height_max": null,
       "bruising_colour": "None",
-      "volva_ring": "None"
+      "volva_ring": "None",
+      "type": ""
     },
     "gills": {
       "colour": "Brown",
@@ -533,6 +556,7 @@ export default [
       "shape": "convex"
     },
     "environment": "Living or dead trees",
+    "ecology": "",
     "time_of_year": "(November to June)",
     "native_or_introduced": "Native",
     "genus": "Cyclocybe",
