@@ -1,3 +1,5 @@
+<!-- This was for a popup window for mushroom details
+PLEASE KEEP - UNTIL I FIGURE OUT IF I NEED IT FOR ANYTHING ELSE -->
 <template>
     <div class="fixed inset-0 flex items-center justify-center z-50">
       <div class="modal-overlay fixed inset-0 bg-gray-800 opacity-50"></div>
