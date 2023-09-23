@@ -1,6 +1,6 @@
 <template>
   <HeaderBar />
-  <NavigationBar @search="handleSearch" @toggleTag="handleTags"/>
+  <NavigationBar @search="handleSearch" @toggleTag="handleTags" @sizefilter="handleSizeFilter"/>
   <FooterBar />
   <div>
     <ul>
@@ -28,6 +28,10 @@ export default{
       selectedTags: [],
       searchInput: '',
       selectedCapShape: '',
+      stipeLen,
+      stipeDiam,
+      capDiam,
+      capThick,
     };
   },
 
@@ -40,6 +44,11 @@ export default{
       results = this.filterByTags(results);
       results = this.filterByName(results, this.searchInput);
       results = this.filterByCapShape(results)
+      //Size Filter Calls:
+      results = this.filterBySize(results, this.stipeLen, 'stipe_features.length_min', 'stipe_features.length_max');
+      results = this.filterBySize(results, this.stipeDiam, 'stipe_features.diameter_min', 'stipe_features.diameter_max');
+      results = this.filterBySize(results, this.capDiam, 'cap_features.diameter_min', 'cap_features.diameter_max');
+      results = this.filterBySize(results, this.capThick,'cap_features.thickness_min', 'cap_features.thickness_max');
       //assign results to filteredMushrooms array
       this.filteredMushrooms = results;
       //debug log 
@@ -83,6 +92,25 @@ export default{
       mushroom.cap_features.shape.includes(this.selectedCapShape));
     },
 
+    //Generic range filter: applied to all int range inputs (diam/len/height/thickness)
+    filterBySize(data, value, propertyMin, propertyMax){
+    //if no inputs - no data change
+    if(!value){
+      return data;
+    }
+    //otherwise filter by range
+    return data.filter(d => {
+      //check that properties exist first ~~(Need a catch if we end up with a mushroom without one of these fields)
+      if (d[propertyMin.split('.')[0]][propertyMin.split('.')[1]] === null) return false;
+      //change string inputs to ints
+      const intValue= +value;
+
+      //check & filter data within input range
+      return d[propertyMin.split('.')[0]][propertyMin.split('.')[1]] <= intValue &&
+             d[propertyMax.split('.')[0]][propertyMax.split('.')[1]] >= intValue;
+      });
+    },
+
     //Event handlers
     //receives search input events
     handleSearch(searchInput) {
@@ -99,7 +127,12 @@ export default{
       this.selectedCapShape = selectedCapShape;
       this.applyAllFilters();
     },
-
+    //generic size filter event handler
+    handleSizeFilter(value, minProperty, maxProperty) {
+      this[minProperty] = value;
+      this[maxProperty] = value;
+      this.applyAllFilters();
+    },
   },
   //Load data
   mounted() {
