@@ -80,7 +80,8 @@ export default {
       this.$emit('toggleTag', this.selectedTags);
     },
     sizeFilter() {
-      this.$emit('sizefilter', {
+      // Log the size filter values
+      this.$emit('sizeFilter', {
         stipeLen: this.stipeLen,
         stipeDiam: this.stipeDiam,
         capDiam: this.capDiam,

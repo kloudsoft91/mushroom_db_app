@@ -1,6 +1,6 @@
 <template>
   <HeaderBar />
-  <NavigationBar @search="handleSearch" @toggleTag="handleTags" @sizefilter="handleSizeFilter"/>
+  <NavigationBar @search="handleSearch" @toggleTag="handleTags" @sizeFilter="handleSizeFilter"/>
   <FooterBar />
   <div>
     <ul>
@@ -28,10 +28,10 @@ export default{
       selectedTags: [],
       searchInput: '',
       selectedCapShape: '',
-      stipeLen,
-      stipeDiam,
-      capDiam,
-      capThick,
+      stipeLen: '',
+      stipeDiam: '',
+      capDiam: '',
+      capThick: '',
     };
   },
 
@@ -54,6 +54,7 @@ export default{
       //debug log 
       console.log("Selected tags: ", this.selectedTags);
       console.log("Search input: ", this.searchInput);
+      console.log('Results After Filtering:', results.length);
     },
 
     //Filters results based on current selectedTags[]
@@ -84,10 +85,10 @@ export default{
     filterByCapShape(data){
       //check if defined
       if (!this.selectedCapShape) {
-        console.log("filterCapShape null");
+        //console.log("filterCapShape null");
         return data;
       }
-      console.log("Filtering (Index) cap shape by: ", this.selectedCapShape);
+      //console.log("Filtering (Index) cap shape by: ", this.selectedCapShape);
       return data.filter((mushroom) => 
       mushroom.cap_features.shape.includes(this.selectedCapShape));
     },
@@ -104,7 +105,6 @@ export default{
       if (d[propertyMin.split('.')[0]][propertyMin.split('.')[1]] === null) return false;
       //change string inputs to ints
       const intValue= +value;
-
       //check & filter data within input range
       return d[propertyMin.split('.')[0]][propertyMin.split('.')[1]] <= intValue &&
              d[propertyMax.split('.')[0]][propertyMax.split('.')[1]] >= intValue;
@@ -128,9 +128,11 @@ export default{
       this.applyAllFilters();
     },
     //generic size filter event handler
-    handleSizeFilter(value, minProperty, maxProperty) {
-      this[minProperty] = value;
-      this[maxProperty] = value;
+    handleSizeFilter(filterData) {
+      this.stipeLen = filterData.stipeLen;
+      this.stipeDiam = filterData.stipeDiam;
+      this.capDiam = filterData.capDiam;
+      this.capThick = filterData.capThick;
       this.applyAllFilters();
     },
   },
