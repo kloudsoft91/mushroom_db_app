@@ -44,8 +44,8 @@
               <span v-if="mushroom.lookalikes">
                 <a
                   type="button"
-                  href="#"
                   class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal bg-emerald-700 text-white rounded-full px-4 py-2 hover:bg-emerald-600 focus:bg-purple-600"
+                  @click="openPopup(mushroom)"
                 >
                   Lookalikes
                   <!-- ADD POP UP WINDOW OR SOMETHING FOR LOOKALIKE SHROOMS -->
@@ -56,13 +56,41 @@
         </div>
       </div>
     </div>
-  </template>
+    <LookalikesModal
+      v-if="showPopup"
+      :mushroom="selectedMushroom"
+      @close-popup="closePopup"
+    />
+</template>
   
   <script>
- 
-  export default {
-    props: {
-      filteredMushrooms: Object,
-    },
-  };
+    import LookalikesModal from './LookalikesModal.vue';
+
+    export default {
+      props: {
+        filteredMushrooms: Object,
+      },
+      data() {
+        return {
+          // Add state variables for the popup
+          showPopup: false,
+          selectedMushroom: null,
+        };
+      },
+      methods: {
+        // open the popup and set the selected mushroom
+        openPopup(mushroom) {
+          this.selectedMushroom = mushroom;
+          this.showPopup = true;
+        },
+        // close the popup
+        closePopup() {
+          this.showPopup = false;
+          this.selectedMushroom = null;
+        },
+      },
+      components: {
+        LookalikesModal,
+      },
+    };
 </script>
