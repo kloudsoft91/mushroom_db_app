@@ -4,7 +4,7 @@
       <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 w-11/12 desktop:w-3/4 mx-auto">
         <!-- Create card for each item in the data file -->
         <div
-          v-for="(mushroom, index) in mushroomData"
+          v-for="(mushroom, index) in filteredMushrooms"
           :key="index"
           class="block max-w-[18rem] rounded-lg bg-gray-200 tablet:shadow-md desktop:shadow-md dark:bg-neutral-700 flex flex-col overflow-hidden"
         >
@@ -39,8 +39,8 @@
             <div class="flex justify-center space-x-4">
               <a
                 type="button"
-                href="#"
                 class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal text-emerald-500 hover:text-emerald-800 focus:text-purple-600"
+                @click="openPopup(mushroom)"
               >
                 Details
                 <!-- ADD POP UP WINDOW FOR FURTHER DETAILS -->
@@ -61,12 +61,44 @@
         </div>
       </div>
     </div>
-
+    <MushroomDetailModal
+    v-if="showPopup"
+    :mushroom="selectedMushroom"
+    @close-popup="closePopup"
+  />
   </template>
   
 
   <!-- THIS WILL NEED TO BE CHANGED - to filteredMushrooms once index.vue is complete -->
-  <script setup>
-    import mushroomData from '~/data/sampledata.js'
-  </script>
-  
+  <script>
+  import MushroomDetailModal from './MushroomDetailModal.vue';
+
+  export default {
+    props: {
+      filteredMushrooms: Object,
+    },
+    data() {
+      return {
+        // Add state variables for the popup
+        showPopup: false,
+        selectedMushroom: null,
+      };
+    },
+    methods: {
+      // Function to open the popup and set the selected mushroom
+      openPopup(mushroom) {
+        this.selectedMushroom = mushroom;
+        this.showPopup = true;
+      },
+      // Function to close the popup
+      closePopup() {
+        this.showPopup = false;
+        this.selectedMushroom = null;
+      },
+      // ... Other methods ...
+    },
+    components: {
+      MushroomDetailModal,
+    },
+  };
+</script>
