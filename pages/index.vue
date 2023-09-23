@@ -52,8 +52,9 @@ export default{
       //assign results to filteredMushrooms array
       this.filteredMushrooms = results;
       //debug log 
-      console.log("Selected tags: ", this.selectedTags);
-      console.log("Search input: ", this.searchInput);
+      //console.log("Selected tags: ", this.selectedTags);
+      //console.log("Search input: ", this.searchInput);
+      this.logSelectedFilters();
       console.log('Results After Filtering:', results.length);
     },
 
@@ -134,6 +135,23 @@ export default{
       this.capDiam = filterData.capDiam;
       this.capThick = filterData.capThick;
       this.applyAllFilters();
+    },
+    //
+    //Helper function to log all currently selected Filters:
+    logSelectedFilters() {
+      const activeFilters = [];
+
+      // Add filters with values to the activeFilters array
+      if (this.selectedTags.length > 0) activeFilters.push(`Tags: ${this.selectedTags.join(', ')}`);
+      if (this.searchInput) activeFilters.push(`Search: ${this.searchInput}`);
+      if (this.selectedCapShape) activeFilters.push(`Cap Shape: ${this.selectedCapShape}`);
+      if (this.stipeLen) activeFilters.push(`Stipe Length: ${this.stipeLen}`);
+      if (this.stipeDiam) activeFilters.push(`Stipe Diameter: ${this.stipeDiam}`);
+      if (this.capDiam) activeFilters.push(`Cap Diameter: ${this.capDiam}`);
+      if (this.capThick) activeFilters.push(`Cap Thickness: ${this.capThick}`);
+
+      // Log active filters or "No Filters" if none are active
+      console.log(activeFilters.length > 0 ? `Active Filters: ${activeFilters.join(' | ')}` : 'No Filters');
     },
   },
   //Load data
