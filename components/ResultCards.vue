@@ -43,7 +43,6 @@
                 @click="openPopup(mushroom)"
               >
                 Details
-                <!-- ADD POP UP WINDOW FOR FURTHER DETAILS -->
               </a>
               <!-- Only shows Lookalike button if the mushroom has lookalikes -->
               <span v-if="mushroom.lookalikes">
@@ -68,8 +67,6 @@
   />
   </template>
   
-
-  <!-- THIS WILL NEED TO BE CHANGED - to filteredMushrooms once index.vue is complete -->
   <script>
   import MushroomDetailModal from './MushroomDetailModal.vue';
 
@@ -85,17 +82,16 @@
       };
     },
     methods: {
-      // Function to open the popup and set the selected mushroom
+      // open the popup and set the selected mushroom
       openPopup(mushroom) {
         this.selectedMushroom = mushroom;
         this.showPopup = true;
       },
-      // Function to close the popup
+      // close the popup
       closePopup() {
         this.showPopup = false;
         this.selectedMushroom = null;
       },
-      // ... Other methods ...
     },
     components: {
       MushroomDetailModal,
