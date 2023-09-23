@@ -1,6 +1,6 @@
 <template>
   <HeaderBar />
-  <NavigationBar @search="handleSearch" @toggleTag="handleTags"/>
+  <NavigationBar @search="handleSearch" @toggleTag="handleTags" @sizeFilter="handleSizeFilter"/>
   <FooterBar />
   <div>
     <ul>
@@ -28,6 +28,10 @@ export default{
       selectedTags: [],
       searchInput: '',
       selectedCapShape: '',
+      stipeLen: '',
+      stipeDiam: '',
+      capDiam: '',
+      capThick: '',
     };
   },
 
@@ -40,11 +44,18 @@ export default{
       results = this.filterByTags(results);
       results = this.filterByName(results, this.searchInput);
       results = this.filterByCapShape(results)
+      //Size Filter Calls:
+      results = this.filterBySize(results, this.stipeLen, 'stipe_features.length_min', 'stipe_features.length_max');
+      results = this.filterBySize(results, this.stipeDiam, 'stipe_features.diameter_min', 'stipe_features.diameter_max');
+      results = this.filterBySize(results, this.capDiam, 'cap_features.diameter_min', 'cap_features.diameter_max');
+      results = this.filterBySize(results, this.capThick,'cap_features.thickness_min', 'cap_features.thickness_max');
       //assign results to filteredMushrooms array
       this.filteredMushrooms = results;
       //debug log 
-      console.log("Selected tags: ", this.selectedTags);
-      console.log("Search input: ", this.searchInput);
+      //console.log("Selected tags: ", this.selectedTags);
+      //console.log("Search input: ", this.searchInput);
+      this.logSelectedFilters();
+      console.log('Results After Filtering:', results.length);
     },
 
     //Filters results based on current selectedTags[]
@@ -75,12 +86,30 @@ export default{
     filterByCapShape(data){
       //check if defined
       if (!this.selectedCapShape) {
-        console.log("filterCapShape null");
+        //console.log("filterCapShape null");
         return data;
       }
-      console.log("Filtering (Index) cap shape by: ", this.selectedCapShape);
+      //console.log("Filtering (Index) cap shape by: ", this.selectedCapShape);
       return data.filter((mushroom) => 
       mushroom.cap_features.shape.includes(this.selectedCapShape));
+    },
+
+    //Generic range filter: applied to all int range inputs (diam/len/height/thickness)
+    filterBySize(data, value, propertyMin, propertyMax){
+    //if no inputs - no data change
+    if(!value){
+      return data;
+    }
+    //otherwise filter by range
+    return data.filter(d => {
+      //check that properties exist first ~~(Need a catch if we end up with a mushroom without one of these fields)
+      if (d[propertyMin.split('.')[0]][propertyMin.split('.')[1]] === null) return false;
+      //change string inputs to ints
+      const intValue= +value;
+      //check & filter data within input range
+      return d[propertyMin.split('.')[0]][propertyMin.split('.')[1]] <= intValue &&
+             d[propertyMax.split('.')[0]][propertyMax.split('.')[1]] >= intValue;
+      });
     },
 
     //Event handlers
@@ -99,7 +128,31 @@ export default{
       this.selectedCapShape = selectedCapShape;
       this.applyAllFilters();
     },
+    //generic size filter event handler
+    handleSizeFilter(filterData) {
+      this.stipeLen = filterData.stipeLen;
+      this.stipeDiam = filterData.stipeDiam;
+      this.capDiam = filterData.capDiam;
+      this.capThick = filterData.capThick;
+      this.applyAllFilters();
+    },
+    //
+    //Helper function to log all currently selected Filters:
+    logSelectedFilters() {
+      const activeFilters = [];
 
+      // Add filters with values to the activeFilters array
+      if (this.selectedTags.length > 0) activeFilters.push(`Tags: ${this.selectedTags.join(', ')}`);
+      if (this.searchInput) activeFilters.push(`Search: ${this.searchInput}`);
+      if (this.selectedCapShape) activeFilters.push(`Cap Shape: ${this.selectedCapShape}`);
+      if (this.stipeLen) activeFilters.push(`Stipe Length: ${this.stipeLen}`);
+      if (this.stipeDiam) activeFilters.push(`Stipe Diameter: ${this.stipeDiam}`);
+      if (this.capDiam) activeFilters.push(`Cap Diameter: ${this.capDiam}`);
+      if (this.capThick) activeFilters.push(`Cap Thickness: ${this.capThick}`);
+
+      // Log active filters or "No Filters" if none are active
+      console.log(activeFilters.length > 0 ? `Active Filters: ${activeFilters.join(' | ')}` : 'No Filters');
+    },
   },
   //Load data
   mounted() {
