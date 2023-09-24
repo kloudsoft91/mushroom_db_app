@@ -21,8 +21,7 @@ export default [
       "height_min": null,
       "height_max": null,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "No volva, ring, or veil present",
-      "type": "Ring"
+      "type": "ring"
     },
     "gills": {
       "colour": "Initially white, then turning black",
@@ -68,8 +67,7 @@ export default [
       "height_min": 5,
       "height_max": 20,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "Has a volva at the base of the stipe, and a distinctive ring on the upper part.",
-      "type": "Ring"
+      "type": "volva ring"
     },
     "gills": {
       "colour": "White",
@@ -115,8 +113,7 @@ export default [
       "height_min": 5,
       "height_max": 15,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "No volva, but often has a fibrous ring on the upper part.",
-      "type": "Ring"
+      "type": "ring"
     },
     "gills": {
       "colour": "Orange-brown",
@@ -162,8 +159,7 @@ export default [
       "height_min": 5,
       "height_max": 15,
       "bruising_colour": "Blueish bruising when handled",
-      "volva_ring": "No volva, ring, or veil present",
-      "type": "Bare"
+      "type": "bare"
     },
     "gills": {
       "colour": "Pale brown when young, becoming dark purple-brown",
@@ -209,8 +205,7 @@ export default [
       "height_min": 10,
       "height_max": 25,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "No volva, ring, or veil present",
-      "type": ""
+      "type": "ring"
     },
     "gills": {
       "colour": "White",
@@ -227,7 +222,7 @@ export default [
       "shape": "Bell-shaped, flattening with a central bump"
     },
     "environment": "Frequently found in grassy areas, pastures, and open woodlands.",
-    "ecology": "",
+    "ecology": "saprotrophic",
     "time_of_year": "Autumn (March to June in the Southern Hemisphere)",
     "native_or_introduced": "Introduced to New Zealand",
     "genus": "Lepiota",
@@ -256,8 +251,7 @@ export default [
       "height_min": 8,
       "height_max": 20,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "No volva, but often has a partial veil that leaves remnants on the stipe.",
-      "type": ""
+      "type": "veil"
     },
     "gills": {
       "colour": "Initially white, then rusty-brown",
@@ -274,7 +268,7 @@ export default [
       "shape": "convex to flat"
     },
     "environment": "Often found in beech forests and other mixed woodlands.",
-    "ecology": "",
+    "ecology": "mycorrhizal",
     "time_of_year": "Autumn (March to June in the Southern Hemisphere)",
     "native_or_introduced": "Native to New Zealand",
     "genus": "Cortinarius",
@@ -303,8 +297,7 @@ export default [
       "height_min": null,
       "height_max": null,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "No volva",
-      "type": ""
+      "type": "bare"
     },
     "gills": {
       "colour": "White pores that later turn grey",
@@ -321,7 +314,7 @@ export default [
       "shape": "Hemispherical to flat at the top"
     },
     "environment": "Under birch trees like Betula pendula",
-    "ecology": "",
+    "ecology": "mycorrhizal",
     "time_of_year": "late summer into autumn (February to June)",
     "native_or_introduced": "Introduced",
     "genus": "Leccinum",
@@ -350,8 +343,7 @@ export default [
       "height_min": 3,
       "height_max": 10,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "No volva",
-      "type": ""
+      "type": "bare"
     },
     "gills": {
       "colour": "",
@@ -368,7 +360,7 @@ export default [
       "shape": "Round body on a stalk"
     },
     "environment": "Dead wood, woods, grassy areas, and along roads",
-    "ecology": "",
+    "ecology": "saprotrophic",
     "time_of_year": "Autumn (March to May)",
     "native_or_introduced": "Introduced",
     "genus": "Lycoperdon",
@@ -397,8 +389,7 @@ export default [
       "height_min": null,
       "height_max": null,
       "bruising_colour": "No bruising",
-      "volva_ring": "No volva",
-      "type": ""
+      "type": "bare"
     },
     "gills": {
       "colour": "White or cream",
@@ -415,7 +406,7 @@ export default [
       "shape": "fan or oyster shaped"
     },
     "environment": "Dead or dying trees, forests",
-    "ecology": "",
+    "ecology": "saprotrophic",
     "time_of_year": "Spring, autumn (April to July)",
     "native_or_introduced": "Introduced",
     "genus": "Pleurotus",
@@ -444,8 +435,7 @@ export default [
       "height_min": null,
       "height_max": null,
       "bruising_colour": "None",
-      "volva_ring": "None",
-      "type": ""
+      "type": "none"
     },
     "gills": {
       "colour": "None",
@@ -462,7 +452,7 @@ export default [
       "shape": "Bundle of branches"
     },
     "environment": "Dead, decaying wood",
-    "ecology": "",
+    "ecology": "saprotrophic",
     "time_of_year": "(March to July)",
     "native_or_introduced": "Native",
     "genus": "Hericium",
@@ -491,8 +481,7 @@ export default [
       "height_min": 3,
       "height_max": 10,
       "bruising_colour": "dingy reddish brown",
-      "volva_ring": "None",
-      "type": ""
+      "type": "bare"
     },
     "gills": {
       "colour": "initially pink, then red-brown and finally a dark brown",
@@ -509,7 +498,7 @@ export default [
       "shape": "convex"
     },
     "environment": "fields, grassy areas, lawns",
-    "ecology": "",
+    "ecology": "mycorrhizal",
     "time_of_year": "(March to May)",
     "native_or_introduced": "Introduced",
     "genus": "Agaricus",
@@ -538,8 +527,7 @@ export default [
       "height_min": null,
       "height_max": null,
       "bruising_colour": "None",
-      "volva_ring": "None",
-      "type": ""
+      "type": "ring"
     },
     "gills": {
       "colour": "Brown",
@@ -556,7 +544,7 @@ export default [
       "shape": "convex"
     },
     "environment": "Living or dead trees",
-    "ecology": "",
+    "ecology": "parasitic",
     "time_of_year": "(November to June)",
     "native_or_introduced": "Native",
     "genus": "Cyclocybe",

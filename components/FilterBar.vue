@@ -43,19 +43,19 @@
     </template>
     <template #stipe>
       <div class="flex justify-around">
-        <div @click="emitStipe('barestipe')" class="mush-slide">
+        <div @click="emitStipe('bare')" class="mush-slide">
             <img class="cap-image" src="./images/bare.png" alt="Bare Stipe">
             <p>Bare</p>
         </div>
-        <div @click="emitStipe('ringstipe')" class="mush-slide">
+        <div @click="emitStipe('ring')" class="mush-slide">
             <img class="cap-image" src="./images/Ring.png" alt="Ring Stipe">
             <p>Ring</p>
         </div>
-        <div @click="emitStipe('volvastipe')" class="mush-slide">
+        <div @click="emitStipe('volva')" class="mush-slide">
             <img class="cap-image" src="./images/volva.png" alt="Volva Stipe" >
             <p>Volva</p>
         </div>
-        <div @click="emitStipe('volvaringstipe')" class="mush-slide">
+        <div @click="emitStipe('volva ring')" class="mush-slide">
             <img class="cap-image" src="./images/volvaring.png" alt="Volva & Ring Stipe" >
             <p>Both</p>
         </div>
