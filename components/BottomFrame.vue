@@ -73,7 +73,6 @@
    methods: {
      emitCapShape(capShape) {
        this.selectedCapShape = capShape;
-       console.log("Event emitted from BottomFrame: ", capShape);
        //emit event to parent component (Index.vue)
        this.$emit('selectedCapShape', capShape);
      },

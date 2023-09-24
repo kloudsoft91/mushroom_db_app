@@ -125,7 +125,11 @@ export default{
     },
     //receives cap shape button events
     handleCapShape(selectedCapShape) {
-      this.selectedCapShape = selectedCapShape;
+      if(this.selectedCapShape === selectedCapShape){
+        this.selectedCapShape = "";
+      } else{
+        this.selectedCapShape = selectedCapShape;
+      }
       this.applyAllFilters();
     },
     //generic size filter event handler
