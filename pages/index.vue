@@ -149,15 +149,27 @@ export default{
     },
     //receives cap shape button events
     handleCapShape(selectedCapShape) {
-      this.selectedCapShape = selectedCapShape;
+      if (this.selectedCapShape == selectedCapShape) {
+        this.selectedCapShape = "";
+      } else {
+        this.selectedCapShape = selectedCapShape;
+      }
       this.applyAllFilters();
     },
     handleEcology(selectedEcology) {
-      this.selectedEcology = selectedEcology;
+      if (this.selectedEcology == selectedEcology) {
+        this.selectedEcology = "";
+      } else {
+        this.selectedEcology = selectedEcology;
+      }
       this.applyAllFilters();
     },
     handleStipe(selectedStipe) {
-      this.selectedStipe = selectedStipe;
+      if (this.selectedStipe == selectedStipe) {
+        this.selectedStipe = "";
+      } else {
+        this.selectedStipe = selectedStipe;
+      }
       this.applyAllFilters();
     },
     //generic size filter event handler
