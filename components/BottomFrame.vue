@@ -27,36 +27,59 @@
 </style>
 
 <template>
+  <div>
   <!-- add class="bg-white" to the end of the button label to hide buttons for testing-->
     <UButton label="Open" @click="open()" class="" />
     <client-only>
       <vue-bottom-sheet ref="myBottomSheet" :can-swipe="false" overlay-color="#00000000" :max-width="9999999999999">
         <div class=" border-solid border-2">
             
-            <FilterBar />    
+            <FilterBar @selectedCapShape="emitCapShape"/>    
         </div>
 
         
       </vue-bottom-sheet>
     </client-only>
+  </div>
   </template>
  
-  <script setup>
-  import VueBottomSheet from "@webzlodimir/vue-bottom-sheet";
-  import  "@webzlodimir/vue-bottom-sheet/dist/style.css";
-  import { ref, onBeforeUpdate } from "vue";
-  
-  const myBottomSheet = ref(null)
-
-  onBeforeUpdate(() => {
-  myBottomSheet.initHeight()
-  
-})
-  const open = () => {
-    myBottomSheet.value.open();
-  }
-  
-  const close = () => {
-    myBottomSheet.value.close();
-  }
-  </script>
+ <script>
+ import VueBottomSheet from "@webzlodimir/vue-bottom-sheet";
+ import  "@webzlodimir/vue-bottom-sheet/dist/style.css";
+ import { ref, onBeforeUpdate } from "vue";
+ 
+ export default {
+   setup() {
+     const myBottomSheet = ref(null);
+ 
+     onBeforeUpdate(() => {
+       myBottomSheet.value.initHeight();
+     });
+ 
+     const open = () => {
+       myBottomSheet.value.open();
+     };
+ 
+     const close = () => {
+       myBottomSheet.value.close();
+     };
+ 
+     return {
+       myBottomSheet,
+       open,
+       close,
+     };
+   },
+   methods: {
+     emitCapShape(capShape) {
+       this.selectedCapShape = capShape;
+       console.log("Event emitted from BottomFrame: ", capShape);
+       //emit event to parent component (Index.vue)
+       this.$emit('selectedCapShape', capShape);
+     },
+   },
+   components: {
+    VueBottomSheet,
+   },
+ };
+ </script>

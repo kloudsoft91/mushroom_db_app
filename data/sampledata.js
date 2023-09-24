@@ -80,7 +80,7 @@ export default [
       "diameter_max": 20,
       "thickness_min": null,
       "thickness_max": null,
-      "shape": "Convex, flattening with age"
+      "shape": "convex"
     },
     "environment": "Often found in association with various trees, especially pines and birches.",
     "time_of_year": "Late summer to autumn (March to June in the Southern Hemisphere)",
@@ -125,7 +125,7 @@ export default [
       "diameter_max": 12,
       "thickness_min": null,
       "thickness_max": null,
-      "shape": "Convex to broadly convex, often developing a central depression"
+      "shape": "convex"
     },
     "environment": "Frequently found on dead wood, particularly logs and stumps.",
     "time_of_year": "Autumn (March to May in the Southern Hemisphere)",
@@ -170,7 +170,7 @@ export default [
       "diameter_max": 2,
       "thickness_min": null,
       "thickness_max": null,
-      "shape": "Conical to bell-shaped"
+      "shape": "conical"
     },
     "environment": "Found in grassy areas, wood chips, and soils with rich organic matter.",
     "time_of_year": "Late summer to autumn (February to May in the Southern Hemisphere)",
@@ -260,7 +260,7 @@ export default [
       "diameter_max": 15,
       "thickness_min": null,
       "thickness_max": null,
-      "shape": "Convex to flat"
+      "shape": "convex to flat"
     },
     "environment": "Often found in beech forests and other mixed woodlands.",
     "time_of_year": "Autumn (March to June in the Southern Hemisphere)",
@@ -530,7 +530,7 @@ export default [
       "diameter_max": 15,
       "thickness_min": null,
       "thickness_max": null,
-      "shape": "Convex"
+      "shape": "convex"
     },
     "environment": "Living or dead trees",
     "time_of_year": "(November to June)",

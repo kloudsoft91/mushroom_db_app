@@ -1,103 +1,165 @@
 <template>
   <HeaderBar />
-  <NavigationBar :toggleTag="toggleTag" :filterByName="filterByName" :searchInput="searchInput"/>
+  <NavigationBar @search="handleSearch" @toggleTag="handleTags" @sizeFilter="handleSizeFilter"/>
   <FooterBar />
-  <div>
-    <ul>
-        <li v-for="mushroom in filteredMushrooms" :key="mushroom.id">
-        <MushroomCard :mushroom="mushroom"/>
-        </li>
-    </ul>
+  <div class="mt-16"> 
+      <ResultCards :filteredMushrooms="filteredMushrooms"/>
   </div>
+
   <!--Slideover for big screens only-->
   <SlideOver />
   <!--Bottomframe for small screens only-->
   <!--Should pop out when clicking the "Discover" button on footerbar-->
-  <BottomFrame />
+  <BottomFrame @selectedCapShape="handleCapShape"/>
 </template>
 
-<script setup>
-import { ref, onMounted } from 'vue'
+<script>
 import mushroomData from '~/data/sampledata.js'
-import MushroomCard from '~/components/MushroomCard.vue';
-import { searchInput } from '../store/store.js';
+import ResultCards from '~/components/ResultCards.vue';
 
-//Load data
-onMounted(() => {
-  mushrooms.value = mushroomData;
-  //This will display all mushrooms in results initially 
-  filteredMushrooms.value = mushrooms.value;
-});
+export default{
+  data(){
+    return{
+      mushrooms: [],
+      filteredMushrooms: [],
+      selectedTags: [],
+      searchInput: '',
+      selectedCapShape: '',
+      stipeLen: '',
+      stipeDiam: '',
+      capDiam: '',
+      capThick: '',
+    };
+  },
 
-//JSON data
-const mushrooms = ref([]);
-const filteredMushrooms = ref([]);
+  methods:{
+    //Apply all of the Filters (Have to decide when this is called
+    //currently called on filter button press, tag select, and when typing in Name search
+    applyAllFilters() {
+      let results = this.mushrooms;
+      //pull results from each filter function
+      results = this.filterByTags(results);
+      results = this.filterByName(results, this.searchInput);
+      results = this.filterByCapShape(results)
+      //Size Filter Calls:
+      results = this.filterBySize(results, this.stipeLen, 'stipe_features.length_min', 'stipe_features.length_max');
+      results = this.filterBySize(results, this.stipeDiam, 'stipe_features.diameter_min', 'stipe_features.diameter_max');
+      results = this.filterBySize(results, this.capDiam, 'cap_features.diameter_min', 'cap_features.diameter_max');
+      results = this.filterBySize(results, this.capThick,'cap_features.thickness_min', 'cap_features.thickness_max');
+      //assign results to filteredMushrooms array
+      this.filteredMushrooms = results;
+      //debug log 
+      //console.log("Selected tags: ", this.selectedTags);
+      //console.log("Search input: ", this.searchInput);
+      this.logSelectedFilters();
+      console.log('Results After Filtering:', results.length);
+    },
 
-//Inputs
-const selectedTags = ref([]);
+    //Filters results based on current selectedTags[]
+    filterByTags(data) {
+    if (this.selectedTags.length === 0) {
+      return data;
+    }
+    return data.filter((mushroom) =>
+      this.selectedTags.every((tag) => mushroom.tags.includes(tag))
+    );
 
-// This watch effect reactively triggers applyAllfilters when the search input changes
-watch(searchInput, (newSearchInput) => {
-  applyAllFilters(newSearchInput);
-});
+    },
+    //filters results by name based on search input (name)
+    filterByName(data, searchInput) {
+    //if no input - no data change
+    if (!searchInput) {
+      return data;
+    }
+    //otherwise filter data by input against latin & common names
+    return data.filter(d =>
+      d.common_names.toLowerCase().includes(searchInput.toLowerCase()) ||
+      d.latin_names.toLowerCase().includes(searchInput.toLowerCase())
+    );
+    },
 
-//Apply all of the Filters (Have to decide when this is called
-//currently called on filter button press, tag select, and when typing in Name search
-const applyAllFilters = (newSearchInput) => {
-    let results = mushrooms.value;
-    //pull results from each filter function
-    results = filterByTags(results);
-    results = filterByName(results, newSearchInput);
-    //assign results to filteredMushrooms array
-    filteredMushrooms.value = results;
-    //debug log 
-    console.log('Filtered Results:', filteredMushrooms.value.map(mushroom => mushroom.common_names));
-    console.log("Selected tags: ", selectedTags.value);
-    console.log("Search input: ", searchInput.value);
+    //Carousel Filters
+    //Cap Shape Filter
+    filterByCapShape(data){
+      //check if defined
+      if (!this.selectedCapShape) {
+        //console.log("filterCapShape null");
+        return data;
+      }
+      //console.log("Filtering (Index) cap shape by: ", this.selectedCapShape);
+      return data.filter((mushroom) => 
+      mushroom.cap_features.shape.includes(this.selectedCapShape));
+    },
+
+    //Generic range filter: applied to all int range inputs (diam/len/height/thickness)
+    filterBySize(data, value, propertyMin, propertyMax){
+    //if no inputs - no data change
+    if(!value){
+      return data;
+    }
+    //otherwise filter by range
+    return data.filter(d => {
+      //check that properties exist first ~~(Need a catch if we end up with a mushroom without one of these fields)
+      if (d[propertyMin.split('.')[0]][propertyMin.split('.')[1]] === null) return false;
+      //change string inputs to ints
+      const intValue= +value;
+      //check & filter data within input range
+      return d[propertyMin.split('.')[0]][propertyMin.split('.')[1]] <= intValue &&
+             d[propertyMax.split('.')[0]][propertyMax.split('.')[1]] >= intValue;
+      });
+    },
+
+    //Event handlers
+    //receives search input events
+    handleSearch(searchInput) {
+      this.searchInput = searchInput;
+      this.applyAllFilters();
+    },
+    //receives tag button events
+    handleTags(selectedTags) {
+      this.selectedTags = selectedTags;
+      this.applyAllFilters();
+    },
+    //receives cap shape button events
+    handleCapShape(selectedCapShape) {
+      this.selectedCapShape = selectedCapShape;
+      this.applyAllFilters();
+    },
+    //generic size filter event handler
+    handleSizeFilter(filterData) {
+      this.stipeLen = filterData.stipeLen;
+      this.stipeDiam = filterData.stipeDiam;
+      this.capDiam = filterData.capDiam;
+      this.capThick = filterData.capThick;
+      this.applyAllFilters();
+    },
+    //
+    //Helper function to log all currently selected Filters:
+    logSelectedFilters() {
+      const activeFilters = [];
+
+      // Add filters with values to the activeFilters array
+      if (this.selectedTags.length > 0) activeFilters.push(`Tags: ${this.selectedTags.join(', ')}`);
+      if (this.searchInput) activeFilters.push(`Search: ${this.searchInput}`);
+      if (this.selectedCapShape) activeFilters.push(`Cap Shape: ${this.selectedCapShape}`);
+      if (this.stipeLen) activeFilters.push(`Stipe Length: ${this.stipeLen}`);
+      if (this.stipeDiam) activeFilters.push(`Stipe Diameter: ${this.stipeDiam}`);
+      if (this.capDiam) activeFilters.push(`Cap Diameter: ${this.capDiam}`);
+      if (this.capThick) activeFilters.push(`Cap Thickness: ${this.capThick}`);
+
+      // Log active filters or "No Filters" if none are active
+      console.log(activeFilters.length > 0 ? `Active Filters: ${activeFilters.join(' | ')}` : 'No Filters');
+    },
+  },
+  //Load data
+  mounted() {
+    this.mushrooms = mushroomData;
+    //display all results initially
+    this.filteredMushrooms = this.mushrooms;
+  },
 };
-
-//Populates selectedTags[] by input (currently toggles on/off, so you can have multiple tags on, will need to style buttons to show that a tag is toggled/pressed)
-//Note: this function is not responsible for changing the results data
-const toggleTag = (tag) => {
-  const index = selectedTags.value.indexOf(tag);
-  if (index === -1) {
-    selectedTags.value.push(tag);
-  } else {
-    selectedTags.value.splice(index, 1);
-  }
-  applyAllFilters();
-};
-
-//Filters results based on current selectedTags[]
-const filterByTags = (data) => {
-  if (selectedTags.value.length === 0) {
-    return data;
-  }
-  return data.filter((mushroom) =>
-    selectedTags.value.every((tag) => mushroom.tags.includes(tag))
-  );
-};
-
-//Reactive Name Filter
-const filterByName = (data, newSearchInput) => {
-  //if no input - no data change
-  if (!newSearchInput) {
-    console.log("NO NAME SEARCH INPUT = ", newSearchInput)
-    return data;
-  }
-  console.log("NAMES SEARCH: ", newSearchInput)
-  //otherwise filter data by input against latin & common names
-  return data.filter(d =>
-    d.common_names.toLowerCase().includes(newSearchInput.toLowerCase()) ||
-    d.latin_names.toLowerCase().includes(newSearchInput.toLowerCase())
-  );
-};
-
-// Call applyFilters initially to show all mushrooms
-applyAllFilters();
 </script>
   
-  <style scoped>
-
-  </style>
+<style scoped>
+</style>
   

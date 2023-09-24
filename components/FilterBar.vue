@@ -35,7 +35,7 @@
     </template>
     <template #capshape>
       
-        <CapCarousel />
+        <CapCarousel @selectedCapShape="emitCapShape"/>
       
     </template>
     <template #attachment>
@@ -64,27 +64,46 @@
   </UAccordion>
 </template>
 
-<script setup>
-const items = [{
-  label: 'Ecology',
-  defaultOpen: true,
-  multiple: true,
-  slot: 'ecology'
-}, {
-  label: 'Cap Shape',
-  defaultOpen: true,
-  multiple: true,
-  slot: 'capshape'
-},
-{
-  label: 'Attachment',
-  defaultOpen: true,
-  multiple: true,
-  slot: 'attachment',
-}, {
-  label: 'Stipe',
-  defaultOpen: true,
-  multiple: true,
-  slot: 'stipe',
-}];
+<script>
+export default {
+  data() {
+    return {
+      items: [
+        {
+          label: 'Ecology',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'ecology'
+        },
+        {
+          label: 'Cap Shape',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'capshape'
+        },
+        {
+          label: 'Attachment',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'attachment',
+        },
+        {
+          label: 'Stipe',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'stipe',
+        }
+      ],
+    };
+  },
+  methods: {
+    //emits cap shape on button click
+    emitCapShape(capShape) {
+      this.selectedCapShape = capShape;
+      console.log("Event emitted from FilterBar: ", capShape);
+      //emit event to parent component (BottomFrame.vue)
+      this.$emit('selectedCapShape', capShape);
+    },
+  }
+};
 </script>
