@@ -1,12 +1,12 @@
 <template>
-    <div >
+    <div class="z-0 p-2">
       <!-- Card Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 w-11/12 desktop:w-3/4 mx-auto">
+      <div class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-4 gap-5 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto">
         <!-- Create card for each item in the data file -->
         <div
           v-for="(mushroom, index) in filteredMushrooms"
           :key="index"
-          class="block max-w-[18rem] rounded-lg bg-gray-200 tablet:shadow-md desktop:shadow-md dark:bg-neutral-700 flex flex-col overflow-hidden"
+          class=" rounded-lg bg-gray-200 tablet:shadow-md desktop:shadow-md flex flex-col overflow-hidden"
         >
           <div class="relative overflow-hidden bg-cover bg-no-repeat">
             <img class="rounded-t-lg" src="~/assets/images/mushy.jpg" alt="this is a pic of a mushy" />

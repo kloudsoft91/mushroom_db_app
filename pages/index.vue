@@ -2,9 +2,8 @@
   <HeaderBar />
   <NavigationBar @search="handleSearch" @toggleTag="handleTags" @sizeFilter="handleSizeFilter"/>
   <FooterBar />
-  <div class="mt-16"> 
-      <ResultCards :filteredMushrooms="filteredMushrooms"/>
-  </div>
+  <ResultCards :filteredMushrooms="filteredMushrooms"/>
+  
 
   <!--Slideover for big screens only-->
   <SlideOver />
