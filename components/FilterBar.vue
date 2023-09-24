@@ -102,7 +102,6 @@ export default {
     //emits cap shape on button click
     emitCapShape(capShape) {
       this.selectedCapShape = capShape;
-      console.log("Event emitted from FilterBar: ", capShape);
       //emit event to parent component (BottomFrame.vue)
       this.$emit('selectedCapShape', capShape);
     },

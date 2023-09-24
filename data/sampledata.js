@@ -5,7 +5,7 @@ export default [
     "latin_names": "Coprinus comatus",
     "common_names": "Shaggy Mane",
     "description": "The Shaggy Mane is a distinctive mushroom with a white, cylindrical cap that is covered in shaggy scales. When young, the cap is elongated and bullet-shaped, but as it matures, it opens up, and the edges become wavy. The gills are initially white, then turn black and eventually dissolve into an inky liquid, a process known as deliquescence. The stipe is white and hollow.",
-    "lookalikes": "The Shaggy Mane has a unique appearance, but young specimens can be confused with the Common Ink Cap (Coprinopsis atramentaria) before the gills turn black.",
+    "lookalikes": "The mushroom can sometimes be confused with the magpie fungus which is poisonous. In America, the 'vomiter' mushroom Chlorophyllum molybdites is responsible for most cases of mushroom poisoning due to its similarity with shaggy mane and other edible mushrooms.[8] Coprinopsis atramentaria (the common Ink Cap) is similar, and contains coprine and can induce coprine poisoning, particularly when consumed with alcohol.[5] Podaxis pistillaris is also similar.",
     "links": {
       "iNaturalist": "https://www.inaturalist.org/taxa/47392-Coprinus-comatus",
       "wikipedia": "https://en.wikipedia.org/wiki/Coprinus_comatus"
@@ -14,79 +14,75 @@ export default [
     "edibility": "Edible when young and fresh. However, it is not recommended to consume alcohol within a few hours before or after eating this mushroom due to potential adverse reactions.",
     "stipe_features": {
       "diameter_min": 1,
-      "diameter_max": 3,
+      "diameter_max": 2.5,
       "colour": ["White"],
-      "length_min": 10,
+      "length_min": 6,
       "length_max": 40,
-      "height_min": null,
-      "height_max": null,
       "bruising_colour": "No significant bruising",
       "type": "ring"
     },
     "gills": {
-      "colour": "Initially white, then turning black",
-      "attachment": "Free from the stipe"
+      "colour": "white pink black",
+      "attachment": "free"
     },
-    "spore_colour": "Black",
+    "spore_colour": "brown",
     "cap_features": {
-      "colour": ["White"],
-      "texture": "Slightly rough",
-      "diameter_min": 3,
-      "diameter_max": 10,
-      "thickness_min": null,
-      "thickness_max": null,
-      "shape": "Elongated and bullet-shaped when young, opening up and becoming wavy at maturity"
+      "colour": ["white", "brown", "black"],
+      "texture": "rough scaly",
+      "diameter_min": 4,
+      "diameter_max": 8,
+      "thickness_min": 6,
+      "thickness_max": 20,
+      "shape": "conical"
     },
-    "environment": "Commonly found in grassy areas, lawns, and meadows, as well as along roadsides and waste areas.",
-    "ecology": "Saprotrophic",
+    "environment": "grass, gravel roads, waste areas",
+    "ecology":"saprotrophic",
     "time_of_year": "Late spring to autumn (October to April in the Southern Hemisphere)",
-    "native_or_introduced": "Introduced to New Zealand",
-    "genus": "Coprinus",
+    "native_or_introduced": "introduced",
+    "genus": "coprinus",
     "photos": []
   },
 
   {
     "id":2,
-    "tags":["poisonous"],
+    "tags":["poisonous", "psychoactive"],
     "latin_names": "Amanita muscaria",
-    "common_names": "Fly Agaric",
+    "common_names": "Fly Agaric, Fly Amanita",
     "description": "Amanita muscaria is a striking and iconic mushroom with a bright red to orange cap covered in white to yellow warts. The cap is usually convex, but it flattens with age. The gills are white, and the stipe is white with a distinctive ring.",
-    "lookalikes": "Amanita muscaria has several lookalike species, some of which are toxic.",
+    "lookalikes": "Amanita muscaria has several lookalike species, some of which are toxic: Caesar’s Mushroom / Amanita Caesarea, Vermilion Grisette / Amanita Xanthocephala",
     "links": {
       "iNaturalist": "https://www.inaturalist.org/taxa/48715-Amanita-muscaria",
       "wikipedia": "https://en.wikipedia.org/wiki/Amanita_muscaria"
     },
-    "nz_books": "Not listed in the provided NZ books.",
+    "nz_books": "None",
     "edibility": "Highly toxic, and consumption can lead to severe poisoning.",
     "stipe_features": {
       "diameter_min": 1,
       "diameter_max": 2,
       "colour": ["White"],
-      "length_min": 8,
-      "length_max": 15,
-      "height_min": 5,
-      "height_max": 20,
+      "length_min": 5,
+      "length_max": 20,
       "bruising_colour": "No significant bruising",
       "type": "volva ring"
     },
     "gills": {
       "colour": "White",
-      "attachment": "Free from the stipe"
+      "attachment": "free"
     },
     "spore_colour": "White",
     "cap_features": {
       "colour": ["Red", "Orange", "White", "Yellow"],//"Bright red to orange with white to yellow warts",
       "texture": "Covered in warts",
-      "diameter_min": 10,
+      "diameter_min": 8,
       "diameter_max": 20,
       "thickness_min": null,
       "thickness_max": null,
       "shape": "convex"
     },
     "environment": "Often found in association with various trees, especially pines and birches.",
-    "ecology": "mycorrhizal",
+    "ecology":"mycorrhizal",
     "time_of_year": "Late summer to autumn (March to June in the Southern Hemisphere)",
-    "native_or_introduced": "Introduced to New Zealand",
+    "native_or_introduced": "introduced",
     "genus": "Amanita",
     "photos": []
   },
@@ -95,44 +91,42 @@ export default [
     "id":3,
     "tags":["poisonous"],
     "latin_names": "Gymnopilus junonius",
-    "common_names": "Laughing Gym",
+    "common_names": "Laughing Gym, Spectacular Rustgill",
     "description": "Gymnopilus junonius is a medium-sized mushroom with a distinctively rusty-brown to orange cap. The cap is convex to broadly convex when young, and it often develops a central depression as it matures. The gills are orange-brown, and the stipe is fibrous and often has a ring.",
-    "lookalikes": "Gymnopilus junonius has several lookalike species, some of which are toxic.",
+    "lookalikes": "Gymnopilus Ventricosus, Yellow Gymnopilus / Gymnopilus Luteus, Gymnopilus Subspectabilis",
     "links": {
       "iNaturalist": "https://inaturalist.nz/taxa/1155105-Gymnopilus-junonius",
       "wikipedia": "https://en.wikipedia.org/wiki/Gymnopilus_junonius"
     },
-    "nz_books": "Not listed in the provided NZ books.",
+    "nz_books": "None",
     "edibility": "Not recommended for consumption due to its potential toxicity.",
     "stipe_features": {
       "diameter_min": 1,
-      "diameter_max": 3,
-      "colour": ["Yellow", "Brown"], //Yellowish-brown",
-      "length_min": 8,
-      "length_max": 20,
-      "height_min": 5,
-      "height_max": 15,
+      "diameter_max": 5,
+      "colour": ["Yellow", "Brown", "Orange"], //Yellowish-brown",
+      "length_min": 5,
+      "length_max": 25,
       "bruising_colour": "No significant bruising",
       "type": "ring"
     },
     "gills": {
       "colour": "Orange-brown",
-      "attachment": "Adnate or slightly decurrent"
+      "attachment": "adnate or decurrent"
     },
     "spore_colour": "Rust-brown",
     "cap_features": {
-      "colour": ["Brown", "Orange"], //"Rusty-brown to orange",
-      "texture": "Smooth or slightly fibrillose",
-      "diameter_min": 4,
-      "diameter_max": 12,
+      "colour": ["Brown", "Orange", "Yellow"], //"Rusty-brown to orange",
+      "texture": "dry scaly",
+      "diameter_min": 8,
+      "diameter_max": 30,
       "thickness_min": null,
       "thickness_max": null,
       "shape": "convex"
     },
-    "environment": "Frequently found on dead wood, particularly logs and stumps.",
-    "ecology": "saprotrophic",
+    "environment": "Frequently found on dead wood, particularly logs and tree stumps or bases.",
+    "ecology":"saprotrophic",
     "time_of_year": "Autumn (March to May in the Southern Hemisphere)",
-    "native_or_introduced": "Introduced to New Zealand",
+    "native_or_introduced": "introduced",
     "genus": "Gymnopilus",
     "photos": []
   },
@@ -140,45 +134,43 @@ export default [
   {
     "id":4,
     "tags":["psychoactive"],
-    "latin_names": "Psilocybe weraroa",
+    "latin_names": "Psilocybe weraroa, Weraroa Novae-Zelandiae",
     "common_names": "Weraroa Magic Mushroom",
     "description": "Psilocybe weraroa is a small mushroom with a conical to bell-shaped cap. The cap is typically brown to dark brown, and the gills are pale brown when young, becoming dark purple-brown with age. The stipe is slender and often has a blueish coloration near the base.",
-    "lookalikes": "Psilocybe weraroa has several lookalike species, but its characteristic blueish coloration on the stipe sets it apart.",
+    "lookalikes": "Psilocybe weraroa has several lookalike species, but its characteristic blueish coloration on the stipe sets it apart. Blue Pouch Fungus / Clavogaster Virescens",
     "links": {
       "iNaturalist": "https://inaturalist.nz/taxa/126163-Psilocybe-weraroa",
       "wikipedia": "https://en.wikipedia.org/wiki/Psilocybe_weraroa"
     },
-    "nz_books": "Not listed in the provided NZ books.",
+    "nz_books": "None",
     "edibility": "Psilocybe weraroa contains psilocybin and psilocin, which are psychoactive compounds. It is illegal to consume this mushroom in New Zealand.",
     "stipe_features": {
       "diameter_min": .1,
-      "diameter_max": .2,
+      "diameter_max": .6,
       "colour": ["White", "Blue"], //"White, often with a blueish coloration near the base",
-      "length_min": 5,
-      "length_max": 15,
-      "height_min": 5,
-      "height_max": 15,
+      "length_min": 0,
+      "length_max": 4,
       "bruising_colour": "Blueish bruising when handled",
-      "type": "bare"
+      "type": "bare cortina"
     },
     "gills": {
       "colour": "Pale brown when young, becoming dark purple-brown",
-      "attachment": "Adnate to sinuate"
+      "attachment": "no attachment, glebal hymenium"
     },
     "spore_colour": "Purple-brown",
     "cap_features": {
       "colour": ["Brown"], //"Brown to dark brown",
-      "texture": "Smooth",
-      "diameter_min": .5,
-      "diameter_max": 2,
-      "thickness_min": null,
-      "thickness_max": null,
-      "shape": "conical"
+      "texture": "Smooth, polished, leathery",
+      "diameter_min": 1.5,
+      "diameter_max": 3,
+      "thickness_min": 3,
+      "thickness_max": 5,
+      "shape": "conical, ovate"
     },
-    "environment": "Found in grassy areas, wood chips, and soils with rich organic matter.",
-    "ecology": "",
+    "environment": "Found in grassy areas, wood chips, and soils with rich organic matter, rotting wood, woody debris",
+    "ecology":"saprotrophic",
     "time_of_year": "Late summer to autumn (February to May in the Southern Hemisphere)",
-    "native_or_introduced": "Native to New Zealand",
+    "native_or_introduced": "native",
     "genus": "Psilocybe",
     "photos": []
   },
@@ -186,91 +178,87 @@ export default [
   {
     "id":5,
     "tags":["poisonous"],
-    "latin_names": "Lepiota naucina",
-    "common_names": "Brown Parasol",
-    "description": "Lepiota naucina is a medium-sized mushroom with a bell-shaped cap that flattens and develops a distinctive central bump as it matures. The cap color is typically light brown to darker brown with darker scales. The gills are white and free from the stipe.",
-    "lookalikes": "Lepiota naucina has several lookalike species, some of which are toxic.",
+    "latin_names": "Cortinarius Porphyroideus",
+    "common_names": "Purple Pouch Fungus, Purple Cortinarius",
+    "description": "Cortinarius porphyroideus, commonly known as purple pouch fungus, is a secotioid species of fungus endemic to New Zealand. It was one of six species that appeared as part of a series depicting native New Zealand fungi on stamps, released in 2002.",
+    "lookalikes": "Although there are many Cortinarius species with some degree of violet colour, C. violaceus and its close relatives are easily distinguished by their much darker purple colour.  Cortinarius iodes of the southeastern United States has a slimy purple cap and paler violet stipe.[23] The other species in the section Cortinarius are dark purple and superficially similar, but can be differentiated based on host and geography as they do not occur in the same locations as C. violaceus.",
     "links": {
-      "iNaturalist": "https://inaturalist.nz/taxa/344521-Lepiota-naucina",
-      "wikipedia": "https://en.wikipedia.org/wiki/Lepiota_naucina"
+      "iNaturalist": "https://inaturalist.nz/taxa/127053-Cortinarius-porphyroideus",
+      "wikipedia": "https://en.wikipedia.org/wiki/Cortinarius_porphyroideus"
     },
-    "nz_books": "Not listed in the provided NZ books.",
-    "edibility": "Not recommended for consumption due to the potential toxicity of some Lepiota species.",
+    "nz_books": "None",
+    "edibility": "Edible but not recommended",
     "stipe_features": {
-      "diameter_min": .5,
-      "diameter_max": 1.5,
-      "colour": ["White"],
-      "length_min": 5,
-      "length_max": 15,
-      "height_min": 10,
-      "height_max": 25,
+      "diameter_min": 1,
+      "diameter_max": 2,
+      "colour": ["Violet"],
+      "length_min": 3,
+      "length_max": 9,
       "bruising_colour": "No significant bruising",
-      "type": "ring"
+      "type": "bare"
     },
     "gills": {
       "colour": "White",
-      "attachment": "Free from the stipe"
+      "attachment": "None, glebal hymenium"
     },
-    "spore_colour": "White",
+    "spore_colour": "Brown",
     "cap_features": {
-      "colour": "Light brown to darker brown with darker scales",
-      "texture": "Smooth",
-      "diameter_min": 5,
-      "diameter_max": 15,
+      "colour": ["Violet"],
+      "texture": "smooth, polished, sticky",
+      "diameter_min": 2,
+      "diameter_max": 7,
       "thickness_min": null,
       "thickness_max": null,
-      "shape": "Bell-shaped, flattening with a central bump"
+      "shape": "ovate"
     },
-    "environment": "Frequently found in grassy areas, pastures, and open woodlands.",
-    "ecology": "saprotrophic",
-    "time_of_year": "Autumn (March to June in the Southern Hemisphere)",
-    "native_or_introduced": "Introduced to New Zealand",
-    "genus": "Lepiota",
+    "environment": "Trees, Hard Beech, Black Beech",
+    "ecology":"saprotrophic",
+    "time_of_year": "(April to June)",
+    "native_or_introduced": "native",
+    "genus": "Cortinarius",
     "photos": []
   },
 
   {
     "id":6,
     "tags":["poisonous"],
-    "latin_names": "Cortinarius porphyroideus",
-    "common_names": "Purple Cortinarius",
-    "description": "Cortinarius porphyroideus is a medium to large-sized mushroom with a convex to flat cap. The cap is typically purple to dark violet, and it often has a fibrous texture. The gills are initially white, then become rusty-brown, and the stipe has a partial purple-brown veil.",
-    "lookalikes": "Cortinarius porphyroideus has several lookalike species within the Cortinarius genus.",
+    "latin_names": "Chlorophyllum Rhacodes",
+    "common_names": "Shaggy Parasol",
+    "description": "The shaggy parasol is a large and conspicuous agaric, with thick brown scales and protuberances on its fleshy white cap. The gills and sport print are both white in colour. Its stipe is slender, but bulbous at the base, is coloured uniformly and bears no patterns. It is fleshy, and a reddish, or maroon discoloration occurs and a pungent odour is evolved when it is cut. The egg-shaped caps become wider and flatter as they mature.",
+    "lookalikes": "Chlorophyllum molybdites, Macrolepiota procera",
     "links": {
-      "iNaturalist": "https://inaturalist.nz/taxa/127053-Cortinarius-porphyroideus",
-      "wikipedia": "https://en.wikipedia.org/wiki/Cortinarius_porphyroideus"
+      "iNaturalist": "https://inaturalist.nz/taxa/56535-Chlorophyllum-rhacodes",
+      "wikipedia": "https://en.wikipedia.org/wiki/Shaggy_parasol"
     },
-    "nz_books": "Not listed in the provided NZ books.",
-    "edibility": "Not recommended for consumption due to the potential toxicity of some Cortinarius species.",
+    "nz_books": "None",
+    "edibility": "Edible but not recommended.",
     "stipe_features": {
-      "diameter_min": 1,
+      "diameter_min": 2,
       "diameter_max": 3,
-      "colour": "White with partial purple-brown veil",
+      "colour": ["White"],
       "length_min": 5,
-      "length_max": 15,
-      "height_min": 8,
-      "height_max": 20,
+      "length_max": 20,
       "bruising_colour": "No significant bruising",
-      "type": "veil"
+      "type": "ring"
     },
     "gills": {
-      "colour": "Initially white, then rusty-brown",
-      "attachment": "Adnate to sinuate"
+      "colour": "White",
+      "attachment": "free"
     },
-    "spore_colour": "Rust-brown",
+    "spore_colour": "White",
     "cap_features": {
-      "colour": "Purple to dark violet with fibrous texture",
-      "texture": "Fibrous",
-      "diameter_min": 5,
-      "diameter_max": 15,
+      "colour": ["White"],
+      "texture": "fleshy",
+      "diameter_min": 6,
+      "diameter_max": 20,
       "thickness_min": null,
       "thickness_max": null,
-      "shape": "convex to flat"
+      "shape": "umbonate or convex"
     },
-    "environment": "Often found in beech forests and other mixed woodlands.",
-    "ecology": "mycorrhizal",
-    "time_of_year": "Autumn (March to June in the Southern Hemisphere)",
-    "native_or_introduced": "Native to New Zealand",
+    "environment": "soil",
+    "ecology":"saprotrophic",
+    "time_of_year": "(February to June)",
+    "native_or_introduced": "introduced",
     "genus": "Cortinarius",
     "photos": []
   },
