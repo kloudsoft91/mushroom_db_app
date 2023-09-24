@@ -9,11 +9,18 @@
                     <p>Home</p>
                 </div>
                 
-                <div class="quick-link">
+                <div @click="open()" class="quick-link">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" class="w-6 h-6">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z" />
                     </svg>
                     <p>Discover</p>
+                    <client-only>
+                        <vue-bottom-sheet ref="myBottomSheet" :can-swipe="false" overlay-color="#00000000" :max-width="9999999999999">
+                            <div class=" border-solid border-2">
+                                <FilterBar @selectedCapShape="emitCapShape"/>    
+                            </div>
+                        </vue-bottom-sheet>
+                    </client-only>
                 </div>
                 
                 <div class="quick-link">
@@ -42,6 +49,43 @@
     </footer>
 </template>
 
-<script setup>
-
+<script>
+    import VueBottomSheet from "@webzlodimir/vue-bottom-sheet";
+    import  "@webzlodimir/vue-bottom-sheet/dist/style.css";
+    import { ref, onBeforeUpdate } from "vue";
+ 
+    export default {
+   setup() {
+     const myBottomSheet = ref(null);
+ 
+     onBeforeUpdate(() => {
+       myBottomSheet.value.initHeight();
+     });
+ 
+     const open = () => {
+       myBottomSheet.value.open();
+     };
+ 
+     const close = () => {
+       myBottomSheet.value.close();
+     };
+ 
+     return {
+       myBottomSheet,
+       open,
+       close,
+     };
+   },
+   methods: {
+     emitCapShape(capShape) {
+       this.selectedCapShape = capShape;
+       console.log("Event emitted from BottomFrame: ", capShape);
+       //emit event to parent component (Index.vue)
+       this.$emit('selectedCapShape', capShape);
+     },
+   },
+   components: {
+    VueBottomSheet,
+   },
+ };
 </script>
