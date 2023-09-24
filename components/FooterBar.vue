@@ -1,5 +1,7 @@
 <template>
-    <footer class="flex justify-center w-full desktop:hidden fixed bottom-0 left-0 right-0 bg-white text-center border-2">
+
+    <footer class="flex justify-center w-full desktop:hidden fixed bottom-0 left-0 right-0 bg-white text-center border-2 z-50">
+
         <div class="w-11/12 left-0 right-0">
             <div class="flex justify-between w-full left-0 right-0 mx-auto py-4">
                 <div class="quick-link">
