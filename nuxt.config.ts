@@ -22,6 +22,16 @@ export default {
       path: '/mushrooms',
       component: '~/pages/mushroom-detail.vue'
     },
+    {
+      name: 'contact',
+      path: '/',
+      component: 'pages/contact.vue'
+    },
+    {
+      name: 'news',
+      path: '/',
+      component: 'pages/news.vue'
+    },
     // for generating page based on mushroom ID, we will implement later
     /*
     {

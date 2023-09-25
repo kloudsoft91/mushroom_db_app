@@ -1,25 +1,29 @@
 <!-- static page with mock data for presentation, we will implement properly later on-->
 <template>
-    <div class="mushroom-detail">
-      <h1 class="mushroom-name">Shaggy Mane</h1>
-      <div class="mushroom-image-container">
-        <img src="assets/images/mushroom.jpg" alt="Mushroom" class="mushroom-image" />
-      </div>
-      <div class="mushroom-info">
-        <div class="edibility-tag">Edible</div>
-      </div>
-      <div class="mushroom-description">
-        The Shaggy Mane is a distinctive mushroom with a white, cylindrical cap that is covered in shaggy scales.
-      </div>
-      <div class="mushroom-lookalikes">
-        <h3>Lookalikes</h3>
-        The Shaggy Mane has a unique appearance, but young specimens can be confused with the Common Ink Cap (Coprinopsis atramentaria) before the gills turn black.
-      </div>
-      <div class="mushroom-links">
-        <a href="https://www.inaturalist.org/taxa/47392-Coprinus-comatus" target="_blank">iNaturalist</a>
-        <a href="https://en.wikipedia.org/wiki/Coprinus_comatus" target="_blank">Wikipedia</a>
-      </div>
+  <HeaderBar />
+  <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter"/>
+  <FooterBar @openCarouselInputs="openCarouselInputs"/>
+  
+  <div class="mushroom-detail">
+    <h1 class="mushroom-name">Shaggy Mane</h1>
+    <div class="mushroom-image-container">
+      <img src="assets/images/mushroom.jpg" alt="Mushroom" class="mushroom-image" />
     </div>
+    <div class="mushroom-info">
+      <div class="edibility-tag">Edible</div>
+    </div>
+    <div class="mushroom-description">
+      The Shaggy Mane is a distinctive mushroom with a white, cylindrical cap that is covered in shaggy scales.
+    </div>
+    <div class="mushroom-lookalikes">
+      <h3>Lookalikes</h3>
+      The Shaggy Mane has a unique appearance, but young specimens can be confused with the Common Ink Cap (Coprinopsis atramentaria) before the gills turn black.
+    </div>
+    <div class="mushroom-links">
+      <a href="https://www.inaturalist.org/taxa/47392-Coprinus-comatus" target="_blank">iNaturalist</a>
+      <a href="https://en.wikipedia.org/wiki/Coprinus_comatus" target="_blank">Wikipedia</a>
+    </div>
+  </div>
   </template>
 
 <!-- this is for dynamic page later, don't delete unless you plan to implement it yourself-->
@@ -101,3 +105,19 @@
   display: inline-block;
 }
   </style>
+
+<script>
+import { reactive, toRefs } from 'vue'
+
+export default {
+    setup () {
+        const state = reactive({
+            count: 0,
+        })
+    
+        return {
+            ...toRefs(state),
+        }
+    }
+}
+</script>
