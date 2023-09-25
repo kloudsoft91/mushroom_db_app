@@ -1,8 +1,32 @@
-# Nuxt 3 Minimal Starter
+# Mushroom DB App
 
-Look at the [Nuxt 3 documentation](https://nuxt.com/docs/getting-started/introduction) to learn more.
+This project was the result of a Capstone Project run through Massey University. It is a webapp designed using NuxtJS to easily identify the different variety of mushrooms and fungi that grow in Aotearoa New Zealand.
 
-## Setup
+
+## Authors
+
+-
+-
+- Joel Yap, ID: 21007112
+- Emily Ferguson, ID: 21013503
+- Karan Nayak, ID: 21002217
+
+
+## Run Locally
+
+Clone the project
+
+```bash
+  git clone https://github.com/kloudsoft91/mushroom_db_app.git
+```
+
+Go to the project directory
+
+```bash
+  cd mushroom_db_app
+```
+
+### Setup
 
 Make sure to install the dependencies:
 
@@ -17,7 +41,7 @@ pnpm install
 yarn install
 ```
 
-## Development Server
+### Development Server
 
 Start the development server on `http://localhost:3000`:
 
@@ -32,7 +56,7 @@ pnpm run dev
 yarn dev
 ```
 
-## Production
+### Production
 
 Build the application for production:
 
@@ -60,4 +84,10 @@ pnpm run preview
 yarn preview
 ```
 
-Check out the [deployment documentation](https://nuxt.com/docs/getting-started/deployment) for more information.
+## Running Tests
+
+To run tests, run the following command
+
+```bash
+  npm run test
+```

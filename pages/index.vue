@@ -1,6 +1,6 @@
 <template>
   <HeaderBar />
-  <NavigationBar @search="handleSearch" @toggleTag="handleTags" @sizeFilter="handleSizeFilter"/>
+  <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter"/>
   <FooterBar />
   <ResultCards :filteredMushrooms="filteredMushrooms"/>
   
@@ -9,7 +9,7 @@
   <SlideOver />
   <!--Bottomframe for small screens only-->
   <!--Should pop out when clicking the "Discover" button on footerbar-->
-  <BottomFrame @selectedCapShape="handleCapShape"/>
+  <BottomFrame @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe"/>
 </template>
 
 <script>
@@ -21,9 +21,12 @@ export default{
     return{
       mushrooms: [],
       filteredMushrooms: [],
-      selectedTags: [],
+      selectedTag: '',
       searchInput: '',
       selectedCapShape: '',
+      selectedGillAttach: '',
+      selectedEcology: '',
+      selectedStipe: '',
       stipeLen: '',
       stipeDiam: '',
       capDiam: '',
@@ -39,7 +42,10 @@ export default{
       //pull results from each filter function
       results = this.filterByTags(results);
       results = this.filterByName(results, this.searchInput);
-      results = this.filterByCapShape(results)
+      results = this.filterByCapShape(results);
+      results = this.filterByGillAttach(results);
+      results = this.filterByEcology(results);
+      results = this.filterByStipe(results);
       //Size Filter Calls:
       results = this.filterBySize(results, this.stipeLen, 'stipe_features.length_min', 'stipe_features.length_max');
       results = this.filterBySize(results, this.stipeDiam, 'stipe_features.diameter_min', 'stipe_features.diameter_max');
@@ -48,22 +54,19 @@ export default{
       //assign results to filteredMushrooms array
       this.filteredMushrooms = results;
       //debug log 
-      //console.log("Selected tags: ", this.selectedTags);
-      //console.log("Search input: ", this.searchInput);
       this.logSelectedFilters();
       console.log('Results After Filtering:', results.length);
     },
 
-    //Filters results based on current selectedTags[]
+    //Filters results based on current selectedTag
     filterByTags(data) {
-    if (this.selectedTags.length === 0) {
-      return data;
-    }
-    return data.filter((mushroom) =>
-      this.selectedTags.every((tag) => mushroom.tags.includes(tag))
-    );
-
+      if(!this.selectedTag) {
+        return data;
+      }
+      return data.filter((mushroom) =>
+      mushroom.tags.includes(this.selectedTag));
     },
+
     //filters results by name based on search input (name)
     filterByName(data, searchInput) {
     //if no input - no data change
@@ -82,12 +85,39 @@ export default{
     filterByCapShape(data){
       //check if defined
       if (!this.selectedCapShape) {
-        //console.log("filterCapShape null");
         return data;
       }
       //console.log("Filtering (Index) cap shape by: ", this.selectedCapShape);
       return data.filter((mushroom) => 
       mushroom.cap_features.shape.includes(this.selectedCapShape));
+    },
+
+    //Gill Attachment Filter
+    filterByGillAttach(data){
+      if(!this.selectedGillAttach){
+        return data;
+      }
+      return data.filter((mushroom) =>
+      mushroom.gills.attachment.includes(this.selectedGillAttach));
+    },
+    //Ecology Filter
+    filterByEcology(data){
+      //check if defined
+      if (!this.selectedEcology) {
+        return data;
+      }
+      return data.filter((mushroom) => 
+      mushroom.ecology.includes(this.selectedEcology));
+    },
+
+    //Stipe Type filter
+    filterByStipe(data){
+      //check if defined
+      if (!this.selectedStipe) {
+        return data;
+      }
+      return data.filter((mushroom) => 
+      mushroom.stipe_features.type.includes(this.selectedStipe));
     },
 
     //Generic range filter: applied to all int range inputs (diam/len/height/thickness)
@@ -115,13 +145,48 @@ export default{
       this.applyAllFilters();
     },
     //receives tag button events
-    handleTags(selectedTags) {
-      this.selectedTags = selectedTags;
+    handleTags(selectedTag) {
+      if (this.selectedTag == selectedTag) {
+        this.selectedTag = "";
+      }else {
+        this.selectedTag = selectedTag;
+      }
       this.applyAllFilters();
     },
     //receives cap shape button events
     handleCapShape(selectedCapShape) {
-      this.selectedCapShape = selectedCapShape;
+      if (this.selectedCapShape == selectedCapShape) {
+        this.selectedCapShape = "";
+      } else {
+        this.selectedCapShape = selectedCapShape;
+      }
+      this.applyAllFilters();
+    },
+    //receives gill attachment buttone vents
+    handleGills(selectedGillAttach) {
+      if(this.selectedGillAttach == selectedGillAttach){
+        this.selectedGillAttach = "";
+      } else {
+        this.selectedGillAttach = selectedGillAttach;
+      }
+      this.applyAllFilters();
+    },
+    //receives ecology button events
+    handleEcology(selectedEcology) {
+      if (this.selectedEcology == selectedEcology) {
+        this.selectedEcology = "";
+      } else {
+        this.selectedEcology = selectedEcology;
+      }
+      this.applyAllFilters();
+    },
+    //receives stipe type button events
+    handleStipe(selectedStipe) {
+      if (this.selectedStipe == selectedStipe) {
+        this.selectedStipe = "";
+      } else {
+        this.selectedStipe = selectedStipe;
+      }
       this.applyAllFilters();
     },
     //generic size filter event handler
@@ -138,13 +203,16 @@ export default{
       const activeFilters = [];
 
       // Add filters with values to the activeFilters array
-      if (this.selectedTags.length > 0) activeFilters.push(`Tags: ${this.selectedTags.join(', ')}`);
-      if (this.searchInput) activeFilters.push(`Search: ${this.searchInput}`);
-      if (this.selectedCapShape) activeFilters.push(`Cap Shape: ${this.selectedCapShape}`);
-      if (this.stipeLen) activeFilters.push(`Stipe Length: ${this.stipeLen}`);
-      if (this.stipeDiam) activeFilters.push(`Stipe Diameter: ${this.stipeDiam}`);
-      if (this.capDiam) activeFilters.push(`Cap Diameter: ${this.capDiam}`);
-      if (this.capThick) activeFilters.push(`Cap Thickness: ${this.capThick}`);
+      if(this.selectedTag) activeFilters.push(`Tags: ${this.selectedTag}`);
+      if(this.searchInput) activeFilters.push(`Search: ${this.searchInput}`);
+      if(this.selectedCapShape) activeFilters.push(`Cap Shape: ${this.selectedCapShape}`);
+      if(this.selectedGillAttach) activeFilters.push(`Gill Attachment: ${this.selectedGillAttach}`);
+      if(this.stipeLen) activeFilters.push(`Stipe Length: ${this.stipeLen}`);
+      if(this.stipeDiam) activeFilters.push(`Stipe Diameter: ${this.stipeDiam}`);
+      if(this.capDiam) activeFilters.push(`Cap Diameter: ${this.capDiam}`);
+      if(this.capThick) activeFilters.push(`Cap Thickness: ${this.capThick}`);
+      if(this.selectedEcology) activeFilters.push(`Ecology: ${this.selectedEcology}`);
+      if(this.selectedStipe) activeFilters.push(`Stipe Type: ${this.selectedStipe}`);
 
       // Log active filters or "No Filters" if none are active
       console.log(activeFilters.length > 0 ? `Active Filters: ${activeFilters.join(' | ')}` : 'No Filters');
