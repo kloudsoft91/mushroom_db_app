@@ -41,11 +41,11 @@
     <!--Edibility Quick Filter-->
     <div class="tablet:bg-white desktop:bg-white rounded-lg w-11/12 desktop:w-3/4 desktop:p-2 absolute left-0 right-0 mx-auto mt-6 tablet:-mt-6 desktop:-mt-5 tablet:shadow-md desktop:shadow-md">
         <div class="flex flex-wrap gap-2 desktop:gap-0 tablet:gap-0 p-2 desktop:p-0 tablet:p-2 w-full">
-          <button class="button bg-blue-500" @click="toggleTag('edible')">Edible</button>
-          <button class="button bg-orange-500" @click="toggleTag('gourmet')">Gourmet</button>
-          <button class="button bg-red-500" @click="toggleTag('poisonous')">Poisonous</button>
-          <button class="button bg-purple-500" @click="toggleTag('psychoactive')">Psychoactive</button>
-          <button class="button bg-yellow-500" @click="toggleTag('lookalike')">Lookalike</button>
+          <button class="button bg-blue-500" @click="tagFilter('edible')">Edible</button>
+          <button class="button bg-orange-500" @click="tagFilter('gourmet')">Gourmet</button>
+          <button class="button bg-red-500" @click="tagFilter('poisonous')">Poisonous</button>
+          <button class="button bg-purple-500" @click="tagFilter('psychoactive')">Psychoactive</button>
+          <button class="button bg-yellow-500" @click="tagFilter('lookalike')">Lookalike</button>
         </div>
       </div>
   </div>
@@ -56,7 +56,7 @@ export default {
   data() {
     return {
       searchInput: '',
-      selectedTags: [],
+      selectedTag:'',
       stipeLen: '',
       stipeDiam: '',
       capDiam: '',
@@ -69,15 +69,11 @@ export default {
       //emit event to notify Index of input change
       this.$emit('search', this.searchInput);
     },
-    //populates the selectedTags[] and emits event on tag button click
-    toggleTag(tag) {
-      const index = this.selectedTags.indexOf(tag);
-      if (index === -1) {
-        this.selectedTags.push(tag);
-      } else {
-        this.selectedTags.splice(index, 1);
-      }
-      this.$emit('toggleTag', this.selectedTags);
+    //single tag method
+    tagFilter(selectedTag){
+      this.selectedTag = selectedTag;
+      //emit tag filter event
+      this.$emit('tagFilter', this.selectedTag)
     },
     sizeFilter() {
       // Log the size filter values

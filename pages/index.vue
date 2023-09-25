@@ -1,6 +1,6 @@
 <template>
   <HeaderBar />
-  <NavigationBar @search="handleSearch" @toggleTag="handleTags" @sizeFilter="handleSizeFilter"/>
+  <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter"/>
   <FooterBar />
   <div>
     <ul>
@@ -25,7 +25,7 @@ export default{
     return{
       mushrooms: [],
       filteredMushrooms: [],
-      selectedTags: [],
+      selectedTag: '',
       searchInput: '',
       selectedCapShape: '',
       selectedEcology: '',
@@ -60,15 +60,13 @@ export default{
       console.log('Results After Filtering:', results.length);
     },
 
-    //Filters results based on current selectedTags[]
+    //Filters results based on current selectedTag
     filterByTags(data) {
-    if (this.selectedTags.length === 0) {
-      return data;
-    }
-    return data.filter((mushroom) =>
-      this.selectedTags.every((tag) => mushroom.tags.includes(tag))
-    );
-
+      if(!this.selectedTag) {
+        return data;
+      }
+      return data.filter((mushroom) =>
+      mushroom.tags.includes(this.selectedTag));
     },
     //filters results by name based on search input (name)
     filterByName(data, searchInput) {
@@ -137,8 +135,12 @@ export default{
       this.applyAllFilters();
     },
     //receives tag button events
-    handleTags(selectedTags) {
-      this.selectedTags = selectedTags;
+    handleTags(selectedTag) {
+      if (this.selectedTag == selectedTag) {
+        this.selectedTag = "";
+      }else {
+        this.selectedTag = selectedTag;
+      }
       this.applyAllFilters();
     },
     //receives cap shape button events
@@ -180,7 +182,7 @@ export default{
       const activeFilters = [];
 
       // Add filters with values to the activeFilters array
-      if (this.selectedTags.length > 0) activeFilters.push(`Tags: ${this.selectedTags.join(', ')}`);
+      if (this.selectedTag) activeFilters.push(`Tags: ${this.selectedTag}`);
       if (this.searchInput) activeFilters.push(`Search: ${this.searchInput}`);
       if (this.selectedCapShape) activeFilters.push(`Cap Shape: ${this.selectedCapShape}`);
       if (this.stipeLen) activeFilters.push(`Stipe Length: ${this.stipeLen}`);
