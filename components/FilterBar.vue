@@ -48,7 +48,7 @@
             <p>Bare</p>
         </div>
         <div class="mush-slide">
-            <img class="cap-image" src="./images/Ring.png" alt="Ring Stipe">
+            <img class="cap-image" src="./images/ring.png" alt="Ring Stipe">
             <p>Ring</p>
         </div>
         <div class="mush-slide">
