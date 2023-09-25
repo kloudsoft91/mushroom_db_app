@@ -103,7 +103,7 @@ describe('Index', () => {
     expect(filteredMushrooms[0].latin_names).toBe('Amanita muscaria');
   })
 
-  xit('should display none if common and latin names provided dont match', () => {
+  it('should display none if unexpected character in name', () => {
     const mockMushrooms = [
       {
         id: 1,
@@ -117,7 +117,7 @@ describe('Index', () => {
       }
     ];
 
-    wrapper.vm.searchInput = ['Amanita', 'Shaggy'];
+    wrapper.vm.searchInput = 'Aman*ita';
 
     const filteredMushrooms = wrapper.vm.filterByName(mockMushrooms, wrapper.vm.searchInput);
 
@@ -275,6 +275,25 @@ describe('Index', () => {
     ];
 
     const filteredMushrooms = wrapper.vm.filterBySize(mockMushrooms, '9', 'cap_features.diameter_min', 'cap_features.diameter_max');
+
+    expect(filteredMushrooms).toHaveLength(0);
+  })
+
+  it('should display none if size has unexpected character', () => {
+    const mockMushrooms = [
+      {
+        id: 1, 
+        stipe_features: {diameter_min: '1', diameter_max: '3'}, 
+        cap_features: {diameter_min: '1', diameter_max: '2'} 
+      },
+      { 
+        id: 2, 
+        stipe_features: {diameter_min: '4', diameter_max: '5'}, 
+        cap_features: {diameter_min: '3', diameter_max: '4'} 
+      }
+    ];
+
+    const filteredMushrooms = wrapper.vm.filterBySize(mockMushrooms, '9*', 'cap_features.diameter_min', 'cap_features.diameter_max');
 
     expect(filteredMushrooms).toHaveLength(0);
   })
