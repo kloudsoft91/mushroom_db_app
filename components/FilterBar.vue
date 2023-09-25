@@ -39,7 +39,7 @@
       
     </template>
     <template #attachment>
-      <AttachmentCarousel />
+      <AttachmentCarousel @selectedGillAttach="emitGillAttach"/>
     </template>
     <template #stipe>
       <div class="flex justify-around">
@@ -105,6 +105,11 @@ export default {
       this.selectedCapShape = capShape;
       //emit event to parent component (BottomFrame.vue)
       this.$emit('selectedCapShape', capShape);
+    },
+    emitGillAttach(gillAttach){
+      this.selectedGillAttach = gillAttach;
+      //emit to parent component (BottomFrame)
+      this.$emit('selectedGillAttach', gillAttach);
     },
     emitEcology(ecology) {
       nextTick(() => {

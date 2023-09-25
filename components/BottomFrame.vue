@@ -34,7 +34,7 @@
       <vue-bottom-sheet ref="myBottomSheet" :can-swipe="false" overlay-color="#00000000" :max-width="9999999999999">
         <div class=" border-solid border-2">
             
-            <FilterBar @selectedCapShape="emitCapShape" @selectedEcology="emitEcology" @selectedStipe="emitStipe"/>    
+            <FilterBar @selectedCapShape="emitCapShape" @selectedGillAttach="emitGillAttach" @selectedEcology="emitEcology" @selectedStipe="emitStipe"/>    
         </div>
 
         
@@ -75,6 +75,12 @@
        this.selectedCapShape = capShape;
        //emit event to parent component (Index.vue)
        this.$emit('selectedCapShape', capShape);
+     },
+     emitGillAttach(gillAttach){ {
+      this.selectedGillAttach = gillAttach;
+      this.$emit('selectedGillAttach', gillAttach);
+     }
+
      },
      emitEcology(ecology) {
       this.selectedEcology = ecology;

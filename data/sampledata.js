@@ -155,7 +155,7 @@ export default [
     },
     "gills": {
       "colour": "Pale brown when young, becoming dark purple-brown",
-      "attachment": "no attachment, glebal hymenium"
+      "attachment": "none"
     },
     "spore_colour": "Purple-brown",
     "cap_features": {
@@ -199,7 +199,7 @@ export default [
     },
     "gills": {
       "colour": "White",
-      "attachment": "None, glebal hymenium"
+      "attachment": "none"
     },
     "spore_colour": "Brown",
     "cap_features": {
@@ -287,7 +287,7 @@ export default [
     },
     "gills": {
       "colour": "White pores that later turn grey",
-      "attachment": "Has pores instead of gills"
+      "attachment": "Has pores instead of gills (none)"
     },
     "spore_colour": "Brown",
     "cap_features": {
@@ -331,7 +331,7 @@ export default [
     },
     "gills": {
       "colour": "",
-      "attachment": "Has internal spores instead of gills"
+      "attachment": "Has internal spores instead of gills (none)"
     },
     "spore_colour": "Brown",
     "cap_features": {
@@ -375,7 +375,7 @@ export default [
     },
     "gills": {
       "colour": "White or cream",
-      "attachment": "hymenium"
+      "attachment": "decurrent"
     },
     "spore_colour": "White",
     "cap_features": {
@@ -463,7 +463,7 @@ export default [
     },
     "gills": {
       "colour": "initially pink, then red-brown and finally a dark brown",
-      "attachment": "hymenium"
+      "attachment": "free"
     },
     "spore_colour": "dark brown",
     "cap_features": {
@@ -507,7 +507,7 @@ export default [
     },
     "gills": {
       "colour": "Brown",
-      "attachment": "Hymenium"
+      "attachment": "adnate"
     },
     "spore_colour": "Black, brown",
     "cap_features": {
