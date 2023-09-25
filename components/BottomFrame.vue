@@ -29,7 +29,7 @@
 <template>
   <div>
   <!-- add class="bg-white" to the end of the button label to hide buttons for testing-->
-    <UButton label="Open" @click="open()" class="" />
+    <UButton label="Filters" @click="open()" class="" />
     <client-only>
       <vue-bottom-sheet ref="myBottomSheet" :can-swipe="false" overlay-color="#00000000" :max-width="9999999999999">
         <div class=" border-solid border-2">
