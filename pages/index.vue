@@ -1,7 +1,7 @@
 <template>
   <HeaderBar />
   <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter"/>
-  <FooterBar />
+  <FooterBar @openCarouselInputs="openCarouselInputs"/>
   <ResultCards :filteredMushrooms="filteredMushrooms"/>
   
 
@@ -9,14 +9,18 @@
   <SlideOver />
   <!--Bottomframe for small screens only-->
   <!--Should pop out when clicking the "Discover" button on footerbar-->
-  <BottomFrame @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe"/>
+  <BottomFrame ref="bottomFrame" @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe" @openCarouselInputs="openCarouselInputs"/>
 </template>
 
 <script>
 import mushroomData from '~/data/sampledata.js'
 import ResultCards from '~/components/ResultCards.vue';
+import BottomFrame from '~/components/BottomFrame.vue';
 
 export default{
+  components: {
+    BottomFrame,
+  },
   data(){
     return{
       mushrooms: [],
@@ -197,7 +201,10 @@ export default{
       this.capThick = filterData.capThick;
       this.applyAllFilters();
     },
-    //
+    //Open 
+    openCarouselInputs() {
+      this.$refs.bottomFrame.openCarouselInputs();
+    },
     //Helper function to log all currently selected Filters:
     logSelectedFilters() {
       const activeFilters = [];

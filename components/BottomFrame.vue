@@ -63,11 +63,16 @@
      const close = () => {
        myBottomSheet.value.close();
      };
+
+     const openCarouselInputs =() =>{
+      open();
+     };
  
      return {
        myBottomSheet,
        open,
        close,
+       openCarouselInputs,
      };
    },
    methods: {
