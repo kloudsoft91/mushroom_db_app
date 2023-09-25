@@ -1,4 +1,4 @@
-# mushroom_db_app
+# Mushroom DB App
 
 This project was the result of a Capstone Project run through Massey University. It is a webapp designed using NuxtJS to easily identify the different variety of mushrooms and fungi that grow in Aotearoa New Zealand.
 
