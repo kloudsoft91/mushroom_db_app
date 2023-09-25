@@ -6,7 +6,7 @@ This project was the result of a Capstone Project run through Massey University.
 ## Authors
 
 -
--
+- Adam Norman, ID: 19043864
 - Joel Yap, ID: 21007112
 - Emily Ferguson, ID: 21013503
 - Karan Nayak, ID: 21002217
