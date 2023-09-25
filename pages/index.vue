@@ -2,13 +2,9 @@
   <HeaderBar />
   <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter"/>
   <FooterBar />
-  <div>
-    <ul>
-        <li v-for="mushroom in filteredMushrooms" :key="mushroom.id">
-        <MushroomCard :mushroom="mushroom"/>
-        </li>
-    </ul>
-  </div>
+  <ResultCards :filteredMushrooms="filteredMushrooms"/>
+  
+
   <!--Slideover for big screens only-->
   <SlideOver />
   <!--Bottomframe for small screens only-->
@@ -18,7 +14,7 @@
 
 <script>
 import mushroomData from '~/data/sampledata.js'
-import MushroomCard from '~/components/MushroomCard.vue';
+import ResultCards from '~/components/ResultCards.vue';
 
 export default{
   data(){

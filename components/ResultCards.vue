@@ -1,12 +1,12 @@
 <template>
-    <div >
+    <div class="z-0 p-2">
       <!-- Card Grid -->
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-5 gap-5 w-11/12 desktop:w-3/4 mx-auto">
+      <div class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-3 desktop:grid-cols-3 ultra:grid-cols-4 gap-5 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto">
         <!-- Create card for each item in the data file -->
         <div
-          v-for="(mushroom, index) in mushroomData"
+          v-for="(mushroom, index) in filteredMushrooms"
           :key="index"
-          class="block max-w-[18rem] rounded-lg bg-gray-200 tablet:shadow-md desktop:shadow-md dark:bg-neutral-700 flex flex-col overflow-hidden"
+          class=" rounded-lg bg-gray-200 tablet:shadow-md desktop:shadow-md flex flex-col overflow-hidden"
         >
           <div class="relative overflow-hidden bg-cover bg-no-repeat">
             <img class="rounded-t-lg" src="~/assets/images/mushy.jpg" alt="this is a pic of a mushy" />
@@ -34,23 +34,18 @@
                 </tr>
             </tbody></table>
           </div>
-          <!-- Links for further details -->
+          <!-- Link to single mushroom-detail page -->
           <div class="p-4 ">
             <div class="flex justify-center space-x-4">
-              <a
-                type="button"
-                href="#"
-                class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal text-emerald-500 hover:text-emerald-800 focus:text-purple-600"
-              >
+              <NuxtLink to="/mushroom-detail" class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal bg-emerald-700 text-white rounded-full px-4 py-2 hover:bg-emerald-600 focus:bg-purple-600">
                 Details
-                <!-- ADD POP UP WINDOW FOR FURTHER DETAILS -->
-              </a>
+              </NuxtLink>
               <!-- Only shows Lookalike button if the mushroom has lookalikes -->
               <span v-if="mushroom.lookalikes">
                 <a
                   type="button"
-                  href="#"
-                  class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal text-emerald-500 hover:text-emerald-800 focus:text-purple-600"
+                  class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal bg-emerald-700 text-white rounded-full px-4 py-2 hover:bg-emerald-600 focus:bg-purple-600"
+                  @click="openPopup(mushroom)"
                 >
                   Lookalikes
                   <!-- ADD POP UP WINDOW OR SOMETHING FOR LOOKALIKE SHROOMS -->
@@ -61,12 +56,41 @@
         </div>
       </div>
     </div>
-
-  </template>
+    <LookalikesModal
+      v-if="showPopup"
+      :mushroom="selectedMushroom"
+      @close-popup="closePopup"
+    />
+</template>
   
+  <script>
+    import LookalikesModal from './LookalikesModal.vue';
 
-  <!-- THIS WILL NEED TO BE CHANGED - to filteredMushrooms once index.vue is complete -->
-  <script setup>
-    import mushroomData from '~/data/sampledata.js'
-  </script>
-  
+    export default {
+      props: {
+        filteredMushrooms: Object,
+      },
+      data() {
+        return {
+          // Add state variables for the popup
+          showPopup: false,
+          selectedMushroom: null,
+        };
+      },
+      methods: {
+        // open the popup and set the selected mushroom
+        openPopup(mushroom) {
+          this.selectedMushroom = mushroom;
+          this.showPopup = true;
+        },
+        // close the popup
+        closePopup() {
+          this.showPopup = false;
+          this.selectedMushroom = null;
+        },
+      },
+      components: {
+        LookalikesModal,
+      },
+    };
+</script>
