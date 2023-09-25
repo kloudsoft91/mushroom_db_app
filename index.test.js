@@ -35,7 +35,7 @@ describe('Index', () => {
       { id: 3, common_names: 'Mushroom 3', tags: ['edible'] },
     ];
 
-    wrapper.vm.selectedTags = [];
+    wrapper.vm.selectedTag = '';
     
     const filteredMushrooms = wrapper.vm.filterByTags(mockMushrooms);
     
