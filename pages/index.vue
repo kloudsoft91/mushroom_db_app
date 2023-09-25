@@ -56,8 +56,6 @@ export default{
       //assign results to filteredMushrooms array
       this.filteredMushrooms = results;
       //debug log 
-      //console.log("Selected tags: ", this.selectedTags);
-      //console.log("Search input: ", this.searchInput);
       this.logSelectedFilters();
       console.log('Results After Filtering:', results.length);
     },
@@ -100,20 +98,16 @@ export default{
     filterByEcology(data){
       //check if defined
       if (!this.selectedEcology) {
-        console.log("filterEcology null");
         return data;
       }
-      console.log("Filtering (Index) cap shape by: ", this.selectedEcology);
       return data.filter((mushroom) => 
       mushroom.ecology.includes(this.selectedEcology));
     },
     filterByStipe(data){
       //check if defined
       if (!this.selectedStipe) {
-        console.log("filterStipe null");
         return data;
       }
-      console.log("Filtering (Index) cap shape by: ", this.selectedStipe);
       return data.filter((mushroom) => 
       mushroom.stipe_features.type.includes(this.selectedStipe));
     },
@@ -193,6 +187,8 @@ export default{
       if (this.stipeDiam) activeFilters.push(`Stipe Diameter: ${this.stipeDiam}`);
       if (this.capDiam) activeFilters.push(`Cap Diameter: ${this.capDiam}`);
       if (this.capThick) activeFilters.push(`Cap Thickness: ${this.capThick}`);
+      if (this.selectedEcology) activeFilters.push(`Ecology: ${this.selectedEcology}`);
+      if (this.selectedStipe) activeFilters.push(`Stipe Type: ${this.selectedStipe}`);
 
       // Log active filters or "No Filters" if none are active
       console.log(activeFilters.length > 0 ? `Active Filters: ${activeFilters.join(' | ')}` : 'No Filters');

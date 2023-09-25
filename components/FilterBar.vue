@@ -65,6 +65,7 @@
 </template>
 
 <script>
+import { nextTick } from 'vue';
 export default {
   data() {
     return {
@@ -106,16 +107,18 @@ export default {
       this.$emit('selectedCapShape', capShape);
     },
     emitEcology(ecology) {
-      this.selectedEcology = ecology;
-      console.log("Event emitted from FilterBar: ", ecology);
-      //emit event to parent component (BottomFrame.vue)
-      this.$emit('selectedEcology', ecology);
+      nextTick(() => {
+        this.selectedEcology = ecology;
+        //emit event to parent component (BottomFrame.vue)
+        this.$emit('selectedEcology', ecology);
+      });  
     },
     emitStipe(stipe) {
-      this.selectedStipe = stipe;
-      console.log("Event emitted from FilterBar: ", stipe);
-      //emit event to parent component (BottomFrame.vue)
-      this.$emit('selectedStipe', stipe);
+      nextTick(() => {
+        this.selectedStipe = stipe;
+        //emit event to parent component (BottomFrame.vue)
+        this.$emit('selectedStipe', stipe);
+      });
     },
   }
 };

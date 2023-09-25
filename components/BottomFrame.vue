@@ -78,13 +78,11 @@
      },
      emitEcology(ecology) {
       this.selectedEcology = ecology;
-      console.log("Event emitted from FilterBar: ", ecology);
       //emit event to parent component (BottomFrame.vue)
       this.$emit('selectedEcology', ecology);
     },
     emitStipe(stipe) {
       this.selectedStipe = stipe;
-      console.log("Event emitted from FilterBar: ", stipe);
       //emit event to parent component (BottomFrame.vue)
       this.$emit('selectedStipe', stipe);
     },
