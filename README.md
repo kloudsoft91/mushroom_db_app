@@ -8,7 +8,7 @@ This project was the result of a Capstone Project run through Massey University.
 -
 -
 -
--
+- Emily Ferguson, ID: 21013503
 - Karan Nayak, ID: 21002217
 
 
