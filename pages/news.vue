@@ -3,7 +3,7 @@
     <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter"/>
     <FooterBar @openCarouselInputs="openCarouselInputs"/>
     <div>
-        <h1 class="text-emerald-700 text-3xl m-[50px]">Welcome to Mushroom Finder</h1>
+        <h1 class="text-emerald-700 text-3xl m-[50px]">News</h1>
     </div>
 </template>
 
