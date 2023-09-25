@@ -18,7 +18,7 @@ describe('Index', () => {
       { id: 3, common_names: 'Mushroom 3', tags: ['edible'] },
     ];
 
-    wrapper.vm.selectedTags = ['edible'];
+    wrapper.vm.selectedTag = 'edible';
     
     const filteredMushrooms = wrapper.vm.filterByTags(mockMushrooms);
     
@@ -27,29 +27,15 @@ describe('Index', () => {
     expect(filteredMushrooms[1].common_names).toBe('Mushroom 3');
   })
 
-  it('should filter based on multiple selected tags', () => {
-    const mockMushrooms = [
-      { id: 1, common_names: 'Mushroom 1', tags: ['edible', 'gourmet'] },
-      { id: 2, common_names: 'Mushroom 2', tags: ['poisonous'] },
-      { id: 3, common_names: 'Mushroom 3', tags: ['edible'] },
-    ];
-
-    wrapper.vm.selectedTags = ['edible', 'gourmet'];
-    
-    const filteredMushrooms = wrapper.vm.filterByTags(mockMushrooms);
-    
-    expect(filteredMushrooms).toHaveLength(1);
-    expect(filteredMushrooms[0].common_names).toBe('Mushroom 1');
-  })
-
-  it('should display all mushrooms when no tags are selected', () => {
+  
+  it('should display all mushrooms when no tag is selected', () => {
     const mockMushrooms = [
       { id: 1, common_names: 'Mushroom 1', tags: ['edible'] },
       { id: 2, common_names: 'Mushroom 2', tags: ['poisonous'] },
       { id: 3, common_names: 'Mushroom 3', tags: ['edible'] },
     ];
 
-    wrapper.vm.selectedTags = [];
+    wrapper.vm.selectedTag = '';
     
     const filteredMushrooms = wrapper.vm.filterByTags(mockMushrooms);
     
