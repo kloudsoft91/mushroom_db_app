@@ -212,7 +212,7 @@ export default [
       "shape": "ovate"
     },
     "environment": "Trees, Hard Beech, Black Beech",
-    "ecology":"N/A",
+    "ecology":"saprotrophic",
     "time_of_year": "(April to June)",
     "native_or_introduced": "native",
     "genus": "Cortinarius",
@@ -285,7 +285,7 @@ export default [
       "height_min": null,
       "height_max": null,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "No volva"
+      "type": "bare"
     },
     "gills": {
       "colour": "White pores that later turn grey",
@@ -302,6 +302,7 @@ export default [
       "shape": "Hemispherical to flat at the top"
     },
     "environment": "Under birch trees like Betula pendula",
+    "ecology": "mycorrhizal",
     "time_of_year": "late summer into autumn (February to June)",
     "native_or_introduced": "Introduced",
     "genus": "Leccinum",
@@ -330,7 +331,7 @@ export default [
       "height_min": 3,
       "height_max": 10,
       "bruising_colour": "No significant bruising",
-      "volva_ring": "No volva"
+      "type": "bare"
     },
     "gills": {
       "colour": "",
@@ -347,6 +348,7 @@ export default [
       "shape": "Round body on a stalk"
     },
     "environment": "Dead wood, woods, grassy areas, and along roads",
+    "ecology": "saprotrophic",
     "time_of_year": "Autumn (March to May)",
     "native_or_introduced": "Introduced",
     "genus": "Lycoperdon",
@@ -375,7 +377,7 @@ export default [
       "height_min": null,
       "height_max": null,
       "bruising_colour": "No bruising",
-      "volva_ring": "No volva"
+      "type": "bare"
     },
     "gills": {
       "colour": "White or cream",
@@ -392,6 +394,7 @@ export default [
       "shape": "fan or oyster shaped"
     },
     "environment": "Dead or dying trees, forests",
+    "ecology": "saprotrophic",
     "time_of_year": "Spring, autumn (April to July)",
     "native_or_introduced": "Introduced",
     "genus": "Pleurotus",
@@ -420,7 +423,7 @@ export default [
       "height_min": null,
       "height_max": null,
       "bruising_colour": "None",
-      "volva_ring": "None"
+      "type": "none"
     },
     "gills": {
       "colour": "None",
@@ -437,6 +440,7 @@ export default [
       "shape": "Bundle of branches"
     },
     "environment": "Dead, decaying wood",
+    "ecology": "saprotrophic",
     "time_of_year": "(March to July)",
     "native_or_introduced": "Native",
     "genus": "Hericium",
@@ -465,7 +469,7 @@ export default [
       "height_min": 3,
       "height_max": 10,
       "bruising_colour": "dingy reddish brown",
-      "volva_ring": "None"
+      "type": "bare"
     },
     "gills": {
       "colour": "initially pink, then red-brown and finally a dark brown",
@@ -482,6 +486,7 @@ export default [
       "shape": "convex"
     },
     "environment": "fields, grassy areas, lawns",
+    "ecology": "mycorrhizal",
     "time_of_year": "(March to May)",
     "native_or_introduced": "Introduced",
     "genus": "Agaricus",
@@ -510,7 +515,7 @@ export default [
       "height_min": null,
       "height_max": null,
       "bruising_colour": "None",
-      "volva_ring": "None"
+      "type": "ring"
     },
     "gills": {
       "colour": "Brown",
@@ -527,6 +532,7 @@ export default [
       "shape": "convex"
     },
     "environment": "Living or dead trees",
+    "ecology": "parasitic",
     "time_of_year": "(November to June)",
     "native_or_introduced": "Native",
     "genus": "Cyclocybe",

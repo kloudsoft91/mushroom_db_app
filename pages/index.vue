@@ -13,7 +13,7 @@
   <SlideOver />
   <!--Bottomframe for small screens only-->
   <!--Should pop out when clicking the "Discover" button on footerbar-->
-  <BottomFrame @selectedCapShape="handleCapShape"/>
+  <BottomFrame @selectedCapShape="handleCapShape" @selectedEcology="handleEcology" @selectedStipe="handleStipe"/>
 </template>
 
 <script>
@@ -28,6 +28,8 @@ export default{
       selectedTags: [],
       searchInput: '',
       selectedCapShape: '',
+      selectedEcology: '',
+      selectedStipe: '',
       stipeLen: '',
       stipeDiam: '',
       capDiam: '',
@@ -43,7 +45,9 @@ export default{
       //pull results from each filter function
       results = this.filterByTags(results);
       results = this.filterByName(results, this.searchInput);
-      results = this.filterByCapShape(results)
+      results = this.filterByCapShape(results);
+      results = this.filterByEcology(results);
+      results = this.filterByStipe(results);
       //Size Filter Calls:
       results = this.filterBySize(results, this.stipeLen, 'stipe_features.length_min', 'stipe_features.length_max');
       results = this.filterBySize(results, this.stipeDiam, 'stipe_features.diameter_min', 'stipe_features.diameter_max');
@@ -93,6 +97,26 @@ export default{
       return data.filter((mushroom) => 
       mushroom.cap_features.shape.includes(this.selectedCapShape));
     },
+    filterByEcology(data){
+      //check if defined
+      if (!this.selectedEcology) {
+        console.log("filterEcology null");
+        return data;
+      }
+      console.log("Filtering (Index) cap shape by: ", this.selectedEcology);
+      return data.filter((mushroom) => 
+      mushroom.ecology.includes(this.selectedEcology));
+    },
+    filterByStipe(data){
+      //check if defined
+      if (!this.selectedStipe) {
+        console.log("filterStipe null");
+        return data;
+      }
+      console.log("Filtering (Index) cap shape by: ", this.selectedStipe);
+      return data.filter((mushroom) => 
+      mushroom.stipe_features.type.includes(this.selectedStipe));
+    },
 
     //Generic range filter: applied to all int range inputs (diam/len/height/thickness)
     filterBySize(data, value, propertyMin, propertyMax){
@@ -125,10 +149,26 @@ export default{
     },
     //receives cap shape button events
     handleCapShape(selectedCapShape) {
-      if(this.selectedCapShape === selectedCapShape){
+      if (this.selectedCapShape == selectedCapShape) {
         this.selectedCapShape = "";
-      } else{
+      } else {
         this.selectedCapShape = selectedCapShape;
+      }
+      this.applyAllFilters();
+    },
+    handleEcology(selectedEcology) {
+      if (this.selectedEcology == selectedEcology) {
+        this.selectedEcology = "";
+      } else {
+        this.selectedEcology = selectedEcology;
+      }
+      this.applyAllFilters();
+    },
+    handleStipe(selectedStipe) {
+      if (this.selectedStipe == selectedStipe) {
+        this.selectedStipe = "";
+      } else {
+        this.selectedStipe = selectedStipe;
       }
       this.applyAllFilters();
     },
