@@ -525,5 +525,135 @@ export default [
     "native_or_introduced": "Native",
     "genus": "Cyclocybe",
     "photos": []
-  }
+  },
+  {
+    "id":13,
+    "tags":[],
+    "latin_names": "Macrolepiota Clelandii",
+    "common_names": "Slender Parasol, Graceful Parason",
+    "description": "Macrolepiota clelandii, commonly known as the slender parasol or graceful parasol, is a species of mushroom-forming fungus in the family Agaricaceae. The species is found in Australia and New Zealand, where it fruits singly or in small groups on the ground in eucalypt woodlands, parks, and roadsides. It is a tall mushroom up to roughly 20 cm (8 in), with a broad cap covered with distinctive rings of dark brown scales. The whitish gills on the cap underside are closely spaced and free from attachment to the slender stipe, which has a loose ring on its upper half, and a bulbous base. The edibility of the mushroom is not known with certainty, but closely related parasol mushrooms are edible and some are very sought after.",
+    "lookalikes": "Macrolepiota Konradii, Chlorophyllum Molybdites / False Parasol",
+    "links": {
+      "iNaturalist": "https://www.inaturalist.org/taxa/354649-Macrolepiota-clelandii",
+      "wikipedia": "https://en.wikipedia.org/wiki/Macrolepiota_clelandii"
+    },
+    "nz_books": "https://biotanz.landcareresearch.co.nz/references/f20c64a6-c0f2-4186-a229-6e1a26ed2",
+    "edibility": "Unknown",
+    "stipe_features": {
+      "diameter_min": null,
+      "diameter_max": null,
+      "colour": ["Pale Brown"],
+      "length_min": 0, //unknown (Made 0 so filter will work 0-18)
+      "length_max": 18,
+      "bruising_colour": "Unknown",
+      "type": "ring"
+    },
+    "gills": {
+      "colour": "White",
+      "attachment": "free"
+    },
+    "spore_colour": "White",
+    "cap_features": {
+      "colour": ["Dark Brown"],
+      "texture": "Scaly",
+      "diameter_min": 0, //unknown
+      "diameter_max": 12.5,
+      "thickness_min": null,
+      "thickness_max": null,
+      "shape": "convex, flat (in maturity)"
+    },
+    "environment": "Found in mixed Mānuka, Kānuka, Kauri forest, conifer plantations",
+    "ecology": "unknown",
+    "time_of_year": "(February - August)",
+    "native_or_introduced": "Native",
+    "genus": "Macrolepiota",
+    "photos": []
+  },
+  {
+    "id":14,
+    "tags":["poisonous"],
+    "latin_names": "Amanita Phalloides",
+    "common_names": "Death Cap",
+    "description": "A. phalloides is one of the most poisonous of all known mushrooms. It is estimated that as little as half a mushroom contains enough toxin to kill an adult human. It has been involved in the majority of human deaths from mushroom poisonin. Young specimens first emerge from the ground resembling a white egg covered by a universal veil, which then breaks, leaving the volva as a remnant.",
+    "lookalikes": "None in NZ?",
+    "links": {
+      "iNaturalist": "https://www.inaturalist.org/taxa/52135-Amanita-phalloides",
+      "wikipedia": "https://en.wikipedia.org/wiki/Amanita_phalloides"
+    },
+    "nz_books": "N/A",
+    "edibility": "Deadly",
+    "stipe_features": {
+      "diameter_min": 1,
+      "diameter_max": 2,
+      "colour": ["White", "Gray", "Olive"],
+      "length_min": 8, 
+      "length_max": 15,
+      "bruising_colour": "Unknown",
+      "type": "ring, volva"
+    },
+    "gills": {
+      "colour": "White",
+      "attachment": "free"
+    },
+    "spore_colour": "White",
+    "cap_features": {
+      "colour": ["Pale Green", "Yellow-Green", "Olive-Green", "Bronze", "White"],
+      "texture": "Sticky",
+      "diameter_min": 5,
+      "diameter_max": 15,
+      "thickness_min": .6,
+      "thickness_max": .8,
+      "shape": "convex, flat"
+    },
+    "environment": "Oak and Chestnut trees",
+    "ecology": "mycorrhiza",
+    "time_of_year": "(February - August)",
+    "native_or_introduced": "introduced",
+    "genus": "Amanita",
+    "photos": []
+  },
+  {
+    "id":15,
+    "tags":["edible"],
+    "latin_names": "Armillaria novae-zelandiae",
+    "common_names": "Austral Honey Mushroom, Harore",
+    "description": "This plant pathogen species is one of three Armillaria species that have been identified in New Zealand (the others are A. limonea and A. hinnulea).. Have a wide host range and can cause disease on a variety of tree species throughout New Zealand; particularly in plantations, home gardens, and parks. Armillaria novae-zelandiae occurs in indigenous forests as a decay fungus of dead trees, stumps, and logs. It causes butt rots in living trees as well",
+    "lookalikes": "None in NZ?",
+    "links": {
+      "iNaturalist": "https://www.inaturalist.org/taxa/55930-Armillaria",
+      "wikipedia": "https://en.wikipedia.org/wiki/Armillaria"
+    },
+    "nz_books": "Field Guide to Fungi - Greta Stevenson, A Field guide to the native edible plants of new zealand - andrew crowe",
+    "edibility": "edible",
+    "stipe_features": {
+      "diameter_min": 0.4,
+      "diameter_max": 0.8,
+      "colour": ["Cream", "Brown", "Purple"],
+      "length_min": 4, 
+      "length_max": 7,
+      "bruising_colour": "Unknown",
+      "type": "ring"
+    },
+    "gills": {
+      "colour": "White",
+      "attachment": "adnate, becomes decurrent"
+    },
+    "spore_colour": "White",
+    "cap_features": {
+      "colour": ["Olive", "Brown"],
+      "texture": "Scaly, Moist, Slimy",
+      "diameter_min": null,
+      "diameter_max": null,
+      "thickness_min": null,
+      "thickness_max": null,
+      "shape": "convex, flat"
+    },
+    "environment": "Dead broad-leaved trees or on their fallen timber",
+    "ecology": "saprotrophic & mycorrhizal", //both stated
+    "time_of_year": "(March - August)",
+    "native_or_introduced": "native",
+    "genus": "Armillaria",
+    "photos": []
+  },
+
 ]
