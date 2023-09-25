@@ -282,8 +282,6 @@ export default [
       "colour": ["White"],
       "length_min": 5,
       "length_max": 15,
-      "height_min": null,
-      "height_max": null,
       "bruising_colour": "No significant bruising",
       "type": "bare"
     },
@@ -326,10 +324,8 @@ export default [
       "diameter_min": null,
       "diameter_max": null,
       "colour": ["White", "Brown"],
-      "length_min": null,
-      "length_max": null,
-      "height_min": 3,
-      "height_max": 10,
+      "length_min": 3,
+      "length_max": 10,
       "bruising_colour": "No significant bruising",
       "type": "bare"
     },
@@ -374,8 +370,6 @@ export default [
       "colour": [""],
       "length_min": null,
       "length_max": null,
-      "height_min": null,
-      "height_max": null,
       "bruising_colour": "No bruising",
       "type": "bare"
     },
@@ -420,8 +414,6 @@ export default [
       "colour": [""],
       "length_min": null,
       "length_max": null,
-      "height_min": null,
-      "height_max": null,
       "bruising_colour": "None",
       "type": "none"
     },
@@ -464,10 +456,8 @@ export default [
       "diameter_min": 1,
       "diameter_max": 2,
       "colour": ["White"],
-      "length_min": null,
-      "length_max": null,
-      "height_min": 3,
-      "height_max": 10,
+      "length_min": 3,
+      "length_max": 10,
       "bruising_colour": "dingy reddish brown",
       "type": "bare"
     },
@@ -512,8 +502,6 @@ export default [
       "colour": ["White", "Brown"],
       "length_min": null,
       "length_max": null,
-      "height_min": null,
-      "height_max": null,
       "bruising_colour": "None",
       "type": "ring"
     },
