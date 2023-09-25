@@ -19,15 +19,15 @@
     </template>
     <template #ecology>
       <div class="flex items-center justify-around">
-        <div class="mush-slide tablet:pl-8">
+        <div @click="emitEcology('mycorrhizal')" class="mush-slide tablet:pl-8">
             <img class="cap-image" src="./images/mycorrhizal.png" alt="mycorrhizal">
             <p>Mycorrhizal</p>
         </div>
-        <div class="mush-slide">
+        <div @click="emitEcology('saprotrophic')" class="mush-slide">
             <img class="cap-image" src="./images/saprotrophic.png" alt="saprotrophic">
             <p>Saprotrophic</p>
         </div>
-        <div class="mush-slide tablet:pr-10">
+        <div @click="emitEcology('parasitic')" class="mush-slide tablet:pr-10">
             <img class="cap-image" src="./images/parasitic.png" alt="parasitic" >
             <p>Parasitic</p>
         </div>
@@ -39,23 +39,23 @@
       
     </template>
     <template #attachment>
-      <AttachmentCarousel />
+      <AttachmentCarousel @selectedGillAttach="emitGillAttach"/>
     </template>
     <template #stipe>
       <div class="flex justify-around">
-        <div class="mush-slide">
+        <div @click="emitStipe('bare')" class="mush-slide">
             <img class="cap-image" src="./images/bare.png" alt="Bare Stipe">
             <p>Bare</p>
         </div>
-        <div class="mush-slide">
+        <div @click="emitStipe('ring')" class="mush-slide">
             <img class="cap-image" src="./images/Ring.png" alt="Ring Stipe">
             <p>Ring</p>
         </div>
-        <div class="mush-slide">
+        <div @click="emitStipe('volva')" class="mush-slide">
             <img class="cap-image" src="./images/volva.png" alt="Volva Stipe" >
             <p>Volva</p>
         </div>
-        <div class="mush-slide">
+        <div @click="emitStipe('volva ring')" class="mush-slide">
             <img class="cap-image" src="./images/volvaring.png" alt="Volva & Ring Stipe" >
             <p>Both</p>
         </div>
@@ -65,9 +65,12 @@
 </template>
 
 <script>
+import { nextTick } from 'vue';
 export default {
   data() {
     return {
+      selectedEcology: '',
+      selectedStipe: '',
       items: [
         {
           label: 'Ecology',
@@ -100,9 +103,27 @@ export default {
     //emits cap shape on button click
     emitCapShape(capShape) {
       this.selectedCapShape = capShape;
-      console.log("Event emitted from FilterBar: ", capShape);
       //emit event to parent component (BottomFrame.vue)
       this.$emit('selectedCapShape', capShape);
+    },
+    emitGillAttach(gillAttach){
+      this.selectedGillAttach = gillAttach;
+      //emit to parent component (BottomFrame)
+      this.$emit('selectedGillAttach', gillAttach);
+    },
+    emitEcology(ecology) {
+      nextTick(() => {
+        this.selectedEcology = ecology;
+        //emit event to parent component (BottomFrame.vue)
+        this.$emit('selectedEcology', ecology);
+      });  
+    },
+    emitStipe(stipe) {
+      nextTick(() => {
+        this.selectedStipe = stipe;
+        //emit event to parent component (BottomFrame.vue)
+        this.$emit('selectedStipe', stipe);
+      });
     },
   }
 };

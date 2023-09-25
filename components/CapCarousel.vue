@@ -96,7 +96,6 @@
         emitCapShape(capShape) {
             nextTick(() => {
                 this.selectedCapShape = capShape;
-                console.log("Event emitted from CapCarousel: ", capShape);
                 //emit event to parent component (FilterBar.vue)
                 this.$emit('selectedCapShape', capShape);
             });
