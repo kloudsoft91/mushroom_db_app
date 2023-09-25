@@ -11,7 +11,7 @@ describe('Index', () => {
 
   });
   
-  it('should filter based on selected tags', () => {
+  it('should filter based on one selected tag', () => {
     const mockMushrooms = [
       { id: 1, common_names: 'Mushroom 1', tags: ['edible'] },
       { id: 2, common_names: 'Mushroom 2', tags: ['poisonous'] },
@@ -20,13 +20,26 @@ describe('Index', () => {
 
     wrapper.vm.selectedTags = ['edible'];
     
-    // Trigger filterByTags method
     const filteredMushrooms = wrapper.vm.filterByTags(mockMushrooms);
     
-    // Check if filtered mushrooms match the selected tag
     expect(filteredMushrooms).toHaveLength(2);
     expect(filteredMushrooms[0].common_names).toBe('Mushroom 1');
     expect(filteredMushrooms[1].common_names).toBe('Mushroom 3');
+  })
+
+  it('should filter based on multiple selected tags', () => {
+    const mockMushrooms = [
+      { id: 1, common_names: 'Mushroom 1', tags: ['edible', 'gourmet'] },
+      { id: 2, common_names: 'Mushroom 2', tags: ['poisonous'] },
+      { id: 3, common_names: 'Mushroom 3', tags: ['edible'] },
+    ];
+
+    wrapper.vm.selectedTags = ['edible', 'gourmet'];
+    
+    const filteredMushrooms = wrapper.vm.filterByTags(mockMushrooms);
+    
+    expect(filteredMushrooms).toHaveLength(1);
+    expect(filteredMushrooms[0].common_names).toBe('Mushroom 1');
   })
 
   it('should display all mushrooms when no tags are selected', () => {
@@ -36,13 +49,10 @@ describe('Index', () => {
       { id: 3, common_names: 'Mushroom 3', tags: ['edible'] },
     ];
 
-    // Select a tag
     wrapper.vm.selectedTags = [];
     
-    // Trigger filterByTags method
     const filteredMushrooms = wrapper.vm.filterByTags(mockMushrooms);
     
-    // Check if filtered mushrooms match the selected tag
     expect(filteredMushrooms).toHaveLength(3);
     expect(filteredMushrooms[0].common_names).toBe('Mushroom 1');
     expect(filteredMushrooms[1].common_names).toBe('Mushroom 2');
@@ -63,13 +73,10 @@ describe('Index', () => {
       }
     ];
 
-    // Set search inputs
     wrapper.vm.searchInput = "shaggy";
 
-    // Trigger filterByName method
     const filteredMushrooms = wrapper.vm.filterByName(mockMushrooms, wrapper.vm.searchInput);
 
-    // Check if mushrooms are filtered based on name provided
     expect(filteredMushrooms).toHaveLength(1);
     expect(filteredMushrooms[0].common_names).toBe('Shaggy Mane');
   })
@@ -88,15 +95,33 @@ describe('Index', () => {
       }
     ];
 
-    // Set search inputs
     wrapper.vm.searchInput = 'Amanita';
 
-    // Trigger filterByName method
     const filteredMushrooms = wrapper.vm.filterByName(mockMushrooms, wrapper.vm.searchInput);
 
-    // Check if mushrooms are filtered based on latin name
     expect(filteredMushrooms).toHaveLength(1);
     expect(filteredMushrooms[0].latin_names).toBe('Amanita muscaria');
+  })
+
+  xit('should display none if common and latin names provided dont match', () => {
+    const mockMushrooms = [
+      {
+        id: 1,
+        common_names: 'Shaggy Mane',
+        latin_names: 'Coprinus comatus',
+      },
+      {
+        id: 2,
+        common_names: 'Fly Agaric',
+        latin_names: 'Amanita muscaria',
+      }
+    ];
+
+    wrapper.vm.searchInput = ['Amanita', 'Shaggy'];
+
+    const filteredMushrooms = wrapper.vm.filterByName(mockMushrooms, wrapper.vm.searchInput);
+
+    expect(filteredMushrooms).toHaveLength(0);
   })
 
   it('should display all when no name is provided', () => {
@@ -114,13 +139,10 @@ describe('Index', () => {
       }
     ];
 
-    // Set search inputs
     wrapper.vm.searchInput = "";
 
-    // Trigger filterByName method
     const filteredMushrooms = wrapper.vm.filterByName(mockMushrooms, wrapper.vm.searchInput);
 
-    // Check all mushrooms are displayed
     expect(filteredMushrooms).toHaveLength(2);
     expect(filteredMushrooms[0].id).toBe(1);
     expect(filteredMushrooms[1].id).toBe(2);
@@ -171,10 +193,8 @@ describe('Index', () => {
       }
     ];
 
-    // Trigger filterByRange method
     const filteredMushrooms = wrapper.vm.filterBySize(mockMushrooms);
 
-    // Check all mushrooms are displayed
     expect(filteredMushrooms).toHaveLength(2);
     expect(filteredMushrooms[0].id).toBe(1);
     expect(filteredMushrooms[1].id).toBe(2);
@@ -194,15 +214,14 @@ describe('Index', () => {
       }
     ];
 
-    // Trigger filterByRange method
+
     const filteredMushrooms = wrapper.vm.filterBySize(mockMushrooms, '5', 'stipe_features.diameter_min', 'stipe_features.diameter_max');
 
-    // Check mushrooms are filtered based on given range
     expect(filteredMushrooms).toHaveLength(1);
     expect(filteredMushrooms[0].id).toBe(2);
   })
 
-  it('should display none found within stipe size', () => {
+  it('should display none found with stipe size', () => {
     const mockMushrooms = [
       {
         id: 1, 
@@ -216,7 +235,6 @@ describe('Index', () => {
       }
     ];
 
-    // Trigger filterByRange method
     const filteredMushrooms = wrapper.vm.filterBySize(mockMushrooms, '9', 'stipe_features.diameter_min', 'stipe_features.diameter_max');
 
     expect(filteredMushrooms).toHaveLength(0);
@@ -236,7 +254,6 @@ describe('Index', () => {
       }
     ];
 
-    // Trigger filterByRange method
     const filteredMushrooms = wrapper.vm.filterBySize(mockMushrooms, '3', 'cap_features.diameter_min', 'cap_features.diameter_max');
 
     expect(filteredMushrooms).toHaveLength(1);
@@ -257,7 +274,6 @@ describe('Index', () => {
       }
     ];
 
-    // Trigger filterByRange method
     const filteredMushrooms = wrapper.vm.filterBySize(mockMushrooms, '9', 'cap_features.diameter_min', 'cap_features.diameter_max');
 
     expect(filteredMushrooms).toHaveLength(0);
