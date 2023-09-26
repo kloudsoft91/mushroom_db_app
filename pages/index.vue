@@ -35,6 +35,7 @@ export default{
       stipeDiam: '',
       capDiam: '',
       capThick: '',
+      openCar: '',
     };
   },
 
@@ -203,7 +204,15 @@ export default{
     },
     //Open 
     openCarouselInputs() {
-      this.$refs.bottomFrame.openCarouselInputs();
+      if (this.openCar == 'open') {
+        this.$refs.bottomFrame.closeCarouselInputs();
+        this.openCar = '';
+        console.log('close');
+      } else {
+        this.$refs.bottomFrame.openCarouselInputs();
+        this.openCar = 'open';
+        console.log('open');
+      }
     },
     //Helper function to log all currently selected Filters:
     logSelectedFilters() {
