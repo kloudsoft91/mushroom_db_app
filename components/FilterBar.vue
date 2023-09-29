@@ -17,6 +17,86 @@
         </template>
       </UButton>
     </template>
+    <template #time>
+      <div class="flex items-center justify-around">
+        <div @click="emitEcology('mycorrhizal')" class="mush-slide tablet:pl-8">
+            <img class="cap-image" src="./images/mycorrhizal.png" alt="mycorrhizal">
+            <p>Mycorrhizal</p>
+        </div>
+        <div @click="emitEcology('saprotrophic')" class="mush-slide">
+            <img class="cap-image" src="./images/saprotrophic.png" alt="saprotrophic">
+            <p>Saprotrophic</p>
+        </div>
+        <div @click="emitEcology('parasitic')" class="mush-slide tablet:pr-10">
+            <img class="cap-image" src="./images/parasitic.png" alt="parasitic" >
+            <p>Parasitic</p>
+        </div>
+      </div>
+    </template>
+    <template #environment>
+      <div class="flex items-center justify-around">
+        <div @click="emitEcology('mycorrhizal')" class="mush-slide tablet:pl-8">
+            <img class="cap-image" src="./images/mycorrhizal.png" alt="mycorrhizal">
+            <p>Mycorrhizal</p>
+        </div>
+        <div @click="emitEcology('saprotrophic')" class="mush-slide">
+            <img class="cap-image" src="./images/saprotrophic.png" alt="saprotrophic">
+            <p>Saprotrophic</p>
+        </div>
+        <div @click="emitEcology('parasitic')" class="mush-slide tablet:pr-10">
+            <img class="cap-image" src="./images/parasitic.png" alt="parasitic" >
+            <p>Parasitic</p>
+        </div>
+      </div>
+    </template>
+    <template #size>
+      <div class="flex items-center justify-around">
+        <div @click="emitEcology('mycorrhizal')" class="mush-slide tablet:pl-8">
+            <img class="cap-image" src="./images/mycorrhizal.png" alt="mycorrhizal">
+            <p>Mycorrhizal</p>
+        </div>
+        <div @click="emitEcology('saprotrophic')" class="mush-slide">
+            <img class="cap-image" src="./images/saprotrophic.png" alt="saprotrophic">
+            <p>Saprotrophic</p>
+        </div>
+        <div @click="emitEcology('parasitic')" class="mush-slide tablet:pr-10">
+            <img class="cap-image" src="./images/parasitic.png" alt="parasitic" >
+            <p>Parasitic</p>
+        </div>
+      </div>
+    </template>
+    <template #colour>
+      <div class="flex items-center justify-around">
+        <div @click="emitEcology('mycorrhizal')" class="mush-slide tablet:pl-8">
+            <img class="cap-image" src="./images/mycorrhizal.png" alt="mycorrhizal">
+            <p>Mycorrhizal</p>
+        </div>
+        <div @click="emitEcology('saprotrophic')" class="mush-slide">
+            <img class="cap-image" src="./images/saprotrophic.png" alt="saprotrophic">
+            <p>Saprotrophic</p>
+        </div>
+        <div @click="emitEcology('parasitic')" class="mush-slide tablet:pr-10">
+            <img class="cap-image" src="./images/parasitic.png" alt="parasitic" >
+            <p>Parasitic</p>
+        </div>
+      </div>
+    </template>
+    <template #hymenium>
+      <div class="flex items-center justify-around">
+        <div @click="emitEcology('mycorrhizal')" class="mush-slide tablet:pl-8">
+            <img class="cap-image" src="./images/mycorrhizal.png" alt="mycorrhizal">
+            <p>Mycorrhizal</p>
+        </div>
+        <div @click="emitEcology('saprotrophic')" class="mush-slide">
+            <img class="cap-image" src="./images/saprotrophic.png" alt="saprotrophic">
+            <p>Saprotrophic</p>
+        </div>
+        <div @click="emitEcology('parasitic')" class="mush-slide tablet:pr-10">
+            <img class="cap-image" src="./images/parasitic.png" alt="parasitic" >
+            <p>Parasitic</p>
+        </div>
+      </div>
+    </template>
     <template #ecology>
       <div class="flex items-center justify-around">
         <div @click="emitEcology('mycorrhizal')" class="mush-slide tablet:pl-8">
@@ -72,6 +152,36 @@ export default {
       selectedEcology: '',
       selectedStipe: '',
       items: [
+      {
+          label: 'Time of Year',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'time'
+        },
+      {
+          label: 'Environment',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'environment'
+        },
+      {
+          label: 'Size',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'size'
+        },
+        {
+          label: 'Colour',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'colour'
+        },
+        {
+          label: 'Hymenium',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'hymenium'
+        },
         {
           label: 'Ecology',
           defaultOpen: true,
