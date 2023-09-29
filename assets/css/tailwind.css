@@ -7,6 +7,9 @@
         @apply flex-1 text-white text-sm rounded-lg px-2 py-1;
     }
     
+    .filter-bar-option {
+        @apply flex items-center justify-between bg-emerald-700 hover:bg-emerald-500 text-xl font-semibold border-b-2 border-white text-white p-2;
+    }
     .tag-button {
         @apply flex-grow tablet:flex-nowrap bg-emerald-500 hover:bg-emerald-700 text-white text-base font-semibold rounded-lg tablet:rounded-none px-2 py-1 min-w-[90px] tablet:min-w-[60px];
     }

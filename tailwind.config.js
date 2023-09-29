@@ -5,7 +5,7 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
-    
+    "./node_modules/flowbite/**/*.js"
   ],
   theme: {
     screens: {
@@ -24,7 +24,7 @@ module.exports = {
     extend: {},
   },
   plugins: [
-    
+    require('flowbite/plugin')
   ]
   
 }

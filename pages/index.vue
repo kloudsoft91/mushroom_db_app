@@ -3,6 +3,9 @@
   <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter"/>
   <FooterBar @openCarouselInputs="openCarouselInputs"/>
   <ResultCards :filteredMushrooms="filteredMushrooms"/>
+  <FilterModal />
+  <TimeModal />
+  <EcologyModal />
   
 
   <!--Slideover for big screens only-->
