@@ -61,6 +61,31 @@
         </div>
       </div>
     </template>
+    <template #colour>
+      <div class="flex items-center justify-around">
+        <input v-model="selectedColour" @input="emitColour(selectedColour)" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Colour" />
+      </div>
+    </template>
+    <template #season>
+      <div class="flex items-center justify-around">
+        <div @click="emitSeason('spring')" class="mush-slide tablet:pl-8">
+            <img class="cap-image" src="" alt="spring">
+            <p>Spring</p>
+        </div>
+        <div @click="emitSeason('summer')" class="mush-slide">
+            <img class="cap-image" src="" alt="summer">
+            <p>Summer</p>
+        </div>
+        <div @click="emitSeason('autumn')" class="mush-slide tablet:pr-10">
+            <img class="cap-image" src="" alt="autumn" >
+            <p>Autumn</p>
+        </div>
+        <div @click="emitSeason('winter')" class="mush-slide tablet:pr-10">
+            <img class="cap-image" src="" alt="winter" >
+            <p>Winter</p>
+        </div>
+      </div>
+    </template>
   </UAccordion>
 </template>
 
@@ -71,6 +96,8 @@ export default {
     return {
       selectedEcology: '',
       selectedStipe: '',
+      selectedColour: '',
+      selectedSeason: '',
       items: [
         {
           label: 'Ecology',
@@ -95,7 +122,19 @@ export default {
           defaultOpen: true,
           multiple: true,
           slot: 'stipe',
-        }
+        },
+        {
+          label: 'Season',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'season'
+        },
+        {
+          label: 'Colour',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'colour'
+        },
       ],
     };
   },
@@ -123,6 +162,21 @@ export default {
         this.selectedStipe = stipe;
         //emit event to parent component (BottomFrame.vue)
         this.$emit('selectedStipe', stipe);
+      });
+    },
+    emitSeason(season) {
+      nextTick(() => {
+        this.selectedSeason = season;
+        //emit event to parent component (BottomFrame.vue)
+        this.$emit('selectedSeason', season);
+      });
+    },
+    emitColour(selectedColour) {
+      nextTick(() => {
+        console.log(selectedColour);
+        this.selectedColour = selectedColour;
+        //emit event to parent component (BottomFrame.vue)
+        this.$emit('selectedColour', selectedColour);
       });
     },
   }

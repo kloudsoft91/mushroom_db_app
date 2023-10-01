@@ -9,7 +9,7 @@
   <SlideOver />
   <!--Bottomframe for small screens only-->
   <!--Should pop out when clicking the "Discover" button on footerbar-->
-  <BottomFrame ref="bottomFrame" @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe" @openCarouselInputs="openCarouselInputs"/>
+  <BottomFrame ref="bottomFrame" @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe" @selectedSeason="handleSeason" @openCarouselInputs="openCarouselInputs"/>
 </template>
 
 <script>
@@ -191,6 +191,14 @@ export default{
         this.selectedStipe = "";
       } else {
         this.selectedStipe = selectedStipe;
+      }
+      this.applyAllFilters();
+    },
+    handleSeason(selectedSeason) {
+      if (this.selectedSeason == selectedSeason) {
+        this.selectedSeason = "";
+      } else {
+        this.selectedSeason = selectedSeason;
       }
       this.applyAllFilters();
     },
