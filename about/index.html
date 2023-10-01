@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html >
+<head><meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1"><link rel="preload" as="fetch" crossorigin="anonymous" href="/about/_payload.json"><link rel="stylesheet" href="/_nuxt/entry.3ba86eb7.css"><style>:root{
+  --nui-c-context:125,125,125;
+}
+
+html{
+  background-color:#fff;
+}
+
+html.dark{
+  background-color:#222;
+  color:#fff;
+  color-scheme:dark;
+}
+
+</style><style>:root{
+  --vc-clr-primary:#000;
+  --vc-clr-secondary:#090f207f;
+  --vc-clr-white:#fff;
+  --vc-icn-width:1.2em;
+  --vc-nav-width:30px;
+  --vc-nav-height:30px;
+  --vc-nav-border-radius:0;
+  --vc-nav-color:var(--vc-clr-primary);
+  --vc-nav-color-hover:var(--vc-clr-secondary);
+  --vc-nav-background:transparent;
+  --vc-pgn-width:12px;
+  --vc-pgn-height:4px;
+  --vc-pgn-margin:4px;
+  --vc-pgn-border-radius:0;
+  --vc-pgn-background-color:var(--vc-clr-secondary);
+  --vc-pgn-active-color:var(--vc-clr-primary);
+}
+.carousel__next,.carousel__prev{
+  align-items:center;
+  background:var(--vc-nav-background);
+  border:0;
+  border-radius:var(--vc-nav-border-radius);
+  box-sizing:content-box;
+  color:var(--vc-nav-color);
+  cursor:pointer;
+  display:flex;
+  font-size:var(--vc-nav-height);
+  height:var(--vc-nav-height);
+  justify-content:center;
+  margin:0 10px;
+  padding:0;
+  position:absolute;
+  text-align:center;
+  top:50%;
+  transform:translateY(-50%);
+  width:var(--vc-nav-width);
+}
+.carousel__next:hover,.carousel__prev:hover{
+  color:var(--vc-nav-color-hover);
+}
+.carousel__next--disabled,.carousel__prev--disabled{
+  cursor:not-allowed;
+  opacity:.5;
+}
+.carousel__prev{
+  left:0;
+}
+.carousel__next{
+  right:0;
+}
+.carousel--rtl .carousel__prev{
+  left:auto;
+  right:0;
+}
+.carousel--rtl .carousel__next{
+  left:0;
+  right:auto;
+}
+.carousel{
+  box-sizing:border-box;
+  overscroll-behavior:none;
+  position:relative;
+  text-align:center;
+  touch-action:pan-y;
+}
+.carousel.is-dragging{
+  touch-action:none;
+}
+.carousel *{
+  box-sizing:border-box;
+}
+.carousel__track{
+  display:flex;
+  padding:0 !important;
+  position:relative;
+}
+.carousel__viewport{
+  overflow:hidden;
+}
+.carousel__sr-only{
+  clip:rect(0, 0, 0, 0);
+  border:0;
+  height:1px;
+  margin:-1px;
+  overflow:hidden;
+  padding:0;
+  position:absolute;
+  width:1px;
+}
+.carousel__icon{
+  fill:currentColor;
+  height:var(--vc-icn-width);
+  width:var(--vc-icn-width);
+}
+.carousel__pagination{
+  display:flex;
+  justify-content:center;
+  line-height:0;
+  list-style:none;
+  margin:10px 0 0;
+}
+.carousel__pagination-button{
+  background:transparent;
+  border:0;
+  cursor:pointer;
+  display:block;
+  margin:0;
+  padding:var(--vc-pgn-margin);
+}
+.carousel__pagination-button:after{
+  background-color:var(--vc-pgn-background-color);
+  border-radius:var(--vc-pgn-border-radius);
+  content:"";
+  display:block;
+  height:var(--vc-pgn-height);
+  width:var(--vc-pgn-width);
+}
+.carousel__pagination-button--active:after,.carousel__pagination-button:hover:after{
+  background-color:var(--vc-pgn-active-color);
+}
+.carousel__slide{
+  align-items:center;
+
+  display:flex;
+  flex-shrink:0;
+  justify-content:center;
+  margin:0;
+  position:relative;
+  scroll-snap-stop:auto;
+  transform:translateZ(0);
+}
+</style><style>*,:after,:before{
+  border:0 solid #e5e7eb;
+  box-sizing:border-box;
+}
+
+html{
+  -webkit-text-size-adjust:100%;
+  font-family:ui-sans-serif,system-ui,-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,Helvetica Neue,Arial,Noto Sans,sans-serif,Apple Color Emoji,Segoe UI Emoji,Segoe UI Symbol,Noto Color Emoji;
+  line-height:1.5;
+  -moz-tab-size:4;
+  -o-tab-size:4;
+     tab-size:4;
+}
+
+body{
+  line-height:inherit;
+  margin:0;
+}
+
+hr{
+  border-top-width:1px;
+  color:inherit;
+  height:0;
+}
+
+abbr:where([title]){
+  -webkit-text-decoration:underline dotted;
+          text-decoration:underline dotted;
+}
+
+h1,h2,h3,h4,h5,h6{
+  font-size:inherit;
+  font-weight:inherit;
+}
+
+a{
+  color:inherit;
+  text-decoration:inherit;
+}
+
+b,strong{
+  font-weight:bolder;
+}
+
+code,kbd,pre,samp{
+  font-family:ui-monospace,SFMono-Regular,Menlo,Monaco,Consolas,Liberation Mono,Courier New,monospace;
+  font-size:1em;
+}
+
+small{
+  font-size:80%;
+}
+
+sub,sup{
+  font-size:75%;
+  line-height:0;
+  position:relative;
+  vertical-align:baseline;
+}
+
+sub{
+  bottom:-.25em;
+}
+
+sup{
+  top:-.5em;
+}
+
+table{
+  border-collapse:collapse;
+  border-color:inherit;
+  text-indent:0;
+}
+
+button,input,optgroup,select,textarea{
+  color:inherit;
+  font-family:inherit;
+  font-size:100%;
+  font-weight:inherit;
+  line-height:inherit;
+  margin:0;
+  padding:0;
+}
+
+button,select{
+  text-transform:none;
+}
+
+[type=button],[type=reset],[type=submit],button{
+  -webkit-appearance:button;
+  background-color:transparent;
+  background-image:none;
+}
+
+:-moz-focusring{
+  outline:auto;
+}
+
+:-moz-ui-invalid{
+  box-shadow:none;
+}
+
+progress{
+  vertical-align:baseline;
+}
+
+::-webkit-inner-spin-button,::-webkit-outer-spin-button{
+  height:auto;
+}
+
+[type=search]{
+  -webkit-appearance:textfield;
+  outline-offset:-2px;
+}
+
+::-webkit-search-decoration{
+  -webkit-appearance:none;
+}
+
+::-webkit-file-upload-button{
+  -webkit-appearance:button;
+  font:inherit;
+}
+
+summary{
+  display:list-item;
+}
+
+blockquote,dd,dl,figure,h1,h2,h3,h4,h5,h6,hr,p,pre{
+  margin:0;
+}
+
+fieldset{
+  margin:0;
+  padding:0;
+}
+
+legend{
+  padding:0;
+}
+
+menu,ol,ul{
+  list-style:none;
+  margin:0;
+  padding:0;
+}
+
+textarea{
+  resize:vertical;
+}
+
+input::-moz-placeholder,textarea::-moz-placeholder{
+  color:#9ca3af;
+  opacity:1;
+}
+
+input::placeholder,textarea::placeholder{
+  color:#9ca3af;
+  opacity:1;
+}
+
+[role=button],button{
+  cursor:pointer;
+}
+
+:disabled{
+  cursor:default;
+}
+
+audio,canvas,embed,iframe,img,object,svg,video{
+  display:block;
+  vertical-align:middle;
+}
+
+img,video{
+  height:auto;
+  max-width:100%;
+}
+
+[hidden]{
+  display:none;
+}
+
+</style><style>#--unocss--{layer:__ALL__}</style><script>"use strict";(()=>{const a=window,e=document.documentElement,m=["dark","light"],c=window.localStorage.getItem("nuxt-color-mode")||"light";let n=c==="system"?f():c;const l=e.getAttribute("data-color-mode-forced");l&&(n=l),i(n),a["__NUXT_COLOR_MODE__"]={preference:c,value:n,getColorScheme:f,addColorScheme:i,removeColorScheme:d};function i(o){const t=""+o+"",s="";e.classList?e.classList.add(t):e.className+=" "+t,s&&e.setAttribute("data-"+s,o)}function d(o){const t=""+o+"",s="";e.classList?e.classList.remove(t):e.className=e.className.replace(new RegExp(t,"g"),""),s&&e.removeAttribute("data-"+s)}function r(o){return a.matchMedia("(prefers-color-scheme"+o+")")}function f(){if(a.matchMedia&&r("").media!=="not all"){for(const o of m)if(r(":"+o).matches)return o}return"light"}})();
+</script></head>
+<body ><div id="__nuxt"><!--[--><!--[--><header class="hidden tablet:hidden desktop:block bg-white content-center"><nav class="flex flex-col text-center content-center sm:flex-row sm:text-left sm:justify-between py-2 w-3/4 m-auto"><div class="mb-2 flex flex-row self-center"><a href="/" class="font-semibold text-emerald-500 text-lg tablet:text-xl desktop:text-3xl">Mushy Match</a></div><div class="sm:mb-0 self-center"><a href="/" class="ml-5 text-emerald-700 hover:text-emerald-500 text-lg">Home</a><a aria-current="page" href="/about" class="router-link-active router-link-exact-active ml-5 text-emerald-700 hover:text-emerald-500 text-lg">About</a><a href="/news" class="ml-5 text-emerald-700 hover:text-emerald-500 text-lg">News</a><a href="/contact" class="ml-5 text-emerald-700 hover:text-emerald-500 text-lg">Contact</a></div></nav></header><div class="bg-gray-100 relative"><div class="z-0 bg-emerald-700 relative py-8 tablet:py-24 desktop:py-28 shadow-md"><h1 class="flex w-11/12 desktop:w-3/4 mx-auto tablet:-mt-12 desktop:-mt-20 font-bold text-white text-lg tablet:text-2xl laptop:text-3xl desktop:text-5xl">Know what you&#39;re looking for?</h1><div class="flex w-11/12 desktop:w-3/4 absolute left-0 right-0 mx-auto mt-3 tablet:mt-1 desktop:mt-4 shadow-md bg-white rounded-lg px-2 py-1 tablet:py-0 tablet:px-2"><input value="" class="text-sm tablet:text-base text-gray-400 flex-grow outline-none px-1 tablet:px-2" type="text" placeholder="Search all mushrooms"><div class="flex py-1 rounded-lg"><button class="bg-emerald-500 text-white text-sm tablet:text-base rounded-lg px-3 py-1 tablet:px-2 tablet:py-1 desktop:px-3 desktop:py-2 font-thin desktop:font-semibold desktop:tracking-wide">Search</button></div></div></div><div class="z-10 grid grid-cols-2 tablet:grid-cols-4 gap-2 w-11/12 px-2 desktop:w-3/4 mx-auto mt-7 tablet:-mt-16 tablet:mb-3 laptop:mt-[-60px] desktop:mt-[-70px] relative"><input value="" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Stipe Length"><input value="" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Stipe Width"><input value="" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Cap Diameter"><input value="" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Cap Thickness"></div><div class="z-20 tablet:bg-white desktop:bg-white rounded-lg w-11/12 desktop:w-3/4 desktop:p-2 desktop:mt-4 mx-auto tablet:shadow-md desktop:shadow-md relative"><div class="flex flex-wrap gap-2 desktop:gap-0 tablet:gap-0 p-2 desktop:p-0 tablet:p-2 w-full"><button class="button tag-button">Edible</button><button class="button tag-button">Gourmet</button><button class="button tag-button">Poisonous</button><button class="button tag-button">Psychoactive</button><button class="button tag-button">Lookalike</button></div></div></div><footer class="flex justify-center w-full desktop:hidden fixed bottom-0 left-0 right-0 bg-white text-center border-2 z-50"><div class="w-11/12 left-0 right-0"><div class="flex justify-between w-full left-0 right-0 mx-auto py-4"><a href="/" class="quick-link" tag="div"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M2.25 12l8.954-8.955c.44-.439 1.152-.439 1.591 0L21.75 12M4.5 9.75v10.125c0 .621.504 1.125 1.125 1.125H9.75v-4.875c0-.621.504-1.125 1.125-1.125h2.25c.621 0 1.125.504 1.125 1.125V21h4.125c.621 0 1.125-.504 1.125-1.125V9.75M8.25 21h8.25"></path></svg><p>Home</p></a><div class="quick-link"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M21 21l-5.197-5.197m0 0A7.5 7.5 0 105.196 5.196a7.5 7.5 0 0010.607 10.607z"></path></svg><p>Discover</p></div><a aria-current="page" href="/about" class="router-link-active router-link-exact-active quick-link" tag="div"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 18v-5.25m0 0a6.01 6.01 0 001.5-.189m-1.5.189a6.01 6.01 0 01-1.5-.189m3.75 7.478a12.06 12.06 0 01-4.5 0m3.75 2.383a14.406 14.406 0 01-3 0M14.25 18v-.192c0-.983.658-1.823 1.508-2.316a7.5 7.5 0 10-7.517 0c.85.493 1.509 1.333 1.509 2.316V18"></path></svg><p>About</p></a><a href="/news" class="quick-link" tag="div"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M12 7.5h1.5m-1.5 3h1.5m-7.5 3h7.5m-7.5 3h7.5m3-9h3.375c.621 0 1.125.504 1.125 1.125V18a2.25 2.25 0 01-2.25 2.25M16.5 7.5V18a2.25 2.25 0 002.25 2.25M16.5 7.5V4.875c0-.621-.504-1.125-1.125-1.125H4.125C3.504 3.75 3 4.254 3 4.875V18a2.25 2.25 0 002.25 2.25h13.5M6 7.5h3v3H6v-3z"></path></svg><p>News</p></a><a href="/contact" class="quick-link" tag="div"><svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" class="w-6 h-6"><path stroke-linecap="round" stroke-linejoin="round" d="M9.879 7.519c1.171-1.025 3.071-1.025 4.242 0 1.172 1.025 1.172 2.687 0 3.712-.203.179-.43.326-.67.442-.745.361-1.45.999-1.45 1.827v.75M21 12a9 9 0 11-18 0 9 9 0 0118 0zm-9 5.25h.008v.008H12v-.008z"></path></svg><p>Contact</p></a></div></div></footer><div><h1 class="text-emerald-700 text-3xl m-[50px]">Welcome to Mushroom Finder</h1></div><!--]--><!--]--></div><script type="application/json" id="__NUXT_DATA__" data-ssr="true" data-src="/about/_payload.json">[{"state":1,"_errors":7,"serverRendered":5,"path":9,"prerenderedAt":10},["Reactive",2],{"$scolor-mode":3},{"preference":4,"value":4,"unknown":5,"forced":6},"light",true,false,["Reactive",8],{},"/about",1696201665539]</script><script>window.__NUXT__={};window.__NUXT__.config={public:{},app:{baseURL:"/",buildAssetsDir:"/_nuxt/",cdnURL:""}}</script><script type="module" src="/_nuxt/entry.6cb9e88a.js" crossorigin></script></body>
+</html>
