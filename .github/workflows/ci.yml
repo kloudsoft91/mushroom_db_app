@@ -62,7 +62,7 @@ jobs:
         run: npm test
 
       - name: Upload artifact
-        if: runner.os == 'Ubuntu' # upload artifact from ubuntu build only
+        if: runner.os == 'Windows' # upload artifact from windows build only
         uses: actions/upload-pages-artifact@v2
         with:
           path: .output/public
