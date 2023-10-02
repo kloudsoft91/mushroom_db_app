@@ -1,6 +1,6 @@
 # This workflow will do a clean installation of node dependencies, cache/restore them, build the source code and run tests
 
-name: CI
+name: CI-CD Workflow
 
 on:
   push:
