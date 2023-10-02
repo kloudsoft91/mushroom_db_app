@@ -9,11 +9,6 @@ on:
     branches: [ "master" ]
   workflow_dispatch:
 
-permissions:
-  contents: read
-  pages: write
-  id-token: write
-
 jobs:
   build:
     runs-on: ${{ matrix.os }}
@@ -74,10 +69,18 @@ jobs:
 
   deploy:
     runs-on: windows-latest
+
+    permissions:
+      contents: read
+      pages: write
+      id-token: write
+
     needs: build
+
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
+      
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
