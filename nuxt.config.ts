@@ -1,6 +1,10 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default {
   // Configuration options here
+  app: {
+    baseURL: '/mushroom_db_app/', // baseURL: '/<repository_name>/'
+    buildAssetsDir: 'assets',
+  },
   // devtools: { enabled: true },
   ssr: false, //disable ssr
   colorMode: {
