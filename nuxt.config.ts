@@ -2,7 +2,7 @@
 export default {
   // Configuration options here
   // devtools: { enabled: true },
-  ssr: false, //disable ssr
+  // ssr: false, //disable ssr
   colorMode: {
     preference: 'light'
   },
