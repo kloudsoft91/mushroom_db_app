@@ -1,7 +1,7 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default {
   // Configuration options here
-  devtools: { enabled: true },
+  // devtools: { enabled: true },
   ssr: false, //disable ssr
   colorMode: {
     preference: 'light'
