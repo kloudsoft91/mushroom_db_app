@@ -1,7 +1,7 @@
 <!--Main Navbar-->
 <template>
   <!--Mobile + Tablet + Desktop-->
-  <div class="bg-gray-100 relative" >
+  <div class=" relative" >
   <!--Extended Filter Button-->
     <!--<div class="hidden desktop:block absolute z-10 right-0 left-10 top-[80px]">
       <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="white" class="w-20 h-20">
@@ -19,22 +19,9 @@
         </div>
       </div> 
     </div>
-      <!--Size Search Bar Row-->
-      <div class="z-10 grid grid-cols-2 tablet:grid-cols-4 gap-2 w-11/12 px-2 desktop:w-3/4 mx-auto mt-7 tablet:-mt-16 tablet:mb-3 laptop:mt-[-60px] desktop:mt-[-70px] relative">
-        <!--Stipe Length-->
-        <input v-model="stipeLen" @input="sizeFilter()" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Stipe Length" />
-
-        <!--Stipe Diameter-->
-        <input v-model="stipeDiam" @input="sizeFilter()" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Stipe Width" />
-
-        <!--Cap Diameter-->
-        <input v-model="capDiam" @input="sizeFilter()" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Cap Diameter" />
-
-        <!--Cap Thickness-->
-        <input v-model="capThick" @input="sizeFilter()" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Cap Thickness" />
-      </div>  
+      
       <!--Edibility Quick Filter-->
-      <div class="z-20 tablet:bg-white desktop:bg-white rounded-lg w-11/12 desktop:w-3/4 desktop:p-2 desktop:mt-4 mx-auto tablet:shadow-md desktop:shadow-md relative">
+      <div class="z-20 tablet:bg-white desktop:bg-white rounded-lg w-11/12 desktop:w-3/4 mt-6 desktop:p-2 tablet:-mt-6 mx-auto tablet:shadow-md desktop:shadow-md relative">
           <div class="flex flex-wrap gap-2 desktop:gap-0 tablet:gap-0 p-2 desktop:p-0 tablet:p-2 w-full">
             <button class="button tag-button" @click="tagFilter('edible')">Edible</button>
             <button class="button tag-button" @click="tagFilter('gourmet')">Gourmet</button>

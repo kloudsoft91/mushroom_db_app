@@ -18,6 +18,14 @@
         @apply flex flex-col items-center mt-2 text-base font-semibold text-emerald-700;
     }
 
+    .ecology-filters-small-screen {
+        @apply text-base text-emerald-700 font-semibold;
+    }
+
+    .capcolor-text {
+        @apply text-sm text-emerald-700 font-semibold;
+    }
+
     .cap-image {
         @apply w-20 h-20 border-double border-4 border-emerald-700 rounded-full;
     }

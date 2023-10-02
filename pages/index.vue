@@ -6,6 +6,11 @@
   <FilterModal />
   <TimeModal />
   <EcologyModal />
+  <CapshapeModal />
+  <CapsizeModal />
+  <AttachmentModal />
+  <StipeModal />
+  <ColourModal />
   
 
   <!--Slideover for big screens only-->
