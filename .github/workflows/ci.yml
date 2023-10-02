@@ -70,7 +70,7 @@ jobs:
         if: runner.os == 'Windows' # upload artifact from windows build only
         uses: actions/upload-pages-artifact@v2
         with:
-          path: ./output/public
+          path: .output/public
 
   deploy:
     runs-on: windows-latest
