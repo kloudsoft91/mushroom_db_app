@@ -24,12 +24,12 @@ export default {
     },
     {
       name: 'contact',
-      path: '/',
+      path: '/contact',
       component: 'pages/contact.vue'
     },
     {
       name: 'news',
-      path: '/',
+      path: '/news',
       component: 'pages/news.vue'
     },
     // for generating page based on mushroom ID, we will implement later
