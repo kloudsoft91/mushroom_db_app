@@ -62,7 +62,7 @@ jobs:
         run: npm test
 
       - name: Upload artifact
-        if: runner.os == 'Windows' # upload artifact from windows build only
+        if: runner.os == 'Ubuntu' # upload artifact from ubuntu build only
         uses: actions/upload-pages-artifact@v2
         with:
           path: .output/public
@@ -80,7 +80,7 @@ jobs:
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
-      
+
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
