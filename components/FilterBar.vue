@@ -173,7 +173,7 @@ export default {
     },
     emitColour(selectedColour) {
       nextTick(() => {
-        console.log("selectedcolour emit:" + selectedColour);
+        //console.log("selectedcolour emit:" + selectedColour);
         this.selectedColour = selectedColour;
         //emit event to parent component (BottomFrame.vue)
         this.$emit('selectedColour', selectedColour);

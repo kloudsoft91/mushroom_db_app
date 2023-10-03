@@ -54,6 +54,7 @@ export default{
       results = this.filterByEcology(results);
       results = this.filterByStipe(results);
       results = this.filterByColour(results);
+      results = this.filterBySeason(results);
       //Size Filter Calls:
       results = this.filterBySize(results, this.stipeLen, 'stipe_features.length_min', 'stipe_features.length_max');
       results = this.filterBySize(results, this.stipeDiam, 'stipe_features.diameter_min', 'stipe_features.diameter_max');
@@ -130,13 +131,22 @@ export default{
 
     //Cap and stipe colour, case sensitive
     filterByColour(data){
-      console.log("filterColour running");
       //check if defined
       if (!this.selectedColour) {
         return data;
       }
       return data.filter((mushroom) => 
       mushroom.cap_features.colour.includes(this.selectedColour) || mushroom.stipe_features.colour.includes(this.selectedColour));
+    },
+
+    //Season filter
+    filterBySeason(data){
+      //check if defined
+      if (!this.selectedSeason) {
+        return data;
+      }
+      return data.filter((mushroom) => 
+      mushroom.time_of_year.toLowerCase().includes(this.selectedSeason.toLowerCase()));
     },
 
     //Generic range filter: applied to all int range inputs (diam/len/height/thickness)
@@ -219,14 +229,12 @@ export default{
       this.applyAllFilters();
     },
     handleSeason(selectedSeason) {
-      /*
       if (this.selectedSeason == selectedSeason) {
         this.selectedSeason = "";
       } else {
         this.selectedSeason = selectedSeason;
       }
       this.applyAllFilters();
-      */
     },
     //generic size filter event handler
     handleSizeFilter(filterData) {
