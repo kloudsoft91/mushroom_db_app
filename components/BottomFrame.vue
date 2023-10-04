@@ -32,7 +32,7 @@
     <UButton label="Filters" @click="open()" class="" />
     <client-only>
       <vue-bottom-sheet ref="myBottomSheet" :can-swipe="false" overlay-color="#00000000" :max-width="9999999999999">
-        <div class=" max-h-[170px] overflow-auto border-solid border-2">
+        <div class=" max-h-[340px] overflow-auto border-solid border-2">
             
             <FilterBar @selectedCapShape="emitCapShape" @selectedGillAttach="emitGillAttach" @selectedEcology="emitEcology" @selectedStipe="emitStipe"/>    
         </div>
