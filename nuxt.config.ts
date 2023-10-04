@@ -1,7 +1,11 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default {
   // Configuration options here
-  devtools: { enabled: true },
+  app: {
+    baseURL: '/mushroom_db_app/', // baseURL: '/<repository_name>/'
+    buildAssetsDir: 'assets',
+  },
+  // devtools: { enabled: true },
   ssr: false, //disable ssr
   colorMode: {
     preference: 'light'
@@ -24,12 +28,12 @@ export default {
     },
     {
       name: 'contact',
-      path: '/',
+      path: '/contact',
       component: 'pages/contact.vue'
     },
     {
       name: 'news',
-      path: '/',
+      path: '/news',
       component: 'pages/news.vue'
     },
     // for generating page based on mushroom ID, we will implement later
