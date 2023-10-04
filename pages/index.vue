@@ -9,7 +9,7 @@
   <SlideOver />
   <!--Bottomframe for small screens only-->
   <!--Should pop out when clicking the "Discover" button on footerbar-->
-  <BottomFrame ref="bottomFrame" @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe" @openCarouselInputs="openCarouselInputs"/>
+  <BottomFrame ref="bottomFrame" @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe" @selectedSeason="handleSeason" @selectedColour="handleColour" @openCarouselInputs="openCarouselInputs"/>
 </template>
 
 <script>
@@ -31,6 +31,8 @@ export default{
       selectedGillAttach: '',
       selectedEcology: '',
       selectedStipe: '',
+      selectedSeason: '',
+      selectedColour: '',
       stipeLen: '',
       stipeDiam: '',
       capDiam: '',
@@ -51,6 +53,8 @@ export default{
       results = this.filterByGillAttach(results);
       results = this.filterByEcology(results);
       results = this.filterByStipe(results);
+      results = this.filterByColour(results);
+      results = this.filterBySeason(results);
       //Size Filter Calls:
       results = this.filterBySize(results, this.stipeLen, 'stipe_features.length_min', 'stipe_features.length_max');
       results = this.filterBySize(results, this.stipeDiam, 'stipe_features.diameter_min', 'stipe_features.diameter_max');
@@ -125,6 +129,26 @@ export default{
       mushroom.stipe_features.type.includes(this.selectedStipe));
     },
 
+    //Cap and stipe colour, case sensitive
+    filterByColour(data){
+      //check if defined
+      if (!this.selectedColour) {
+        return data;
+      }
+      return data.filter((mushroom) => 
+      mushroom.cap_features.colour.includes(this.selectedColour) || mushroom.stipe_features.colour.includes(this.selectedColour));
+    },
+
+    //Season filter
+    filterBySeason(data){
+      //check if defined
+      if (!this.selectedSeason) {
+        return data;
+      }
+      return data.filter((mushroom) => 
+      mushroom.time_of_year.toLowerCase().includes(this.selectedSeason.toLowerCase()));
+    },
+
     //Generic range filter: applied to all int range inputs (diam/len/height/thickness)
     filterBySize(data, value, propertyMin, propertyMax){
     //if no inputs - no data change
@@ -191,6 +215,24 @@ export default{
         this.selectedStipe = "";
       } else {
         this.selectedStipe = selectedStipe;
+      }
+      this.applyAllFilters();
+    },
+    handleColour(selectedColour) {
+      console.log("handle colour function");
+      if (this.selectedColour == selectedColour) {
+        this.selectedColour = "";
+      } else {
+        this.selectedColour = selectedColour;
+        console.log("handle colour:" + selectedColour);
+      }
+      this.applyAllFilters();
+    },
+    handleSeason(selectedSeason) {
+      if (this.selectedSeason == selectedSeason) {
+        this.selectedSeason = "";
+      } else {
+        this.selectedSeason = selectedSeason;
       }
       this.applyAllFilters();
     },

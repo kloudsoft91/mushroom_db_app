@@ -34,7 +34,7 @@
       <vue-bottom-sheet ref="myBottomSheet" :can-swipe="false" overlay-color="#00000000" :max-width="9999999999999">
         <div class=" border-solid border-2">
             
-            <FilterBar @selectedCapShape="emitCapShape" @selectedGillAttach="emitGillAttach" @selectedEcology="emitEcology" @selectedStipe="emitStipe"/>    
+            <FilterBar @selectedCapShape="emitCapShape" @selectedGillAttach="emitGillAttach" @selectedEcology="emitEcology" @selectedStipe="emitStipe" @selectedSeason="emitSeason" @selectedColour="emitColour"/>    
         </div>
 
         
@@ -93,13 +93,24 @@
      },
      emitEcology(ecology) {
       this.selectedEcology = ecology;
-      //emit event to parent component (BottomFrame.vue)
+      //emit event to parent component (Index.vue)
       this.$emit('selectedEcology', ecology);
     },
     emitStipe(stipe) {
       this.selectedStipe = stipe;
-      //emit event to parent component (BottomFrame.vue)
+      //emit event to parent component (Index.vue)
       this.$emit('selectedStipe', stipe);
+    },
+    emitSeason(season) {
+        this.selectedSeason = season;
+        //emit event to parent component (Index.vue)
+        this.$emit('selectedSeason', season);
+    },
+    emitColour(selectedColour) {
+        console.log("selectedcolour emit 2:" + selectedColour);
+        this.selectedColour = selectedColour;
+        //emit event to parent component (Index.vue)
+        this.$emit('selectedColour', selectedColour);
     },
    },
    components: {

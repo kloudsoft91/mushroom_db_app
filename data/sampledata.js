@@ -433,7 +433,7 @@ export default [
     },
     "environment": "Dead, decaying wood",
     "ecology": "saprotrophic",
-    "time_of_year": "(March to July)",
+    "time_of_year": "Autumn, winter (March to July)",
     "native_or_introduced": "Native",
     "genus": "Hericium",
     "photos": []
@@ -477,7 +477,7 @@ export default [
     },
     "environment": "fields, grassy areas, lawns",
     "ecology": "mycorrhizal",
-    "time_of_year": "(March to May)",
+    "time_of_year": "Autumn (March to May)",
     "native_or_introduced": "Introduced",
     "genus": "Agaricus",
     "photos": []
@@ -521,7 +521,7 @@ export default [
     },
     "environment": "Living or dead trees",
     "ecology": "parasitic",
-    "time_of_year": "(November to June)",
+    "time_of_year": "Summer, autumn (November to June)",
     "native_or_introduced": "Native",
     "genus": "Cyclocybe",
     "photos": []
@@ -564,7 +564,7 @@ export default [
     },
     "environment": "Found in mixed Mānuka, Kānuka, Kauri forest, conifer plantations",
     "ecology": "unknown",
-    "time_of_year": "(February - August)",
+    "time_of_year": "Autumn, winter (February - August)",
     "native_or_introduced": "Native",
     "genus": "Macrolepiota",
     "photos": []
@@ -607,7 +607,7 @@ export default [
     },
     "environment": "Oak and Chestnut trees",
     "ecology": "mycorrhiza",
-    "time_of_year": "(February - August)",
+    "time_of_year": "Autumn, winter (February - August)",
     "native_or_introduced": "introduced",
     "genus": "Amanita",
     "photos": []
@@ -650,7 +650,7 @@ export default [
     },
     "environment": "Dead broad-leaved trees or on their fallen timber",
     "ecology": "saprotrophic & mycorrhizal", //both stated
-    "time_of_year": "(March - August)",
+    "time_of_year": "Autumn, winter (March - August)",
     "native_or_introduced": "native",
     "genus": "Armillaria",
     "photos": []
