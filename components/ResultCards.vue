@@ -37,7 +37,8 @@
           <!-- Link to single mushroom-detail page -->
           <div class="p-4 ">
             <div class="flex justify-center space-x-4">
-              <NuxtLink to="/mushroom-detail" class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal bg-emerald-700 text-white rounded-full px-4 py-2 hover:bg-emerald-600 focus:bg-purple-600">
+              <NuxtLink :to="'/mushroom-detail/'+ mushroom.id" class="pointer-events-auto inline-block cursor-pointer text-base font-normal leading-normal bg-emerald-700 text-white rounded-full px-4 py-2 hover:bg-emerald-600 focus:bg-purple-600"
+                >
                 Details
               </NuxtLink>
               <!-- Only shows Lookalike button if the mushroom has lookalikes -->
