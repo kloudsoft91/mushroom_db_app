@@ -5,19 +5,14 @@
       <FooterBar @openCarouselInputs="openCarouselInputs" />
   
       <div class="mushroom-detail">
-        <h1 class="mushroom-name">{{ mushroomData.common_names }}</h1>
-        <p>Details for {{ id }}</p>
-        <div class="mushroom-image-container">
-          <img :src="mushroomData.imageUrl" alt="Mushroom" class="mushroom-image" />
-        </div>
-        <div class="mushroom-info">
-          <div class="edibility-tag">{{ mushroomData.edibility }}</div>
-        </div>
-        <div class="mushroom-description">{{ mushroomData.description }}</div>
-        <div class="mushroom-links">
-          <a :href="mushroomData.links.iNaturalist" target="_blank">iNaturalist</a>
-          <a :href="mushroomData.links.wikipedia" target="_blank">Wikipedia</a>
-        </div>
+        <table class="mushroom-table">
+            <tbody>
+                <tr v-for="(value, key) in mushroomData">
+                    <td>{{ formatKey(key) }}</td>
+                    <td>{{ formatValue(value) }}</td>
+                </tr>
+            </tbody>
+        </table>
       </div>
     </div>
 </template>
@@ -26,27 +21,38 @@
 import mushroomData from '~/data/sampledata.js';
 
 export default {
-    data() {
+  data() {
     return {
-        id: null,
-        mushroomData: null,
+      id: null,
+      mushroomData: null,
     };
-    },
-    methods: {
+  },
+  methods: {
     fetchData() {
-        this.id = this.$route.params.id;
+      this.id = this.$route.params.id;
 
-        // Simulate fetching data based on the provided ID
-        this.mushroomData = mushroomData.find(mushroom => mushroom.id === parseInt(this.id));
+      // Simulate fetching data based on the provided ID
+      this.mushroomData = mushroomData.find(mushroom => mushroom.id === parseInt(this.id));
 
-        if (!this.mushroomData) {
+      if (!this.mushroomData) {
         // Handle the case where the mushroom with the given ID is not found
         throw new Error(`Mushroom with ID ${this.id} not found.`);
-        }
+      }
     },
+    formatKey(key) {
+      // Convert camelCase to Title Case for display
+      return key.replace(/([A-Z])/g, ' $1').trim();
     },
-    created() {
+    formatValue(value) {
+      // Format array values as a comma-separated list
+      if (Array.isArray(value)) {
+        return value.join(', ');
+      }
+      return value;
+    },
+  },
+  created() {
     this.fetchData();
-    },
+  },
 };
 </script>
