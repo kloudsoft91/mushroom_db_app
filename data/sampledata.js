@@ -40,7 +40,7 @@ export default [
     "time_of_year": "Late spring to autumn (October to April in the Southern Hemisphere)",
     "native_or_introduced": "introduced",
     "genus": "coprinus",
-    "photos": []
+    "photos": ["MushroomCards/ShaggyManeCard_egc21k.jpg"]
   },
 
   {
@@ -84,7 +84,7 @@ export default [
     "time_of_year": "Late summer to autumn (March to June in the Southern Hemisphere)",
     "native_or_introduced": "introduced",
     "genus": "Amanita",
-    "photos": []
+    "photos": ["MushroomCards/AmanitaMuscariaCard_gy8lsy.jpg"]
   },
 
   {
@@ -128,7 +128,7 @@ export default [
     "time_of_year": "Autumn (March to May in the Southern Hemisphere)",
     "native_or_introduced": "introduced",
     "genus": "Gymnopilus",
-    "photos": []
+    "photos": ["MushroomCards/LaughingGymCard_yo4quk.jpg"]
   },
 
   {
@@ -172,7 +172,7 @@ export default [
     "time_of_year": "Late summer to autumn (February to May in the Southern Hemisphere)",
     "native_or_introduced": "native",
     "genus": "Psilocybe",
-    "photos": []
+    "photos": ["MushroomCards/PsilocybeWeraroaCard_ipwjeo.jpg"]
   },
 
   {
@@ -216,7 +216,7 @@ export default [
     "time_of_year": "(April to June)",
     "native_or_introduced": "native",
     "genus": "Cortinarius",
-    "photos": []
+    "photos": ["MushroomCards/PurplePouchCard_mtfrc3.jpg"]
   },
 
   {
@@ -260,7 +260,7 @@ export default [
     "time_of_year": "(February to June)",
     "native_or_introduced": "introduced",
     "genus": "Cortinarius",
-    "photos": []
+    "photos": ["MushroomCards/ShaggyParasolCard_e61grf.jpg"]
   },
 
   {
@@ -304,7 +304,7 @@ export default [
     "time_of_year": "late summer into autumn (February to June)",
     "native_or_introduced": "Introduced",
     "genus": "Leccinum",
-    "photos": []
+    "photos": ["MushroomCards/BirchBoleteCard_jkkl6o.jpg"]
   },
 
   {
@@ -348,7 +348,7 @@ export default [
     "time_of_year": "Autumn (March to May)",
     "native_or_introduced": "Introduced",
     "genus": "Lycoperdon",
-    "photos": []
+    "photos": ["MushroomCards/CommonPuffballCard_hporke.jpg"]
   },
 
   {
@@ -392,7 +392,7 @@ export default [
     "time_of_year": "Spring, autumn (April to July)",
     "native_or_introduced": "Introduced",
     "genus": "Pleurotus",
-    "photos": []
+    "photos": ["MushroomCards/OysterCard_cogvbc.jpg"]
   },
 
   {
@@ -436,7 +436,7 @@ export default [
     "time_of_year": "Autumn, winter (March to July)",
     "native_or_introduced": "Native",
     "genus": "Hericium",
-    "photos": []
+    "photos": ["MushroomCards/LionsManeCard_vhbdjh.jpg"]
   },
 
   {
@@ -480,7 +480,7 @@ export default [
     "time_of_year": "Autumn (March to May)",
     "native_or_introduced": "Introduced",
     "genus": "Agaricus",
-    "photos": []
+    "photos": ["MushroomCards/MeadowMushroomCard_y7dlhy.jpg"]
   },
 
   {
@@ -524,7 +524,7 @@ export default [
     "time_of_year": "Summer, autumn (November to June)",
     "native_or_introduced": "Native",
     "genus": "Cyclocybe",
-    "photos": []
+    "photos": ["MushroomCards/TawakaCard_g6ndwo.jpg"]
   },
   {
     "id":13,
@@ -567,7 +567,7 @@ export default [
     "time_of_year": "Autumn, winter (February - August)",
     "native_or_introduced": "Native",
     "genus": "Macrolepiota",
-    "photos": []
+    "photos": ["MushroomCards/GracefulParasolCard_bkmw4v.jpg"]
   },
   {
     "id":14,
@@ -610,7 +610,7 @@ export default [
     "time_of_year": "Autumn, winter (February - August)",
     "native_or_introduced": "introduced",
     "genus": "Amanita",
-    "photos": []
+    "photos": ["MushroomCards/DeathCapCard_ueb21p.jpg"]
   },
   {
     "id":15,
@@ -653,7 +653,7 @@ export default [
     "time_of_year": "Autumn, winter (March - August)",
     "native_or_introduced": "native",
     "genus": "Armillaria",
-    "photos": []
+    "photos": ["MushroomCards/AustralHoneyCard_wys1f8.jpg"]
   },
 
 ]
