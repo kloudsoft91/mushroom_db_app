@@ -7,6 +7,7 @@
           v-for="(mushroom, index) in filteredMushrooms"
           :key="index"
           class=" rounded-lg bg-gray-200 tablet:shadow-md desktop:shadow-md flex flex-col overflow-hidden"
+          data-cy="card"
         >
           <div class="relative overflow-hidden bg-cover bg-no-repeat">
             <img class="rounded-t-lg" src="~/assets/images/mushy.jpg" alt="Mushroom Image" />
