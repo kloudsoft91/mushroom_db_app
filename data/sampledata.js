@@ -284,323 +284,329 @@ export default [
 
   {
     "id":7,
-    "tags":["edible"],
-    "latin_names": "Leccinum scabrum",
-    "common_names": "Birch Bolete",
-    "description": "The cap is hemispherical, and later becomes flatter. The skin of the cap is tan or brownish, usually with a lighter edge, it is smooth, bald, and dry to viscid",
-    "lookalikes": "Several different species of Leccinum mushrooms are found in mycorrhiza with birches, and can be confused by amateurs and mycologists alike. L. variicolor has \
-    a bluish stipe. L. oxydabile has firmer, pinkish flesh and a different pileus skin structure. L. melaneum is darker in color and has yellowish hues under the skin of the pileus \
-    and stipe. L. holopus is paler and whitish in all parts.",
-    "links": {
-      "iNaturalist": "https://inaturalist.nz/taxa/63232-Leccinum-scabrum",
-      "wikipedia": "https://en.wikipedia.org/wiki/Leccinum_scabrum"
-    },
-    "nz_books": "A Field Guide to the Native Edible Plants of New Zealand",
-    "edibility": "The birch bolete is edible but considered not to be worthwhile by some guides. A few reports in North America suggest that Leccinums (birch boletes) should \
-    only be consumed with much caution.",
     "stipe_features": {
       "diameter_min": 1,
-      "diameter_max": 3.5,
-      "colour": ["White"],
+      "diameter_max": 3,
+      "colour": "white",
       "length_min": 5,
       "length_max": 15,
-      "bruising_colour": "No significant bruising",
-      "type": "bare"
-    },
-    "gills": {
-      "colour": "White pores that later turn grey",
-      "attachment": "Has pores instead of gills (none)"
-    },
-    "spore_colour": "Brown",
-    "cap_features": {
-      "colour": ["Tan", "Brown"],
-      "texture": "Smooth, bald, and dry to viscid",
+      "bruising_colour": "na",
+      "description": "bare"
+  },
+  "hymenium": {
+      "colour": "white",
+      "description": "White pores that later turn grey",
+      "type": "none",
+      "attachment": "none",
+      "spore_colour": "rustbrown"
+  },
+  "cap_features": {
+      "colour": "yellowish-brown",
       "diameter_min": 5,
       "diameter_max": 15,
       "thickness_min": null,
       "thickness_max": null,
-      "shape": "Hemispherical to flat at the top"
-    },
-    "environment": "Under birch trees like Betula pendula",
-    "ecology": "mycorrhizal",
-    "time_of_year": "late summer into autumn (February to June)",
-    "native_or_introduced": "Introduced",
-    "genus": "Leccinum",
-    "photos": ["MushroomCards/BirchBoleteCard_jkkl6o.jpg", "MushroomCards/BirchBolete1_qwwjwz.jpg"]
+      "shape": "Hemispherical to flat at the top",
+      "texture": "Smooth, bald, and dry to viscid"
+  },
+  "tags": [
+      "Edible"
+  ],
+  "latin_names": [
+      "Leccinum scabrum"
+  ],
+  "common_names": [
+      "Birch Bolete"
+  ],
+  "description": "The cap is hemispherical, and later becomes flatter. The skin of the cap is tan or brownish, usually with a lighter edge, it is smooth, bald, and dry to viscid",
+  "lookalikes": [
+      null,
+      null,
+      null
+  ],
+  "links": [
+      "https://inaturalist.nz/taxa/63232-Leccinum-scabrum",
+      "https://en.wikipedia.org/wiki/Leccinum_scabrum"
+  ],
+  "nz_books": [
+      "A Field Guide to the Native Edible Plants of New Zealand"
+  ],
+  "edibility": "The birch bolete is edible but considered not to be worthwhile by some guides. A few reports in North America suggest that Leccinums (birch boletes) should \\     only be consumed with much caution.",
+  "ecology": "mycorrhizal",
+  "environment": "Under birch trees like Betula pendula",
+  "time_of_year": [
+      "February"
+  ],
+  "genus": "Leccinum",
+  "adult_photos": [
+      "MushroomCards/BirchBoleteCard_jkkl6o.jpg"
+  ]
   },
 
   {
     "id":8,
-    "tags":["edible"],
-    "latin_names": "Lycoperdon perlatum",
-    "common_names": "Common Puffball",
-    "description": "Medium-sized puffball mushroom with a round body and wide stalk and spiny bumps that can be rubbed off, white when immature but brown when mature and bursts \
-    open with a hole at the top",
-    "lookalikes": "Amanita mushrooms are similar when immature but toxic, cutting open a puffball should show smooth flesh while amanita mushrooms have gills inside, other \
-    puffball species can look similar",
-    "links": {
-      "iNaturalist": "https://www.inaturalist.org/taxa/118132-Bovista-plumbea",
-      "wikipedia": "https://en.wikipedia.org/wiki/Bovista_plumbea"
-    },
-    "nz_books": "A Field Guide to the Native Edible Plants of New Zealand",
-    "edibility": "Edible when immature",
     "stipe_features": {
-      "diameter_min": null,
-      "diameter_max": null,
-      "colour": ["White", "Brown"],
       "length_min": 3,
       "length_max": 10,
-      "bruising_colour": "No significant bruising",
-      "type": "bare"
-    },
-    "gills": {
-      "colour": "",
-      "attachment": "Has internal spores instead of gills (none)"
-    },
-    "spore_colour": "Brown",
-    "cap_features": {
-      "colour": ["White", "Brown"],
+      "bruising_colour": "na",
+      "description": "bare"
+  },
+  "hymenium": {
+      "type": "none",
+      "description": "Has internal spores instead of gills"
+  },
+  "cap_features": {
+      "colour": "white",
       "texture": "Short spines that rub off easily",
-      "diameter_min": 1.5,
-      "diameter_max": 6,
-      "thickness_min": null,
-      "thickness_max": null,
-      "shape": "Round body on a stalk"
-    },
-    "environment": "Dead wood, woods, grassy areas, and along roads",
-    "ecology": "saprotrophic",
-    "time_of_year": "Autumn (March to May in the Southern Hemisphere)",
-    "native_or_introduced": "Introduced",
-    "genus": "Lycoperdon",
-    "photos": ["MushroomCards/CommonPuffballCard_hporke.jpg", "MushroomCards/CommonPuffball1_svcolm.jpg"]
+      "shape": "Round body on a stalk",
+      "diameter_min": 1,
+      "diameter_max": 6
+  },
+  "tags": [
+      "Edible"
+  ],
+  "latin_names": [
+      "Lycoperdon perlatum"
+  ],
+  "common_names": [
+      "Common Puffball"
+  ],
+  "description": "Medium-sized puffball mushroom with a round body and wide stalk and spiny bumps that can be rubbed off, white when immature but brown when mature and bursts \\     open with a hole at the top",
+  "lookalikes": [
+      null
+  ],
+  "links": [
+      "https://www.inaturalist.org/taxa/118132-Bovista-plumbea",
+      "https://en.wikipedia.org/wiki/Bovista_plumbea"
+  ],
+  "lookalikes_description": "Amanita mushrooms are similar when immature but toxic, cutting open a puffball should show smooth flesh while amanita mushrooms have gills inside, other \\     puffball species can look similar",
+  "genus": "Lycoperdon",
+  "nz_books": [
+      "A Field Guide to the Native Edible Plants of New Zealand"
+  ],
+  "edibility": "Edible when immature",
+  "ecology": "saprotrophic",
+  "time_of_year": [
+      "March"
+  ],
+  "native_or_introduced": false,
+  "adult_photos": [
+      "MushroomCards/CommonPuffballCard_hporke.jpg"
+  ]
   },
 
   {
     "id": 9,
-    "tags":["edible"],
-    "latin_names": "Pleurotus ostreatus",
-    "common_names": "Oyster mushroom, hiratake",
-    "description": "Broad, oyster or fan-shaped cap, commonly growing on trees with no stalk",
-    "lookalikes": "Oysterlings are similar but significantly smaller and inedible, some varieties can be toxic",
-    "links": {
-      "iNaturalist": "https://www.inaturalist.org/taxa/48494-Pleurotus-ostreatus",
-      "wikipedia": "https://en.wikipedia.org/wiki/Pleurotus_ostreatus"
-    },
-    "nz_books": "A Field Guide to the Native Edible Plants of New Zealand",
-    "edibility": "Edible, commonly cultivated popular mushroom",
     "stipe_features": {
-      "diameter_min": null,
-      "diameter_max": null,
-      "colour": [""],
-      "length_min": null,
-      "length_max": null,
-      "bruising_colour": "No bruising",
-      "type": "bare"
-    },
-    "gills": {
-      "colour": "White or cream",
-      "attachment": "decurrent"
-    },
-    "spore_colour": "White",
-    "cap_features": {
-      "colour": ["White", "Grey", "Tan", "Dark Brown"],
-      "texture": "",
+      "attachment": "none"
+  },
+  "hymenium": {
+      "attachment": "decurrent",
+      "colour": "white",
+      "spore_colour": "white"
+  },
+  "cap_features": {
+      "colour": "white",
+      "shape": "fan or oyster shaped",
       "diameter_min": 2,
-      "diameter_max": 30,
-      "thickness_min": null,
-      "thickness_max": null,
-      "shape": "fan or oyster shaped"
-    },
-    "environment": "Dead or dying trees, forests",
-    "ecology": "saprotrophic",
-    "time_of_year": "Spring, autumn (April to July in the Southern Hemisphere)",
-    "native_or_introduced": "Introduced",
-    "genus": "Pleurotus",
-    "photos": ["MushroomCards/OysterCard_cogvbc.jpg", "MushroomCards/Oyster1_pk8ykc.jpg"]
+      "diameter_max": 30
+  },
+  "latin_names": [
+      "Pleurotus ostreatus"
+  ],
+  "tags": [
+      "Edible"
+  ],
+  "common_names": [
+      "Oyster mushroom",
+      "hiratake"
+  ],
+  "description": "Broad, oyster or fan-shaped cap, commonly growing on trees with no stalk",
+  "lookalikes_description": "Oysterlings are similar but significantly smaller and inedible, some varieties can be toxic",
+  "lookalikes": [
+      null
+  ],
+  "links": [
+      "https://www.inaturalist.org/taxa/48494-Pleurotus-ostreatus",
+      "https://en.wikipedia.org/wiki/Pleurotus_ostreatus"
+  ],
+  "nz_books": [
+      "A Field Guide to the Native Edible Plants of New Zealand"
+  ],
+  "edibility": "Edible, commonly cultivated popular mushroom",
+  "ecology": "saprotrophic",
+  "environment": "Dead or dying trees, forests",
+  "time_of_year": [
+      "April"
+  ],
+  "native_or_introduced": false,
+  "adult_photos": [
+      "MushroomCards/OysterCard_cogvbc.jpg"
+  ]
   },
 
   {
     "id":10,
-    "tags":["edible"],
-    "latin_names": "Hericium novae-zealandiae",
-    "common_names": "New Zealand's lion mane, pekepeke kiore",
-    "description": "Initially looking somewhat like a cauliflower nearing flowering when immature, numerous feathery reddish-brown branches with no defined stipe when mature",
-    "lookalikes": "None, though originally mistaken for overseas Coral tooth fungus",
-    "links": {
-      "iNaturalist": "https://inaturalist.nz/taxa/906969-Hericium-novae-zealandiae",
-      "wikipedia": "https://en.wikipedia.org/wiki/Hericium_novae-zealandiae"
-    },
-    "nz_books": "A Field Guide to the Native Edible Plants of New Zealand",
-    "edibility": "Edible",
     "stipe_features": {
-      "diameter_min": null,
-      "diameter_max": null,
-      "colour": [""],
-      "length_min": null,
-      "length_max": null,
-      "bruising_colour": "None",
+      "attachment": "none"
+  },
+  "hymenium": {
       "type": "none"
-    },
-    "gills": {
-      "colour": "None",
-      "attachment": "Hymenium at edge of tips"
-    },
-    "spore_colour": "",
-    "cap_features": {
-      "colour": ["Red", "Brown", "Pink"],
-      "texture": "Feathery",
+  },
+  "cap_features": {
+      "colour": "red",
+      "texture": "feathery",
       "diameter_min": 1,
       "diameter_max": 10,
-      "thickness_min": null,
-      "thickness_max": null,
       "shape": "Bundle of branches"
-    },
-    "environment": "Dead, decaying wood",
-    "ecology": "saprotrophic",
-    "time_of_year": "Autumn, winter (March to July in the Southern Hemisphere)",
-    "native_or_introduced": "Native",
-    "genus": "Hericium",
-    "photos": ["MushroomCards/LionsManeCard_vhbdjh.jpg", "MushroomCards/LionsMane1_phrqyk.jpg"]
+  },
+  "tags": [
+      "Edible"
+  ],
+  "latin_names": [
+      "Hericium novae-zealandiae"
+  ],
+  "common_names": [
+      "New Zealand's lion mane"
+  ],
+  "maori_names": [
+      "pekepeke kiore"
+  ],
+  "genus": "Hericium",
+  "description": "Initially looking somewhat like a cauliflower nearing flowering when immature, numerous feathery reddish-brown branches with no defined stipe when mature",
+  "lookalikes": [
+      null
+  ],
+  "links": [
+      "https://inaturalist.nz/taxa/906969-Hericium-novae-zealandiae",
+      "https://en.wikipedia.org/wiki/Hericium_novae-zealandiae"
+  ],
+  "lookalikes_description": "originally mistaken for overseas Coral tooth fungus",
+  "nz_books": [
+      "A Field Guide to the Native Edible Plants of New Zealand"
+  ],
+  "edibility": "Edible",
+  "ecology": "saprotrophic",
+  "environment": "Dead, decaying wood",
+  "time_of_year": [
+      "March"
+  ],
+  "native_or_introduced": true,
+  "adult_photos": [
+      "MushroomCards/LionsManeCard_vhbdjh.jpg"
+  ]
   },
 
   {
     "id":11,
-    "tags":["edible"],
-    "latin_names": "Agaricus campestris",
-    "common_names": "Meadow mushroom",
-    "description": "A white cap which may have scales, with pink to brown gills, stipe is white with a single thin ring",
-    "lookalikes": "Agaricus xanthodermus is poisonous and bruises yellow instead of reddish brown in edible meadow mushrooms, Agaricus genus has multiple similar-looking toxic \
-    and deadly related mushrooms not currently observed in New Zealand yet, but caution is advised, lookalikes may have a strong smell or slightly different shape or features",
-    "links": {
-      "iNaturalist": "https://inaturalist.nz/taxa/143563-Agaricus-campestris",
-      "wikipedia": "https://en.wikipedia.org/wiki/Agaricus_campestris"
-    },
-    "nz_books": "A Field Guide to the Native Edible Plants of New Zealand",
-    "edibility": "Edible",
     "stipe_features": {
+      "description": "bare",
       "diameter_min": 1,
       "diameter_max": 2,
-      "colour": ["White"],
+      "colour": "white",
       "length_min": 3,
       "length_max": 10,
-      "bruising_colour": "dingy reddish brown",
-      "type": "bare"
-    },
-    "gills": {
-      "colour": "initially pink, then red-brown and finally a dark brown",
+      "bruising_colour": "blueish",
       "attachment": "free"
-    },
-    "spore_colour": "dark brown",
-    "cap_features": {
-      "colour": ["White"],
+  },
+  "hymenium": {
+      "colour": "orange-brown",
+      "description": "initially pink, then red-brown and finally a dark brown",
+      "attachment": "free",
+      "spore_colour": "rustbrown"
+  },
+  "cap_features": {
+      "colour": "white",
       "texture": "May be smooth or may have scales",
       "diameter_min": 3,
       "diameter_max": 12,
-      "thickness_min": null,
-      "thickness_max": null,
       "shape": "convex"
-    },
-    "environment": "fields, grassy areas, lawns",
-    "ecology": "mycorrhizal",
-    "time_of_year": "Autumn (March to May in the Southern Hemisphere)",
-    "native_or_introduced": "Introduced",
-    "genus": "Agaricus",
-    "photos": ["MushroomCards/MeadowMushroomCard_y7dlhy.jpg", "MushroomCards/MeadowMushroom1_eh1dpo.jpg"]
+  },
+  "latin_names": [
+      "Agaricus campestris"
+  ],
+  "common_names": [
+      "Meadow mushroom"
+  ],
+  "tags": [
+      "Edible"
+  ],
+  "description": "A white cap which may have scales, with pink to brown gills, stipe is white with a single thin ring",
+  "genus": "Agaricus",
+  "lookalikes": [
+      null
+  ],
+  "lookalikes_description": "Agaricus xanthodermus is poisonous and bruises yellow instead of reddish brown in edible meadow mushrooms, Agaricus genus has multiple similar-looking toxic \\     and deadly related mushrooms not currently observed in New Zealand yet, but caution is advised, lookalikes may have a strong smell or slightly different shape or features",
+  "links": [
+      "https://inaturalist.nz/taxa/143563-Agaricus-campestris",
+      "https://en.wikipedia.org/wiki/Agaricus_campestris"
+  ],
+  "nz_books": [
+      "A Field Guide to the Native Edible Plants of New Zealand"
+  ],
+  "edibility": "Edible",
+  "ecology": "mycorrhizal",
+  "environment": "fields, grassy areas, lawns",
+  "time_of_year": [
+      "March"
+  ],
+  "native_or_introduced": false,
+  "adult_photos": [
+      "MushroomCards/MeadowMushroomCard_y7dlhy.jpg"
+  ]
   },
 
   {
     "id":12,
-    "tags":["edible"],
-    "latin_names": "Cyclocybe parasitica",
-    "common_names": "Tawaka, poplar mushroom",
-    "description": "Brown cap, white stem, growing on trees, veil is pressing against the gills and turns into a prominent ring often striated with dark brown spore print upon \
-    the stem expansion",
-    "lookalikes": "No known lookalikes",
-    "links": {
-      "iNaturalist": "https://inaturalist.nz/taxa/815897-Cyclocybe-parasitica",
-      "wikipedia": "https://en.wikipedia.org/wiki/Cyclocybe_parasitica"
-    },
-    "nz_books": "A Field Guide to the Native Edible Plants of New Zealand",
-    "edibility": "Edible",
     "stipe_features": {
-      "diameter_min": null,
-      "diameter_max": null,
-      "colour": ["White", "Brown"],
-      "length_min": null,
-      "length_max": null,
-      "bruising_colour": "None",
-      "type": "ring"
-    },
-    "gills": {
-      "colour": "Brown",
+      "bruising_colour": "na",
+      "colour": "white"
+  },
+  "hymenium": {
+      "colour": "palebrown",
       "attachment": "adnate"
-    },
-    "spore_colour": "Black, brown",
-    "cap_features": {
-      "colour": ["Brown"],
-      "texture": "Smooth",
+  },
+  "cap_features": {
+      "colour": "yellowish-brown",
+      "texture": "smooth",
       "diameter_min": 12,
       "diameter_max": 15,
-      "thickness_min": null,
-      "thickness_max": null,
       "shape": "convex"
-    },
-    "environment": "Living or dead trees",
-    "ecology": "parasitic",
-    "time_of_year": "Summer, autumn (November to June in the Southern Hemisphere)",
-    "native_or_introduced": "Native",
-    "genus": "Cyclocybe",
-    "photos": ["MushroomCards/TawakaCard_g6ndwo.jpg", "MushroomCards/Tawaka1_cb5u1w.jpg"]
   },
-  {
-    "id":13,
-    "tags":[],
-    "latin_names": "Macrolepiota Clelandii",
-    "common_names": "Slender Parasol, Graceful Parason",
-    "description": "Macrolepiota clelandii, commonly known as the slender parasol or graceful parasol, is a species of mushroom-forming fungus in the family Agaricaceae. \
-    The species is found in Australia and New Zealand, where it fruits singly or in small groups on the ground in eucalypt woodlands, parks, and roadsides. It is a tall mushroom \
-    up to roughly 20 cm (8 in), with a broad cap covered with distinctive rings of dark brown scales. The whitish gills on the cap underside are closely spaced and free from \
-    attachment to the slender stipe, which has a loose ring on its upper half, and a bulbous base. The edibility of the mushroom is not known with certainty, but closely related \
-    parasol mushrooms are edible and some are very sought after.",
-    "lookalikes": "M. procera is a larger with broad caps up to 12 in (30 cm) in diameter, and the stipe surface is covered with brownish zigzag bands or scaly girdles on a \
-    whitish background. The 'false parasol', Chlorophyllum molybdites, a toxic species that can be mistaken for M. konradii, also occurs in Australia (but not New Zealand). \
-    It can be distinguished by its green spore print and gills that turn light green in age. Some deadly poisonous Lepiota species have a similar pattern of scales on the cap, \
-    but their fruitbodies are smaller",
-    "links": {
-      "iNaturalist": "https://www.inaturalist.org/taxa/354649-Macrolepiota-clelandii",
-      "wikipedia": "https://en.wikipedia.org/wiki/Macrolepiota_clelandii"
-    },
-    "nz_books": "https://biotanz.landcareresearch.co.nz/references/f20c64a6-c0f2-4186-a229-6e1a26ed2",
-    "edibility": "Unknown",
-    "stipe_features": {
-      "diameter_min": null,
-      "diameter_max": null,
-      "colour": ["Pale Brown"],
-      "length_min": 0, //unknown (Made 0 so filter will work 0-18)
-      "length_max": 18,
-      "bruising_colour": "Unknown",
-      "type": "ring"
-    },
-    "gills": {
-      "colour": "White",
-      "attachment": "free"
-    },
-    "spore_colour": "White",
-    "cap_features": {
-      "colour": ["Dark Brown"],
-      "texture": "Scaly",
-      "diameter_min": 0, //unknown
-      "diameter_max": 12.5,
-      "thickness_min": null,
-      "thickness_max": null,
-      "shape": "convex, flat (in maturity)"
-    },
-    "environment": "Found in mixed Mānuka, Kānuka, Kauri forest, conifer plantations",
-    "ecology": "unknown",
-    "time_of_year": "Autumn, winter (February to August in the Southern Hemisphere)",
-    "native_or_introduced": "Native",
-    "genus": "Macrolepiota",
-    "photos": ["MushroomCards/GracefulParasolCard_bkmw4v.jpg", "MushroomCards/GracefulParasol1_cjvi54.jpg"]
+  "tags": [
+      "Edible"
+  ],
+  "latin_names": [
+      "Cyclocybe parasitica"
+  ],
+  "common_names": [
+      "poplar mushroom"
+  ],
+  "maori_names": [
+      "Tawaka"
+  ],
+  "genus": "Cyclocybe",
+  "description": "Brown cap, white stem, growing on trees, veil is pressing against the gills and turns into a prominent ring often striated with dark brown spore print upon \\     the stem expansion",
+  "lookalikes": [
+      null
+  ],
+  "links": [
+      "https://inaturalist.nz/taxa/815897-Cyclocybe-parasitica",
+      "https://en.wikipedia.org/wiki/Cyclocybe_parasitica"
+  ],
+  "nz_books": [
+      "A Field Guide to the Native Edible Plants of New Zealand"
+  ],
+  "edibility": "Edible",
+  "ecology": "parasitic",
+  "time_of_year": [
+      "November"
+  ],
+  "environment": "Living or dead trees",
+  "native_or_introduced": true,
+  "adult_photos": [
+      "MushroomCards/TawakaCard_g6ndwo.jpg"
+  ]
   },
   {
     "id":14,
