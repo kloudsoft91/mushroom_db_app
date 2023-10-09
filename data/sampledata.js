@@ -675,5 +675,328 @@ export default [
     "genus": "Armillaria",
     "photos": []
   },
-
+  {
+    "id": 16,
+    "stipe_features": {
+        "description": "The cylindrical stipe (stalk) is up to 5 cm long by 0.5 cm thick, fibrillose and stuffed.",
+        "colour": "indigo",
+        "bruising_colour": "na",
+        "attachment": "bare",
+        "length_max": 50,
+        "diameter_max": 5
+    },
+    "hymenium": {
+        "spore_colour": "reddishpink",
+        "description": "The gills are thin and 3–5 mm wide, essentially the same colour as the cap, sometimes with a yellow tint",
+        "attachment": "adnate",
+        "colour": "indigo"
+    },
+    "cap_features": {
+        "diameter_max": 40,
+        "shape": "convex",
+        "texture": "Fibrillose",
+        "colour": "indigo",
+        "description": "The cap may be up to 4 cm in diameter and conical in shape. The cap colour is indigo-blue with a green tint, and is fibrillose. The cap margin is striate and rolled inwards."
+    },
+    "common_names": [
+        "Blue Pinkgill",
+        "Sky-Blue Mushroom"
+    ],
+    "latin_names": [
+        "Entoloma Hochstetteri"
+    ],
+    "tags": [
+        "Poisonous"
+    ],
+    "maori_names": [
+        "Werewere-kōkako"
+    ],
+    "genus": "Entoloma",
+    "description": "Entoloma hochstetteri has a small delicate epigeous (above-ground) fruit body (basidiocarp)",
+    "links": [
+        "https://www.inaturalist.org/taxa/70225-Entoloma-hochstetteri",
+        "https://forest-ecology.com/focal-species-entoloma-hochstetteri/"
+    ],
+    "edibility": "Unknown",
+    "ecology": "saprotrophic",
+    "environment": "Grows on soil among litter in broadleaf/podocarp forest",
+    "time_of_year": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July"
+    ],
+    "native_or_introduced": true
+  },
+  {
+    "id": 17,
+    "stipe_features": {
+        "attachment": "volva",
+        "description": "It has a hollow white stalk and a cup shaped volva at the base",
+        "length_max": 100,
+        "length_min": 50,
+        "bruising_colour": "na",
+        "diameter_max": 30,
+        "colour": "white",
+        "diameter_min": 30
+    },
+    "hymenium": {
+        "description": "This mushroom does not have gills, instead it erupts arms and has a dark olive-brown slime or gleba which spreads the spores",
+        "attachment": "none"
+    },
+    "cap_features": {
+        "description": "It matures into a reddish star-shaped structure with 6 to 10 arms up to 4 cm long radiating from the central area. These arms are bifid (deeply divided into two limbs). The top of the fungus is covered with dark olive-brown slime or gleba, which smells of rotting meat.",
+        "colour": "red",
+        "diameter_max": 40
+    },
+    "latin_names": [
+        "Aseroe Rubra"
+    ],
+    "time_of_year": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "June",
+        "July",
+        "September",
+        "October",
+        "November",
+        "December"
+    ],
+    "common_names": [
+        "Anemone Stinkhorn",
+        "Sea Anemone Fungus",
+        "Starfish Fungus"
+    ],
+    "environment": "It is found on decomposing plant matter as well as on woodchips and mulch and is common in gardens and amenities plantings. It also occurs in alpine grasslands and woodlands.",
+    "ecology": "saprotrophic",
+    "edibility": "Unknown",
+    "genus": "Aseroe",
+    "tags": [
+        "Poisonous"
+    ],
+    "native_or_introduced": true,
+    "description": "Aseroe rubra begins as a partly buried whitish egg-shaped structure 3 cm in diameter, which bursts open as a hollow white stalk with reddish arms erupts and grows to a height of 10 cm. It matures into a reddish star-shaped structure with six to ten arms up to 4 cm long radiating from the central area. These arms are bifid (deeply divided into two limbs). The top of the fungus is covered with dark olive-brown slime or gleba, which smells of rotting meat. There is a cup-shaped volva at the base that is the remnants of the original egg.",
+    "links": [
+        "https://www.inaturalist.org/taxa/381310-Aseroe-rubra"
+    ]
+  },
+  {
+    "id": 18,
+    "stipe_features": {
+        "attachment": "bare",
+        "bruising_colour": "na",
+        "length_max": 100,
+        "description": "The stipe (stem) is smooth but fibrillose and streaky, yellow to orange-red, whitish towards base, lacking a ring.",
+        "diameter_min": 5,
+        "diameter_max": 10,
+        "colour": "yellowish-orange",
+        "length_min": 40
+    },
+    "hymenium": {
+        "attachment": "emarginate",
+        "description": "The gills are at first a pale lemon yellow, becoming more orange and then blackening as the rest of the mushroom changes colour.",
+        "colour": "yellowish-orange",
+        "spore_colour": "white"
+    },
+    "cap_features": {
+        "description": "The cap surface is smooth and finely fibrillose, varying from an initial light orange to orange-red, often paler at the margin. The surface is greasy in damp weather but in dry weather it becomes dry and silky. The conical caps rarely open out fully and they soon turn black - at first in patches but eventually they blacken all over. Even when blackened the caps of these fungi remain quite shiny.",
+        "colour": "yellowish-orange",
+        "diameter_min": 40,
+        "diameter_max": 70,
+        "texture": "Smooth and finely fibrillose, greasy in damp weather but dry and silky in dry weather.",
+        "shape": "conical"
+    },
+    "latin_names": [
+        "Hygrocybe Conica"
+    ],
+    "tags": [
+        "Poisonous"
+    ],
+    "common_names": [
+        "Blackening Waxcap",
+        "Witch's Hat",
+        "Conical Wax Cap",
+        "Conical Slimy Cap"
+    ],
+    "genus": "Hygrocybe",
+    "description": "Basidiocarps are agaricoid, up to 100 mm tall, the cap narrowly conical at first becoming umbonate and often lobed, up to 100 mm across. The cap surface is smooth and finely fibrillose, moist or viscid at first, variously yellow to orange or scarlet. The lamellae (gills) are waxy, white to pale yellow or greyish. The stipe (stem) is smooth but fibrillose and streaky, yellow to orange-red, whitish towards base, lacking a ring. All parts become duller and grey with age, finally becoming entirely black.",
+    "links": [
+        "https://www.inaturalist.org/taxa/51872-Hygrocybe-conica",
+        "https://www.first-nature.com/fungi/hygrocybe-conica.php"
+    ],
+    "edibility": "Unknown",
+    "time_of_year": [
+        "January",
+        "February",
+        "March",
+        "April",
+        "May",
+        "December"
+    ],
+    "ecology": "saprotrophic",
+    "environment": "It is commonly found in grassland but is also found in dunes, road verges, and other habitats. It grows on the dead roots of grasses and other grassland plants",
+    "native_or_introduced": false
+  },
+  {
+    "id": 19,
+    "stipe_features": {
+        "length_min": 20,
+        "length_max": 40,
+        "attachment": "bare",
+        "description": "Arising from a downy or felted whitish central stem and usually branching frequently",
+        "colour": "lilac"
+    },
+    "hymenium": {
+        "spore_colour": "white",
+        "attachment": "none"
+    },
+    "cap_features": {
+        "description": "No typical cap but upper surfaces are smooth, lilac or violaceous, and noticeably elastic.",
+        "colour": "lilac",
+        "texture": "Smooth and elastic"
+    },
+    "latin_names": [
+        "Ramariopsis Pulchella"
+    ],
+    "description": "Ramariopsis pulchella is a species of coral fungus in the family Clavariaceae. This small, branching coral fungus is often hard to spot, largely because if its relative rarity but also it small stature, often being concealed among mosses and leaf litter. Arising from a downy or felted whitish central stem and usually branching frequently, the fruitbody is typically 2 to 4cm tall. Upper surfaces are smooth, lilac or violaceous, and noticeably elastic.",
+    "genus": "Ramariopsis",
+    "native_or_introduced": true,
+    "time_of_year": [
+        "April",
+        "May",
+        "June",
+        "July",
+        "August",
+        "September"
+    ],
+    "common_names": [
+        "Lilac Coral Fungus"
+    ],
+    "links": [
+        "https://www.inaturalist.org/taxa/352201-Ramariopsis-pulchella",
+        "https://biotanz.landcareresearch.co.nz/scientific-names/1cb1a14f-36b9-11d5-9548-00d0592d548c",
+        "https://www.first-nature.com/fungi/ramariopsis-pulchella.php"
+    ],
+    "edibility": "May be edible but taste is mild and not distinctive",
+    "ecology": "saprotrophic",
+    "environment": "Grows on soil among leaf litter and mosses in deciduous woodland on calcareous soil.",
+    "tags": [
+        "Edible"
+    ]
+  },
+  {
+    "id": 20,
+    "stipe_features": {
+        "colour": "yellow",
+        "description": "The stem is pale yellow, and measures 4–12 cm long by 0.5–1.9 cm thick. The partial veil that covers the young fruit body turns into the ring on the stem at maturity.",
+        "length_min": 40,
+        "length_max": 120,
+        "bruising_colour": "na",
+        "diameter_min": 5,
+        "diameter_max": 19,
+        "attachment": "ring"
+    },
+    "hymenium": {
+        "spore_colour": "white",
+        "description": "The gills are white and closely spaced.",
+        "colour": "white",
+        "attachment": "adnate"
+    },
+    "cap_features": {
+        "colour": "yellow",
+        "description": "The fruit bodies are coloured yellow overall. The fresh cap, ranging in colour from dull creamy yellow to golden yellow to buff, is sticky when moist. White warts adorn the cap surface, but they are usually flimsy and easily washed away by rain. They are placed randomly, but tend to be more concentrated in the centre. The cap is typically 2.5–12 cm in diameter, and initially convex before flattening out in maturity.",
+        "diameter_min": 25,
+        "diameter_max": 120,
+        "texture": "The cap surface is sticky when moist, and characterized by white warts, which are easily detached.",
+        "shape": "flat"
+    },
+    "ecology": "mycorrihizal",
+    "latin_names": [
+        "Amanita Gemmata",
+        "Amanita Junquillea"
+    ],
+    "common_names": [
+        "Jewelled Amanita",
+        "Gemmed Amanita"
+    ],
+    "time_of_year": [
+        "April",
+        "May",
+        "June",
+        "July",
+        "September",
+        "October",
+        "November",
+        "December"
+    ],
+    "native_or_introduced": false,
+    "genus": "Amanita",
+    "description": "The fruit body has a cap that is a dull to golden shade of yellow, and typically 2.5–12 cm in diameter. The cap surface is sticky when moist, and characterised by white warts, which are easily detached. It is initially convex, and flattens out when mature. The flesh is white and does not change colour when cut. The gills are white and closely spaced. The stem is pale yellow, and measures 4–12 cm long by 0.5–1.9 cm thick. The partial veil that covers the young fruit body turns into the ring on the stem at maturity.",
+    "links": [
+        "https://www.inaturalist.org/taxa/350046-Amanita-junquillea",
+        "https://biotanz.landcareresearch.co.nz/scientific-names/2d7c6716-aa41-46c2-9aa7-cc1855546642",
+        "https://en.wikipedia.org/wiki/Amanita_gemmata"
+    ],
+    "edibility": "Toxic",
+    "tags": [
+        "Poisonous",
+        "Psychoactive"
+    ],
+    "environment": "It prefers habitats like coniferous and mixed forests and alongside paths"
+  },
+  {
+    "id": 21,
+    "stipe_features": {
+        "description": "The stipe is up to about 7 cm tall by 3 cm in diameter and it is similar in colour to the cap, but much lighter. It may have shallow pits (scrobiculae). The flesh is a dirty white and tends to turn brown.",
+        "colour": "olive-brown",
+        "length_max": 70,
+        "diameter_max": 30,
+        "bruising_colour": "na",
+        "attachment": "bare"
+    },
+    "hymenium": {
+        "attachment": "decurrent",
+        "colour": "white",
+        "description": "The gills are crowded, dirty white, stained olive-brown by old milk, which is initially white on contact with the air. They are somewhat decurrent. With potassium hydroxide or ammonia there is a purple reaction."
+    },
+    "cap_features": {
+        "description": "The cap is normally 8–20 cm in diameter. At first it has an involute margin and a somewhat depressed centre. The upper surface is olive brown or yellow-green and is often sticky or slimy in the middle. When young it has velvety zones and may be shaggy at the rim. Later it becomes funnel-shaped and the colour darkens to blackish.",
+        "colour": "olive-brown",
+        "diameter_min": 80,
+        "diameter_max": 200,
+        "texture": "It has velvety zones and may be shaggy at the rim and is often sticky or slimy in the middle",
+        "shape": "depressed"
+    },
+    "common_names": [
+        "Ugly Milkcap"
+    ],
+    "latin_names": [
+        "Lactarius Turpis"
+    ],
+    "native_or_introduced": false,
+    "environment": "While especially associated with birch, it is also found with spruce, pine and other trees in mixed woodland.",
+    "description": "The messy, dirty appearance, seen in the photograph, is characteristic of the species. It seems to collect debris on top and the gills acquire a dirty brownish stain due to discoloured milk.",
+    "genus": "Lactarius",
+    "links": [
+        "https://www.inaturalist.org/taxa/382886-Lactarius-turpis"
+    ],
+    "edibility": "Edible but not recommended",
+    "tags": [
+        "Edible"
+    ],
+    "ecology": "mycorrihizal",
+    "time_of_year": [
+        "July",
+        "August",
+        "September",
+        "October",
+        "November"
+    ]
+  },
 ]
