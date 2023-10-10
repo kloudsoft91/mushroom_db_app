@@ -66,24 +66,23 @@
         <input v-model="selectedColour" @input="emitColour(selectedColour)" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Colour" />
       </div>
     </template>
-    <template #season>
+    <template #month>
       <div class="flex items-center justify-around">
-        <div @click="emitSeason('spring')" class="mush-slide tablet:pl-8">
-            <img class="cap-image" src="" alt="spring">
-            <p>Spring</p>
-        </div>
-        <div @click="emitSeason('summer')" class="mush-slide">
-            <img class="cap-image" src="" alt="summer">
-            <p>Summer</p>
-        </div>
-        <div @click="emitSeason('autumn')" class="mush-slide tablet:pr-10">
-            <img class="cap-image" src="" alt="autumn" >
-            <p>Autumn</p>
-        </div>
-        <div @click="emitSeason('winter')" class="mush-slide tablet:pr-10">
-            <img class="cap-image" src="" alt="winter" >
-            <p>Winter</p>
-        </div>
+        <select @click="emitMonth(selectedMonth)" v-model="selectedMonth">
+          <option></option>
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
       </div>
     </template>
   </UAccordion>
@@ -97,7 +96,7 @@ export default {
       selectedEcology: '',
       selectedStipe: '',
       selectedColour: '',
-      selectedSeason: '',
+      selectedMonth: '',
       items: [
         {
           label: 'Ecology',
@@ -124,10 +123,10 @@ export default {
           slot: 'stipe',
         },
         {
-          label: 'Season',
+          label: 'Month',
           defaultOpen: true,
           multiple: true,
-          slot: 'season'
+          slot: 'month'
         },
         {
           label: 'Colour',
@@ -164,11 +163,12 @@ export default {
         this.$emit('selectedStipe', stipe);
       });
     },
-    emitSeason(season) {
+    emitMonth(selectedMonth) {
       nextTick(() => {
-        this.selectedSeason = season;
-        //emit event to parent component (BottomFrame.vue)
-        this.$emit('selectedSeason', season);
+      //emit event to parent component (BottomFrame.vue)
+      this.selectedMonth = selectedMonth;
+      console.log("selectedMonth emit:" + this.selectedMonth);
+      this.$emit('selectedMonth', this.selectedMonth);
       });
     },
     emitColour(selectedColour) {
