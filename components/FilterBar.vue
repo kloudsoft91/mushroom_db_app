@@ -69,6 +69,7 @@
     <template #month>
       <div class="flex items-center justify-around">
         <select @click="emitMonth(selectedMonth)" v-model="selectedMonth">
+          <option disabled value="">Select Month</option>
           <option></option>
           <option>January</option>
           <option>February</option>
@@ -83,6 +84,9 @@
           <option>November</option>
           <option>December</option>
         </select>
+        <div>
+          {{ currentMonth() }}
+        </div>
       </div>
     </template>
   </UAccordion>
@@ -138,6 +142,37 @@ export default {
     };
   },
   methods: {
+    currentMonth() {
+      const current = new Date();
+      const date = current.getMonth();
+      switch (date) {
+      case 0:
+      return "Current Month: January";
+      case 1:
+      return "Current Month: February";
+      case 2:
+      return "Current Month: March";
+      case 3:
+      return "Current Month: April";
+      case 4:
+      return "Current Month: May";
+      case 5:
+      return "Current Month: June";
+      case 6:
+      return "Current Month: July";
+      case 7:
+      return "Current Month: August";
+      case 8:
+      return "Current Month: September";
+      case 9:
+      return "Current Month: October";
+      case 10:
+      return "Current Month: November";
+      case 11:
+      return "Current Month: December";
+      }
+      return date;
+    },
     //emits cap shape on button click
     emitCapShape(capShape) {
       this.selectedCapShape = capShape;
