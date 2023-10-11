@@ -213,17 +213,17 @@ export default {
     emitStipeColour(stipeColour) {
       nextTick(() => {
       //emit event to parent component (BottomFrame.vue)
-        console.log("selectedstipecolour emit:" + this.stipeColour);
-        this.stipeColour = stipeColour;
-        this.$emit('selectedstipeColour', this.stipeColour);
+      this.stipeColour = stipeColour;
+      console.log("stipecolour emit:" + this.stipeColour);
+      this.$emit('stipeColour', this.stipeColour);
       });
     },
     emitCapColour(capColour) {
       nextTick(() => {
       //emit event to parent component (BottomFrame.vue)
-        console.log("selectedcapcolour emit:" + this.capColour);
-        this.capColour = capColour;
-        this.$emit('selectedstipeColour', this.capColour);
+      this.capColour = capColour;
+      console.log("capcolour emit:" + this.capColour);
+      this.$emit('capColour', this.capColour);
       });
     }
   }
