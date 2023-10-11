@@ -279,6 +279,7 @@ export default{
     handleSearch(searchInput) {
       this.searchInput = searchInput;
       this.applyAllFilters();
+      return this.searchInput;
     },
     //receives tag button events
     handleTags(selectedTag) {
@@ -288,6 +289,7 @@ export default{
         this.selectedTag = selectedTag;
       }
       this.applyAllFilters();
+      return this.selectedTag;
     },
     //receives cap shape button events
     handleCapShape(selectedCapShape) {
@@ -297,6 +299,7 @@ export default{
         this.selectedCapShape = selectedCapShape;
       }
       this.applyAllFilters();
+      return this.selectedCapShape;
     },
     //receives gill attachment buttone vents
     handleGills(selectedGillAttach) {
@@ -306,6 +309,7 @@ export default{
         this.selectedGillAttach = selectedGillAttach;
       }
       this.applyAllFilters();
+      return this.selectedGillAttach;
     },
     //receives ecology button events
     handleEcology(selectedEcology) {
@@ -315,6 +319,7 @@ export default{
         this.selectedEcology = selectedEcology;
       }
       this.applyAllFilters();
+      return this.selectedEcology;
     },
     //receives stipe type button events
     handleStipe(selectedStipe) {
@@ -324,6 +329,7 @@ export default{
         this.selectedStipe = selectedStipe;
       }
       this.applyAllFilters();
+      return this.selectedStipe;
     },
     handleStipeColour(stipeColour) {
       console.log("handle stipe colour function");
@@ -334,6 +340,7 @@ export default{
         console.log("handle stipe colour:" + stipeColour);
       }
       this.applyAllFilters();
+      return this.stipeColour;
     },
     handleCapColour(capColour) {
       console.log("handle cap colour function");
@@ -344,6 +351,7 @@ export default{
         console.log("handle cap colour:" + capColour);
       }
       this.applyAllFilters();
+      return this.capColour;
     },
     handleMonth(selectedMonth) {
       if (selectedMonth == "") {
@@ -353,6 +361,7 @@ export default{
         this.selectedMonth = selectedMonth;
       }
       this.applyAllFilters();
+      return this.selectedMonth;
     },
     //generic size filter event handler
     handleSizeFilter(filterData) {
@@ -361,6 +370,7 @@ export default{
       this.capDiam = filterData.capDiam;
       this.capThick = filterData.capThick;
       this.applyAllFilters();
+      return this.filterData;
     },
     //Open 
     openCarouselInputs() {
