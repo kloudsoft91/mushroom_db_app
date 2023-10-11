@@ -103,21 +103,21 @@
     },
     emitMonth(selectedMonth) {
       this.selectedMonth = selectedMonth;
-      console.log("selectedmonth emit 2:" + this.selectedMonth);
+      console.log("selectedmonth emit 2:" + selectedMonth);
       //emit event to parent component (BottomFrame.vue)
-      this.$emit('selectedMonth', this.selectedMonth);
+      this.$emit('selectedMonth', selectedMonth);
     },
     emitStipeColour(stipeColour) {
-        console.log("selectedstipecolour emit 2:" + this.stipeColour);
-        this.stipeColour = stipeColour;
-        //emit event to parent component (Index.vue)
-        this.$emit('selectedstipeColour', this.stipeColour);
+      console.log("stipecolour emit 2:" + stipeColour);
+      this.stipeColour = stipeColour;
+      //emit event to parent component (Index.vue)
+      this.$emit('stipeColour', stipeColour);
     },
     emitCapColour(capColour) {
-        console.log("selectedcapcolour emit 2:" + this.capColour);
-        this.capColour = capColour;
-        //emit event to parent component (Index.vue)
-        this.$emit('selectedstipeColour', this.capColour);
+      console.log("capcolour emit 2:" + capColour);
+      this.capColour = capColour;
+      //emit event to parent component (Index.vue)
+      this.$emit('capColour', capColour);
     },
    },
    components: {
