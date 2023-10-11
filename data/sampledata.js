@@ -31,7 +31,7 @@ export default [
     },
     "spore_colour": "brown",
     "cap_features": {
-      "colour": ["white", "brown", "black"],
+      "colour": ["White", "Brown", "Black"],
       "texture": "rough scaly",
       "diameter_min": 4,
       "diameter_max": 8,

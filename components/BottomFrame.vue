@@ -34,7 +34,7 @@
       <vue-bottom-sheet ref="myBottomSheet" :can-swipe="false" overlay-color="#00000000" :max-width="9999999999999">
         <div class=" border-solid border-2">
             
-            <FilterBar @selectedCapShape="emitCapShape" @selectedGillAttach="emitGillAttach" @selectedEcology="emitEcology" @selectedStipe="emitStipe" @selectedMonth="emitMonth" @selectedColour="emitColour"/>    
+            <FilterBar @selectedCapShape="emitCapShape" @selectedGillAttach="emitGillAttach" @selectedEcology="emitEcology" @selectedStipe="emitStipe" @selectedMonth="emitMonth" @stipeColour="emitStipeColour" @capColour="emitCapColour"/>    
         </div>
 
         
@@ -107,11 +107,17 @@
       //emit event to parent component (BottomFrame.vue)
       this.$emit('selectedMonth', this.selectedMonth);
     },
-    emitColour(selectedColour) {
-        console.log("selectedcolour emit 2:" + selectedColour);
-        this.selectedColour = selectedColour;
+    emitStipeColour(stipeColour) {
+        console.log("selectedstipecolour emit 2:" + this.stipeColour);
+        this.stipeColour = stipeColour;
         //emit event to parent component (Index.vue)
-        this.$emit('selectedColour', selectedColour);
+        this.$emit('selectedstipeColour', this.stipeColour);
+    },
+    emitCapColour(capColour) {
+        console.log("selectedcapcolour emit 2:" + this.capColour);
+        this.capColour = capColour;
+        //emit event to parent component (Index.vue)
+        this.$emit('selectedstipeColour', this.capColour);
     },
    },
    components: {

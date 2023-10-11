@@ -63,7 +63,10 @@
     </template>
     <template #colour>
       <div class="flex items-center justify-around">
-        <input v-model="selectedColour" @input="emitColour(selectedColour)" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Colour" />
+        <input v-model="stipeColour" @input="emitStipeColour(stipeColour)" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Stipe Colour" />
+      </div>
+      <div class="flex items-center justify-around">
+        <input v-model="capColour" @input="emitCapColour(capColour)" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Cap Colour" />
       </div>
     </template>
     <template #month>
@@ -99,7 +102,8 @@ export default {
     return {
       selectedEcology: '',
       selectedStipe: '',
-      selectedColour: '',
+      stipeColour: '',
+      capColour: '',
       selectedMonth: '',
       items: [
         {
@@ -206,14 +210,22 @@ export default {
       this.$emit('selectedMonth', this.selectedMonth);
       });
     },
-    emitColour(selectedColour) {
+    emitStipeColour(stipeColour) {
       nextTick(() => {
-        //console.log("selectedcolour emit:" + selectedColour);
-        this.selectedColour = selectedColour;
-        //emit event to parent component (BottomFrame.vue)
-        this.$emit('selectedColour', selectedColour);
+      //emit event to parent component (BottomFrame.vue)
+        console.log("selectedstipecolour emit:" + this.stipeColour);
+        this.stipeColour = stipeColour;
+        this.$emit('selectedstipeColour', this.stipeColour);
       });
     },
+    emitCapColour(capColour) {
+      nextTick(() => {
+      //emit event to parent component (BottomFrame.vue)
+        console.log("selectedcapcolour emit:" + this.capColour);
+        this.capColour = capColour;
+        this.$emit('selectedstipeColour', this.capColour);
+      });
+    }
   }
 };
 </script>

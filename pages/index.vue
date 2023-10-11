@@ -9,7 +9,7 @@
   <SlideOver />
   <!--Bottomframe for small screens only-->
   <!--Should pop out when clicking the "Discover" button on footerbar-->
-  <BottomFrame ref="bottomFrame" @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe" @selectedMonth="handleMonth" @selectedColour="handleColour" @openCarouselInputs="openCarouselInputs"/>
+  <BottomFrame ref="bottomFrame" @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe" @selectedMonth="handleMonth" @stipeColour="handleStipeColour" @capColour="handleCapColour" @openCarouselInputs="openCarouselInputs"/>
 </template>
 
 <script>
@@ -33,6 +33,8 @@ export default{
       selectedStipe: '',
       selectedMonth: '',
       selectedColour: '',
+      stipeColour: '',
+      capColour: '',
       stipeLen: '',
       stipeDiam: '',
       capDiam: '',
@@ -53,7 +55,9 @@ export default{
       results = this.filterByGillAttach(results);
       results = this.filterByEcology(results);
       results = this.filterByStipe(results);
-      results = this.filterByColour(results);
+      //results = this.filterByColour(results);
+      results = this.filterByStipeColour(results);
+      results = this.filterByCapColour(results);
       results = this.filterByMonth(results);
       //Size Filter Calls:
       results = this.filterBySize(results, this.stipeLen, 'stipe_features.length_min', 'stipe_features.length_max');
@@ -130,13 +134,32 @@ export default{
     },
 
     //Cap and stipe colour, case sensitive
-    filterByColour(data){
+    /*filterByColour(data){
       //check if defined
       if (!this.selectedColour) {
         return data;
       }
       return data.filter((mushroom) => 
       mushroom.cap_features.colour.includes(this.selectedColour) || mushroom.stipe_features.colour.includes(this.selectedColour));
+    },
+    */
+
+    filterByStipeColour(data){
+      //check if defined
+      if (!this.stipeColour) {
+        return data;
+      }
+      return data.filter((mushroom) => 
+      mushroom.stipe_features.colour.includes(this.stipeColour));
+    },
+
+    filterByCapColour(data){
+      //check if defined
+      if (!this.capColour) {
+        return data;
+      }
+      return data.filter((mushroom) => 
+      mushroom.cap_features.colour.includes(this.capColour));
     },
 
     monthToInt(month) {
@@ -273,13 +296,23 @@ export default{
       }
       this.applyAllFilters();
     },
-    handleColour(selectedColour) {
-      console.log("handle colour function");
-      if (this.selectedColour == selectedColour) {
-        this.selectedColour = "";
+    handleStipeColour(stipeColour) {
+      console.log("handle stipe colour function");
+      if (this.stipeColour == stipeColour) {
+        this.stipeColour = "";
       } else {
-        this.selectedColour = selectedColour;
-        console.log("handle colour:" + selectedColour);
+        this.stipeColour = stipeColour;
+        console.log("handle stipe colour:" + stipeColour);
+      }
+      this.applyAllFilters();
+    },
+    handleCapColour(capColour) {
+      console.log("handle cap colour function");
+      if (this.capColour == capColour) {
+        this.capColour = "";
+      } else {
+        this.capColour = capColour;
+        console.log("handle cap colour:" + capColour);
       }
       this.applyAllFilters();
     },

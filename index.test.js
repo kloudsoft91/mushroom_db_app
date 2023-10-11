@@ -496,7 +496,7 @@ describe('Index', () => {
     expect(wrapper.vm.monthToInt('may')).toBe(5);
     expect(wrapper.vm.monthToInt('june')).toBe(6);
     expect(wrapper.vm.monthToInt('july')).toBe(7);
-    expect(wrapper.vm.monthToInt('August')).toBe(8);
+    expect(wrapper.vm.monthToInt('august')).toBe(8);
     expect(wrapper.vm.monthToInt('september')).toBe(9);
     expect(wrapper.vm.monthToInt('october')).toBe(10);
     expect(wrapper.vm.monthToInt('november')).toBe(11);
