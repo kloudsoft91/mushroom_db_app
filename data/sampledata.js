@@ -86,6 +86,39 @@ export default [
             "MushroomCards/ShaggyMane3_xveake.jpg"
         ]
     },
+    "nz_books": "A Field Guide to the Fungi of New Zealand by E.J.H. Corner and P.D. Orton",
+    "edibility": "Edible when young and fresh. However, it is not recommended to consume alcohol within a few hours before or after eating this mushroom due to potential adverse \
+    reactions.",
+    "stipe_features": {
+      "diameter_min": 1,
+      "diameter_max": 2.5,
+      "colour": ["white"],
+      "length_min": 6,
+      "length_max": 40,
+      "bruising_colour": "No significant bruising",
+      "type": "ring"
+    },
+    "gills": {
+      "colour": "white pink black",
+      "attachment": "free"
+    },
+    "spore_colour": "brown",
+    "cap_features": {
+      "colour": ["white", "brown", "black"],
+      "texture": "rough scaly",
+      "diameter_min": 4,
+      "diameter_max": 8,
+      "thickness_min": 6,
+      "thickness_max": 20,
+      "shape": "conical"
+    },
+    "environment": "grass, gravel roads, waste areas",
+    "ecology":"saprotrophic",
+    "time_of_year": "Late spring to autumn (October to April in the Southern Hemisphere)",
+    "native_or_introduced": "introduced",
+    "genus": "coprinus",
+    "photos": ["MushroomCards/ShaggyManeCard_egc21k.jpg"]
+  },
 
     {
         "id": 2,
@@ -165,96 +198,38 @@ export default [
             "MushroomCards/AmanitaMuscaria2_ttnpcq.jpg"
         ]
     },
-    {
-        "id": 3,
-        "stipe_features": {
-            "description": "The stem is 5–25 cm (2–10 in) long, 1–5 cm thick, and often narrows near the base.[1] The frail ring is dusted with rusty orange spores, and the gill attachment to the stem is adnate to sub-decurrent.",
-            "diameter_min": 1,
-            "diameter_max": 5,
-            "colour": [
-                "yellow",
-                "yellowish-brown",
-                "yellowish-orange",
-                "orange",
-                "brown"
-            ],
-            "length_min": 5,
-            "length_max": 25,
-            "bruising_colour": null,
-            "type": "ring"
-        },
-        "gills": {
-            "description": "The Spectacular Rustgills have gills on the hymenium. the gill attachment to the stem is adnate to sub-decurrent. that are similar in colour to its cap",
-            "colour": [
-                "yellow",
-                "yellowish-brown",
-                "yellowish-orange",
-                "orange",
-                "brown"
-            ],
-            "attachment": "adnate",
-            "spore_colour": "rust brown"
-        },
-        "cap_features": {
-            "description": "The cap ranges from 8–30 cm (3–12 in) across, is convex to flat,[1] and is bright yellow-orange in younger specimens and orange-brown or reddish brown in older ones, with a dry scaly surface.",
-            "colour": [
-                "yellow",
-                "yellowish-brown",
-                "yellowish-orange",
-                "orange",
-                "brown"
-            ],
-            "diameter_min": 8,
-            "diameter_max": 30,
-            "thickness_min": null,
-            "thickness_max": null,
-            "texture": "Dry and scaly",
-            "shape": [
-                "convex"
-            ],
-        },
-        "tags": [
-            "poisonous"
-        ],
-        "latin_names": [
-            "Gymnopilus junonius"
-        ],
-        "common_names": [
-            "Laughing Gym",
-            "Spectacular Rustgill"
-        ],
-        "maori_names": [
-            "None"
-        ],
-        "genus": "Gymnopilus",
-        "description": "Gymnopilus junonius is a type of mushroom-forming fungus in the family Hymenogastraceae. Commonly known as the spectacular rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the neurotoxic oligoisoprenoid gymnopilin.",
-        "lookalikes": [
-            null
-        ],
-        "lookalikes_description": "This mushroom is often mistaken for Gymnopilus ventricosus, which also contains no psilocybin and G. luteus and G. subspectabilis, which do. It also resembles Armillaria mellea and Omphalotus olivascens.",
-        "links": [
-            "https://inaturalist.nz/taxa/1155105-Gymnopilus-junonius",
-            "https://en.wikipedia.org/wiki/Gymnopilus_junonius"
-        ],
-        "nz_books": [
-            null
-        ],
-        "edibility": "Not recommended for consumption due to its potential toxicity.",
-        "ecology": "saprotrophic",
-        "environment": "Frequently found on dead wood, particularly logs and tree stumps or bases.",
-        "time_of_year": [
-            "march",
-            "april",
-            "may"
-        ],
-        "native_or_introduced": "introduced",
-        "photos": [
-            "MushroomCards/LaughingGymCard_yo4quk.jpg",
-            "MushroomCards/LaughingGym1_lwmtun.jpg",
-            "MushroomCards/LaughingGym2_crh6vm.jpg",
-            "MushroomCards/LaughingGym3_kkwhzz.jpg"
-        ],
+    "nz_books": "None",
+    "edibility": "Highly toxic, and consumption can lead to severe poisoning.",
+    "stipe_features": {
+      "diameter_min": 1,
+      "diameter_max": 2,
+      "colour": ["white"],
+      "length_min": 5,
+      "length_max": 20,
+      "bruising_colour": "No significant bruising",
+      "type": "volva ring"
     },
+    "gills": {
+      "colour": "White",
+      "attachment": "free"
+    },
+    "spore_colour": "White",
+    "cap_features": {
+      "colour": ["red", "orange", "white", "yellow"],//"Bright red to orange with white to yellow warts",
+      "texture": "Covered in warts",
+      "diameter_min": 8,
+      "diameter_max": 20,
+      "thickness_min": null,
+      "thickness_max": null,
+      "shape": "convex"
+    },
+    "environment": "Often found in association with various trees, especially pines and birches.",
+    "ecology":"mycorrhizal",
+    "time_of_year": "Late summer to autumn (March to June in the Southern Hemisphere)",
+    "native_or_introduced": "introduced",
+    "genus": "Amanita",
+    "photos": ["MushroomCards/AmanitaMuscariaCard_gy8lsy.jpg"]
+  },
 
     {
         "id": 4,
@@ -341,6 +316,38 @@ export default [
             "MushroomCards/PsilocybeWeraroa3_khjiwc.jpg"
         ]
     },
+    "nz_books": "None",
+    "edibility": "Not recommended for consumption due to its potential toxicity.",
+    "stipe_features": {
+      "diameter_min": 1,
+      "diameter_max": 5,
+      "colour": ["yellow", "brown", "orange"], //Yellowish-brown",
+      "length_min": 5,
+      "length_max": 25,
+      "bruising_colour": "No significant bruising",
+      "type": "ring"
+    },
+    "gills": {
+      "colour": "Orange-brown",
+      "attachment": "adnate or decurrent"
+    },
+    "spore_colour": "Rust-brown",
+    "cap_features": {
+      "colour": ["brown", "orange", "yellow"], //"Rusty-brown to orange",
+      "texture": "dry scaly",
+      "diameter_min": 8,
+      "diameter_max": 30,
+      "thickness_min": null,
+      "thickness_max": null,
+      "shape": "convex"
+    },
+    "environment": "Frequently found on dead wood, particularly logs and tree stumps or bases.",
+    "ecology":"saprotrophic",
+    "time_of_year": "Autumn (March to May in the Southern Hemisphere)",
+    "native_or_introduced": "introduced",
+    "genus": "Gymnopilus",
+    "photos": ["MushroomCards/LaughingGymCard_yo4quk.jpg"]
+  },
 
     {
         "id": 5,
@@ -419,6 +426,38 @@ export default [
             "MushroomCards/PurplePouchCard_mtfrc3.jpg"
         ]
     },
+    "nz_books": "None",
+    "edibility": "Psilocybe weraroa contains psilocybin and psilocin, which are psychoactive compounds. It is illegal to consume this mushroom in New Zealand.",
+    "stipe_features": {
+      "diameter_min": .1,
+      "diameter_max": .6,
+      "colour": ["white", "blue"], //"White, often with a blueish coloration near the base",
+      "length_min": 0,
+      "length_max": 4,
+      "bruising_colour": "Blueish bruising when handled",
+      "type": "bare cortina"
+    },
+    "gills": {
+      "colour": "Pale brown when young, becoming dark purple-brown",
+      "attachment": "none"
+    },
+    "spore_colour": "Purple-brown",
+    "cap_features": {
+      "colour": ["brown"], //"Brown to dark brown",
+      "texture": "Smooth, polished, leathery",
+      "diameter_min": 1.5,
+      "diameter_max": 3,
+      "thickness_min": 3,
+      "thickness_max": 5,
+      "shape": "conical, ovate"
+    },
+    "environment": "Found in grassy areas, wood chips, and soils with rich organic matter, rotting wood, woody debris",
+    "ecology":"saprotrophic",
+    "time_of_year": "Late summer to autumn (February to May in the Southern Hemisphere)",
+    "native_or_introduced": "native",
+    "genus": "Psilocybe",
+    "photos": ["MushroomCards/PsilocybeWeraroaCard_ipwjeo.jpg"]
+  },
 
     {
         "id": 6,
@@ -501,7 +540,38 @@ export default [
             "MushroomCards/ShaggyParasol4_mb2ogq.jpg"
         ]
     },
-    
+    "nz_books": "None",
+    "edibility": "Edible but not recommended",
+    "stipe_features": {
+      "diameter_min": 1,
+      "diameter_max": 2,
+      "colour": ["violet"],
+      "length_min": 3,
+      "length_max": 9,
+      "bruising_colour": "No significant bruising",
+      "type": "bare"
+    },
+    "gills": {
+      "colour": "White",
+      "attachment": "none"
+    },
+    "spore_colour": "Brown",
+    "cap_features": {
+      "colour": ["violet"],
+      "texture": "smooth, polished, sticky",
+      "diameter_min": 2,
+      "diameter_max": 7,
+      "thickness_min": null,
+      "thickness_max": null,
+      "shape": "ovate"
+    },
+    "environment": "Trees, Hard Beech, Black Beech",
+    "ecology":"saprotrophic",
+    "time_of_year": "(April to June)",
+    "native_or_introduced": "native",
+    "genus": "Cortinarius",
+    "photos": ["MushroomCards/PurplePouchCard_mtfrc3.jpg"]
+  },
 
     {
         "id": 7,
@@ -585,7 +655,38 @@ export default [
             "MushroomCards/BirchBolete1_qwwjwz.jpg"
         ]
     },
-    
+    "nz_books": "None",
+    "edibility": "Edible but not recommended.",
+    "stipe_features": {
+      "diameter_min": 2,
+      "diameter_max": 3,
+      "colour": ["white"],
+      "length_min": 5,
+      "length_max": 20,
+      "bruising_colour": "No significant bruising",
+      "type": "ring"
+    },
+    "gills": {
+      "colour": "White",
+      "attachment": "free"
+    },
+    "spore_colour": "White",
+    "cap_features": {
+      "colour": ["white"],
+      "texture": "fleshy",
+      "diameter_min": 6,
+      "diameter_max": 20,
+      "thickness_min": null,
+      "thickness_max": null,
+      "shape": "umbonate or convex"
+    },
+    "environment": "soil",
+    "ecology":"saprotrophic",
+    "time_of_year": "(February to June in the Southern Hemisphere)",
+    "native_or_introduced": "introduced",
+    "genus": "Cortinarius",
+    "photos": ["MushroomCards/ShaggyParasolCard_e61grf.jpg"]
+  },
 
     {
         "id": 8,
@@ -668,6 +769,39 @@ export default [
             "MushroomCards/CommonPuffball1_svcolm.jpg"
         ]
     },
+    "nz_books": "A Field Guide to the Native Edible Plants of New Zealand",
+    "edibility": "The birch bolete is edible but considered not to be worthwhile by some guides. A few reports in North America suggest that Leccinums (birch boletes) should \
+    only be consumed with much caution.",
+    "stipe_features": {
+      "diameter_min": 1,
+      "diameter_max": 3.5,
+      "colour": ["white"],
+      "length_min": 5,
+      "length_max": 15,
+      "bruising_colour": "No significant bruising",
+      "type": "bare"
+    },
+    "gills": {
+      "colour": "White pores that later turn grey",
+      "attachment": "Has pores instead of gills (none)"
+    },
+    "spore_colour": "Brown",
+    "cap_features": {
+      "colour": ["tan", "brown"],
+      "texture": "Smooth, bald, and dry to viscid",
+      "diameter_min": 5,
+      "diameter_max": 15,
+      "thickness_min": null,
+      "thickness_max": null,
+      "shape": "Hemispherical to flat at the top"
+    },
+    "environment": "Under birch trees like Betula pendula",
+    "ecology": "mycorrhizal",
+    "time_of_year": "late summer into autumn (February to June)",
+    "native_or_introduced": "Introduced",
+    "genus": "Leccinum",
+    "photos": ["MushroomCards/BirchBoleteCard_jkkl6o.jpg"]
+  },
 
     {
         "id": 9,
@@ -755,6 +889,38 @@ export default [
             "MushroomCards/Oyster1_pk8ykc.jpg"
         ]
     },
+    "nz_books": "A Field Guide to the Native Edible Plants of New Zealand",
+    "edibility": "Edible when immature",
+    "stipe_features": {
+      "diameter_min": null,
+      "diameter_max": null,
+      "colour": ["white", "brown"],
+      "length_min": 3,
+      "length_max": 10,
+      "bruising_colour": "No significant bruising",
+      "type": "bare"
+    },
+    "gills": {
+      "colour": "",
+      "attachment": "Has internal spores instead of gills (none)"
+    },
+    "spore_colour": "Brown",
+    "cap_features": {
+      "colour": ["white", "brown"],
+      "texture": "Short spines that rub off easily",
+      "diameter_min": 1.5,
+      "diameter_max": 6,
+      "thickness_min": null,
+      "thickness_max": null,
+      "shape": "Round body on a stalk"
+    },
+    "environment": "Dead wood, woods, grassy areas, and along roads",
+    "ecology": "saprotrophic",
+    "time_of_year": "Autumn (March to May in the Southern Hemisphere)",
+    "native_or_introduced": "Introduced",
+    "genus": "Lycoperdon",
+    "photos": ["MushroomCards/CommonPuffballCard_hporke.jpg"]
+  },
 
     {
         "id": 10,
@@ -835,6 +1001,38 @@ export default [
             "MushroomCards/LionsMane1_phrqyk.jpg"
         ]
     },
+    "nz_books": "A Field Guide to the Native Edible Plants of New Zealand",
+    "edibility": "Edible, commonly cultivated popular mushroom",
+    "stipe_features": {
+      "diameter_min": null,
+      "diameter_max": null,
+      "colour": [""],
+      "length_min": null,
+      "length_max": null,
+      "bruising_colour": "No bruising",
+      "type": "bare"
+    },
+    "gills": {
+      "colour": "White or cream",
+      "attachment": "decurrent"
+    },
+    "spore_colour": "White",
+    "cap_features": {
+      "colour": ["white", "grey", "tan", "dark brown"],
+      "texture": "",
+      "diameter_min": 2,
+      "diameter_max": 30,
+      "thickness_min": null,
+      "thickness_max": null,
+      "shape": "fan or oyster shaped"
+    },
+    "environment": "Dead or dying trees, forests",
+    "ecology": "saprotrophic",
+    "time_of_year": "Spring, autumn (April to July in the Southern Hemisphere)",
+    "native_or_introduced": "Introduced",
+    "genus": "Pleurotus",
+    "photos": ["MushroomCards/OysterCard_cogvbc.jpg"]
+  },
 
     {
         "id": 11,
@@ -1075,6 +1273,23 @@ export default [
             "MushroomCards/GracefulParasol1_cjvi54.jpg"
         ]
     },
+    "spore_colour": "",
+    "cap_features": {
+      "colour": ["red", "brown", "pink"],
+      "texture": "Feathery",
+      "diameter_min": 1,
+      "diameter_max": 10,
+      "thickness_min": null,
+      "thickness_max": null,
+      "shape": "Bundle of branches"
+    },
+    "environment": "Dead, decaying wood",
+    "ecology": "saprotrophic",
+    "time_of_year": "Autumn, winter (March to July in the Southern Hemisphere)",
+    "native_or_introduced": "Native",
+    "genus": "Hericium",
+    "photos": ["MushroomCards/LionsManeCard_vhbdjh.jpg"]
+  },
 
     {
         "id": 14,
@@ -1161,89 +1376,38 @@ export default [
             "MushroomCards/DeathCap1_cawgjg.jpg"
         ]
     },
-    {
-        "id": 15,
-        "stipe_features": {
-            "description": "The stipe is usually cream coloured or brown with a thin ring.",
-            "diameter_min": 0,
-            "diameter_max": 0,
-            "colour": [
-                "cream",
-                "brown",
-                "purple"
-            ],
-            "length_min": 4,
-            "length_max": 7,
-            "bruising_colour": null,
-            "type": "ring"
-        },
-        "gills": {
-            "description": "White gills on the undercap, with an adnate attachment that becomes decurrent with age.",
-            "colour": [
-                "white"
-            ],
-            "attachment": "decurrent or adnate",
-            "spore_colour": "white"
-        },
-        "cap_features": {
-            "description": "The cap is brown or sometimes olive coloured. Usually moist and slimy but can also be scaly. Convex or flat in shape.",
-            "colour": [
-                "brown",
-                "olive"
-            ],
-            "diameter_min": null,
-            "diameter_max": null,
-            "thickness_min": null,
-            "thickness_max": null,
-            "texture": "Scaly, moist, slimy.",
-            "shape": [
-                "convex",
-                "flat"
-            ]
-        },
-        "tags": [
-            "edible"
-        ],
-        "latin_names": [
-            "Armillaria novae-zelandiae"
-        ],
-        "common_names": [
-            "Austral Honey Mushroom"
-        ],
-        "maori_names": [
-            "Harore"
-        ],
-        "genus": "Armillaria",
-        "description": "This plant pathogen species is one of three Armillaria species that have been identified in New Zealand (the others are A. limonea and A. hinnulea). \\     Have a wide host range and can cause disease on a variety of tree species throughout New Zealand; particularly in plantations, home gardens, and parks. Armillaria \\     novae-zelandiae occurs in indigenous forests as a decay fungus of dead trees, stumps, and logs. It causes butt rots in living trees as well",
-        "lookalikes": [
-            null
-        ],
-        "lookalikes_description": "In both New Zealand and Australia, there are various mushrooms with similar appearances to Armillaria species. For example, some Galerina species and \\     Cortinarius species may resemble Armillaria mushrooms. Some of these lookalikes can be toxic.",
-        "links": [
-            "https://www.inaturalist.org/taxa/55930-Armillaria",
-            "https://en.wikipedia.org/wiki/Armillaria"
-        ],
-        "nz_books": [
-            "Field Guide to Fungi - Greta Stevenson",
-            "A Field guide to the native edible plants of new zealand - andrew crowe"
-        ],
-        "edibility": "Edible",
-        "ecology": "mycorrhizal and saprotrophic",
-        "environment": "Dead broad-leaved trees or on their fallen timber",
-        "time_of_year": [
-            "march",
-            "april",
-            "may",
-            "june",
-            "july",
-            "august"
-        ],
-        "native_or_introduced": "native",
-        "photos": [
-            "MushroomCards/AustralHoneyCard_wys1f8.jpg",
-            "MushroomCards/AustralHoney1_ovxlk3.jpg"
-        ]
+    "nz_books": "A Field Guide to the Native Edible Plants of New Zealand",
+    "edibility": "Edible",
+    "stipe_features": {
+      "diameter_min": 1,
+      "diameter_max": 2,
+      "colour": ["white"],
+      "length_min": 3,
+      "length_max": 10,
+      "bruising_colour": "dingy reddish brown",
+      "type": "bare"
     },
+    "gills": {
+      "colour": "initially pink, then red-brown and finally a dark brown",
+      "attachment": "free"
+    },
+    "spore_colour": "dark brown",
+    "cap_features": {
+      "colour": ["white"],
+      "texture": "May be smooth or may have scales",
+      "diameter_min": 3,
+      "diameter_max": 12,
+      "thickness_min": null,
+      "thickness_max": null,
+      "shape": "convex"
+    },
+    "environment": "fields, grassy areas, lawns",
+    "ecology": "mycorrhizal",
+    "time_of_year": "Autumn (March to May in the Southern Hemisphere)",
+    "native_or_introduced": "Introduced",
+    "genus": "Agaricus",
+    "photos": ["MushroomCards/MeadowMushroomCard_y7dlhy.jpg"]
+  },
 
     {
         "id": 16,
@@ -1312,70 +1476,16 @@ export default [
             ""
         ]
     },
-    {
-        "id": 17,
-        "stipe_features": {
-            "description": "It has a hollow white stalk and a cup shaped volva at the base",
-            "length_max": 10,
-            "length_min": 5,
-            "bruising_colour": "na",
-            "diameter_max": 3,
-            "colour": [
-                "white"
-            ],
-            "diameter_min": 3,
-            "type": "volva"
-        },
-        "gills": {
-            "description": "This mushroom does not have gills, instead it erupts arms and has a dark olive-brown slime or gleba which spreads the spores",
-            "attachment": "none"
-        },
-        "cap_features": {
-            "description": "It matures into a reddish star-shaped structure with 6 to 10 arms up to 4 cm long radiating from the central area. These arms are bifid (deeply divided into two limbs). The top of the fungus is covered with dark olive-brown slime or gleba, which smells of rotting meat.",
-            "colour": [
-                "red"
-            ],
-            "diameter_max": 4
-        },
-        "latin_names": [
-            "Aseroe Rubra"
-        ],
-        "time_of_year": [
-            "january",
-            "february",
-            "march",
-            "april",
-            "may",
-            "june",
-            "july",
-            "september",
-            "october",
-            "november",
-            "december"
-        ],
-        "common_names": [
-            "Anemone Stinkhorn",
-            "Sea Anemone Fungus",
-            "Starfish Fungus"
-        ],
-        "environment": "It is found on decomposing plant matter as well as on woodchips and mulch and is common in gardens and amenities plantings. It also occurs in alpine grasslands and woodlands.",
-        "ecology": "saprotrophic",
-        "edibility": "Unknown",
-        "genus": "Aseroe",
-        "tags": [
-            "poisonous"
-        ],
-        "native_or_introduced": "native",
-        "description": "Aseroe rubra begins as a partly buried whitish egg-shaped structure 3 cm in diameter, which bursts open as a hollow white stalk with reddish arms erupts and grows to a height of 10 cm. It matures into a reddish star-shaped structure with six to ten arms up to 4 cm long radiating from the central area. These arms are bifid (deeply divided into two limbs). The top of the fungus is covered with dark olive-brown slime or gleba, which smells of rotting meat. There is a cup-shaped volva at the base that is the remnants of the original egg.",
-        "links": [
-            "https://www.inaturalist.org/taxa/381310-Aseroe-rubra"
-        ],
-        "maori_names": [
-            "None"
-        ],
-        "photos": [
-            ""
-        ]
+    "nz_books": "A Field Guide to the Native Edible Plants of New Zealand",
+    "edibility": "Edible",
+    "stipe_features": {
+      "diameter_min": null,
+      "diameter_max": null,
+      "colour": ["white", "brown"],
+      "length_min": null,
+      "length_max": null,
+      "bruising_colour": "None",
+      "type": "ring"
     },
     {
         "id": 18,
@@ -1448,63 +1558,15 @@ export default [
             ""
         ]
     },
-    {
-        "id": 19,
-        "stipe_features": {
-            "length_min": 2,
-            "length_max": 4,
-            "type": "bare",
-            "description": "Arising from a downy or felted whitish central stem and usually branching frequently",
-            "colour": [
-                "lilac"
-            ],
-            "bruising_colour": "na"
-        },
-        "gills": {
-            "spore_colour": "white",
-            "attachment": "none"
-        },
-        "cap_features": {
-            "description": "No typical cap but upper surfaces are smooth, lilac or violaceous, and noticeably elastic.",
-            "colour": [
-                "lilac"
-            ],
-            "texture": "Smooth and elastic"
-        },
-        "latin_names": [
-            "Ramariopsis Pulchella"
-        ],
-        "description": "Ramariopsis pulchella is a species of coral fungus in the family Clavariaceae. This small, branching coral fungus is often hard to spot, largely because if its relative rarity but also it small stature, often being concealed among mosses and leaf litter. Arising from a downy or felted whitish central stem and usually branching frequently, the fruitbody is typically 2 to 4cm tall. Upper surfaces are smooth, lilac or violaceous, and noticeably elastic.",
-        "genus": "Ramariopsis",
-        "native_or_introduced": "native",
-        "time_of_year": [
-            "april",
-            "may",
-            "june",
-            "july",
-            "august",
-            "september"
-        ],
-        "common_names": [
-            "Lilac Coral Fungus"
-        ],
-        "maori_names": [
-            "None"
-        ],
-        "links": [
-            "https://www.inaturalist.org/taxa/352201-Ramariopsis-pulchella",
-            "https://biotanz.landcareresearch.co.nz/scientific-names/1cb1a14f-36b9-11d5-9548-00d0592d548c",
-            "https://www.first-nature.com/fungi/ramariopsis-pulchella.php"
-        ],
-        "edibility": "May be edible but taste is mild and not distinctive",
-        "ecology": "saprotrophic",
-        "environment": "Grows on soil among leaf litter and mosses in deciduous woodland on calcareous soil.",
-        "tags": [
-            "edible"
-        ],
-        "photos": [
-            ""
-        ]
+    "spore_colour": "Black, brown",
+    "cap_features": {
+      "colour": ["brown"],
+      "texture": "Smooth",
+      "diameter_min": 12,
+      "diameter_max": 15,
+      "thickness_min": null,
+      "thickness_max": null,
+      "shape": "convex"
     },
     {
         "id": 20,
@@ -1580,67 +1642,131 @@ export default [
             ""
         ]
     },
-    {
-        "id": 21,
-        "stipe_features": {
-            "description": "The stipe is up to about 7 cm tall by 3 cm in diameter and it is similar in colour to the cap, but much lighter. It may have shallow pits (scrobiculae). The flesh is a dirty white and tends to turn brown.",
-            "colour": [
-                "olive-brown"
-            ],
-            "length_max": 7,
-            "diameter_max": 3,
-            "bruising_colour": "na",
-            "type": "bare"
-        },
-        "gills": {
-            "attachment": "decurrent",
-            "colour": [
-                "white"
-            ],
-            "description": "The gills are crowded, dirty white, stained olive-brown by old milk, which is initially white on contact with the air. They are somewhat decurrent. With potassium hydroxide or ammonia there is a purple reaction."
-        },
-        "cap_features": {
-            "description": "The cap is normally 8–20 cm in diameter. At first it has an involute margin and a somewhat depressed centre. The upper surface is olive brown or yellow-green and is often sticky or slimy in the middle. When young it has velvety zones and may be shaggy at the rim. Later it becomes funnel-shaped and the colour darkens to blackish.",
-            "colour": [
-                "olive-brown"
-            ],
-            "diameter_min": 8,
-            "diameter_max": 20,
-            "texture": "It has velvety zones and may be shaggy at the rim and is often sticky or slimy in the middle",
-            "shape": [
-                "depressed"
-            ]
-        },
-        "common_names": [
-            "Ugly Milkcap"
-        ],
-        "latin_names": [
-            "Lactarius Turpis"
-        ],
-        "native_or_introduced": "introduced",
-        "environment": "While especially associated with birch, it is also found with spruce, pine and other trees in mixed woodland.",
-        "description": "The messy, dirty appearance, seen in the photograph, is characteristic of the species. It seems to collect debris on top and the gills acquire a dirty brownish stain due to discoloured milk.",
-        "genus": "Lactarius",
-        "links": [
-            "https://www.inaturalist.org/taxa/382886-Lactarius-turpis"
-        ],
-        "edibility": "Edible but not recommended",
-        "tags": [
-            "edible"
-        ],
-        "ecology": "mycorrhizal",
-        "time_of_year": [
-            "july",
-            "august",
-            "september",
-            "october",
-            "november"
-        ],
-        "maori_names": [
-            "None"
-        ],
-        "photos": [
-            ""
-        ]
+    "nz_books": "https://biotanz.landcareresearch.co.nz/references/f20c64a6-c0f2-4186-a229-6e1a26ed2",
+    "edibility": "Unknown",
+    "stipe_features": {
+      "diameter_min": null,
+      "diameter_max": null,
+      "colour": ["pale brown"],
+      "length_min": 0, //unknown (Made 0 so filter will work 0-18)
+      "length_max": 18,
+      "bruising_colour": "Unknown",
+      "type": "ring"
     },
+    "gills": {
+      "colour": "White",
+      "attachment": "free"
+    },
+    "spore_colour": "White",
+    "cap_features": {
+      "colour": ["dark brown"],
+      "texture": "Scaly",
+      "diameter_min": 0, //unknown
+      "diameter_max": 12.5,
+      "thickness_min": null,
+      "thickness_max": null,
+      "shape": "convex, flat (in maturity)"
+    },
+    "environment": "Found in mixed Mānuka, Kānuka, Kauri forest, conifer plantations",
+    "ecology": "unknown",
+    "time_of_year": "Autumn, winter (February to August in the Southern Hemisphere)",
+    "native_or_introduced": "Native",
+    "genus": "Macrolepiota",
+    "photos": ["MushroomCards/GracefulParasolCard_bkmw4v.jpg"]
+  },
+  {
+    "id":14,
+    "tags":["poisonous"],
+    "latin_names": "Amanita Phalloides",
+    "common_names": "Death Cap",
+    "description": "A. phalloides is one of the most poisonous of all known mushrooms. It is estimated that as little as half a mushroom contains enough toxin to kill an \
+    adult human. It has been involved in the majority of human deaths from mushroom poisonin. Young specimens first emerge from the ground resembling a white egg covered by \
+    a universal veil, which then breaks, leaving the volva as a remnant.",
+    "lookalikes": "A. phalloides is similar to the edible paddy straw mushroom (Volvariella volvacea)[38] and A. princeps, commonly known as 'white Caesar'.[39] Some may mistake \
+    juvenile death caps for edible puffballs[40][41] or mature specimens for other edible Amanita species, such as A. lanei, so some authorities recommend avoiding the collecting \
+    of Amanita species for the table altogether.[42] The white form of A. phalloides may be mistaken for edible species of Agaricus, especially the young fruitbodies whose \
+    unexpanded caps conceal the telltale white gills; all mature species of Agaricus have dark-colored gills.",
+    "links": {
+      "iNaturalist": "https://www.inaturalist.org/taxa/52135-Amanita-phalloides",
+      "wikipedia": "https://en.wikipedia.org/wiki/Amanita_phalloides"
+    },
+    "nz_books": "N/A",
+    "edibility": "Deadly",
+    "stipe_features": {
+      "diameter_min": 1,
+      "diameter_max": 2,
+      "colour": ["white", "gray", "olive"],
+      "length_min": 8, 
+      "length_max": 15,
+      "bruising_colour": "Unknown",
+      "type": "ring, volva"
+    },
+    "gills": {
+      "colour": "White",
+      "attachment": "free"
+    },
+    "spore_colour": "White",
+    "cap_features": {
+      "colour": ["pale green", "yellow green", "olive green", "bronze", "white"],
+      "texture": "Sticky",
+      "diameter_min": 5,
+      "diameter_max": 15,
+      "thickness_min": .6,
+      "thickness_max": .8,
+      "shape": "convex, flat"
+    },
+    "environment": "Oak and Chestnut trees",
+    "ecology": "mycorrhiza",
+    "time_of_year": "Autumn, winter (February to August in the Southern Hemisphere)",
+    "native_or_introduced": "introduced",
+    "genus": "Amanita",
+    "photos": ["MushroomCards/DeathCapCard_ueb21p.jpg"]
+  },
+  {
+    "id":15,
+    "tags":["edible"],
+    "latin_names": "Armillaria novae-zelandiae",
+    "common_names": "Austral Honey Mushroom, Harore",
+    "description": "This plant pathogen species is one of three Armillaria species that have been identified in New Zealand (the others are A. limonea and A. hinnulea). \
+    Have a wide host range and can cause disease on a variety of tree species throughout New Zealand; particularly in plantations, home gardens, and parks. Armillaria \
+    novae-zelandiae occurs in indigenous forests as a decay fungus of dead trees, stumps, and logs. It causes butt rots in living trees as well",
+    "lookalikes": "In both New Zealand and Australia, there are various mushrooms with similar appearances to Armillaria species. For example, some Galerina species and \
+    Cortinarius species may resemble Armillaria mushrooms. Some of these lookalikes can be toxic.",
+    "links": {
+      "iNaturalist": "https://www.inaturalist.org/taxa/55930-Armillaria",
+      "wikipedia": "https://en.wikipedia.org/wiki/Armillaria"
+    },
+    "nz_books": "Field Guide to Fungi - Greta Stevenson, A Field guide to the native edible plants of new zealand - andrew crowe",
+    "edibility": "edible",
+    "stipe_features": {
+      "diameter_min": 0.4,
+      "diameter_max": 0.8,
+      "colour": ["cream", "brown", "purple"],
+      "length_min": 4, 
+      "length_max": 7,
+      "bruising_colour": "Unknown",
+      "type": "ring"
+    },
+    "gills": {
+      "colour": "White",
+      "attachment": "adnate, becomes decurrent"
+    },
+    "spore_colour": "White",
+    "cap_features": {
+      "colour": ["olive", "brown"],
+      "texture": "Scaly, Moist, Slimy",
+      "diameter_min": null,
+      "diameter_max": null,
+      "thickness_min": null,
+      "thickness_max": null,
+      "shape": "convex, flat"
+    },
+    "environment": "Dead broad-leaved trees or on their fallen timber",
+    "ecology": "saprotrophic & mycorrhizal", //both stated
+    "time_of_year": "Autumn, winter (March to August in the Southern Hemisphere)",
+    "native_or_introduced": "native",
+    "genus": "Armillaria",
+    "photos": ["MushroomCards/AustralHoneyCard_wys1f8.jpg"]
+  },
+
 ]
