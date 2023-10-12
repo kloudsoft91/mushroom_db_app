@@ -61,14 +61,14 @@
         </div>
       </div>
     </template>
-    <template #colour>
-      <div class="flex items-center justify-around">
-        <input v-model="stipeColour" @input="emitStipeColour(stipeColour)" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Stipe Colour" />
-      </div>
-      <div class="flex items-center justify-around">
-        <input v-model="capColour" @input="emitCapColour(capColour)" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Cap Colour" />
-      </div>
+    <template #capcolour>
+      <CapColourCarousel @selectedCapColour="emitCapColour"/>
     </template>
+
+    <template #stipecolour>
+      <StipeColourCarousel @selectedStipeColour="emitStipeColour"/>
+    </template>
+
     <template #month>
       <div class="flex items-center justify-around">
         <select @click="emitMonth(selectedMonth)" v-model="selectedMonth">
@@ -137,10 +137,16 @@ export default {
           slot: 'month'
         },
         {
-          label: 'Colour',
+          label: 'Cap Colour',
           defaultOpen: true,
           multiple: true,
-          slot: 'colour'
+          slot: 'capcolour'
+        },
+        {
+          label: 'Stipe Colour',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'stipecolour'
         },
       ],
     };
@@ -213,17 +219,15 @@ export default {
     emitStipeColour(stipeColour) {
       nextTick(() => {
       //emit event to parent component (BottomFrame.vue)
-      this.stipeColour = stipeColour;
-      console.log("stipecolour emit:" + this.stipeColour);
-      this.$emit('stipeColour', this.stipeColour);
+      this.selectedStipeColour = stipeColour;
+      this.$emit('selectedStipeColour', stipeColour);
       });
-    },
+    }, 
     emitCapColour(capColour) {
       nextTick(() => {
       //emit event to parent component (BottomFrame.vue)
-      this.capColour = capColour;
-      console.log("capcolour emit:" + this.capColour);
-      this.$emit('capColour', this.capColour);
+      this.selectedCapColour = capColour;
+      this.$emit('selectedCapColour', capColour);
       });
     }
   }
