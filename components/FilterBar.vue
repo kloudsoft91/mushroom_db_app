@@ -63,26 +63,32 @@
     </template>
     <template #colour>
       <div class="flex items-center justify-around">
-        <input v-model="selectedColour" @input="emitColour(selectedColour)" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Colour" />
+        <input v-model="stipeColour" @input="emitStipeColour(stipeColour)" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Stipe Colour" />
+      </div>
+      <div class="flex items-center justify-around">
+        <input v-model="capColour" @input="emitCapColour(capColour)" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Cap Colour" />
       </div>
     </template>
-    <template #season>
+    <template #month>
       <div class="flex items-center justify-around">
-        <div @click="emitSeason('spring')" class="mush-slide tablet:pl-8">
-            <img class="cap-image" src="" alt="spring">
-            <p>Spring</p>
-        </div>
-        <div @click="emitSeason('summer')" class="mush-slide">
-            <img class="cap-image" src="" alt="summer">
-            <p>Summer</p>
-        </div>
-        <div @click="emitSeason('autumn')" class="mush-slide tablet:pr-10">
-            <img class="cap-image" src="" alt="autumn" >
-            <p>Autumn</p>
-        </div>
-        <div @click="emitSeason('winter')" class="mush-slide tablet:pr-10">
-            <img class="cap-image" src="" alt="winter" >
-            <p>Winter</p>
+        <select @click="emitMonth(selectedMonth)" v-model="selectedMonth">
+          <option disabled value="">Select Month</option>
+          <option></option>
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+        <div>
+          {{ currentMonth() }}
         </div>
       </div>
     </template>
@@ -96,8 +102,9 @@ export default {
     return {
       selectedEcology: '',
       selectedStipe: '',
-      selectedColour: '',
-      selectedSeason: '',
+      stipeColour: '',
+      capColour: '',
+      selectedMonth: '',
       items: [
         {
           label: 'Ecology',
@@ -124,10 +131,10 @@ export default {
           slot: 'stipe',
         },
         {
-          label: 'Season',
+          label: 'Month',
           defaultOpen: true,
           multiple: true,
-          slot: 'season'
+          slot: 'month'
         },
         {
           label: 'Colour',
@@ -139,6 +146,37 @@ export default {
     };
   },
   methods: {
+    currentMonth() {
+      const current = new Date();
+      const date = current.getMonth();
+      switch (date) {
+      case 0:
+      return "Current Month: January";
+      case 1:
+      return "Current Month: February";
+      case 2:
+      return "Current Month: March";
+      case 3:
+      return "Current Month: April";
+      case 4:
+      return "Current Month: May";
+      case 5:
+      return "Current Month: June";
+      case 6:
+      return "Current Month: July";
+      case 7:
+      return "Current Month: August";
+      case 8:
+      return "Current Month: September";
+      case 9:
+      return "Current Month: October";
+      case 10:
+      return "Current Month: November";
+      case 11:
+      return "Current Month: December";
+      }
+      return date;
+    },
     //emits cap shape on button click
     emitCapShape(capShape) {
       this.selectedCapShape = capShape;
@@ -164,21 +202,30 @@ export default {
         this.$emit('selectedStipe', stipe);
       });
     },
-    emitSeason(season) {
+    emitMonth(selectedMonth) {
       nextTick(() => {
-        this.selectedSeason = season;
-        //emit event to parent component (BottomFrame.vue)
-        this.$emit('selectedSeason', season);
+      //emit event to parent component (BottomFrame.vue)
+      this.selectedMonth = selectedMonth;
+      console.log("selectedMonth emit:" + this.selectedMonth);
+      this.$emit('selectedMonth', this.selectedMonth);
       });
     },
-    emitColour(selectedColour) {
+    emitStipeColour(stipeColour) {
       nextTick(() => {
-        //console.log("selectedcolour emit:" + selectedColour);
-        this.selectedColour = selectedColour;
-        //emit event to parent component (BottomFrame.vue)
-        this.$emit('selectedColour', selectedColour);
+      //emit event to parent component (BottomFrame.vue)
+      this.stipeColour = stipeColour;
+      console.log("stipecolour emit:" + this.stipeColour);
+      this.$emit('stipeColour', this.stipeColour);
       });
     },
+    emitCapColour(capColour) {
+      nextTick(() => {
+      //emit event to parent component (BottomFrame.vue)
+      this.capColour = capColour;
+      console.log("capcolour emit:" + this.capColour);
+      this.$emit('capColour', this.capColour);
+      });
+    }
   }
 };
 </script>
