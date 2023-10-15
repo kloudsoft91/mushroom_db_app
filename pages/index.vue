@@ -118,8 +118,11 @@ export default{
     }
     //otherwise filter data by input against latin, common or maori names
     return data.filter(d =>
-      d.common_names.concat(d.latin_names).concat(d.maori_names).join(' ')
-        .toLowerCase().includes(searchInput.trim().toLowerCase())
+      if (d.maori_names) {
+        d.common_names.concat(d.latin_names).concat(d.maori_names).join(' ').toLowerCase().includes(searchInput.trim().toLowerCase())
+      } else {
+        d.common_names.concat(d.latin_names).join(' ').toLowerCase().includes(searchInput.trim().toLowerCase())
+      }
     );
     },
 
