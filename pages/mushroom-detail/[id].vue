@@ -20,14 +20,147 @@
         <!-- Apply modern styling to the table -->
         <table >
           <tbody>
-            <tr v-for="(value, key) in mushroomData" :key="key">
-              <td>{{ formatKey(key) }}</td>
-              <td>{{ formatValue(value) }}</td>
+            <tr>
+              <td>Latin names</td>
+              <td>{{ mushroomData.latin_names}}</td>
+            </tr>
+            <tr>
+              <td>Genus</td>
+              <td>{{ mushroomData.genus}}</td>
+            </tr>
+            <tr>
+              <td>Edibility</td>
+              <td>{{ mushroomData.edibility}}</td>
+            </tr>
+            <tr>
+              <td>Environment</td>
+              <td>{{ mushroomData.environment}}</td>
+            </tr>
+            <tr>
+              <td>Ecology</td>
+              <td>{{ mushroomData.ecology}}</td>
+            </tr>
+            <tr>
+              <td>Time of year</td>
+              <td>{{ mushroomData.time_of_year}}</td>
+            </tr>
+            <tr>
+              <td>Origin</td>
+              <td>{{ mushroomData.native_or_introduced}}</td>
             </tr>
           </tbody>
         </table>
       </div>
     </div>
+    <div class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 desktop:grid-cols-2 ultra:grid-cols-2 gap-5 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto">
+      <div class="more-details">
+        <h1 class="text-2xl font-semibold my-4">Details</h1>
+        <table>
+          <tbody>
+              <tr>
+                <td>Description</td>
+                <td>{{ mushroomData.description}}</td>
+              </tr>
+              <tr>
+                <td>Lookalikes</td>
+                <td>{{ mushroomData.lookalikes}}</td>
+              </tr>
+              <tr>
+                <td>Stipe features</td>
+                <tr>
+                  <td>Minimum diameter:</td>
+                  <td>{{ mushroomData.stipe_features.diameter_min}}</td>
+                </tr>
+                <tr>
+                  <td>Maximum diameter:</td>
+                  <td>{{ mushroomData.stipe_features.diameter_max}}</td>
+                </tr>
+                <tr>
+                  <td>Colour:</td>
+                  <td>
+                    <ul>
+                      <li v-for="color in mushroomData.stipe_features.colour" :key="color">{{ color }}</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Minimum length:</td>
+                  <td>{{ mushroomData.stipe_features.length_min}}</td>
+                </tr>
+                <tr>
+                  <td>Maximum length:</td>
+                  <td>{{ mushroomData.stipe_features.length_max}}</td>
+                </tr>
+                <tr>
+                  <td>Bruising colour:</td>
+                  <td>{{ mushroomData.stipe_features.brusing_colour}}</td>
+                </tr>
+                <tr>
+                  <td>Type:</td>
+                  <td>{{ mushroomData.stipe_features.type}}</td>
+                </tr>
+              </tr>
+              <tr>
+                <td>Gills</td>
+                <tr>
+                  <td>Colour:</td>
+                  <td>{{ mushroomData.gills.colour}}</td>
+                </tr>
+                <tr>
+                  <td>Attachment:</td>
+                  <td>{{ mushroomData.gills.attachment}}</td>
+                </tr>
+              </tr>
+              <tr>
+                <td>Spore colour</td>
+                <td>{{ mushroomData.spore_colour}}</td>
+              </tr>
+              <tr>
+                <td>Cap features</td>
+                <tr>
+                  <td>Colour:</td>
+                  <td>
+                    <ul>
+                      <li v-for="color in mushroomData.cap_features.colour" :key="color">{{ color }}</li>
+                    </ul>
+                  </td>
+                </tr>
+                <tr>
+                  <td>Texture</td>
+                  <td>{{ mushroomData.cap_features.texture}}</td>
+                </tr>
+                <tr>
+                  <td>Diameter</td>
+                  <td>Minimum: {{ mushroomData.cap_features.diameter_min}}, Maximum: {{ mushroomData.cap_features.diameter_max}}</td>
+                </tr>
+                <tr>
+                  <td>Thickness</td>
+                  <td>Minimum: {{ mushroomData.cap_features.thickness_min}}, Maximum: {{ mushroomData.cap_features.thickness_max}}</td>
+                </tr>
+                <tr>
+                  <td>Shape</td>
+                  <td>{{ mushroomData.cap_features.shape}}</td>
+                </tr>
+              </tr>
+          </tbody>
+        </table>
+      </div>
+      <div class="links">
+        <h1 class="text-2xl font-semibold my-4">More information</h1>
+        <p>
+          <h2>Links</h2>
+          <div v-for="(link, linkName) in mushroomData.links" :key="linkName">
+            <a :href="link" target="_blank">{{ linkName }}</a>
+          </div>
+        </p>
+        <p>
+          <h2>Books</h2>
+          {{ mushroomData.nz_books}}
+
+        </p>
+      </div>
+    </div>
+    
 </template>
     
 <script>
