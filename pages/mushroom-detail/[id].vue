@@ -22,33 +22,9 @@
           <h1 class="text-3xl font-semibold my-4">{{ mushroomData.common_names.split(',').map(name => name.trim()).join(' / ') }}</h1>
           <table class="w-full mb-4">
             <tbody>
-              <tr>
-                <td class="font-semibold">Latin names:</td>
-                <td>{{ mushroomData.latin_names }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Genus:</td>
-                <td>{{ mushroomData.genus }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Edibility:</td>
-                <td>{{ mushroomData.edibility }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Environment:</td>
-                <td>{{ mushroomData.environment }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Ecology:</td>
-                <td>{{ mushroomData.ecology }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Time of year:</td>
-                <td>{{ mushroomData.time_of_year }}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Origin:</td>
-                <td>{{ mushroomData.native_or_introduced }}</td>
+              <tr v-for="attribute in informationAttributes" :key="attribute.key">
+                <td class="font-semibold">{{ attribute.label }}:</td>
+                <td>{{ mushroomData[attribute.key] }}</td>
               </tr>
             </tbody>
           </table>
@@ -71,91 +47,10 @@
         <h2 class="text-2xl font-semibold mb-2">Details</h2>
         <table class="w-full mb-4">
           <tbody>
-              <tr>
-                <td class="font-semibold">Description:</td>
-                <td>{{ mushroomData.description}}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Lookalikes:</td>
-                <td>{{ mushroomData.lookalikes}}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Stipe features:</td>
-                <tr>
-                  <td>Minimum diameter:</td>
-                  <td>{{ mushroomData.stipe_features.diameter_min}}</td>
-                </tr>
-                <tr>
-                  <td>Maximum diameter:</td>
-                  <td>{{ mushroomData.stipe_features.diameter_max}}</td>
-                </tr>
-                <tr>
-                  <td>Colour:</td>
-                  <td>
-                    <ul>
-                      <li v-for="color in mushroomData.stipe_features.colour" :key="color">{{ color }}</li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Minimum length:</td>
-                  <td>{{ mushroomData.stipe_features.length_min}}</td>
-                </tr>
-                <tr>
-                  <td>Maximum length:</td>
-                  <td>{{ mushroomData.stipe_features.length_max}}</td>
-                </tr>
-                <tr>
-                  <td>Bruising colour:</td>
-                  <td>{{ mushroomData.stipe_features.brusing_colour}}</td>
-                </tr>
-                <tr>
-                  <td>Type:</td>
-                  <td>{{ mushroomData.stipe_features.type}}</td>
-                </tr>
-              </tr>
-              <tr>
-                <td class="font-semibold">Gills:</td>
-                <tr>
-                  <td>Colour:</td>
-                  <td>{{ mushroomData.gills.colour}}</td>
-                </tr>
-                <tr>
-                  <td>Attachment:</td>
-                  <td>{{ mushroomData.gills.attachment}}</td>
-                </tr>
-              </tr>
-              <tr>
-                <td class="font-semibold">Spore colour:</td>
-                <td>{{ mushroomData.spore_colour}}</td>
-              </tr>
-              <tr>
-                <td class="font-semibold">Cap features:</td>
-                <tr>
-                  <td>Colour:</td>
-                  <td>
-                    <ul>
-                      <li v-for="color in mushroomData.cap_features.colour" :key="color">{{ color }}</li>
-                    </ul>
-                  </td>
-                </tr>
-                <tr>
-                  <td>Texture</td>
-                  <td>{{ mushroomData.cap_features.texture}}</td>
-                </tr>
-                <tr>
-                  <td>Diameter</td>
-                  <td>Minimum: {{ mushroomData.cap_features.diameter_min}}, Maximum: {{ mushroomData.cap_features.diameter_max}}</td>
-                </tr>
-                <tr>
-                  <td>Thickness</td>
-                  <td>Minimum: {{ mushroomData.cap_features.thickness_min}}, Maximum: {{ mushroomData.cap_features.thickness_max}}</td>
-                </tr>
-                <tr>
-                  <td>Shape</td>
-                  <td>{{ mushroomData.cap_features.shape}}</td>
-                </tr>
-              </tr>
+            <tr v-for="attribute in detailsAttributes" :key="attribute.key">
+              <td class="font-semibold">{{ attribute.label }}:</td>
+              <td>{{ mushroomData[attribute.key] }}</td>
+            </tr>
           </tbody>
         </table>
       </div>
@@ -172,6 +67,23 @@ export default {
     return {
       id: null,
       mushroomData: null,
+      informationAttributes: [
+        { label: 'Latin names', key: 'latin_names' },
+        { label: 'Genus', key: 'genus' },
+        { label: 'Edibility', key: 'edibility' },
+        { label: 'Environment', key: 'environment' },
+        { label: 'Ecology', key: 'ecology' },
+        { label: 'Time of year', key: 'time_of_year' },
+        { label: 'Origin', key: 'native_or_introduced' },
+      ],
+      detailsAttributes: [
+        { label: 'Description', key: 'description' },
+        { label: 'Lookalikes', key: 'lookalikes' },
+        { label: 'Stipe features', key: 'stipe_features' },
+        { label: 'Gills', key: 'gills' },
+        { label: 'Spore colour', key: 'spore_colour' },
+        { label: 'Cap features', key: 'cap_features' },
+      ],
     };
   },
   methods: {
