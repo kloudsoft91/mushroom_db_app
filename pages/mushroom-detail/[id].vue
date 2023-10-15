@@ -49,7 +49,26 @@
           <tbody>
             <tr v-for="attribute in detailsAttributes" :key="attribute.key">
               <td class="font-semibold">{{ attribute.label }}:</td>
-              <td>{{ mushroomData[attribute.key] }}</td>
+              <td>
+                <template v-if="typeof mushroomData[attribute.key] === 'object'">
+                  <ul>
+                    <li v-for="(value, key) in mushroomData[attribute.key]" :key="key">
+                      <template v-if="Array.isArray(value)">
+                        <p class="font-semibold">{{ key }}:</p>
+                        <ul>
+                          <li v-for="item in value" :key="item">{{ item }}</li>
+                        </ul>
+                      </template>
+                      <template v-else>
+                        <p>{{ key }}: {{ value }}</p>
+                      </template>
+                    </li>
+                  </ul>
+                </template>
+                <template v-else>
+                  <span>{{ mushroomData[attribute.key] }}</span>
+                </template>
+              </td>
             </tr>
           </tbody>
         </table>
