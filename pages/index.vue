@@ -248,9 +248,18 @@ export default{
     //Event handlers
     //receives search input events
     handleSearch(searchInput) {
-      this.searchInput = searchInput;
-      this.applyAllFilters();
-      return this.searchInput;
+      let strRegex = new RegExp(/^[a-z\s]*$/i);
+	    let result = strRegex.test(searchInput); 
+	    try {
+	    	if (!result) throw "Non-alphabetical name";
+        this.searchInput = searchInput;
+        this.applyAllFilters();
+        return this.searchInput;
+	    }
+	    catch(err) {
+	    	console.log('Invalid user input: ' + err);
+	    	alert('Invalid user input: ' + err);
+	    }
     },
     //receives tag button events
     handleTags(selectedTag) {
@@ -336,12 +345,27 @@ export default{
     },
     //generic size filter event handler
     handleSizeFilter(filterData) {
-      this.stipeLen = filterData.stipeLen;
-      this.stipeDiam = filterData.stipeDiam;
-      this.capDiam = filterData.capDiam;
-      this.capThick = filterData.capThick;
-      this.applyAllFilters();
-      return this.filterData;
+      let strRegex = new RegExp(/^[0-9]*$/i);
+      const result = [];
+	    result[0] = strRegex.test(filterData.stipeLen); 
+      result[1] = strRegex.test(filterData.stipeDiam); 
+      result[2] = strRegex.test(filterData.capDiam); 
+      result[3] = strRegex.test(filterData.capThick); 
+	    try {
+        for (var i=0;i<4;i++) {
+          if (!result[i]) throw "Non-numerical length";
+        }
+        this.stipeLen = filterData.stipeLen;
+        this.stipeDiam = filterData.stipeDiam;
+        this.capDiam = filterData.capDiam;
+        this.capThick = filterData.capThick;
+        this.applyAllFilters();
+        return this.filterData;
+	    }
+	    catch(err) {
+	    	console.log('Invalid user input: ' + err);
+	    	alert('Invalid user input: ' + err);
+	    }
     },
     //Open 
     openCarouselInputs() {
