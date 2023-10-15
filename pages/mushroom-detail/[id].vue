@@ -6,7 +6,7 @@
 
     <!-- Main content container -->
     <div class="container mx-auto mt-8">
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 desktop:grid-cols-2 ultra:grid-cols-2 gap-10 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto">
         <!-- Image carousel -->
 
           <carousel :items-to-show="1">
@@ -73,7 +73,7 @@
       </div>
 
       <!-- Details table -->
-      <div class="bg-white rounded-lg shadow-lg p-4">
+      <div class="bg-white rounded-lg shadow-lg p-4 mt-8">
         <h2 class="text-2xl font-semibold mb-2">Details</h2>
         <table class="w-full mb-4">
           <tbody>
