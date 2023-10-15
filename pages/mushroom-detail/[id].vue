@@ -8,7 +8,6 @@
     <div class="container mx-auto mt-8">
       <div class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 desktop:grid-cols-2 ultra:grid-cols-2 gap-10 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto">
         <!-- Image carousel -->
-
           <carousel :items-to-show="1">
             <slide v-for="(image, index) in mushroomData.photos" :key="index">
               <nuxt-img class="w-full" provider="cloudinary" :src="`ar_3:4,c_fill,h_1024,w_768/${image}`" alt="Mushroom Image"></nuxt-img>
@@ -18,13 +17,9 @@
               <pagination />
             </template>
           </carousel>
-
-
         <!-- Information table -->
         <div class="bg-white rounded-lg shadow-lg p-4">
           <h1 class="text-3xl font-semibold my-4">{{ mushroomData.common_names.split(',').map(name => name.trim()).join(' / ') }}</h1>
-
-          <!-- Basic information table -->
           <table class="w-full mb-4">
             <tbody>
               <tr>
@@ -64,7 +59,6 @@
             <div v-for="(link, linkName) in mushroomData.links" :key="linkName">
               <a :href="link" target="_blank" class="text-blue-500 hover:underline">{{ linkName }}</a>
             </div>
-
             <!-- Books section -->
             <h3 class="text-xl font-semibold mb-2">Books</h3>
             <p class="text-gray-600">{{ mushroomData.nz_books }}</p>
@@ -78,15 +72,15 @@
         <table class="w-full mb-4">
           <tbody>
               <tr>
-                <td>Description</td>
+                <td class="font-semibold">Description:</td>
                 <td>{{ mushroomData.description}}</td>
               </tr>
               <tr>
-                <td>Lookalikes</td>
+                <td class="font-semibold">Lookalikes:</td>
                 <td>{{ mushroomData.lookalikes}}</td>
               </tr>
               <tr>
-                <td>Stipe features</td>
+                <td class="font-semibold">Stipe features:</td>
                 <tr>
                   <td>Minimum diameter:</td>
                   <td>{{ mushroomData.stipe_features.diameter_min}}</td>
@@ -121,7 +115,7 @@
                 </tr>
               </tr>
               <tr>
-                <td>Gills</td>
+                <td class="font-semibold">Gills:</td>
                 <tr>
                   <td>Colour:</td>
                   <td>{{ mushroomData.gills.colour}}</td>
@@ -132,11 +126,11 @@
                 </tr>
               </tr>
               <tr>
-                <td>Spore colour</td>
+                <td class="font-semibold">Spore colour:</td>
                 <td>{{ mushroomData.spore_colour}}</td>
               </tr>
               <tr>
-                <td>Cap features</td>
+                <td class="font-semibold">Cap features:</td>
                 <tr>
                   <td>Colour:</td>
                   <td>
