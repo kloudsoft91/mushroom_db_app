@@ -1,61 +1,81 @@
 <template>
+  <div class="bg-gray-100 min-h-screen p-4">
     <HeaderBar />
     <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter" />
     <FooterBar @openCarouselInputs="openCarouselInputs" />
-    <div class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 desktop:grid-cols-2 ultra:grid-cols-2 gap-5 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto">
-      <div class="image-carousel">
-        <carousel :items-to-show="1">
-        <slide v-for="(image, index) in mushroomData.photos" :key="index">
-          <nuxt-img class="rounded-t-lg" provider="cloudinary" :src="`ar_3:4,c_fill,h_1024,w_768/${image}`" alt="Mushroom Image"></nuxt-img>
-        </slide>
 
-        <template #addons>
-          <navigation />
-          <pagination />
-        </template>
-      </carousel>
+    <!-- Main content container -->
+    <div class="container mx-auto mt-8">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-4">
+        <!-- Image carousel -->
+
+          <carousel :items-to-show="1">
+            <slide v-for="(image, index) in mushroomData.photos" :key="index">
+              <nuxt-img class="w-full" provider="cloudinary" :src="`ar_3:4,c_fill,h_1024,w_768/${image}`" alt="Mushroom Image"></nuxt-img>
+            </slide>
+            <template #addons>
+              <navigation />
+              <pagination />
+            </template>
+          </carousel>
+
+
+        <!-- Information table -->
+        <div class="bg-white rounded-lg shadow-lg p-4">
+          <h1 class="text-3xl font-semibold my-4">{{ mushroomData.common_names.split(',').map(name => name.trim()).join(' / ') }}</h1>
+
+          <!-- Basic information table -->
+          <table class="w-full mb-4">
+            <tbody>
+              <tr>
+                <td class="font-semibold">Latin names:</td>
+                <td>{{ mushroomData.latin_names }}</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Genus:</td>
+                <td>{{ mushroomData.genus }}</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Edibility:</td>
+                <td>{{ mushroomData.edibility }}</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Environment:</td>
+                <td>{{ mushroomData.environment }}</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Ecology:</td>
+                <td>{{ mushroomData.ecology }}</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Time of year:</td>
+                <td>{{ mushroomData.time_of_year }}</td>
+              </tr>
+              <tr>
+                <td class="font-semibold">Origin:</td>
+                <td>{{ mushroomData.native_or_introduced }}</td>
+              </tr>
+            </tbody>
+          </table>
+          <h2 class="text-2xl font-semibold mb-2">More Information</h2>
+          <div class="space-y-2">
+            <!-- Links section -->
+            <h3 class="text-xl font-semibold mb-2">Links</h3>
+            <div v-for="(link, linkName) in mushroomData.links" :key="linkName">
+              <a :href="link" target="_blank" class="text-blue-500 hover:underline">{{ linkName }}</a>
+            </div>
+
+            <!-- Books section -->
+            <h3 class="text-xl font-semibold mb-2">Books</h3>
+            <p class="text-gray-600">{{ mushroomData.nz_books }}</p>
+          </div>
+        </div>
       </div>
-      <div class="information-table">
-        <h1 class="text-3xl font-semibold my-4">{{ mushroomData.common_names.split(',').map(name => name.trim()).join(' / ') }}</h1>
-        <!-- Apply modern styling to the table -->
-        <table >
-          <tbody>
-            <tr>
-              <td>Latin names</td>
-              <td>{{ mushroomData.latin_names}}</td>
-            </tr>
-            <tr>
-              <td>Genus</td>
-              <td>{{ mushroomData.genus}}</td>
-            </tr>
-            <tr>
-              <td>Edibility</td>
-              <td>{{ mushroomData.edibility}}</td>
-            </tr>
-            <tr>
-              <td>Environment</td>
-              <td>{{ mushroomData.environment}}</td>
-            </tr>
-            <tr>
-              <td>Ecology</td>
-              <td>{{ mushroomData.ecology}}</td>
-            </tr>
-            <tr>
-              <td>Time of year</td>
-              <td>{{ mushroomData.time_of_year}}</td>
-            </tr>
-            <tr>
-              <td>Origin</td>
-              <td>{{ mushroomData.native_or_introduced}}</td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
-    </div>
-    <div class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 desktop:grid-cols-2 ultra:grid-cols-2 gap-5 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto">
-      <div class="more-details">
-        <h1 class="text-2xl font-semibold my-4">Details</h1>
-        <table>
+
+      <!-- Details table -->
+      <div class="bg-white rounded-lg shadow-lg p-4">
+        <h2 class="text-2xl font-semibold mb-2">Details</h2>
+        <table class="w-full mb-4">
           <tbody>
               <tr>
                 <td>Description</td>
@@ -145,23 +165,10 @@
           </tbody>
         </table>
       </div>
-      <div class="links">
-        <h1 class="text-2xl font-semibold my-4">More information</h1>
-        <p>
-          <h2>Links</h2>
-          <div v-for="(link, linkName) in mushroomData.links" :key="linkName">
-            <a :href="link" target="_blank">{{ linkName }}</a>
-          </div>
-        </p>
-        <p>
-          <h2>Books</h2>
-          {{ mushroomData.nz_books}}
-
-        </p>
-      </div>
     </div>
-    
+  </div>
 </template>
+
     
 <script>
 import mushroomData from '~/data/sampledata.js';
