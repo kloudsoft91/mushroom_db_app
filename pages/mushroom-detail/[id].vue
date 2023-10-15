@@ -58,7 +58,6 @@
   </div>
 </template>
 
-    
 <script>
 import mushroomData from '~/data/sampledata.js';
 
@@ -90,11 +89,9 @@ export default {
     fetchData() {
       this.id = this.$route.params.id;
 
-      // Simulate fetching data based on the provided ID
       this.mushroomData = mushroomData.find(mushroom => mushroom.id === parseInt(this.id));
 
       if (!this.mushroomData) {
-        // Handle the case where the mushroom with the given ID is not found
         throw new Error(`Mushroom with ID ${this.id} not found.`);
       }
     },

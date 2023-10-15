@@ -31,7 +31,7 @@ export default [
     },
     "spore_colour": "brown",
     "cap_features": {
-      "colour": ["white", "brown", "black"],
+      "colour": ["White", "Brown", "Black"],
       "texture": "rough scaly",
       "diameter_min": 4,
       "diameter_max": 8,
@@ -44,7 +44,7 @@ export default [
     "time_of_year": "Late spring to autumn (October to April in the Southern Hemisphere)",
     "native_or_introduced": "introduced",
     "genus": "coprinus",
-    "photos": ["MushroomCards/ShaggyManeCard_egc21k.jpg"]
+    "photos": ["MushroomCards/ShaggyManeCard_egc21k.jpg", "MushroomCards/ShaggyMane1_mlbzzg.jpg", "MushroomCards/ShaggyMane2_r6yvtx.jpg", "MushroomCards/ShaggyMane3_xveake.jpg"]
   },
 
   {
@@ -90,7 +90,7 @@ export default [
     "time_of_year": "Late summer to autumn (March to June in the Southern Hemisphere)",
     "native_or_introduced": "introduced",
     "genus": "Amanita",
-    "photos": ["MushroomCards/AmanitaMuscariaCard_gy8lsy.jpg"]
+    "photos": ["MushroomCards/AmanitaMuscariaCard_gy8lsy.jpg", "MushroomCards/AmanitaMuscaria1_zkqfbb.jpg", "MushroomCards/AmanitaMuscaria2_ttnpcq.jpg"]
   },
 
   {
@@ -136,7 +136,7 @@ export default [
     "time_of_year": "Autumn (March to May in the Southern Hemisphere)",
     "native_or_introduced": "introduced",
     "genus": "Gymnopilus",
-    "photos": ["MushroomCards/LaughingGymCard_yo4quk.jpg"]
+    "photos": ["MushroomCards/LaughingGymCard_yo4quk.jpg", "MushroomCards/LaughingGym1_lwmtun.jpg", "MushroomCards/LaughingGym2_crh6vm.jpg", "MushroomCards/LaughingGym3_kkwhzz.jpg"]
   },
 
   {
@@ -184,7 +184,7 @@ export default [
     "time_of_year": "Late summer to autumn (February to May in the Southern Hemisphere)",
     "native_or_introduced": "native",
     "genus": "Psilocybe",
-    "photos": ["MushroomCards/PsilocybeWeraroaCard_ipwjeo.jpg"]
+    "photos": ["MushroomCards/PsilocybeWeraroaCard_ipwjeo.jpg", "MushroomCards/PsilocybeWeraroa1_b2mzqh.jpg", "MushroomCards/PsilocybeWeraroa2_ibuwpt.jpg", "MushroomCards/PsilocybeWeraroa3_khjiwc.jpg"]
   },
 
   {
@@ -276,10 +276,10 @@ export default [
     },
     "environment": "soil",
     "ecology":"saprotrophic",
-    "time_of_year": "(February to June)",
+    "time_of_year": "(February to June in the Southern Hemisphere)",
     "native_or_introduced": "introduced",
     "genus": "Cortinarius",
-    "photos": ["MushroomCards/ShaggyParasolCard_e61grf.jpg"]
+    "photos": ["MushroomCards/ShaggyParasolCard_e61grf.jpg", "MushroomCards/ShaggyParasol1_xgkzxm.jpg", "MushroomCards/ShaggyParasol2_cabdyu.jpg", "MushroomCards/ShaggyParasol3_ajb8kp.jpg", "MushroomCards/ShaggyParasol4_mb2ogq.jpg"]
   },
 
   {
@@ -326,7 +326,7 @@ export default [
     "time_of_year": "late summer into autumn (February to June)",
     "native_or_introduced": "Introduced",
     "genus": "Leccinum",
-    "photos": ["MushroomCards/BirchBoleteCard_jkkl6o.jpg"]
+    "photos": ["MushroomCards/BirchBoleteCard_jkkl6o.jpg", "MushroomCards/BirchBolete1_qwwjwz.jpg"]
   },
 
   {
@@ -369,10 +369,10 @@ export default [
     },
     "environment": "Dead wood, woods, grassy areas, and along roads",
     "ecology": "saprotrophic",
-    "time_of_year": "Autumn (March to May)",
+    "time_of_year": "Autumn (March to May in the Southern Hemisphere)",
     "native_or_introduced": "Introduced",
     "genus": "Lycoperdon",
-    "photos": ["MushroomCards/CommonPuffballCard_hporke.jpg"]
+    "photos": ["MushroomCards/CommonPuffballCard_hporke.jpg", "MushroomCards/CommonPuffball1_svcolm.jpg"]
   },
 
   {
@@ -413,10 +413,10 @@ export default [
     },
     "environment": "Dead or dying trees, forests",
     "ecology": "saprotrophic",
-    "time_of_year": "Spring, autumn (April to July)",
+    "time_of_year": "Spring, autumn (April to July in the Southern Hemisphere)",
     "native_or_introduced": "Introduced",
     "genus": "Pleurotus",
-    "photos": ["MushroomCards/OysterCard_cogvbc.jpg"]
+    "photos": ["MushroomCards/OysterCard_cogvbc.jpg", "MushroomCards/Oyster1_pk8ykc.jpg"]
   },
 
   {
@@ -457,10 +457,10 @@ export default [
     },
     "environment": "Dead, decaying wood",
     "ecology": "saprotrophic",
-    "time_of_year": "Autumn, winter (March to July)",
+    "time_of_year": "Autumn, winter (March to July in the Southern Hemisphere)",
     "native_or_introduced": "Native",
     "genus": "Hericium",
-    "photos": ["MushroomCards/LionsManeCard_vhbdjh.jpg"]
+    "photos": ["MushroomCards/LionsManeCard_vhbdjh.jpg", "MushroomCards/LionsMane1_phrqyk.jpg"]
   },
 
   {
@@ -502,10 +502,10 @@ export default [
     },
     "environment": "fields, grassy areas, lawns",
     "ecology": "mycorrhizal",
-    "time_of_year": "Autumn (March to May)",
+    "time_of_year": "Autumn (March to May in the Southern Hemisphere)",
     "native_or_introduced": "Introduced",
     "genus": "Agaricus",
-    "photos": ["MushroomCards/MeadowMushroomCard_y7dlhy.jpg"]
+    "photos": ["MushroomCards/MeadowMushroomCard_y7dlhy.jpg", "MushroomCards/MeadowMushroom1_eh1dpo.jpg"]
   },
 
   {
@@ -547,10 +547,10 @@ export default [
     },
     "environment": "Living or dead trees",
     "ecology": "parasitic",
-    "time_of_year": "Summer, autumn (November to June)",
+    "time_of_year": "Summer, autumn (November to June in the Southern Hemisphere)",
     "native_or_introduced": "Native",
     "genus": "Cyclocybe",
-    "photos": ["MushroomCards/TawakaCard_g6ndwo.jpg"]
+    "photos": ["MushroomCards/TawakaCard_g6ndwo.jpg", "MushroomCards/Tawaka1_cb5u1w.jpg"]
   },
   {
     "id":13,
@@ -597,10 +597,10 @@ export default [
     },
     "environment": "Found in mixed Mānuka, Kānuka, Kauri forest, conifer plantations",
     "ecology": "unknown",
-    "time_of_year": "Autumn, winter (February - August)",
+    "time_of_year": "Autumn, winter (February to August in the Southern Hemisphere)",
     "native_or_introduced": "Native",
     "genus": "Macrolepiota",
-    "photos": ["MushroomCards/GracefulParasolCard_bkmw4v.jpg"]
+    "photos": ["MushroomCards/GracefulParasolCard_bkmw4v.jpg", "MushroomCards/GracefulParasol1_cjvi54.jpg"]
   },
   {
     "id":14,
@@ -645,10 +645,10 @@ export default [
     },
     "environment": "Oak and Chestnut trees",
     "ecology": "mycorrhiza",
-    "time_of_year": "Autumn, winter (February - August)",
+    "time_of_year": "Autumn, winter (February to August in the Southern Hemisphere)",
     "native_or_introduced": "introduced",
     "genus": "Amanita",
-    "photos": ["MushroomCards/DeathCapCard_ueb21p.jpg"]
+    "photos": ["MushroomCards/DeathCapCard_ueb21p.jpg", "MushroomCards/DeathCap1_cawgjg.jpg"]
   },
   {
     "id":15,
@@ -691,10 +691,10 @@ export default [
     },
     "environment": "Dead broad-leaved trees or on their fallen timber",
     "ecology": "saprotrophic & mycorrhizal", //both stated
-    "time_of_year": "Autumn, winter (March - August)",
+    "time_of_year": "Autumn, winter (March to August in the Southern Hemisphere)",
     "native_or_introduced": "native",
     "genus": "Armillaria",
-    "photos": ["MushroomCards/AustralHoneyCard_wys1f8.jpg"]
+    "photos": ["MushroomCards/AustralHoneyCard_wys1f8.jpg", "MushroomCards/AustralHoney1_ovxlk3.jpg"]
   },
 
 ]
