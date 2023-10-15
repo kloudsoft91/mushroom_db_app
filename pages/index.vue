@@ -86,10 +86,10 @@ export default{
     if (!searchInput) {
       return data;
     }
-    //otherwise filter data by input against latin & common names
+    //otherwise filter data by input against latin, common or maori names
     return data.filter(d =>
-      d.common_names.toLowerCase().includes(searchInput.toLowerCase()) ||
-      d.latin_names.toLowerCase().includes(searchInput.toLowerCase())
+      d.common_names.concat(d.latin_names).concat(d.maori_names).join(' ')
+        .toLowerCase().includes(searchInput.trim().toLowerCase())
     );
     },
 
