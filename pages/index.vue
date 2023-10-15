@@ -87,7 +87,7 @@ export default{
         return data;
       }
       //otherwise filter data by input against latin, common or maori names
-      else if (d.maori_names) {
+      else if (data.hasOwn("maori_names")) {
         return data.filter(d =>
           d.common_names.concat(d.latin_names).concat(d.maori_names).join(' ').toLowerCase().includes(searchInput.trim().toLowerCase())
         );
