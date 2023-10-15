@@ -9,7 +9,7 @@
           class=" rounded-lg bg-gray-200 tablet:shadow-md desktop:shadow-md flex flex-col overflow-hidden"
         >
           <div class="relative overflow-hidden bg-cover bg-no-repeat">
-            <img class="rounded-t-lg" src="~/assets/images/mushy.jpg" alt="this is a pic of a mushy" />
+            <img class="rounded-t-lg" src="~/assets/images/mushy.jpg" alt="Mushroom Image" />
             <!-- Adds a warning label for toxic mushrooms -->
             <span
               v-if="mushroom.edibility.includes('toxic')"

@@ -12,6 +12,7 @@
         <pagination />
       </template>
     </carousel>
+    <h1 class="text-3xl font-semibold my-4">{{ mushroomData.common_names.split(',').map(name => name.trim()).join(' / ') }}</h1>
     <table class="mushroom-table">
       <tbody>
         <tr v-for="(value, key) in mushroomData" :key="key">
