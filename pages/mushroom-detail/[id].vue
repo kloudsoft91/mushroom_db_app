@@ -1,20 +1,25 @@
 <template>
-    <div>
-      <HeaderBar />
-      <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter" />
-      <FooterBar @openCarouselInputs="openCarouselInputs" />
-  
-      <div class="mushroom-detail">
-        <table class="mushroom-table">
-            <tbody>
-                <tr v-for="(value, key) in mushroomData">
-                    <td>{{ formatKey(key) }}</td>
-                    <td>{{ formatValue(value) }}</td>
-                </tr>
-            </tbody>
-        </table>
-      </div>
-    </div>
+    <HeaderBar />
+    <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter" />
+    <FooterBar @openCarouselInputs="openCarouselInputs" />
+    <carousel :items-to-show="1">
+      <slide v-for="(image, index) in mushroomData.photos" :key="index">
+        <nuxt-img class="rounded-t-lg" provider="cloudinary" :src="`ar_3:4,c_fill,h_1024,w_768/${image}`" alt="Mushroom Image"></nuxt-img>
+      </slide>
+
+      <template #addons>
+        <navigation />
+        <pagination />
+      </template>
+    </carousel>
+    <table class="mushroom-table">
+      <tbody>
+        <tr v-for="(value, key) in mushroomData" :key="key">
+          <td class="pr-4">{{ formatKey(key) }}</td>
+          <td>{{ formatValue(value) }}</td>
+        </tr>
+      </tbody>
+    </table>
 </template>
     
 <script>
