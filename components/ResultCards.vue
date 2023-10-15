@@ -9,7 +9,7 @@
           class=" rounded-lg bg-gray-200 tablet:shadow-md desktop:shadow-md flex flex-col overflow-hidden"
         >
           <div class="relative overflow-hidden bg-cover bg-no-repeat">
-            <nuxt-img class="rounded-t-lg" provider="cloudinary" :src="`ar_3:4,c_fill,h_1024,w_768/${mushroom.photos[0]}`" alt="Mushroom Image"></nuxt-img>
+            <img class="rounded-t-lg" src="~/assets/images/mushy.jpg" alt="Mushroom Image" />
             <!-- Adds a warning label for toxic mushrooms -->
             <span
               v-if="mushroom.edibility.includes('toxic')"
