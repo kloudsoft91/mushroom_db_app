@@ -104,18 +104,12 @@ export default {
   methods: {
     fetchData() {
       const route = useRoute();
-
       this.id = route.params.id;
-
       this.mushroomData = mushroomData.find(mushroom => mushroom.id === parseInt(this.id));
 
       if (!this.mushroomData) {
         throw new Error(`Mushroom with ID ${this.id} not found.`);
       }
-    },
-    formatKey(key) {
-      // Convert camelCase to Title Case for display
-      return key.replace(/([A-Z])/g, ' $1').trim();
     },
     formatValue(value) {
       // Format array values as a comma-separated list
