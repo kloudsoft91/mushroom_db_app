@@ -56,11 +56,11 @@
                       <template v-if="Array.isArray(value)">
                         <p class="font-semibold">{{ key }}:</p>
                         <ul>
-                          <li v-for="item in value" :key="item">{{ item }}</li>
+                          <li v-for="item in value" :key="item"><nuxt-link :to="{ path: '/', query: { label: attribute.label, item: item }}" class="quick-link">{{ item }}</nuxt-link></li>
                         </ul>
                       </template>
                       <template v-else>
-                        <p>{{ key }}: {{ value }}</p>
+                        <p>{{ key }}: <nuxt-link :to="{ path: '/', query: { label: attribute.key + key, item: value }}" class="quick-link">{{ value }}</nuxt-link></p>
                       </template>
                     </li>
                   </ul>
@@ -106,7 +106,9 @@ export default {
   },
   methods: {
     fetchData() {
-      this.id = this.$route.params.id;
+      const route = useRoute();
+
+      this.id = route.params.id;
 
       this.mushroomData = mushroomData.find(mushroom => mushroom.id === parseInt(this.id));
 
