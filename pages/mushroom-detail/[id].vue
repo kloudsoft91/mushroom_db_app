@@ -56,7 +56,7 @@
                       <template v-if="Array.isArray(value)">
                         <p class="font-semibold">{{ key }}:</p>
                         <ul>
-                          <li v-for="item in value" :key="item"><nuxt-link :to="{ path: '/', query: { label: attribute.label, item: item }}" class="quick-link">{{ item }}</nuxt-link></li>
+                          <li v-for="item in value" :key="item"><nuxt-link :to="{ path: '/', query: { label: attribute.label+','+ key, item: item }}" class="quick-link">{{ item }}</nuxt-link></li>
                         </ul>
                       </template>
                       <template v-else>
