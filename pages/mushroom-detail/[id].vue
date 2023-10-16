@@ -28,6 +28,7 @@
                 </tr>
               </tbody>
             </table>
+            <br>
             <h2 class="text-2xl font-semibold mb-2">More Information</h2>
             <div class="space-y-2">
               <!-- Links section -->
