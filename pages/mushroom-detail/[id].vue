@@ -33,7 +33,7 @@
             <!-- Links section -->
             <h3 class="text-xl font-semibold mb-2">Links</h3>
             <div v-for="(link, linkName) in mushroomData.links" :key="linkName">
-              <a :href="link" target="_blank" class="text-blue-500 hover:underline">{{ linkName }}</a>
+              <a :href="link" target="_blank" class="quick-link">{{ linkName }}</a>
             </div>
             <!-- Books section -->
             <h3 class="text-xl font-semibold mb-2">Books</h3>
@@ -44,35 +44,40 @@
 
       <!-- Details table -->
       <div class="bg-white rounded-lg shadow-lg p-4 mt-8">
-        <h2 class="text-2xl font-semibold mb-2">Details</h2>
-        <table class="w-full mb-4">
-          <tbody>
-            <tr v-for="attribute in detailsAttributes" :key="attribute.key">
-              <td class="font-semibold">{{ attribute.label }}:</td>
-              <td>
-                <template v-if="typeof mushroomData[attribute.key] === 'object'">
-                  <ul>
-                    <li v-for="(value, key) in mushroomData[attribute.key]" :key="key">
-                      <template v-if="Array.isArray(value)">
-                        <p class="font-semibold">{{ key }}:</p>
-                        <ul>
-                          <li v-for="item in value" :key="item"><nuxt-link :to="{ path: '/', query: { label: attribute.label+','+ key, item: item }}" class="quick-link">{{ item }}</nuxt-link></li>
-                        </ul>
-                      </template>
-                      <template v-else>
-                        <p>{{ key }}: <nuxt-link :to="{ path: '/', query: { label: attribute.key +','+ key, item: value }}" class="quick-link">{{ value }}</nuxt-link></p>
-                      </template>
-                    </li>
-                  </ul>
-                </template>
-                <template v-else>
-                  <span>{{ mushroomData[attribute.key] }}</span>
-                </template>
-              </td>
-            </tr>
-          </tbody>
-        </table>
-      </div>
+  <h2 class="text-2xl font-semibold mb-2">Details</h2>
+  <div class="overflow-x-auto">
+    <table class="w-full">
+      <tbody>
+        <template v-for="attribute in detailsAttributes" :key="attribute.key">
+          <tr class="px-4 py-2 font-semibold">{{ attribute.label }}:</tr>
+          <td class="px-4 py-2">
+            <template v-if="typeof mushroomData[attribute.key] === 'object'">
+              <ul>
+                <li v-for="(value, key) in mushroomData[attribute.key]" :key="key">
+                  <template v-if="Array.isArray(value)">
+                   {{ key }}:
+
+                    <span v-for="item in value" :key="item">
+                      <nuxt-link :to="{ path: '/', query: { label: attribute.label + ',' + key, item: item }}" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ item }}</nuxt-link>
+                      &nbsp;
+                    </span>
+    
+                  </template>
+                  <template v-else>
+                    <p>{{ key }}: <nuxt-link :to="{ path: '/', query: { label: attribute.key + ',' + key, item: value }}" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ value }}</nuxt-link></p>
+                  </template>
+                </li>
+              </ul>
+            </template>
+            <template v-else>
+              <nuxt-link :to="{ path: '/', query: { label: attribute.label, item: attribute.key }}" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ mushroomData[attribute.key] }}</nuxt-link>
+            </template>
+          </td>
+        </template>
+      </tbody>
+    </table>
+  </div>
+</div>
     </div>
   </div>
 </template>
