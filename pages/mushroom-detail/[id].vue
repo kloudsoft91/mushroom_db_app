@@ -42,17 +42,16 @@
         </div>
       </div>
 
-      
       <div class="grid grid-cols-1 gap-10 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto">
-        <!-- Description table -->
+        <!-- Details table -->
         <div class="bg-white rounded-lg shadow-lg p-4 mt-8">
           <h2 class="text-2xl font-semibold mb-2">Details</h2>
           <div class="overflow-x-auto">
             <table>
               <tbody>
-                <tr class="px-4 py-2 font-semibold">Description:</tr> <hr class="h-1 bg-gray-200 dark:bg-gray-700">
+                <tr class="px-4 py-2 font-semibold">Description:</tr> 
                 <td class="px-4 py-2">{{ mushroomData.description }}</td>
-                <tr class="px-4 py-2 font-semibold">Lookalikes:</tr> <hr class="h-1 bg-gray-200 dark:bg-gray-700">
+                <tr class="px-4 py-2 font-semibold">Lookalikes:</tr> 
                 <td class="px-4 py-2">{{ mushroomData.lookalikes }}</td>  
               </tbody>
             </table>
@@ -60,16 +59,15 @@
         </div>
       </div>
 
-
-      <!-- Further details table -->
+      <!-- Features table -->
       <div class="bg-white rounded-lg shadow-lg p-4 mt-8 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto">
         <h2 class="text-2xl font-semibold mb-2">Features</h2>
         <div class="overflow-x-auto">
           <table class="w-full">
             <tbody>
               <tr class="px-4 py-2 font-semibold">
-                <td class="w-1/2">Stipe Features:</td>
-                <td class="w-1/2">Cap Features:</td>
+                <td class="w-1/2">Stipe Features:</td> 
+                <td class="w-1/2">Cap Features:</td> 
               </tr>
               <tr>
                 <td class="px-4 py-2">
@@ -90,7 +88,7 @@
                 </td>
               </tr>
               <tr class="px-4 py-2 font-semibold">
-                <td class="w-1/2">Gills:</td>
+                <td class="w-1/2">Gills:</td> 
                 <td class="w-1/2">Spore colour: <nuxt-link :to="{ path: '/', query: { label: 'Spore colour,' + key, item: value }}" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ mushroomData.spore_colour }}</nuxt-link></td>
               </tr>
               <tr>
