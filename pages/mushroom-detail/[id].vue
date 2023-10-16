@@ -17,28 +17,28 @@
               <pagination />
             </template>
           </carousel>
-        <!-- Information table -->
-        <div class="bg-white rounded-lg shadow-lg p-4">
-          <h1 class="text-3xl font-semibold my-4">{{ mushroomData.common_names.split(',').map(name => name.trim()).join(' / ') }}</h1>
-          <table class="w-full mb-4">
-            <tbody>
-              <tr v-for="attribute in informationAttributes" :key="attribute.key">
-                <td class="font-semibold">{{ attribute.label }}:</td>
-                <td>{{ mushroomData[attribute.key] }}</td>
-              </tr>
-            </tbody>
-          </table>
-          <h2 class="text-2xl font-semibold mb-2">More Information</h2>
-          <div class="space-y-2">
-            <!-- Links section -->
-            <h3 class="text-xl font-semibold mb-2">Links</h3>
-            <div v-for="(link, linkName) in mushroomData.links" :key="linkName">
-              <a :href="link" target="_blank" class="quick-link">{{ linkName }}</a>
+          <!-- Information table -->
+          <div class="bg-white rounded-lg shadow-lg p-4">
+            <h1 class="text-3xl font-semibold my-4">{{ mushroomData.common_names.split(',').map(name => name.trim()).join(' / ') }}</h1>
+            <table class="w-full mb-4">
+              <tbody>
+                <tr v-for="attribute in informationAttributes" :key="attribute.key">
+                  <td class="px-4 py-2 font-semibold">{{ attribute.label }}:</td>
+                  <td class="px-4 py-2">{{ mushroomData[attribute.key] }}</td>
+                </tr>
+              </tbody>
+            </table>
+            <h2 class="text-2xl font-semibold mb-2">More Information</h2>
+            <div class="space-y-2">
+              <!-- Links section -->
+              <h3 class="text-xl font-semibold mb-2">Links</h3>
+              <div v-for="(link, linkName) in mushroomData.links" :key="linkName">
+                <a :href="link" target="_blank" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ linkName }}</a>
+              </div>
+              <!-- Books section -->
+              <h3 class="text-xl font-semibold mb-2">Books</h3>
+              <p class="text-gray-600">{{ mushroomData.nz_books }}</p>
             </div>
-            <!-- Books section -->
-            <h3 class="text-xl font-semibold mb-2">Books</h3>
-            <p class="text-gray-600">{{ mushroomData.nz_books }}</p>
-          </div>
         </div>
       </div>
 
