@@ -354,7 +354,7 @@ export default{
         this.selectedStipeColour = selectedStipeColour;
       }
       this.applyAllFilters();
-      return this.stipeColour;
+      return this.selectedStipeColour;
     },
     handleCapColour(selectedCapColour) {
       if (this.selectedCapColour == selectedCapColour) {

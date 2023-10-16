@@ -338,7 +338,7 @@ describe('Index', () => {
     ];
 
     // Set search inputs
-    wrapper.vm.stipeColour = "";
+    wrapper.vm.selectedStipeColour = "";
 
     // Trigger filterByStipeColour method
     const filteredMushrooms = wrapper.vm.filterByStipeColour(mockMushrooms);
@@ -366,7 +366,7 @@ describe('Index', () => {
     ];
 
     // Set search inputs
-    wrapper.vm.stipeColour = 'White';
+    wrapper.vm.selectedStipeColour = 'White';
 
     // Trigger filterByStipeColour method
     const filteredMushrooms = wrapper.vm.filterByStipeColour(mockMushrooms);
@@ -393,7 +393,7 @@ describe('Index', () => {
     ];
 
     // Set search inputs
-    wrapper.vm.stipeColour = 'Yellow';
+    wrapper.vm.selectedStipeColour = 'Yellow';
 
     // Trigger filterByStipeColour method
     const filteredMushrooms = wrapper.vm.filterByStipeColour(mockMushrooms);
@@ -418,7 +418,7 @@ describe('Index', () => {
     ];
 
     // Set search inputs
-    wrapper.vm.capColour = "";
+    wrapper.vm.selectedCapColour = "";
 
     // Trigger filterByCapColour method
     const filteredMushrooms = wrapper.vm.filterByCapColour(mockMushrooms);
@@ -446,7 +446,7 @@ describe('Index', () => {
     ];
 
     // Set search inputs
-    wrapper.vm.capColour = 'White';
+    wrapper.vm.selectedCapColour = 'White';
 
     // Trigger filterByCapColour method
     const filteredMushrooms = wrapper.vm.filterByCapColour(mockMushrooms);
@@ -473,7 +473,7 @@ describe('Index', () => {
     ];
 
     // Set search inputs
-    wrapper.vm.capColour = 'Yellow';
+    wrapper.vm.selectedCapColour = 'Yellow';
 
     // Trigger filterByCapColour method
     const filteredMushrooms = wrapper.vm.filterByCapColour(mockMushrooms);
