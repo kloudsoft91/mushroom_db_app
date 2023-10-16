@@ -44,40 +44,32 @@
 
       <!-- Details table -->
       <div class="bg-white rounded-lg shadow-lg p-4 mt-8">
-  <h2 class="text-2xl font-semibold mb-2">Details</h2>
-  <div class="overflow-x-auto">
-    <table class="w-full">
-      <tbody>
-        <template v-for="attribute in detailsAttributes" :key="attribute.key">
-          <tr class="px-4 py-2 font-semibold">{{ attribute.label }}:</tr>
-          <td class="px-4 py-2">
-            <template v-if="typeof mushroomData[attribute.key] === 'object'">
-              <ul>
-                <li v-for="(value, key) in mushroomData[attribute.key]" :key="key">
-                  <template v-if="Array.isArray(value)">
-                   {{ key }}:
-
-                    <span v-for="item in value" :key="item">
-                      <nuxt-link :to="{ path: '/', query: { label: attribute.label + ',' + key, item: item }}" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ item }}</nuxt-link>
-                      &nbsp;
-                    </span>
-    
-                  </template>
-                  <template v-else>
-                    <p>{{ key }}: <nuxt-link :to="{ path: '/', query: { label: attribute.key + ',' + key, item: value }}" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ value }}</nuxt-link></p>
-                  </template>
-                </li>
-              </ul>
+      <h2 class="text-2xl font-semibold mb-2">Details</h2>
+      <div class="overflow-x-auto">
+        <table class="w-full">
+          <tbody>
+            <template v-for="attribute in detailsAttributes" :key="attribute.key">
+              <tr class="px-4 py-2 font-semibold">{{ attribute.label }}:</tr>
+              <td class="px-4 py-2">
+                <template v-if="typeof mushroomData[attribute.key] === 'object'">
+                  <ul>
+                    <li v-for="(value, key) in mushroomData[attribute.key]" :key="key">
+                      {{ key }}: <nuxt-link :to="{ path: '/', query: { label: attribute.key + ',' + key, item: value }}" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ formatValue(value) }}</nuxt-link>
+                    </li>
+                  </ul>
+                </template>
+                <template v-else-if="attribute.link == true">
+                  <nuxt-link :to="{ path: '/', query: { label: attribute.label, item: attribute.key }}" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ mushroomData[attribute.key] }}</nuxt-link>
+                </template>
+                <template v-else>
+                  {{ mushroomData[attribute.key] }}
+                </template>
+              </td>
             </template>
-            <template v-else>
-              <nuxt-link :to="{ path: '/', query: { label: attribute.label, item: attribute.key }}" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ mushroomData[attribute.key] }}</nuxt-link>
-            </template>
-          </td>
-        </template>
-      </tbody>
-    </table>
-  </div>
-</div>
+          </tbody>
+        </table>
+      </div>
+    </div>
     </div>
   </div>
 </template>
@@ -100,12 +92,12 @@ export default {
         { label: 'Origin', key: 'native_or_introduced' },
       ],
       detailsAttributes: [
-        { label: 'Description', key: 'description' },
-        { label: 'Lookalikes', key: 'lookalikes' },
-        { label: 'Stipe features', key: 'stipe_features' },
-        { label: 'Gills', key: 'gills' },
-        { label: 'Spore colour', key: 'spore_colour' },
-        { label: 'Cap features', key: 'cap_features' },
+        { label: 'Description', key: 'description', link: false },
+        { label: 'Lookalikes', key: 'lookalikes', link: false},
+        { label: 'Stipe features', key: 'stipe_features', link: true },
+        { label: 'Gills', key: 'gills' , link: true},
+        { label: 'Spore colour', key: 'spore_colour', link: true },
+        { label: 'Cap features', key: 'cap_features', link: true },
       ],
     };
   },
