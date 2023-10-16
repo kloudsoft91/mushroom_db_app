@@ -87,6 +87,7 @@
                     </ul>
                 </td>
               </tr>
+              <br>
               <tr class="px-4 py-2 font-semibold">
                 <td class="w-1/2">Gills:</td> 
                 <td class="w-1/2">Spore colour: <nuxt-link :to="{ path: '/', query: { label: 'Spore colour,' + key, item: value }}" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ mushroomData.spore_colour }}</nuxt-link></td>
