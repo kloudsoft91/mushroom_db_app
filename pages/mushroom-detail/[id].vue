@@ -60,7 +60,7 @@
                         </ul>
                       </template>
                       <template v-else>
-                        <p>{{ key }}: <nuxt-link :to="{ path: '/', query: { label: attribute.key + key, item: value }}" class="quick-link">{{ value }}</nuxt-link></p>
+                        <p>{{ key }}: <nuxt-link :to="{ path: '/', query: { label: attribute.key +','+ key, item: value }}" class="quick-link">{{ value }}</nuxt-link></p>
                       </template>
                     </li>
                   </ul>
