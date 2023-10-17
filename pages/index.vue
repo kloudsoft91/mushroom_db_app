@@ -1,5 +1,6 @@
 <template>
   <HeaderBar />
+  <!--Alert for invalid user inputs-->
   <p id="inputerror" style="color:red; text-align: center;"></p>
   <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter"/>
   <FooterBar @openCarouselInputs="openCarouselInputs"/>

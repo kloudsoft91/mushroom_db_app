@@ -314,6 +314,12 @@ describe('Index', () => {
     wrapper.vm.searchInput = 'Mushroom';
     wrapper.vm.selectedCapShape = 'convex';
 
+    //create dummy HTML alert element for applyAllFilters alert reset line
+    document.body.innerHTML =
+    '<div>' +
+    '  <span id="inputerror" />' +
+    '</div>';
+
     // Trigger applyAllFilters method
     wrapper.vm.applyAllFilters();
 
