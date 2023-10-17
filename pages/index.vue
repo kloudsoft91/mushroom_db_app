@@ -1,5 +1,6 @@
 <template>
   <HeaderBar />
+  <p id="inputerror" style="color:red; text-align: center;"></p>
   <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter"/>
   <FooterBar @openCarouselInputs="openCarouselInputs"/>
   <ResultCards :filteredMushrooms="filteredMushrooms"/>
@@ -48,6 +49,7 @@ export default{
     //currently called on filter button press, tag select, and when typing in Name search
     applyAllFilters() {
       let results = this.mushrooms;
+      document.getElementById("inputerror").innerHTML = "";
       //pull results from each filter function
       results = this.filterByTags(results);
       results = this.filterByName(results, this.searchInput);
@@ -258,7 +260,7 @@ export default{
 	    }
 	    catch(err) {
 	    	console.log('Invalid user input: ' + err);
-	    	alert('Invalid user input: ' + err);
+        document.getElementById("inputerror").innerHTML = 'Invalid user input: Non-alphabetical name';
 	    }
     },
     //receives tag button events
@@ -364,7 +366,7 @@ export default{
 	    }
 	    catch(err) {
 	    	console.log('Invalid user input: ' + err);
-	    	alert('Invalid user input: ' + err);
+        document.getElementById("inputerror").innerHTML = 'Invalid user input: Non-numerical length';
 	    }
     },
     //Open 
