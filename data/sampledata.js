@@ -19,7 +19,7 @@ export default [
     "stipe_features": {
       "diameter_min": 1,
       "diameter_max": 2.5,
-      "colour": ["White"],
+      "colour": ["white"],
       "length_min": 6,
       "length_max": 40,
       "bruising_colour": "No significant bruising",
@@ -31,7 +31,7 @@ export default [
     },
     "spore_colour": "brown",
     "cap_features": {
-      "colour": ["White", "Brown", "Black"],
+      "colour": ["white", "brown", "black"],
       "texture": "rough scaly",
       "diameter_min": 4,
       "diameter_max": 8,
@@ -65,7 +65,7 @@ export default [
     "stipe_features": {
       "diameter_min": 1,
       "diameter_max": 2,
-      "colour": ["White"],
+      "colour": ["white"],
       "length_min": 5,
       "length_max": 20,
       "bruising_colour": "No significant bruising",
@@ -77,7 +77,7 @@ export default [
     },
     "spore_colour": "White",
     "cap_features": {
-      "colour": ["Red", "Orange", "White", "Yellow"],//"Bright red to orange with white to yellow warts",
+      "colour": ["red", "orange", "white", "yellow"],//"Bright red to orange with white to yellow warts",
       "texture": "Covered in warts",
       "diameter_min": 8,
       "diameter_max": 20,
@@ -111,7 +111,7 @@ export default [
     "stipe_features": {
       "diameter_min": 1,
       "diameter_max": 5,
-      "colour": ["Yellow", "Brown", "Orange"], //Yellowish-brown",
+      "colour": ["yellow", "brown", "orange"], //Yellowish-brown",
       "length_min": 5,
       "length_max": 25,
       "bruising_colour": "No significant bruising",
@@ -123,7 +123,7 @@ export default [
     },
     "spore_colour": "Rust-brown",
     "cap_features": {
-      "colour": ["Brown", "Orange", "Yellow"], //"Rusty-brown to orange",
+      "colour": ["brown", "orange", "yellow"], //"Rusty-brown to orange",
       "texture": "dry scaly",
       "diameter_min": 8,
       "diameter_max": 30,
@@ -159,7 +159,7 @@ export default [
     "stipe_features": {
       "diameter_min": .1,
       "diameter_max": .6,
-      "colour": ["White", "Blue"], //"White, often with a blueish coloration near the base",
+      "colour": ["white", "blue"], //"White, often with a blueish coloration near the base",
       "length_min": 0,
       "length_max": 4,
       "bruising_colour": "Blueish bruising when handled",
@@ -171,7 +171,7 @@ export default [
     },
     "spore_colour": "Purple-brown",
     "cap_features": {
-      "colour": ["Brown"], //"Brown to dark brown",
+      "colour": ["brown"], //"Brown to dark brown",
       "texture": "Smooth, polished, leathery",
       "diameter_min": 1.5,
       "diameter_max": 3,
@@ -206,7 +206,7 @@ export default [
     "stipe_features": {
       "diameter_min": 1,
       "diameter_max": 2,
-      "colour": ["Violet"],
+      "colour": ["violet"],
       "length_min": 3,
       "length_max": 9,
       "bruising_colour": "No significant bruising",
@@ -218,7 +218,7 @@ export default [
     },
     "spore_colour": "Brown",
     "cap_features": {
-      "colour": ["Violet"],
+      "colour": ["violet"],
       "texture": "smooth, polished, sticky",
       "diameter_min": 2,
       "diameter_max": 7,
@@ -254,7 +254,7 @@ export default [
     "stipe_features": {
       "diameter_min": 2,
       "diameter_max": 3,
-      "colour": ["White"],
+      "colour": ["white"],
       "length_min": 5,
       "length_max": 20,
       "bruising_colour": "No significant bruising",
@@ -266,7 +266,7 @@ export default [
     },
     "spore_colour": "White",
     "cap_features": {
-      "colour": ["White"],
+      "colour": ["white"],
       "texture": "fleshy",
       "diameter_min": 6,
       "diameter_max": 20,
@@ -301,7 +301,7 @@ export default [
     "stipe_features": {
       "diameter_min": 1,
       "diameter_max": 3.5,
-      "colour": ["White"],
+      "colour": ["white"],
       "length_min": 5,
       "length_max": 15,
       "bruising_colour": "No significant bruising",
@@ -313,7 +313,7 @@ export default [
     },
     "spore_colour": "Brown",
     "cap_features": {
-      "colour": ["Tan", "Brown"],
+      "colour": ["tan", "brown"],
       "texture": "Smooth, bald, and dry to viscid",
       "diameter_min": 5,
       "diameter_max": 15,
@@ -347,7 +347,7 @@ export default [
     "stipe_features": {
       "diameter_min": null,
       "diameter_max": null,
-      "colour": ["White", "Brown"],
+      "colour": ["white", "brown"],
       "length_min": 3,
       "length_max": 10,
       "bruising_colour": "No significant bruising",
@@ -359,7 +359,7 @@ export default [
     },
     "spore_colour": "Brown",
     "cap_features": {
-      "colour": ["White", "Brown"],
+      "colour": ["white", "brown"],
       "texture": "Short spines that rub off easily",
       "diameter_min": 1.5,
       "diameter_max": 6,
@@ -403,7 +403,7 @@ export default [
     },
     "spore_colour": "White",
     "cap_features": {
-      "colour": ["White", "Grey", "Tan", "Dark Brown"],
+      "colour": ["white", "grey", "tan", "dark brown"],
       "texture": "",
       "diameter_min": 2,
       "diameter_max": 30,
@@ -447,7 +447,7 @@ export default [
     },
     "spore_colour": "",
     "cap_features": {
-      "colour": ["Red", "Brown", "Pink"],
+      "colour": ["red", "brown", "pink"],
       "texture": "Feathery",
       "diameter_min": 1,
       "diameter_max": 10,
@@ -480,7 +480,7 @@ export default [
     "stipe_features": {
       "diameter_min": 1,
       "diameter_max": 2,
-      "colour": ["White"],
+      "colour": ["white"],
       "length_min": 3,
       "length_max": 10,
       "bruising_colour": "dingy reddish brown",
@@ -492,7 +492,7 @@ export default [
     },
     "spore_colour": "dark brown",
     "cap_features": {
-      "colour": ["White"],
+      "colour": ["white"],
       "texture": "May be smooth or may have scales",
       "diameter_min": 3,
       "diameter_max": 12,
@@ -525,7 +525,7 @@ export default [
     "stipe_features": {
       "diameter_min": null,
       "diameter_max": null,
-      "colour": ["White", "Brown"],
+      "colour": ["white", "brown"],
       "length_min": null,
       "length_max": null,
       "bruising_colour": "None",
@@ -537,7 +537,7 @@ export default [
     },
     "spore_colour": "Black, brown",
     "cap_features": {
-      "colour": ["Brown"],
+      "colour": ["brown"],
       "texture": "Smooth",
       "diameter_min": 12,
       "diameter_max": 15,
@@ -575,7 +575,7 @@ export default [
     "stipe_features": {
       "diameter_min": null,
       "diameter_max": null,
-      "colour": ["Pale Brown"],
+      "colour": ["pale brown"],
       "length_min": 0, //unknown (Made 0 so filter will work 0-18)
       "length_max": 18,
       "bruising_colour": "Unknown",
@@ -587,7 +587,7 @@ export default [
     },
     "spore_colour": "White",
     "cap_features": {
-      "colour": ["Dark Brown"],
+      "colour": ["dark brown"],
       "texture": "Scaly",
       "diameter_min": 0, //unknown
       "diameter_max": 12.5,
@@ -623,7 +623,7 @@ export default [
     "stipe_features": {
       "diameter_min": 1,
       "diameter_max": 2,
-      "colour": ["White", "Gray", "Olive"],
+      "colour": ["white", "gray", "olive"],
       "length_min": 8, 
       "length_max": 15,
       "bruising_colour": "Unknown",
@@ -635,7 +635,7 @@ export default [
     },
     "spore_colour": "White",
     "cap_features": {
-      "colour": ["Pale Green", "Yellow-Green", "Olive-Green", "Bronze", "White"],
+      "colour": ["pale green", "yellow green", "olive green", "bronze", "white"],
       "texture": "Sticky",
       "diameter_min": 5,
       "diameter_max": 15,
@@ -669,7 +669,7 @@ export default [
     "stipe_features": {
       "diameter_min": 0.4,
       "diameter_max": 0.8,
-      "colour": ["Cream", "Brown", "Purple"],
+      "colour": ["cream", "brown", "purple"],
       "length_min": 4, 
       "length_max": 7,
       "bruising_colour": "Unknown",
@@ -681,7 +681,7 @@ export default [
     },
     "spore_colour": "White",
     "cap_features": {
-      "colour": ["Olive", "Brown"],
+      "colour": ["olive", "brown"],
       "texture": "Scaly, Moist, Slimy",
       "diameter_min": null,
       "diameter_max": null,
