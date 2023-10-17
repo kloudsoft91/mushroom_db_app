@@ -101,12 +101,26 @@ export default {
       });
     },
     mlAPICall() {
-      let apiURI = "https://us-central1-aiplatform.googleapis.com/v1/projects/PROJECT_ID/locations/us-central1/publishers/google/models/imagetext:predict";
+      let projectID = "";
+      let apiToken = "";
+      let apiURI = "https://us-central1-aiplatform.googleapis.com/v1/projects/" + projectID + "/locations/us-central1/publishers/google/models/imagetext:predict";
       let encodedImage = encodeURIComponent(this.imageSearch);
-      let prompts = [
-        "What is the colour of the mushroom in the picture?",
-        "What is the width of the mushroom in centimeters?",
-        "What is the height of the mushroom in centimeters?"
+      let promptDictionaries = [
+        {
+          name: "colour",
+          question: "What is the colour of the mushroom in the picture?",
+          answer: ""
+        },
+        {
+          name: "width",
+          question: "What is the width of the mushroom in centimeters?",
+          answer: ""
+        },
+        {
+          name: "height",
+          question: "What is the height of the mushroom in centimeters?",
+          answer: ""
+        }
       ];
       let requestBody = {
         "instances": [
@@ -121,22 +135,32 @@ export default {
           "sampleCount": 1
         }
       };
-      for (prompt in prompts) {
-        requestBody.instances[0].prompt = prompt;
+      // loop through each of the questions and make an api call
+      for (let promptDict of promptDictionaries) {
+        requestBody.instances[0].prompt = promptDict.question;
         try {
           const response = await fetch(apiURI, {
             method: "POST",
             headers: {
               "Content-Type": "application/json; charset=utf-8",
-              "Authorization": "Bearer ACCESS_TOKEN"
+              "Authorization": "Bearer " + apiToken
             },
             body: JSON.stringify(requestBody),
           });
-          let prediction = (await response.json()).predictions[0];
+          promptDict.answer = (await response.json()).predictions[0];
         } catch (error) {
-          console.log('Error getting response from Google Vertex API')
+          console.log('Error getting response from Google Vertex API for ' + promptDict.name)
         }
       }
+      // emit the responses to the filters
+      this.$emit('sizeFilter', {
+        stipeLen: promptDictionaries.filter(p => p.name.includes('height'))[0].answer,
+        stipeDiam: this.stipeDiam,
+        capDiam: promptDictionaries.filter(p => p.name.includes('width'))[0].answer,
+        capThick: this.capThick,
+      });
+      this.$emit('selectedCapColour', promptDictionaries.filter(p => p.name.includes('colour'))[0].answer);
+      // this.$emit('selectedStipeColour', promptDictionaries.filter(p => p.name.includes('colour'))[0].answer);
     },
   },
 };
