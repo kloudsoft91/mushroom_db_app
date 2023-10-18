@@ -10,6 +10,7 @@
   <!--Bottomframe for small screens only-->
   <!--Should pop out when clicking the "Discover" button on footerbar-->
   <BottomFrame ref="bottomFrame" @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe" @selectedSeason="handleSeason" @selectedColour="handleColour" @openCarouselInputs="openCarouselInputs"/>
+
 </template>
 
 <script>
@@ -38,10 +39,19 @@ export default{
       capDiam: '',
       capThick: '',
       openCar: '',
+      label: null,
+      item: null,
     };
   },
 
   methods:{
+    //method to fetch data if the user has clicked on a mushroom attribute
+    //in the mushroom-detail page.
+    fetchData() {
+      const route = useRoute();
+      this.label = route.params.label;
+      this.item = route.params.item;
+    },
     //Apply all of the Filters (Have to decide when this is called
     //currently called on filter button press, tag select, and when typing in Name search
     applyAllFilters() {
