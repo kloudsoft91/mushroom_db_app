@@ -75,7 +75,7 @@
                   <ul>
                     <li v-for="(value, key) in mushroomData.stipe_features" :key="key">
                       {{ key }}:
-                      <nuxt-link :to="{ path: '/', query: { label: 'Stipe Features,' + key, item: value }}" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ formatValue(value) }}</nuxt-link>
+                      <nuxt-link :to="{ path: '/', query: { label: 'Stipe Features;' + key, item: value }}" class="small-link">{{ formatValue(value) }}</nuxt-link>
                     </li>
                   </ul>
                 </td>
@@ -83,7 +83,7 @@
                     <ul>
                       <li v-for="(value, key) in mushroomData.cap_features" :key="key">
                         {{ key }}:
-                        <nuxt-link :to="{ path: '/', query: { label: 'Cap Features,' + key, item: value }}" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ formatValue(value) }}</nuxt-link>
+                        <nuxt-link :to="{ path: '/', query: { label: 'Cap Features;' + key, item: value }}" class="small-link">{{ formatValue(value) }}</nuxt-link>
                       </li>
                     </ul>
                 </td>
@@ -91,16 +91,19 @@
               <br>
               <tr class="px-4 py-2 font-semibold">
                 <td class="w-1/2">Gills:</td> 
-                <td class="w-1/2">Spore colour: <nuxt-link :to="{ path: '/', query: { label: 'Spore colour,' + key, item: value }}" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ mushroomData.spore_colour }}</nuxt-link></td>
+                <td class="w-1/2">Spore colour: </td>
               </tr>
               <tr>
                 <td class="px-4 py-2">
                   <ul>
                     <li v-for="(value, key) in mushroomData.gills" :key="key">
                       {{ key }}:
-                      <nuxt-link :to="{ path: '/', query: { label: 'Gills,' + key, item: value }}" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ formatValue(value) }}</nuxt-link>
+                      <nuxt-link :to="{ path: '/', query: { label: 'Gills;' + key, item: value }}" class="small-link">{{ formatValue(value) }}</nuxt-link>
                     </li>
                   </ul>
+                </td>
+                <td class="px-4 py-2">
+                  <nuxt-link :to="{ path: '/', query: { label: 'Spore colour,' + key, item: value }}" class="small-link">{{ mushroomData.spore_colour }}</nuxt-link>
                 </td>
               </tr>
             </tbody>
