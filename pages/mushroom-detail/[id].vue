@@ -60,55 +60,47 @@
         </div>
       </div>
 
-      <!-- Features table -->
+      <!-- Feature tables -->
       <div class="bg-white rounded-lg shadow-lg p-4 mt-8 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto">
         <h2 class="text-2xl font-semibold mb-2">Features</h2>
         <div class="overflow-x-auto">
-          <table class="w-full">
-            <tbody>
-              <tr class="px-4 py-2 font-semibold">
-                <td class="w-1/2">Stipe Features:</td> 
-                <td class="w-1/2">Cap Features:</td> 
-              </tr>
-              <tr>
-                <td class="px-4 py-2">
-                  <ul>
-                    <li v-for="(value, key) in mushroomData.stipe_features" :key="key">
-                      {{ key }}:
-                      <nuxt-link :to="{ path: '/', query: { label: 'Stipe Features;' + key, item: value }}" class="small-link">{{ formatValue(value) }}</nuxt-link>
-                    </li>
-                  </ul>
-                </td>
-                <td class="px-4 py-2">
-                    <ul>
-                      <li v-for="(value, key) in mushroomData.cap_features" :key="key">
-                        {{ key }}:
-                        <nuxt-link :to="{ path: '/', query: { label: 'Cap Features;' + key, item: value }}" class="small-link">{{ formatValue(value) }}</nuxt-link>
-                      </li>
-                    </ul>
-                </td>
-              </tr>
-              <br>
-              <tr class="px-4 py-2 font-semibold">
-                <td class="w-1/2">Gills:</td> 
-                <td class="w-1/2">Spore colour: </td>
-              </tr>
-              <tr>
-                <td class="px-4 py-2">
-                  <ul>
-                    <li v-for="(value, key) in mushroomData.gills" :key="key">
-                      {{ key }}:
-                      <nuxt-link :to="{ path: '/', query: { label: 'Gills;' + key, item: value }}" class="small-link">{{ formatValue(value) }}</nuxt-link>
-                    </li>
-                  </ul>
-                </td>
-                <td class="px-4 py-2">
-                  <nuxt-link :to="{ path: '/', query: { label: 'Spore colour,' + key, item: value }}" class="small-link">{{ mushroomData.spore_colour }}</nuxt-link>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+          <!-- Stipe and Cap data -->
+          <table class="w-full mb-4">
+              <tbody>
+                <tr class="px-4 py-2 ">
+                  <td v-for="(feature, featureName) in features" :key="featureName">
+                    <td class="px-4 py-2 font-semibold">{{ featureName }}:</td>
+                    <!-- Display each properties attributes -->
+                      <tr v-for="attribute in feature" :key="attribute.key">
+                        <td class="px-4 py-2">
+                          {{ attribute.label }}: 
+                          <nuxt-link :to="{path: '/', query: { label: attribute.key, item: getValueFromData(mushroomData, attribute.key) }}" class="small-link">{{ getValueFromData(mushroomData, attribute.key) }}</nuxt-link>
+                        </td>
+                      </tr>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
         </div>
+        <div class="overflow-x-auto">
+          <!-- Gill and Spore data -->
+          <table class="w-full mb-4">
+              <tbody>
+                <tr class="px-4 py-2 ">
+                  <td v-for="(feature, featureName) in other" :key="featureName">
+                    <td class="px-4 py-2 font-semibold">{{ featureName }}:</td>
+                    <!-- Display each properties attributes -->
+                      <tr v-for="attribute in feature" :key="attribute.key">
+                        <td class="px-4 py-2">
+                          {{ attribute.label }}: 
+                          <nuxt-link :to="{path: '/', query: { label: attribute.key, item: getValueFromData(mushroomData, attribute.key) }}" class="small-link">{{ getValueFromData(mushroomData, attribute.key) }}</nuxt-link>
+                        </td>
+                      </tr>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
       </div>
     </div>
   </div>
@@ -130,7 +122,34 @@ export default {
         { label: 'Ecology', key: 'ecology' },
         { label: 'Time of year', key: 'time_of_year' },
         { label: 'Origin', key: 'native_or_introduced' },
-      ]
+      ],
+      features: {
+        Stipe: [
+          { label: 'Minimum diameter', key: 'stipe_features.diameter_min' },
+          { label: 'Maximum diameter', key: 'stipe_features.diameter_max' },
+          { label: 'Colour', key: 'stipe_features.colour' },
+          { label: 'Minimum length', key: 'stipe_features.length_min' },
+          { label: 'Maximum length', key: 'stipe_features.length_max' },
+          { label: 'Bruising colour', key: 'stipe_features.bruising_colour' },
+          { label: 'Type', key: 'stipe_features.type' },
+        ],
+        Cap: [
+          { label: 'Colour', key: 'cap_features.colour' },
+          { label: 'Texture', key: 'cap_features.texture' },
+          { label: 'Minimum diameter', key: 'cap_features.diameter_min' },
+          { label: 'Maximum diameter', key: 'cap_features.diameter_max' },
+          { label: 'Minimum thickness', key: 'cap_features.thickness_min' },
+          { label: 'Maximum thickness', key: 'cap_features.thickness_max' },
+          { label: 'Shape', key: 'cap_features.shape' },
+        ],
+      },
+      other: {
+        Gills: [
+          { label: 'Colour', key: 'gills.colour' },
+          { label: 'Attachment', key: 'gills.attachment' },
+        ],
+        Spores:[{ label: 'Colour', key: 'spore_colour' }],
+      }
     };
   },
   methods: {
@@ -143,10 +162,20 @@ export default {
         throw new Error(`Mushroom with ID ${this.id} not found.`);
       }
     },
-    formatValue(value) {
-      // Format array values as a comma-separated list
+    getValueFromData(data, key) {
+      // Split the key into nested keys
+      const keys = key.split('.');
+      let value = data;
+      for (const k of keys) {
+        value = value[k];
+        // If the value is undefined or null, return an empty string
+        if (value === null || value === undefined) {
+          return '';
+        }
+      }
+      // Check if the value is an array and join it into a comma-separated string
       if (Array.isArray(value)) {
-        return value.join(', ');
+        return value.map(item => item.toString()).join(', ');
       }
       return value;
     },
