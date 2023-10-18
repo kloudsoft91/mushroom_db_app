@@ -1,143 +1,260 @@
 export default [
-  {
-    "id":1,
-    "tags":["edible"],
-    "latin_names": "Coprinus comatus",
-    "common_names": "Shaggy Mane",
-    "description": "The Shaggy Mane is a distinctive mushroom with a white, cylindrical cap that is covered in shaggy scales. When young, the cap is elongated and bullet-shaped, \
-    but as it matures, it opens up, and the edges become wavy. The gills are initially white, then turn black and eventually dissolve into an inky liquid, a process known as \
-    deliquescence. The stipe is white and hollow.",
-    "lookalikes": "The mushroom can sometimes be confused with the magpie fungus which is poisonous (Aus). Coprinopsis atramentaria (the common Ink Cap) is similar, and contains \
-    coprine and can induce coprine poisoning, particularly when consumed with alcohol (NZ). Podaxis pistillaris is also similar (Aus).",
-    "links": {
-      "iNaturalist": "https://www.inaturalist.org/taxa/47392-Coprinus-comatus",
-      "wikipedia": "https://en.wikipedia.org/wiki/Coprinus_comatus"
+    {
+        "id": 1,
+        "stipe_features": {
+            "description": "The white and fairly thick stipe measures 6–40 cm (2–16 in) high by 1–2.5 cm (1⁄2–1 in) in diameter and has a loose ring near the bottom.",
+            "diameter_min": 1,
+            "diameter_max": 2,
+            "colour": [
+                "white"
+            ],
+            "length_min": 6,
+            "length_max": 40,
+            "bruising_colour": null,
+            "type": "ring"
+        },
+        "gills": {
+            "description": "The gills beneath the cap are white, then pink, then turn black and deliquesce ('melt') into a black liquid filled with spores (hence the \\\"ink cap\\\" name).",
+            "colour": [
+                "white",
+                "pink",
+                "black"
+            ],
+            "attachment": "free",
+            "spore_colour": "brown"
+        },
+        "cap_features": {
+            "description": "description\": \"The caps are white, and covered with scales—this is the origin of the common names of the fungus. The almost cylindrical cap which initially covers most of its stem ranges from 4–8 cm (1+5⁄8–3+1⁄8 in) in width and 6–20 cm (2+3⁄8–7+7⁄8 in) in height. It is mostly white with shaggy scales, which are more pale brown at the apex.",
+            "colour": [
+                "white",
+                "brown",
+                "black"
+            ],
+            "diameter_min": 4,
+            "diameter_max": 8,
+            "thickness_min": 6,
+            "thickness_max": 20,
+            "texture": "Shaggy",
+            "shape": [
+                "conical"
+            ]
+        },
+        "tags": [
+            "edible"
+        ],
+        "latin_names": [
+            "Coprinus Comatus"
+        ],
+        "common_names": [
+            "Shaggy Mane",
+            "Shaggy Ink Cap",
+            "Lawyers Wig"
+        ],
+        "maori_names": [
+            null
+        ],
+        "genus": "Coprinus",
+        "description": "The Shaggy Mane is a distinctive mushroom with a white, cylindrical cap that is covered in shaggy scales. When young, the cap is elongated and bullet-shaped, but as it matures, it opens up, and the edges become wavy. The gills are initially white, then turn black and eventually dissolve into an inky liquid, a process known as deliquescence. The stipe is white and hollow.",
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "The mushroom can sometimes be confused with the Magpie Fungus which is poisonous (Aus). Coprinopsis Atramentaria (the Common Ink Cap) is similar, and contains \\\\     coprine and can induce coprine poisoning, particularly when consumed with alcohol (NZ). Desert Shaggy Mane is also similar (Aus).",
+        "links": [
+            "https://www.inaturalist.org/taxa/47392-Coprinus-comatus",
+            "https://en.wikipedia.org/wiki/Coprinus_comatus"
+        ],
+        "nz_books": [
+            "A Field Guide to the Fungi of New Zealand by E.J.H. Corner and P.D. Orton"
+        ],
+        "edibility": "Edible when young and fresh. However, it is not recommended to consume alcohol within a few hours before or after eating this mushroom due to potential adverse reactions.",
+        "ecology": "saprotrophic",
+        "environment": "It grows in groups in places which are often unexpected, such as green areas in towns (grass, gravel roads, waste areas).",
+        "time_of_year": [
+            "january",
+            "february",
+            "march",
+            "april",
+            "october",
+            "november",
+            "december"
+        ],
+        "native_or_introduced": "introduced",
+        "photos": [
+            "MushroomCards/ShaggyManeCard_egc21k.jpg",
+            "MushroomCards/ShaggyMane1_mlbzzg.jpg",
+            "MushroomCards/ShaggyMane2_r6yvtx.jpg",
+            "MushroomCards/ShaggyMane3_xveake.jpg"
+        ]
     },
-    "nz_books": "A Field Guide to the Fungi of New Zealand by E.J.H. Corner and P.D. Orton",
-    "edibility": "Edible when young and fresh. However, it is not recommended to consume alcohol within a few hours before or after eating this mushroom due to potential adverse \
-    reactions.",
-    "stipe_features": {
-      "diameter_min": 1,
-      "diameter_max": 2.5,
-      "colour": ["White"],
-      "length_min": 6,
-      "length_max": 40,
-      "bruising_colour": "No significant bruising",
-      "type": "ring"
-    },
-    "gills": {
-      "colour": "white pink black",
-      "attachment": "free"
-    },
-    "spore_colour": "brown",
-    "cap_features": {
-      "colour": ["White", "Brown", "Black"],
-      "texture": "rough scaly",
-      "diameter_min": 4,
-      "diameter_max": 8,
-      "thickness_min": 6,
-      "thickness_max": 20,
-      "shape": "conical"
-    },
-    "environment": "grass, gravel roads, waste areas",
-    "ecology":"saprotrophic",
-    "time_of_year": "Late spring to autumn (October to April in the Southern Hemisphere)",
-    "native_or_introduced": "introduced",
-    "genus": "coprinus",
-    "photos": ["MushroomCards/ShaggyManeCard_egc21k.jpg", "MushroomCards/ShaggyMane1_mlbzzg.jpg", "MushroomCards/ShaggyMane2_r6yvtx.jpg", "MushroomCards/ShaggyMane3_xveake.jpg"]
-  },
 
-  {
-    "id":2,
-    "tags":["poisonous", "psychoactive"],
-    "latin_names": "Amanita muscaria",
-    "common_names": "Fly Agaric, Fly Amanita",
-    "description": "Amanita muscaria is a striking and iconic mushroom with a bright red to orange cap covered in white to yellow warts. The cap is usually convex, but it flattens \
-    with age. The gills are white, and the stipe is white with a distinctive ring.",
-    "lookalikes": "No known lookalikes in New Zealand. In Australia, the introduced fly agaric may be confused with the native vermilion grisette (Amanita xanthocephala), which \
-    grows in association with eucalypts. The species generally lacks the white warts of A. muscaria and bears no ring.",
-    "links": {
-      "iNaturalist": "https://www.inaturalist.org/taxa/48715-Amanita-muscaria",
-      "wikipedia": "https://en.wikipedia.org/wiki/Amanita_muscaria"
+    {
+        "id": 2,
+        "stipe_features": {
+            "description": "The stipe is white, 5–20 cm (2–8 in) high by 1–2 cm (1⁄2–1 in) wide, and has the slightly brittle, fibrous texture typical of many large mushrooms. At the base is a bulb that bears universal veil remnants in the form of two to four distinct rings or ruffs. Between the basal universal veil remnants and gills are remnants of the partial veil (which covers the gills during development) in the form of a white ring. It can be quite wide and flaccid with age.",
+            "diameter_min": 1,
+            "diameter_max": 2,
+            "colour": [
+                "white"
+            ],
+            "length_min": 5,
+            "length_max": 20,
+            "bruising_colour": null,
+            "type": "volva"
+        },
+        "gills": {
+            "description": "The free gills are white, as is the spore print",
+            "colour": [
+                "white"
+            ],
+            "attachment": "free",
+            "spore_colour": "white"
+        },
+        "cap_features": {
+            "description": "After emerging from the ground, the cap is covered with numerous small white to yellow pyramid-shaped warts. These are remnants of the universal veil, a membrane that encloses the entire mushroom when it is still very young. The cap changes from globose to hemispherical, and finally to plate-like and flat in mature specimens. Fully grown, the bright red cap is usually around 8–20 cm (3–8 in) in diameter, although larger specimens have been found. The red colour may fade after rain and in older mushrooms.",
+            "colour": [
+                "white",
+                "yellow",
+                "orange",
+                "red"
+            ],
+            "diameter_min": 8,
+            "diameter_max": 20,
+            "thickness_min": null,
+            "thickness_max": null,
+            "texture": null,
+            "shape": [
+                "convex"
+            ]
+        },
+        "tags": [
+            "poisonous",
+            "psychoactive"
+        ],
+        "latin_names": [
+            "Amanita Muscaria"
+        ],
+        "common_names": [
+            "Fly Agaric",
+            "Fly Amanita"
+        ],
+        "maori_names": [
+            null
+        ],
+        "genus": "Amanita",
+        "description": "Amanita muscaria is a striking and iconic mushroom with a bright red to orange cap covered in white to yellow warts. The cap is usually convex, but it flattens with age. The gills are white, and the stipe is white with a distinctive ring.",
+        "lookalikes": [],
+        "lookalikes_description": "No known lookalikes in New Zealand. In Australia, the introduced fly agaric may be confused with the native vermilion grisette (Amanita xanthocephala), which grows in association with eucalypts. The species generally lacks the white warts of A. muscaria and bears no ring.",
+        "links": [
+            "https://www.inaturalist.org/taxa/48715-Amanita-muscaria",
+            "https://en.wikipedia.org/wiki/Amanita_muscaria"
+        ],
+        "nz_books": [null],
+        "edibility": "Highly toxic, and consumption can lead to severe poisoning.",
+        "ecology": "mycorrihizal",
+        "environment": "Often found in association with various trees, especially pines and birches.",
+        "time_of_year": [
+            "march",
+            "april",
+            "may",
+            "june"
+        ],
+        "native_or_introduced": "introduced",
+        "photos": [
+            "MushroomCards/AmanitaMuscariaCard_gy8lsy.jpg",
+            "MushroomCards/AmanitaMuscaria1_zkqfbb.jpg",
+            "MushroomCards/AmanitaMuscaria2_ttnpcq.jpg"
+        ]
     },
-    "nz_books": "None",
-    "edibility": "Highly toxic, and consumption can lead to severe poisoning.",
-    "stipe_features": {
-      "diameter_min": 1,
-      "diameter_max": 2,
-      "colour": ["White"],
-      "length_min": 5,
-      "length_max": 20,
-      "bruising_colour": "No significant bruising",
-      "type": "volva ring"
+    {
+        "id": 3,
+        "stipe_features": {
+            "description": "The stem is 5–25 cm (2–10 in) long, 1–5 cm thick, and often narrows near the base.[1] The frail ring is dusted with rusty orange spores, and the gill attachment to the stem is adnate to sub-decurrent.",
+            "diameter_min": 1,
+            "diameter_max": 5,
+            "colour": [
+                "yellow",
+                "yellowish-brown",
+                "yellowish-orange",
+                "orange",
+                "brown"
+            ],
+            "length_min": 5,
+            "length_max": 25,
+            "bruising_colour": null,
+            "type": "ring"
+        },
+        "gills": {
+            "description": "The Spectacular Rustgills have gills on the hymenium. the gill attachment to the stem is adnate to sub-decurrent. that are similar in colour to its cap",
+            "colour": [
+                "yellow",
+                "yellowish-brown",
+                "yellowish-orange",
+                "orange",
+                "brown"
+            ],
+            "attachment": "adnate",
+            "spore_colour": "rust brown"
+        },
+        "cap_features": {
+            "description": "The cap ranges from 8–30 cm (3–12 in) across, is convex to flat,[1] and is bright yellow-orange in younger specimens and orange-brown or reddish brown in older ones, with a dry scaly surface.",
+            "colour": [
+                "yellow",
+                "yellowish-brown",
+                "yellowish-orange",
+                "orange",
+                "brown"
+            ],
+            "diameter_min": 8,
+            "diameter_max": 30,
+            "thickness_min": null,
+            "thickness_max": null,
+            "texture": "Dry and scaly",
+            "shape": [
+                "convex"
+            ],
+        },
+        "tags": [
+            "poisonous"
+        ],
+        "latin_names": [
+            "Gymnopilus junonius"
+        ],
+        "common_names": [
+            "Laughing Gym",
+            "Spectacular Rustgill"
+        ],
+        "maori_names": [
+            null
+        ],
+        "genus": "Gymnopilus",
+        "description": "Gymnopilus junonius is a type of mushroom-forming fungus in the family Hymenogastraceae. Commonly known as the spectacular rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the neurotoxic oligoisoprenoid gymnopilin.",
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "This mushroom is often mistaken for Gymnopilus ventricosus, which also contains no psilocybin and G. luteus and G. subspectabilis, which do. It also resembles Armillaria mellea and Omphalotus olivascens.",
+        "links": [
+            "https://inaturalist.nz/taxa/1155105-Gymnopilus-junonius",
+            "https://en.wikipedia.org/wiki/Gymnopilus_junonius"
+        ],
+        "nz_books": [
+            null
+        ],
+        "edibility": "Not recommended for consumption due to its potential toxicity.",
+        "ecology": "saprotrophic",
+        "environment": "Frequently found on dead wood, particularly logs and tree stumps or bases.",
+        "time_of_year": [
+            "march",
+            "april",
+            "may"
+        ],
+        "native_or_introduced": "introduced",
+        "photos": [
+            "MushroomCards/LaughingGymCard_yo4quk.jpg",
+            "MushroomCards/LaughingGym1_lwmtun.jpg",
+            "MushroomCards/LaughingGym2_crh6vm.jpg",
+            "MushroomCards/LaughingGym3_kkwhzz.jpg"
+        ],
     },
-    "gills": {
-      "colour": "White",
-      "attachment": "free"
-    },
-    "spore_colour": "White",
-    "cap_features": {
-      "colour": ["Red", "Orange", "White", "Yellow"],//"Bright red to orange with white to yellow warts",
-      "texture": "Covered in warts",
-      "diameter_min": 8,
-      "diameter_max": 20,
-      "thickness_min": null,
-      "thickness_max": null,
-      "shape": "convex"
-    },
-    "environment": "Often found in association with various trees, especially pines and birches.",
-    "ecology":"mycorrhizal",
-    "time_of_year": "Late summer to autumn (March to June in the Southern Hemisphere)",
-    "native_or_introduced": "introduced",
-    "genus": "Amanita",
-    "photos": ["MushroomCards/AmanitaMuscariaCard_gy8lsy.jpg", "MushroomCards/AmanitaMuscaria1_zkqfbb.jpg", "MushroomCards/AmanitaMuscaria2_ttnpcq.jpg"]
-  },
-
-  {
-    "id":3,
-    "tags":["poisonous"],
-    "latin_names": "Gymnopilus junonius",
-    "common_names": "Laughing Gym, Spectacular Rustgill",
-    "description": "Gymnopilus junonius is a medium-sized mushroom with a distinctively rusty-brown to orange cap. The cap is convex to broadly convex when young, and it often \
-    develops a central depression as it matures. The gills are orange-brown, and the stipe is fibrous and often has a ring.",
-    "lookalikes": "This mushroom is often mistaken for Gymnopilus ventricosus, which also contains no psilocybin and G. luteus and G. subspectabilis, which do. It also resembles \
-    Armillaria mellea and Omphalotus olivascens.",
-    "links": {
-      "iNaturalist": "https://inaturalist.nz/taxa/1155105-Gymnopilus-junonius",
-      "wikipedia": "https://en.wikipedia.org/wiki/Gymnopilus_junonius"
-    },
-    "nz_books": "None",
-    "edibility": "Not recommended for consumption due to its potential toxicity.",
-    "stipe_features": {
-      "diameter_min": 1,
-      "diameter_max": 5,
-      "colour": ["Yellow", "Brown", "Orange"], //Yellowish-brown",
-      "length_min": 5,
-      "length_max": 25,
-      "bruising_colour": "No significant bruising",
-      "type": "ring"
-    },
-    "gills": {
-      "colour": "Orange-brown",
-      "attachment": "adnate or decurrent"
-    },
-    "spore_colour": "Rust-brown",
-    "cap_features": {
-      "colour": ["Brown", "Orange", "Yellow"], //"Rusty-brown to orange",
-      "texture": "dry scaly",
-      "diameter_min": 8,
-      "diameter_max": 30,
-      "thickness_min": null,
-      "thickness_max": null,
-      "shape": "convex"
-    },
-    "environment": "Frequently found on dead wood, particularly logs and tree stumps or bases.",
-    "ecology":"saprotrophic",
-    "time_of_year": "Autumn (March to May in the Southern Hemisphere)",
-    "native_or_introduced": "introduced",
-    "genus": "Gymnopilus",
-    "photos": ["MushroomCards/LaughingGymCard_yo4quk.jpg", "MushroomCards/LaughingGym1_lwmtun.jpg", "MushroomCards/LaughingGym2_crh6vm.jpg", "MushroomCards/LaughingGym3_kkwhzz.jpg"]
-  },
 
   {
     "id":4,
