@@ -61,7 +61,7 @@
       </div>
 
       <!-- Feature tables -->
-      <div class="bg-white rounded-lg shadow-lg p-4 mt-8 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto">
+      <div class="bg-white rounded-lg shadow-lg p-4 mt-8 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto mb-12">
         <h2 class="text-2xl font-semibold mb-2">Features</h2>
         <div class="overflow-x-auto">
           <!-- Stipe and Cap data -->
