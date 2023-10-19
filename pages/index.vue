@@ -48,9 +48,10 @@ export default{
     //method to fetch data if the user has clicked on a mushroom attribute
     //in the mushroom-detail page.
     fetchData() {
-      const route = useRoute();
-      this.label = route.params.label;
-      this.item = route.params.item;
+      const query = this.$route.query;
+      this.label = query.label;
+      this.item = query.item;
+      console.log("Label & Item: ", this.label , this.item);
     },
     //Apply all of the Filters (Have to decide when this is called
     //currently called on filter button press, tag select, and when typing in Name search
@@ -291,6 +292,10 @@ export default{
     this.mushrooms = mushroomData;
     //display all results initially
     this.filteredMushrooms = this.mushrooms;
+    if(this.$route.query.label) {
+      console.log("FetchData call: ", this.label, this.item);
+      this.fetchData();
+    }
   },
 };
 </script>
