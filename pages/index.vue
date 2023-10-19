@@ -54,44 +54,20 @@ export default{
       console.log("Label & Item: ", this.label , this.item);
       //are some handlers outdated? Sizefilter handler takes 4-part object so manually adding lengths instead
       switch(this.label) {
-        case "stipe_features.diameter_min":
-          this.stipeDiam = this.item;
-          this.applyAllFilters();
-          break;
-        case "stipe_features.diameter_max":
-          this.stipeDiam = this.item;
-          this.applyAllFilters();
-          break;
         case "stipe_features.colour":
           this.handleColour(this.item);
           break;
-        case "stipe_features.length_max":
-          this.stipeLen = this.item;
-          this.applyAllFilters();
-          break;
-        case "stipe_features.length_min":
-          this.stipeLen = this.item;
-          this.applyAllFilters();
-          break;
-        case "cap_features.diameter_min":
-          this.capDiam = this.item;
-          this.applyAllFilters();
-          break;
-        case "cap_features.diameter_max":
-          this.capDiam = this.item;
-          this.applyAllFilters();
+        case "stipe_features.type":
+          this.handleStipe(this.item);
           break;
         case "cap_features.colour":
           this.handleColour(this.item);
           break;
-        case "cap_features.capshape":
-          this.handleColour(this.item);
-          break;
-        case "gills.colour":
-          this.handleColour(this.item);
+        case "cap_features.shape":
+          this.handleCapShape(this.item);
           break;
         case "gills.attachment":
-          this.handleColour(this.item);
+          this.handleGills(this.item);
           break;
         default:
           this.applyAllFilters();
@@ -104,10 +80,10 @@ export default{
       //pull results from each filter function
       results = this.filterByTags(results);
       results = this.filterByName(results, this.searchInput);
-      results = this.filterByCapShape(results);
-      results = this.filterByGillAttach(results);
+      results = this.filterByCapShape(results, this.selectedCapShape);
+      results = this.filterByGillAttach(results, this.selectedGillAttach);
       results = this.filterByEcology(results);
-      results = this.filterByStipe(results);
+      results = this.filterByStipe(results, this.selectedStipe);
       results = this.filterByColour(results);
       results = this.filterBySeason(results);
       //Size Filter Calls:
@@ -146,19 +122,18 @@ export default{
 
     //Carousel Filters
     //Cap Shape Filter
-    filterByCapShape(data){
+    filterByCapShape(data, selectedCapShape){
       //check if defined
-      if (!this.selectedCapShape) {
+      if (!selectedCapShape) {
         return data;
       }
-      //console.log("Filtering (Index) cap shape by: ", this.selectedCapShape);
       return data.filter((mushroom) => 
       mushroom.cap_features.shape.includes(this.selectedCapShape));
     },
 
     //Gill Attachment Filter
-    filterByGillAttach(data){
-      if(!this.selectedGillAttach){
+    filterByGillAttach(data, selectedGillAttach){
+      if(!selectedGillAttach){
         return data;
       }
       return data.filter((mushroom) =>
@@ -175,9 +150,9 @@ export default{
     },
 
     //Stipe Type filter
-    filterByStipe(data){
+    filterByStipe(data, selectedStipe){
       //check if defined
-      if (!this.selectedStipe) {
+      if (!selectedStipe) {
         return data;
       }
       return data.filter((mushroom) => 
