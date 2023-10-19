@@ -1488,6 +1488,9 @@ export default [
         "common_names": [
             "Lilac Coral Fungus"
         ],
+        "maori_names": [
+            "None"
+        ],
         "links": [
             "https://www.inaturalist.org/taxa/352201-Ramariopsis-pulchella",
             "https://biotanz.landcareresearch.co.nz/scientific-names/1cb1a14f-36b9-11d5-9548-00d0592d548c",
