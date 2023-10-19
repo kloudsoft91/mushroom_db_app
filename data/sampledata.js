@@ -51,7 +51,7 @@ export default [
             "Lawyers Wig"
         ],
         "maori_names": [
-            null
+            "None"
         ],
         "genus": "Coprinus",
         "description": "The Shaggy Mane is a distinctive mushroom with a white, cylindrical cap that is covered in shaggy scales. When young, the cap is elongated and bullet-shaped, but as it matures, it opens up, and the edges become wavy. The gills are initially white, then turn black and eventually dissolve into an inky liquid, a process known as deliquescence. The stipe is white and hollow.",
@@ -138,7 +138,7 @@ export default [
             "Fly Amanita"
         ],
         "maori_names": [
-            null
+            "None"
         ],
         "genus": "Amanita",
         "description": "Amanita muscaria is a striking and iconic mushroom with a bright red to orange cap covered in white to yellow warts. The cap is usually convex, but it flattens with age. The gills are white, and the stipe is white with a distinctive ring.",
@@ -224,7 +224,7 @@ export default [
             "Spectacular Rustgill"
         ],
         "maori_names": [
-            null
+            "None"
         ],
         "genus": "Gymnopilus",
         "description": "Gymnopilus junonius is a type of mushroom-forming fungus in the family Hymenogastraceae. Commonly known as the spectacular rustgill, this large orange mushroom is typically found growing on tree stumps, logs, or tree bases. Some subspecies of this mushroom contain the neurotoxic oligoisoprenoid gymnopilin.",
@@ -309,7 +309,7 @@ export default [
             "Weraroa Magic Mushroom"
         ],
         "maori_names": [
-            null
+            "None"
         ],
         "genus": "Psilocybe",
         "description": "Psilocybe weraroa (formerly Weraroa novae-zelandiae) is a secotioid fungus in the family Hymenogastraceae. It is endemic to New Zealand, where it grows in native forests from rotting wood and woody debris. Despite its pouch-like form this species is closely related to Psilocybe cyanescens and Psilocybe subaeruginosa. As a bluing member of the genus Psilocybe it contains the psychoactive compounds psilocin and psilocybin.",
@@ -391,7 +391,7 @@ export default [
             "Purple Cortinarius"
         ],
         "maori_names": [
-            null
+            "None"
         ],
         "genus": "Cortinarius",
         "description": "Cortinarius porphyroideus, commonly known as purple pouch fungus, is a secotioid species of fungus endemic to New Zealand. It was one of six species that appeared as part of a series depicting native New Zealand fungi on stamps, released in 2002.",
@@ -467,7 +467,7 @@ export default [
             "Shaggy Parasol"
         ],
         "maori_names": [
-            null
+            "None"
         ],
         "genus": "Chlorophyllum",
         "description": "The shaggy parasol is a large and conspicuous agaric, with thick brown scales and protuberances on its fleshy white cap. It is fleshy, and a reddish, or maroon discoloration occurs and a pungent odour is evolved when it is cut.",
@@ -554,7 +554,7 @@ export default [
             "Scaber Stalk"
         ],
         "maori_names": [
-            null
+            "None"
         ],
         "genus": "Leccinum",
         "description": "The cap is hemispherical, and later becomes flatter. The skin of the cap is tan or brownish, usually with a lighter edge, it is smooth, bald, and dry to viscid. The flesh is whitish, sometimes darkening following exposure. In young specimens, the meat is relatively firm, but it very soon becomes spongy and holds water, especially in rainy weather. When cooked, the meat of the birch bolete turns black.",
@@ -639,7 +639,7 @@ export default [
             "Devil's Snuff-box"
         ],
         "maori_names": [
-            null
+            "None"
         ],
         "genus": "Lycoperdon",
         "description": "Medium-sized puffball mushroom with a round body and wide stalk and spiny bumps that can be rubbed off, white when immature but brown when mature and bursts open with a hole at the top",
@@ -725,7 +725,7 @@ export default [
             "Oyster Fungus"
         ],
         "maori_names": [
-            null
+            "None"
         ],
         "genus": "Pleurotus",
         "description": "The oyster mushroom is a choice edible, and is a delicacy in Japanese, Korean and Chinese cuisine. Natural specimens range from white to gray or tan to dark-brown; the margin is inrolled when young, and is smooth and often somewhat lobed or wavy. The flesh is white, firm, and varies in thickness due to stipe arrangement.",
@@ -885,7 +885,7 @@ export default [
             "Field Mushroom"
         ],
         "maori_names": [
-            null
+            "None"
         ],
         "genus": "Agaricus",
         "description": "Agaricus campestris is a widely eaten gilled mushroom closely related to the cultivated button mushroom Agaricus bisporus. The taste is mild. The white flesh bruises a dingy reddish brown, as opposed to yellow in the poisonous Agaricus xanthodermus and similar species.",
@@ -1042,7 +1042,7 @@ export default [
             "Graceful Parason"
         ],
         "maori_names": [
-            null
+            "None"
         ],
         "genus": "Macrolepiota",
         "description": "Macrolepiota clelandii, commonly known as the slender parasol or graceful parasol, is a species of mushroom-forming fungus in the family Agaricaceae. The species is found in Australia and New Zealand, where it fruits singly or in small groups on the ground in eucalypt woodlands, parks, and roadsides. The edibility of the mushroom is not known with certainty, but closely related parasol mushrooms are edible and some are very sought after.",
@@ -1128,7 +1128,7 @@ export default [
             "Death Cap"
         ],
         "maori_names": [
-            "na"
+            "None"
         ],
         "genus": "Amanita",
         "description": "A. phalloides is one of the most poisonous of all known mushrooms. It is estimated that as little as half a mushroom contains enough toxin to kill an \\     adult human. It has been involved in the majority of human deaths from mushroom poisonin. Young specimens first emerge from the ground resembling a white egg covered by \\     a universal veil, which then breaks, leaving the volva as a remnant.",
