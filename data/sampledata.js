@@ -801,7 +801,7 @@ export default [
             "Hericium Novae-zealandiae"
         ],
         "common_names": [
-            "New Zealand's lion mane"
+            "New Zealand's Lion Mane"
         ],
         "maori_names": [
             "Pekepeke Kiore"
@@ -1039,7 +1039,7 @@ export default [
         ],
         "common_names": [
             "Slender Parasol",
-            "Graceful Parason"
+            "Graceful Parasol"
         ],
         "maori_names": [
             "None"
