@@ -835,7 +835,6 @@ export default [
             "MushroomCards/LionsMane1_phrqyk.jpg"
         ]
     },
-
     {
         "id": 11,
         "stipe_features": {
@@ -1244,7 +1243,6 @@ export default [
             "MushroomCards/AustralHoney1_ovxlk3.jpg"
         ]
     },
-
     {
         "id": 16,
         "stipe_features": {
