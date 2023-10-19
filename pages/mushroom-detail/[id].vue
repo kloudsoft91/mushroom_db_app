@@ -66,41 +66,40 @@
         <div class="overflow-x-auto">
           <!-- Stipe and Cap data -->
           <table class="w-full mb-4">
-              <tbody>
-                <tr class="px-4 py-2 ">
-                  <td v-for="(feature, featureName) in features" :key="featureName">
-                    <td class="px-4 py-2 font-semibold">{{ featureName }}:</td>
-                    <!-- Display each properties attributes -->
-                      <tr v-for="attribute in feature" :key="attribute.key">
-                        <td class="px-4 py-2">
-                          {{ attribute.label }}: 
-                            <nuxt-link :to="{path: '/', query: { label: attribute.key, item: getValueFromData(mushroomData, attribute.key) }}" class="small-link">{{ getValueFromData(mushroomData, attribute.key) }}</nuxt-link>
-                        </td>
-                      </tr>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
+            <tbody>
+              <tr>
+                <td v-for="(feature, featureName) in features" :key="featureName">
+                  <td class="py-2 font-semibold">{{ featureName }}:</td>
+                  <tr v-for="attribute in feature" :key="attribute.key">
+                    {{ attribute.label }}:
+                    <span class="px-4 py-2" v-for="item in getValueFromData(mushroomData, attribute.key)" :key="item">
+                      <nuxt-link :to="{ path: '/', query: { label: attribute.key, item: item } }" class="small-link">{{ item }}</nuxt-link> 
+                    </span>
+                  </tr>
+                </td>
+              </tr>
+            </tbody>
+          </table>
         </div>
         <div class="overflow-x-auto">
           <!-- Gill and Spore data -->
           <table class="w-full mb-4">
-              <tbody>
-                <tr class="px-4 py-2 ">
-                  <td v-for="(feature, featureName) in other" :key="featureName">
-                    <td class="px-4 py-2 font-semibold">{{ featureName }}:</td>
-                    <!-- Display each properties attributes -->
-                      <tr v-for="attribute in feature" :key="attribute.key">
-                        <td class="px-4 py-2">
-                          {{ attribute.label }}: 
-                          <nuxt-link :to="{path: '/', query: { label: attribute.key, item: getValueFromData(mushroomData, attribute.key) }}" class="small-link">{{ getValueFromData(mushroomData, attribute.key) }}</nuxt-link>
-                        </td>
-                      </tr>
-                  </td>
-                </tr>
-              </tbody>
-            </table>
-          </div>
+            <tbody>
+              <tr>
+                <td v-for="(feature, featureName) in other" :key="featureName">
+                  <td class="font-semibold">{{ featureName }}:</td>
+                  <!-- Display each properties attributes -->
+                  <tr v-for="attribute in feature" :key="attribute.key">
+                    <td v-for="item in getValueFromData(mushroomData, attribute.key)">
+                      {{ attribute.label }}: 
+                      <nuxt-link :to="{path: '/', query: { label: attribute.key, item: item }}" class="small-link">{{ item }}</nuxt-link>
+                    </td>
+                  </tr>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -173,11 +172,11 @@ export default {
           return '';
         }
       }
-      // Check if the value is an array and join it into a comma-separated string
+      // Check if the value is an array
       if (Array.isArray(value)) {
-        return value.map(item => item.toString()).join(', ');
+        return value; // Return the array as-is
       }
-      return value;
+      return [value]; // Wrap the single value in an array
     },
   },
   created() {
