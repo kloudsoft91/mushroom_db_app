@@ -74,7 +74,7 @@
                       <tr v-for="attribute in feature" :key="attribute.key">
                         <td class="px-4 py-2">
                           {{ attribute.label }}: 
-                          <nuxt-link :to="{path: '/', query: { label: attribute.key, item: getValueFromData(mushroomData, attribute.key) }}" class="small-link">{{ getValueFromData(mushroomData, attribute.key) }}</nuxt-link>
+                            <nuxt-link :to="{path: '/', query: { label: attribute.key, item: getValueFromData(mushroomData, attribute.key) }}" class="small-link">{{ getValueFromData(mushroomData, attribute.key) }}</nuxt-link>
                         </td>
                       </tr>
                   </td>
