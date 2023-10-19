@@ -150,7 +150,7 @@ export default [
         ],
         "nz_books": [null],
         "edibility": "Highly toxic, and consumption can lead to severe poisoning.",
-        "ecology": "mycorrihizal",
+        "ecology": "mycorrhizal",
         "environment": "Often found in association with various trees, especially pines and birches.",
         "time_of_year": [
             "march",
@@ -570,7 +570,7 @@ export default [
             "A Field Guide to the Native Edible Plants of New Zealand"
         ],
         "edibility": "The birch bolete is edible but considered not to be worthwhile by some guides. A few reports in North America suggest that Leccinums (birch boletes) should only be consumed with much caution.",
-        "ecology": "mycorrihizal",
+        "ecology": "mycorrhizal",
         "environment": "Under birch trees like Betula pendula",
         "time_of_year": [
             "february",
@@ -901,7 +901,7 @@ export default [
             "A Field Guide to the Native Edible Plants of New Zealand"
         ],
         "edibility": "Edible",
-        "ecology": "mycorrihizal",
+        "ecology": "mycorrhizal",
         "environment": "Fields, grassy areas, lawns",
         "time_of_year": [
             "march",
@@ -1144,7 +1144,7 @@ export default [
             null
         ],
         "edibility": "Deadly",
-        "ecology": "mycorrihizal",
+        "ecology": "mycorrhizal",
         "environment": "Oak and Chestnut trees",
         "time_of_year": [
             "february",
@@ -1228,7 +1228,7 @@ export default [
             "A Field guide to the native edible plants of new zealand - andrew crowe"
         ],
         "edibility": "Edible",
-        "ecology": "mycorrihizal and saprotrophic",
+        "ecology": "mycorrhizal and saprotrophic",
         "environment": "Dead broad-leaved trees or on their fallen timber",
         "time_of_year": [
             "march",
