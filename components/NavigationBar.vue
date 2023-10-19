@@ -100,7 +100,7 @@ export default {
         capThick: this.capThick,
       });
     },
-    mlAPICall() {
+    async mlAPICall() {
       let projectID = "";
       let apiToken = "";
       let apiURI = "https://us-central1-aiplatform.googleapis.com/v1/projects/" + projectID + "/locations/us-central1/publishers/google/models/imagetext:predict";
