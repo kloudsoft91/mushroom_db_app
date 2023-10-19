@@ -48,9 +48,54 @@ export default{
     //method to fetch data if the user has clicked on a mushroom attribute
     //in the mushroom-detail page.
     fetchData() {
-      const route = useRoute();
-      this.label = route.params.label;
-      this.item = route.params.item;
+      const query = this.$route.query;
+      this.label = query.label;
+      this.item = query.item;
+      console.log("Label & Item: ", this.label , this.item);
+      //are some handlers outdated? Sizefilter handler takes 4-part object so manually adding lengths instead
+      switch(this.label) {
+        case "stipe_features.diameter_min":
+          this.stipeDiam = this.item;
+          this.applyAllFilters();
+          break;
+        case "stipe_features.diameter_max":
+          this.stipeDiam = this.item;
+          this.applyAllFilters();
+          break;
+        case "stipe_features.colour":
+          this.handleColour(this.item);
+          break;
+        case "stipe_features.length_max":
+          this.stipeLen = this.item;
+          this.applyAllFilters();
+          break;
+        case "stipe_features.length_min":
+          this.stipeLen = this.item;
+          this.applyAllFilters();
+          break;
+        case "cap_features.diameter_min":
+          this.capDiam = this.item;
+          this.applyAllFilters();
+          break;
+        case "cap_features.diameter_max":
+          this.capDiam = this.item;
+          this.applyAllFilters();
+          break;
+        case "cap_features.colour":
+          this.handleColour(this.item);
+          break;
+        case "cap_features.capshape":
+          this.handleColour(this.item);
+          break;
+        case "gills.colour":
+          this.handleColour(this.item);
+          break;
+        case "gills.attachment":
+          this.handleColour(this.item);
+          break;
+        default:
+          this.applyAllFilters();
+      }
     },
     //Apply all of the Filters (Have to decide when this is called
     //currently called on filter button press, tag select, and when typing in Name search
@@ -291,6 +336,10 @@ export default{
     this.mushrooms = mushroomData;
     //display all results initially
     this.filteredMushrooms = this.mushrooms;
+    if(this.$route.query.label) {
+      console.log("FetchData call: ", this.label, this.item);
+      this.fetchData();
+    }
   },
 };
 </script>
