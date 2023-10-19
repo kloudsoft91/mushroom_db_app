@@ -82,10 +82,13 @@ export default{
     if (!searchInput) {
       return data;
     }
+    //convert search to lowercase
+    searchInput = searchInput.toLowerCase();
     //otherwise filter data by input against latin & common names
     return data.filter(d =>
-      d.common_names.toLowerCase().includes(searchInput.toLowerCase()) ||
-      d.latin_names.toLowerCase().includes(searchInput.toLowerCase())
+      d.common_names.some(name => name.toLowerCase().includes(searchInput)) ||
+      d.latin_names.some(name => name.toLowerCase().includes(searchInput)) ||
+      d.maori_names.some(name => name.toLowerCase().includes(searchInput))
     );
     },
 
