@@ -1244,7 +1244,8 @@ export default [
             "MushroomCards/AustralHoney1_ovxlk3.jpg"
         ]
     },
-  {
+
+  /* {
     "id": 16,
     "stipe_features": {
         "description": "The cylindrical stipe (stalk) is up to 5 cm long by 0.5 cm thick, fibrillose and stuffed.",
@@ -1567,5 +1568,5 @@ export default [
         "October",
         "November"
     ]
-  },
+  }, */
 ]
