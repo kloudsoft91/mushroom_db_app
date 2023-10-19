@@ -52,6 +52,51 @@ export default{
       this.label = query.label;
       this.item = query.item;
       console.log("Label & Item: ", this.label , this.item);
+      //are some handlers outdated? Sizefilter handler takes 4-part object so manually adding lengths instead
+      switch(this.label) {
+        case "stipe_features.diameter_min":
+          this.stipeDiam = this.item;
+          this.applyAllFilters();
+          break;
+        case "stipe_features.diameter_max":
+          this.stipeDiam = this.item;
+          this.applyAllFilters();
+          break;
+        case "stipe_features.colour":
+          this.handleColour(this.item);
+          break;
+        case "stipe_features.length_max":
+          this.stipeLen = this.item;
+          this.applyAllFilters();
+          break;
+        case "stipe_features.length_min":
+          this.stipeLen = this.item;
+          this.applyAllFilters();
+          break;
+        case "cap_features.diameter_min":
+          this.capDiam = this.item;
+          this.applyAllFilters();
+          break;
+        case "cap_features.diameter_max":
+          this.capDiam = this.item;
+          this.applyAllFilters();
+          break;
+        case "cap_features.colour":
+          this.handleColour(this.item);
+          break;
+        case "cap_features.shape":
+          console.log("capshape call", this.item);
+          this.handleCapShape(this.item);
+          break;
+        case "gills.colour":
+          this.handleColour(this.item);
+          break;
+        case "gills.attachment":
+          this.handleColour(this.item);
+          break;
+        default:
+          this.applyAllFilters();
+      }
     },
     //Apply all of the Filters (Have to decide when this is called
     //currently called on filter button press, tag select, and when typing in Name search
@@ -60,7 +105,7 @@ export default{
       //pull results from each filter function
       results = this.filterByTags(results);
       results = this.filterByName(results, this.searchInput);
-      results = this.filterByCapShape(results);
+      results = this.filterByCapShape(results, this.selectedCapShape);
       results = this.filterByGillAttach(results);
       results = this.filterByEcology(results);
       results = this.filterByStipe(results);
@@ -102,12 +147,15 @@ export default{
 
     //Carousel Filters
     //Cap Shape Filter
-    filterByCapShape(data){
+    filterByCapShape(data, selectedCapShape){
+      console.log("Data type:", typeof data);
+      console.log("Selected Cap Shape:", this.selectedCapShape);
       //check if defined
-      if (!this.selectedCapShape) {
+      if (!selectedCapShape) {
+        console.log("filterby null if")
         return data;
       }
-      //console.log("Filtering (Index) cap shape by: ", this.selectedCapShape);
+      console.log("Filtering cap shape by: ", data)
       return data.filter((mushroom) => 
       mushroom.cap_features.shape.includes(this.selectedCapShape));
     },
@@ -195,6 +243,7 @@ export default{
     },
     //receives cap shape button events
     handleCapShape(selectedCapShape) {
+      console.log("selected, then this.sele", selectedCapShape,)
       if (this.selectedCapShape == selectedCapShape) {
         this.selectedCapShape = "";
       } else {
@@ -293,10 +342,9 @@ export default{
     //display all results initially
     this.filteredMushrooms = this.mushrooms;
     if(this.$route.query.label) {
-      console.log("FetchData call: ", this.label, this.item);
       this.fetchData();
     }
-  },
+  },  
 };
 </script>
   
