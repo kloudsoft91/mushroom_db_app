@@ -20,13 +20,17 @@
           </div>
           <div class="p-4 flex-grow">
             <h5 class="mb-2 text-xl font-medium leading-tight text-neutral-800 dark:text-neutral-50">
-              {{ mushroom.common_names }}
+              {{ mushroom.common_names.join(', ') }}
             </h5>
             <!-- Table with mushroom info -->
             <table class="text-xs my-3">
                 <tbody><tr>
                     <td class="px-2 py-2 text-gray-500 font-semibold max-w-[50%] truncate align-top">Latin name</td>
-                    <td class="px-2 py-2 align-top">{{ mushroom.latin_names }}</td>
+                    <td class="px-2 py-2 align-top">{{ mushroom.latin_names.join(', ') }}</td>
+                </tr>
+                <tr>
+                    <td class="px-2 py-2 text-gray-500 font-semibold max-w-[50%] truncate align-top">Maori name</td>
+                    <td class="px-2 py-2 align-top">{{ mushroom.maori_names.join(', ') }}</td>
                 </tr>
                 <tr>
                     <td class="px-2 py-2 text-gray-500 font-semibold align-top">Edibility</td>
