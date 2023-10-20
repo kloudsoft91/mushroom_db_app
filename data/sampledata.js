@@ -1253,7 +1253,9 @@ export default [
             "bruising_colour": "na",
             "length_max": 5,
             "diameter_max": 0.5,
-            "type": "bare"
+            "type": "bare",
+            "length_min": 1,
+            "diameter_min": 0
         },
         "gills": {
             "spore_colour": "reddish pink",
@@ -1272,7 +1274,10 @@ export default [
             "colour": [
                 "indigo"
             ],
-            "description": "The cap may be up to 4 cm in diameter and conical in shape. The cap colour is indigo-blue with a green tint, and is fibrillose. The cap margin is striate and rolled inwards."
+            "description": "The cap may be up to 4 cm in diameter and conical in shape. The cap colour is indigo-blue with a green tint, and is fibrillose. The cap margin is striate and rolled inwards.",
+            "diameter_min": 1,
+            "thickness_min": null,
+            "thickness_max": null
         },
         "common_names": [
             "Blue Pinkgill",
@@ -1308,6 +1313,13 @@ export default [
         "native_or_introduced": "native",
         "photos": [
             ""
+        ],
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "",
+        "nz_books": [
+            ""
         ]
     },
     {
@@ -1321,19 +1333,28 @@ export default [
             "colour": [
                 "white"
             ],
-            "diameter_min": 3,
+            "diameter_min": 1,
             "type": "volva"
         },
         "gills": {
             "description": "This mushroom does not have gills, instead it erupts arms and has a dark olive-brown slime or gleba which spreads the spores",
-            "attachment": "none"
+            "attachment": "none",
+            "spore_colour": "",
+            "colour": []
         },
         "cap_features": {
             "description": "It matures into a reddish star-shaped structure with 6 to 10 arms up to 4 cm long radiating from the central area. These arms are bifid (deeply divided into two limbs). The top of the fungus is covered with dark olive-brown slime or gleba, which smells of rotting meat.",
             "colour": [
                 "red"
             ],
-            "diameter_max": 4
+            "diameter_max": 4,
+            "diameter_min": 1,
+            "thickness_min": null,
+            "thickness_max": null,
+            "texture": "",
+            "shape": [
+                "irregular"
+            ]
         },
         "latin_names": [
             "Aseroe Rubra"
@@ -1373,6 +1394,13 @@ export default [
         ],
         "photos": [
             ""
+        ],
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "",
+        "nz_books": [
+            ""
         ]
     },
     {
@@ -1407,7 +1435,9 @@ export default [
             "texture": "Smooth and finely fibrillose, greasy in damp weather but dry and silky in dry weather.",
             "shape": [
                 "conical"
-            ]
+            ],
+            "thickness_min": null,
+            "thickness_max": null
         },
         "latin_names": [
             "Hygrocybe Conica"
@@ -1444,6 +1474,13 @@ export default [
         ],
         "photos": [
             ""
+        ],
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "",
+        "nz_books": [
+            ""
         ]
     },
     {
@@ -1456,18 +1493,29 @@ export default [
             "colour": [
                 "lilac"
             ],
-            "bruising_colour": "na"
+            "bruising_colour": "na",
+            "diameter_min": null,
+            "diameter_max": null
         },
         "gills": {
             "spore_colour": "white",
-            "attachment": "none"
+            "attachment": "none",
+            "description": "",
+            "colour": []
         },
         "cap_features": {
             "description": "No typical cap but upper surfaces are smooth, lilac or violaceous, and noticeably elastic.",
             "colour": [
                 "lilac"
             ],
-            "texture": "Smooth and elastic"
+            "texture": "Smooth and elastic",
+            "diameter_min": null,
+            "diameter_max": null,
+            "thickness_min": null,
+            "thickness_max": null,
+            "shape": [
+                "irregular"
+            ]
         },
         "latin_names": [
             "Ramariopsis Pulchella"
@@ -1501,6 +1549,13 @@ export default [
             "edible"
         ],
         "photos": [
+            ""
+        ],
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "",
+        "nz_books": [
             ""
         ]
     },
@@ -1536,7 +1591,9 @@ export default [
             "texture": "The cap surface is sticky when moist, and characterized by white warts, which are easily detached.",
             "shape": [
                 "flat"
-            ]
+            ],
+            "thickness_min": null,
+            "thickness_max": null
         },
         "ecology": "mycorrhizal",
         "latin_names": [
@@ -1576,6 +1633,13 @@ export default [
         ],
         "photos": [
             ""
+        ],
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "",
+        "nz_books": [
+            ""
         ]
     },
     {
@@ -1588,14 +1652,17 @@ export default [
             "length_max": 7,
             "diameter_max": 3,
             "bruising_colour": "na",
-            "type": "bare"
+            "type": "bare",
+            "diameter_min": 1,
+            "length_min": 1
         },
         "gills": {
             "attachment": "decurrent",
             "colour": [
                 "white"
             ],
-            "description": "The gills are crowded, dirty white, stained olive-brown by old milk, which is initially white on contact with the air. They are somewhat decurrent. With potassium hydroxide or ammonia there is a purple reaction."
+            "description": "The gills are crowded, dirty white, stained olive-brown by old milk, which is initially white on contact with the air. They are somewhat decurrent. With potassium hydroxide or ammonia there is a purple reaction.",
+            "spore_colour": null
         },
         "cap_features": {
             "description": "The cap is normally 8–20 cm in diameter. At first it has an involute margin and a somewhat depressed centre. The upper surface is olive brown or yellow-green and is often sticky or slimy in the middle. When young it has velvety zones and may be shaggy at the rim. Later it becomes funnel-shaped and the colour darkens to blackish.",
@@ -1607,7 +1674,9 @@ export default [
             "texture": "It has velvety zones and may be shaggy at the rim and is often sticky or slimy in the middle",
             "shape": [
                 "depressed"
-            ]
+            ],
+            "thickness_min": null,
+            "thickness_max": null
         },
         "common_names": [
             "Ugly Milkcap"
@@ -1638,6 +1707,13 @@ export default [
             "None"
         ],
         "photos": [
+            ""
+        ],
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "",
+        "nz_books": [
             ""
         ]
     },
