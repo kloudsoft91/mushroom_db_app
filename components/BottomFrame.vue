@@ -34,7 +34,7 @@
       <vue-bottom-sheet ref="myBottomSheet" :can-swipe="false" overlay-color="#00000000" :max-width="9999999999999">
         <div class=" max-h-[340px] overflow-auto border-solid border-2">
             
-            <FilterBar @selectedCapShape="emitCapShape" @selectedGillAttach="emitGillAttach" @selectedEcology="emitEcology" @selectedStipe="emitStipe"/>    
+            <FilterBar @selectedCapShape="emitCapShape" @selectedGillAttach="emitGillAttach" @selectedEcology="emitEcology" @selectedStipe="emitStipe" @selectedMonth="emitMonth" @selectedStipeColour="emitStipeColour" @selectedCapColour="emitCapColour"/>    
         </div>
 
         
@@ -93,13 +93,29 @@
      },
      emitEcology(ecology) {
       this.selectedEcology = ecology;
-      //emit event to parent component (BottomFrame.vue)
+      //emit event to parent component (Index.vue)
       this.$emit('selectedEcology', ecology);
     },
     emitStipe(stipe) {
       this.selectedStipe = stipe;
-      //emit event to parent component (BottomFrame.vue)
+      //emit event to parent component (Index.vue)
       this.$emit('selectedStipe', stipe);
+    },
+    emitMonth(selectedMonth) {
+      this.selectedMonth = selectedMonth;
+      console.log("selectedmonth emit 2:" + selectedMonth);
+      //emit event to parent component (BottomFrame.vue)
+      this.$emit('selectedMonth', selectedMonth);
+    },
+    emitStipeColour(stipeColour) {
+      this.selectedStipeColour = stipeColour;
+      //emit event to parent component (Index.vue)
+      this.$emit('selectedStipeColour', stipeColour);
+    },
+    emitCapColour(capColour) {
+      this.selectedCapColour = capColour;
+      //emit event to parent component (Index.vue)
+      this.$emit('selectedCapColour', capColour);
     },
    },
    components: {

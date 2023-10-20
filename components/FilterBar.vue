@@ -141,6 +141,37 @@
         </div>
       </div>
     </template>
+    <template #capcolour>
+      <CapColourCarousel @selectedCapColour="emitCapColour"/>
+    </template>
+
+    <template #stipecolour>
+      <StipeColourCarousel @selectedStipeColour="emitStipeColour"/>
+    </template>
+
+    <template #month>
+      <div class="flex items-center justify-around">
+        <select @click="emitMonth(selectedMonth)" v-model="selectedMonth">
+          <option disabled value="">Select Month</option>
+          <option></option>
+          <option>January</option>
+          <option>February</option>
+          <option>March</option>
+          <option>April</option>
+          <option>May</option>
+          <option>June</option>
+          <option>July</option>
+          <option>August</option>
+          <option>September</option>
+          <option>October</option>
+          <option>November</option>
+          <option>December</option>
+        </select>
+        <div>
+          {{ currentMonth() }}
+        </div>
+      </div>
+    </template>
   </UAccordion>
 </template>
 
@@ -151,6 +182,9 @@ export default {
     return {
       selectedEcology: '',
       selectedStipe: '',
+      stipeColour: '',
+      capColour: '',
+      selectedMonth: '',
       items: [
       {
           label: 'Time of Year',
@@ -205,11 +239,60 @@ export default {
           defaultOpen: true,
           multiple: true,
           slot: 'stipe',
-        }
+        },
+        {
+          label: 'Month',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'month'
+        },
+        {
+          label: 'Cap Colour',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'capcolour'
+        },
+        {
+          label: 'Stipe Colour',
+          defaultOpen: true,
+          multiple: true,
+          slot: 'stipecolour'
+        },
       ],
     };
   },
   methods: {
+    currentMonth() {
+      const current = new Date();
+      const date = current.getMonth();
+      switch (date) {
+      case 0:
+      return "Current Month: January";
+      case 1:
+      return "Current Month: February";
+      case 2:
+      return "Current Month: March";
+      case 3:
+      return "Current Month: April";
+      case 4:
+      return "Current Month: May";
+      case 5:
+      return "Current Month: June";
+      case 6:
+      return "Current Month: July";
+      case 7:
+      return "Current Month: August";
+      case 8:
+      return "Current Month: September";
+      case 9:
+      return "Current Month: October";
+      case 10:
+      return "Current Month: November";
+      case 11:
+      return "Current Month: December";
+      }
+      return date;
+    },
     //emits cap shape on button click
     emitCapShape(capShape) {
       this.selectedCapShape = capShape;
@@ -235,6 +318,28 @@ export default {
         this.$emit('selectedStipe', stipe);
       });
     },
+    emitMonth(selectedMonth) {
+      nextTick(() => {
+      //emit event to parent component (BottomFrame.vue)
+      this.selectedMonth = selectedMonth;
+      console.log("selectedMonth emit:" + this.selectedMonth);
+      this.$emit('selectedMonth', this.selectedMonth);
+      });
+    },
+    emitStipeColour(stipeColour) {
+      nextTick(() => {
+      //emit event to parent component (BottomFrame.vue)
+      this.selectedStipeColour = stipeColour;
+      this.$emit('selectedStipeColour', stipeColour);
+      });
+    }, 
+    emitCapColour(capColour) {
+      nextTick(() => {
+      //emit event to parent component (BottomFrame.vue)
+      this.selectedCapColour = capColour;
+      this.$emit('selectedCapColour', capColour);
+      });
+    }
   }
 };
 </script>

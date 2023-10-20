@@ -9,10 +9,10 @@
           class=" rounded-lg bg-gray-200 tablet:shadow-md desktop:shadow-md flex flex-col overflow-hidden"
         >
           <div class="relative overflow-hidden bg-cover bg-no-repeat">
-            <img class="rounded-t-lg" src="~/assets/images/mushy.jpg" alt="this is a pic of a mushy" />
+            <nuxt-img class="rounded-t-lg" provider="cloudinary" :src="`ar_3:4,c_fill,h_1024,w_768/${mushroom.photos[0]}`" alt="Mushroom Image"></nuxt-img>
             <!-- Adds a warning label for toxic mushrooms -->
             <span
-              v-if="mushroom.edibility.includes('toxic')"
+              v-if="mushroom.edibility.toLowerCase().includes('toxic') || mushroom.edibility.toLowerCase().includes('deadly') || mushroom.edibility.toLowerCase().includes('poisonous')"
               class="absolute top-2 right-2 bg-red-500 text-white px-2 py-1 rounded-full text-xs font-semibold"
               >
               Warning: Toxic
@@ -48,7 +48,6 @@
                   @click="openPopup(mushroom)"
                 >
                   Lookalikes
-                  <!-- ADD POP UP WINDOW OR SOMETHING FOR LOOKALIKE SHROOMS -->
                 </a>
               </span>
             </div>
