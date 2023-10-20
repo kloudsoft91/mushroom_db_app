@@ -58,7 +58,7 @@ jobs:
       - name: Generate static pages
         run: npm run generate
         
-      - name: Test
+      - name: Jest unit test
         run: npm test
 
       - name: Upload artifact
