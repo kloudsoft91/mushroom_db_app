@@ -1419,7 +1419,9 @@ export default [
             "bruising_colour": "na",
             "length_max": 5,
             "diameter_max": 0.5,
-            "type": "bare"
+            "type": "bare",
+            "length_min": 1,
+            "diameter_min": 0
         },
         "gills": {
             "spore_colour": "reddish pink",
@@ -1438,7 +1440,10 @@ export default [
             "colour": [
                 "indigo"
             ],
-            "description": "The cap may be up to 4 cm in diameter and conical in shape. The cap colour is indigo-blue with a green tint, and is fibrillose. The cap margin is striate and rolled inwards."
+            "description": "The cap may be up to 4 cm in diameter and conical in shape. The cap colour is indigo-blue with a green tint, and is fibrillose. The cap margin is striate and rolled inwards.",
+            "diameter_min": 1,
+            "thickness_min": null,
+            "thickness_max": null
         },
         "common_names": [
             "Blue Pinkgill",
@@ -1474,18 +1479,95 @@ export default [
         "native_or_introduced": "native",
         "photos": [
             ""
+        ],
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "",
+        "nz_books": [
+            ""
         ]
     },
-    "nz_books": "A Field Guide to the Native Edible Plants of New Zealand",
-    "edibility": "Edible",
-    "stipe_features": {
-      "diameter_min": null,
-      "diameter_max": null,
-      "colour": ["white", "brown"],
-      "length_min": null,
-      "length_max": null,
-      "bruising_colour": "None",
-      "type": "ring"
+    {
+        "id": 17,
+        "stipe_features": {
+            "description": "It has a hollow white stalk and a cup shaped volva at the base",
+            "length_max": 10,
+            "length_min": 5,
+            "bruising_colour": "na",
+            "diameter_max": 3,
+            "colour": [
+                "white"
+            ],
+            "diameter_min": 1,
+            "type": "volva"
+        },
+        "gills": {
+            "description": "This mushroom does not have gills, instead it erupts arms and has a dark olive-brown slime or gleba which spreads the spores",
+            "attachment": "none",
+            "spore_colour": "",
+            "colour": []
+        },
+        "cap_features": {
+            "description": "It matures into a reddish star-shaped structure with 6 to 10 arms up to 4 cm long radiating from the central area. These arms are bifid (deeply divided into two limbs). The top of the fungus is covered with dark olive-brown slime or gleba, which smells of rotting meat.",
+            "colour": [
+                "red"
+            ],
+            "diameter_max": 4,
+            "diameter_min": 1,
+            "thickness_min": null,
+            "thickness_max": null,
+            "texture": "",
+            "shape": [
+                "irregular"
+            ]
+        },
+        "latin_names": [
+            "Aseroe Rubra"
+        ],
+        "time_of_year": [
+            "january",
+            "february",
+            "march",
+            "april",
+            "may",
+            "june",
+            "july",
+            "september",
+            "october",
+            "november",
+            "december"
+        ],
+        "common_names": [
+            "Anemone Stinkhorn",
+            "Sea Anemone Fungus",
+            "Starfish Fungus"
+        ],
+        "environment": "It is found on decomposing plant matter as well as on woodchips and mulch and is common in gardens and amenities plantings. It also occurs in alpine grasslands and woodlands.",
+        "ecology": "saprotrophic",
+        "edibility": "Unknown",
+        "genus": "Aseroe",
+        "tags": [
+            "poisonous"
+        ],
+        "native_or_introduced": "native",
+        "description": "Aseroe rubra begins as a partly buried whitish egg-shaped structure 3 cm in diameter, which bursts open as a hollow white stalk with reddish arms erupts and grows to a height of 10 cm. It matures into a reddish star-shaped structure with six to ten arms up to 4 cm long radiating from the central area. These arms are bifid (deeply divided into two limbs). The top of the fungus is covered with dark olive-brown slime or gleba, which smells of rotting meat. There is a cup-shaped volva at the base that is the remnants of the original egg.",
+        "links": [
+            "https://www.inaturalist.org/taxa/381310-Aseroe-rubra"
+        ],
+        "maori_names": [
+            "None"
+        ],
+        "photos": [
+            ""
+        ],
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "",
+        "nz_books": [
+            ""
+        ]
     },
     {
         "id": 18,
@@ -1519,7 +1601,9 @@ export default [
             "texture": "Smooth and finely fibrillose, greasy in damp weather but dry and silky in dry weather.",
             "shape": [
                 "conical"
-            ]
+            ],
+            "thickness_min": null,
+            "thickness_max": null
         },
         "latin_names": [
             "Hygrocybe Conica"
@@ -1556,17 +1640,90 @@ export default [
         ],
         "photos": [
             ""
+        ],
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "",
+        "nz_books": [
+            ""
         ]
     },
-    "spore_colour": "Black, brown",
-    "cap_features": {
-      "colour": ["brown"],
-      "texture": "Smooth",
-      "diameter_min": 12,
-      "diameter_max": 15,
-      "thickness_min": null,
-      "thickness_max": null,
-      "shape": "convex"
+    {
+        "id": 19,
+        "stipe_features": {
+            "length_min": 2,
+            "length_max": 4,
+            "type": "bare",
+            "description": "Arising from a downy or felted whitish central stem and usually branching frequently",
+            "colour": [
+                "lilac"
+            ],
+            "bruising_colour": "na",
+            "diameter_min": null,
+            "diameter_max": null
+        },
+        "gills": {
+            "spore_colour": "white",
+            "attachment": "none",
+            "description": "",
+            "colour": []
+        },
+        "cap_features": {
+            "description": "No typical cap but upper surfaces are smooth, lilac or violaceous, and noticeably elastic.",
+            "colour": [
+                "lilac"
+            ],
+            "texture": "Smooth and elastic",
+            "diameter_min": null,
+            "diameter_max": null,
+            "thickness_min": null,
+            "thickness_max": null,
+            "shape": [
+                "irregular"
+            ]
+        },
+        "latin_names": [
+            "Ramariopsis Pulchella"
+        ],
+        "description": "Ramariopsis pulchella is a species of coral fungus in the family Clavariaceae. This small, branching coral fungus is often hard to spot, largely because if its relative rarity but also it small stature, often being concealed among mosses and leaf litter. Arising from a downy or felted whitish central stem and usually branching frequently, the fruitbody is typically 2 to 4cm tall. Upper surfaces are smooth, lilac or violaceous, and noticeably elastic.",
+        "genus": "Ramariopsis",
+        "native_or_introduced": "native",
+        "time_of_year": [
+            "april",
+            "may",
+            "june",
+            "july",
+            "august",
+            "september"
+        ],
+        "common_names": [
+            "Lilac Coral Fungus"
+        ],
+        "maori_names": [
+            "None"
+        ],
+        "links": [
+            "https://www.inaturalist.org/taxa/352201-Ramariopsis-pulchella",
+            "https://biotanz.landcareresearch.co.nz/scientific-names/1cb1a14f-36b9-11d5-9548-00d0592d548c",
+            "https://www.first-nature.com/fungi/ramariopsis-pulchella.php"
+        ],
+        "edibility": "May be edible but taste is mild and not distinctive",
+        "ecology": "saprotrophic",
+        "environment": "Grows on soil among leaf litter and mosses in deciduous woodland on calcareous soil.",
+        "tags": [
+            "edible"
+        ],
+        "photos": [
+            ""
+        ],
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "",
+        "nz_books": [
+            ""
+        ]
     },
     {
         "id": 20,
@@ -1600,7 +1757,9 @@ export default [
             "texture": "The cap surface is sticky when moist, and characterized by white warts, which are easily detached.",
             "shape": [
                 "flat"
-            ]
+            ],
+            "thickness_min": null,
+            "thickness_max": null
         },
         "ecology": "mycorrhizal",
         "latin_names": [
@@ -1640,18 +1799,89 @@ export default [
         ],
         "photos": [
             ""
+        ],
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "",
+        "nz_books": [
+            ""
         ]
     },
-    "nz_books": "https://biotanz.landcareresearch.co.nz/references/f20c64a6-c0f2-4186-a229-6e1a26ed2",
-    "edibility": "Unknown",
-    "stipe_features": {
-      "diameter_min": null,
-      "diameter_max": null,
-      "colour": ["pale brown"],
-      "length_min": 0, //unknown (Made 0 so filter will work 0-18)
-      "length_max": 18,
-      "bruising_colour": "Unknown",
-      "type": "ring"
+    {
+        "id": 21,
+        "stipe_features": {
+            "description": "The stipe is up to about 7 cm tall by 3 cm in diameter and it is similar in colour to the cap, but much lighter. It may have shallow pits (scrobiculae). The flesh is a dirty white and tends to turn brown.",
+            "colour": [
+                "olive-brown"
+            ],
+            "length_max": 7,
+            "diameter_max": 3,
+            "bruising_colour": "na",
+            "type": "bare",
+            "diameter_min": 1,
+            "length_min": 1
+        },
+        "gills": {
+            "attachment": "decurrent",
+            "colour": [
+                "white"
+            ],
+            "description": "The gills are crowded, dirty white, stained olive-brown by old milk, which is initially white on contact with the air. They are somewhat decurrent. With potassium hydroxide or ammonia there is a purple reaction.",
+            "spore_colour": null
+        },
+        "cap_features": {
+            "description": "The cap is normally 8–20 cm in diameter. At first it has an involute margin and a somewhat depressed centre. The upper surface is olive brown or yellow-green and is often sticky or slimy in the middle. When young it has velvety zones and may be shaggy at the rim. Later it becomes funnel-shaped and the colour darkens to blackish.",
+            "colour": [
+                "olive-brown"
+            ],
+            "diameter_min": 8,
+            "diameter_max": 20,
+            "texture": "It has velvety zones and may be shaggy at the rim and is often sticky or slimy in the middle",
+            "shape": [
+                "depressed"
+            ],
+            "thickness_min": null,
+            "thickness_max": null
+        },
+        "common_names": [
+            "Ugly Milkcap"
+        ],
+        "latin_names": [
+            "Lactarius Turpis"
+        ],
+        "native_or_introduced": "introduced",
+        "environment": "While especially associated with birch, it is also found with spruce, pine and other trees in mixed woodland.",
+        "description": "The messy, dirty appearance, seen in the photograph, is characteristic of the species. It seems to collect debris on top and the gills acquire a dirty brownish stain due to discoloured milk.",
+        "genus": "Lactarius",
+        "links": [
+            "https://www.inaturalist.org/taxa/382886-Lactarius-turpis"
+        ],
+        "edibility": "Edible but not recommended",
+        "tags": [
+            "edible"
+        ],
+        "ecology": "mycorrhizal",
+        "time_of_year": [
+            "july",
+            "august",
+            "september",
+            "october",
+            "november"
+        ],
+        "maori_names": [
+            "None"
+        ],
+        "photos": [
+            ""
+        ],
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "",
+        "nz_books": [
+            ""
+        ]
     },
     "gills": {
       "colour": "White",
