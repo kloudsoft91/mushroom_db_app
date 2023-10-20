@@ -17,6 +17,7 @@ module.exports = {
     'vue',
     'json'
   ],
+  setupFiles: ['<rootDir>/test-setup.js'],
   transform: {
       '^.+\\.ts$': 'ts-jest',
       '^.+\\.js$': 'babel-jest',
@@ -24,7 +25,7 @@ module.exports = {
     },
   collectCoverage: true,
   collectCoverageFrom: [
-    '<rootDir>/pages/index.vue'
+    '<rootDir>/pages/*.vue'
   ],
   testEnvironment: 'jsdom'
 }
