@@ -1,5 +1,7 @@
 <template>
   <HeaderBar />
+  <!--Alert for invalid user inputs-->
+  <p id="inputerror" style="color:red; text-align: center;"></p>
   <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter"/>
   <FooterBar @openCarouselInputs="openCarouselInputs"/>
   <ResultCards :filteredMushrooms="filteredMushrooms"/>
@@ -9,7 +11,7 @@
   <SlideOver />
   <!--Bottomframe for small screens only-->
   <!--Should pop out when clicking the "Discover" button on footerbar-->
-  <BottomFrame ref="bottomFrame" @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe" @selectedMonth="handleMonth" @stipeColour="handleStipeColour" @capColour="handleCapColour" @openCarouselInputs="openCarouselInputs"/>
+  <BottomFrame ref="bottomFrame" @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe" @selectedMonth="handleMonth" @selectedStipeColour="handleStipeColour" @selectedCapColour="handleCapColour" @openCarouselInputs="openCarouselInputs"/>
 </template>
 
 <script>
@@ -33,8 +35,8 @@ export default{
       selectedStipe: '',
       selectedMonth: '',
       selectedColour: '',
-      stipeColour: '',
-      capColour: '',
+      selectedStipeColour: '',
+      selectedCapColour: '',
       stipeLen: '',
       stipeDiam: '',
       capDiam: '',
@@ -48,6 +50,7 @@ export default{
     //currently called on filter button press, tag select, and when typing in Name search
     applyAllFilters() {
       let results = this.mushrooms;
+      document.getElementById("inputerror").innerHTML = "";
       //pull results from each filter function
       results = this.filterByTags(results);
       results = this.filterByName(results, this.searchInput);
@@ -151,20 +154,20 @@ export default{
 
     filterByStipeColour(data){
       //check if defined
-      if (!this.stipeColour) {
+      if (!this.selectedStipeColour) {
         return data;
       }
       return data.filter((mushroom) => 
-      mushroom.stipe_features.colour.includes(this.stipeColour));
+      mushroom.stipe_features.colour.includes(this.selectedStipeColour));
     },
 
     filterByCapColour(data){
       //check if defined
-      if (!this.capColour) {
+      if (!this.selectedCapColour) {
         return data;
       }
       return data.filter((mushroom) => 
-      mushroom.cap_features.colour.includes(this.capColour));
+      mushroom.cap_features.colour.includes(this.selectedCapColour));
     },
 
     monthToInt(month) {
@@ -263,7 +266,7 @@ export default{
 	    }
 	    catch(err) {
 	    	console.log('Invalid user input: ' + err);
-	    	alert('Invalid user input: ' + err);
+        document.getElementById("inputerror").innerHTML = 'Invalid user input: Non-alphabetical name';
 	    }
     },
     //receives tag button events
@@ -316,27 +319,23 @@ export default{
       this.applyAllFilters();
       return this.selectedStipe;
     },
-    handleStipeColour(stipeColour) {
-      console.log("handle stipe colour function");
-      if (this.stipeColour == stipeColour) {
-        this.stipeColour = "";
+    handleStipeColour(selectedStipeColour) {
+      if (this.selectedStipeColour == selectedStipeColour) {
+        this.selectedStipeColour = "";
       } else {
-        this.stipeColour = stipeColour;
-        console.log("handle stipe colour:" + stipeColour);
+        this.selectedStipeColour = selectedStipeColour;
       }
       this.applyAllFilters();
-      return this.stipeColour;
+      return this.selectedStipeColour;
     },
-    handleCapColour(capColour) {
-      console.log("handle cap colour function");
-      if (this.capColour == capColour) {
-        this.capColour = "";
+    handleCapColour(selectedCapColour) {
+      if (this.selectedCapColour == selectedCapColour) {
+        this.selectedCapColour = "";
       } else {
-        this.capColour = capColour;
-        console.log("handle cap colour:" + capColour);
+        this.selectedCapColour = selectedCapColour;
       }
       this.applyAllFilters();
-      return this.capColour;
+      return this.selectedCapColour;
     },
     handleMonth(selectedMonth) {
       if (selectedMonth == "") {
@@ -369,7 +368,7 @@ export default{
 	    }
 	    catch(err) {
 	    	console.log('Invalid user input: ' + err);
-	    	alert('Invalid user input: ' + err);
+        document.getElementById("inputerror").innerHTML = 'Invalid user input: Non-numerical length';
 	    }
     },
     //Open 
@@ -399,6 +398,8 @@ export default{
       if(this.capThick) activeFilters.push(`Cap Thickness: ${this.capThick}`);
       if(this.selectedEcology) activeFilters.push(`Ecology: ${this.selectedEcology}`);
       if(this.selectedStipe) activeFilters.push(`Stipe Type: ${this.selectedStipe}`);
+      if(this.selectedStipeColour) activeFilters.push(`Stipe Colour: ${this.selectedStipeColour}`)
+      if(this.selectedCapColour) activeFilters.push(`Cap Colour: ${this.selectedCapColour}`);
 
       // Log active filters or "No Filters" if none are active
       console.log(activeFilters.length > 0 ? `Active Filters: ${activeFilters.join(' | ')}` : 'No Filters');
