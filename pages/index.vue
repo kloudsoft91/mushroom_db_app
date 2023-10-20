@@ -1,5 +1,7 @@
 <template>
   <HeaderBar />
+  <!--Alert for invalid user inputs-->
+  <p id="inputerror" style="color:red; text-align: center;"></p>
   <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter"/>
   <FooterBar @openCarouselInputs="openCarouselInputs"/>
   <ResultCards :filteredMushrooms="filteredMushrooms"/>
@@ -9,7 +11,7 @@
   <SlideOver />
   <!--Bottomframe for small screens only-->
   <!--Should pop out when clicking the "Discover" button on footerbar-->
-  <BottomFrame ref="bottomFrame" @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe" @selectedSeason="handleSeason" @selectedColour="handleColour" @openCarouselInputs="openCarouselInputs"/>
+  <BottomFrame ref="bottomFrame" @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe" @selectedMonth="handleMonth" @selectedStipeColour="handleStipeColour" @selectedCapColour="handleCapColour" @openCarouselInputs="openCarouselInputs"/>
 </template>
 
 <script>
@@ -31,8 +33,10 @@ export default{
       selectedGillAttach: '',
       selectedEcology: '',
       selectedStipe: '',
-      selectedSeason: '',
+      selectedMonth: '',
       selectedColour: '',
+      selectedStipeColour: '',
+      selectedCapColour: '',
       stipeLen: '',
       stipeDiam: '',
       capDiam: '',
@@ -46,6 +50,7 @@ export default{
     //currently called on filter button press, tag select, and when typing in Name search
     applyAllFilters() {
       let results = this.mushrooms;
+      document.getElementById("inputerror").innerHTML = "";
       //pull results from each filter function
       results = this.filterByTags(results);
       results = this.filterByName(results, this.searchInput);
@@ -53,8 +58,10 @@ export default{
       results = this.filterByGillAttach(results);
       results = this.filterByEcology(results);
       results = this.filterByStipe(results);
-      results = this.filterByColour(results);
-      results = this.filterBySeason(results);
+      //results = this.filterByColour(results);
+      results = this.filterByStipeColour(results);
+      results = this.filterByCapColour(results);
+      results = this.filterByMonth(results);
       //Size Filter Calls:
       results = this.filterBySize(results, this.stipeLen, 'stipe_features.length_min', 'stipe_features.length_max');
       results = this.filterBySize(results, this.stipeDiam, 'stipe_features.diameter_min', 'stipe_features.diameter_max');
@@ -130,7 +137,7 @@ export default{
     },
 
     //Cap and stipe colour, case sensitive
-    filterByColour(data){
+    /*filterByColour(data){
       //check if defined
       if (!this.selectedColour) {
         return data;
@@ -138,15 +145,89 @@ export default{
       return data.filter((mushroom) => 
       mushroom.cap_features.colour.includes(this.selectedColour) || mushroom.stipe_features.colour.includes(this.selectedColour));
     },
+    */
 
-    //Season filter
-    filterBySeason(data){
+    filterByStipeColour(data){
       //check if defined
-      if (!this.selectedSeason) {
+      if (!this.selectedStipeColour) {
         return data;
       }
       return data.filter((mushroom) => 
-      mushroom.time_of_year.toLowerCase().includes(this.selectedSeason.toLowerCase()));
+      mushroom.stipe_features.colour.includes(this.selectedStipeColour));
+    },
+
+    filterByCapColour(data){
+      //check if defined
+      if (!this.selectedCapColour) {
+        return data;
+      }
+      return data.filter((mushroom) => 
+      mushroom.cap_features.colour.includes(this.selectedCapColour));
+    },
+
+    monthToInt(month) {
+      switch (month) {
+        case "january":
+        return 1;
+        case "february":
+        return 2;
+        case "march":
+        return 3;
+        case "april":
+        return 4;
+        case "may":
+        return 5;
+        case "june":
+        return 6;
+        case "july":
+        return 7;
+        case "august":
+        return 8;
+        case "september":
+        return 9;
+        case "october":
+        return 10;
+        case "november":
+        return 11;
+        case "december":
+        return 12;
+      }
+    },
+
+    filterByMonthInt(selectedMonth, jsonString) {
+      var str1 = jsonString.split('(')[1];
+      console.log("str1 " + str1);
+      var str2a = str1.split(' to ')[0];
+      console.log("str2a " + str2a);
+      var str2b = str1.split(' to ')[1];
+      console.log("str2b " + str2b);
+      var str3 = str2b.split(' ')[0];
+      console.log("str3 " + str3);
+      var str4 = str3.split(')')[0];
+      console.log("str4 " + str4);
+      if ((this.monthToInt(selectedMonth) >= this.monthToInt(str2a)) && (this.monthToInt(selectedMonth) <= this.monthToInt(str4))) {
+        console.log("Found matching date range");
+        return true;
+      }
+      if (this.monthToInt(str2a) > this.monthToInt(str4)) {
+        if (((this.monthToInt(selectedMonth) >= this.monthToInt(str2a)) && (this.monthToInt(selectedMonth) <= 12)) || ((this.monthToInt(selectedMonth) <= this.monthToInt(str4)) && 	(this.monthToInt(selectedMonth) > 0))) {
+          console.log("Found matching date range 2");
+          return true;
+        }
+      }
+      console.log("No matching date range");
+      return false;
+    },
+
+    //Season filter
+    filterByMonth(data){
+      //check if defined
+      if (!this.selectedMonth) {
+        return data;
+      }
+      return data.filter(d =>
+        this.filterByMonthInt(this.selectedMonth.toLowerCase(), d.time_of_year.toLowerCase())
+      );
     },
 
     //Generic range filter: applied to all int range inputs (diam/len/height/thickness)
@@ -170,8 +251,18 @@ export default{
     //Event handlers
     //receives search input events
     handleSearch(searchInput) {
-      this.searchInput = searchInput;
-      this.applyAllFilters();
+      let strRegex = new RegExp(/^[a-z\s]*$/i);
+	    let result = strRegex.test(searchInput); 
+	    try {
+	    	if (!result) throw "Non-alphabetical name";
+        this.searchInput = searchInput;
+        this.applyAllFilters();
+        return this.searchInput;
+	    }
+	    catch(err) {
+	    	console.log('Invalid user input: ' + err);
+        document.getElementById("inputerror").innerHTML = 'Invalid user input: Non-alphabetical name';
+	    }
     },
     //receives tag button events
     handleTags(selectedTag) {
@@ -181,6 +272,7 @@ export default{
         this.selectedTag = selectedTag;
       }
       this.applyAllFilters();
+      return this.selectedTag;
     },
     //receives cap shape button events
     handleCapShape(selectedCapShape) {
@@ -190,6 +282,7 @@ export default{
         this.selectedCapShape = selectedCapShape;
       }
       this.applyAllFilters();
+      return this.selectedCapShape;
     },
     //receives gill attachment buttone vents
     handleGills(selectedGillAttach) {
@@ -199,6 +292,7 @@ export default{
         this.selectedGillAttach = selectedGillAttach;
       }
       this.applyAllFilters();
+      return this.selectedGillAttach;
     },
     //receives ecology button events
     handleEcology(selectedEcology) {
@@ -208,6 +302,7 @@ export default{
         this.selectedEcology = selectedEcology;
       }
       this.applyAllFilters();
+      return this.selectedEcology;
     },
     //receives stipe type button events
     handleStipe(selectedStipe) {
@@ -217,32 +312,59 @@ export default{
         this.selectedStipe = selectedStipe;
       }
       this.applyAllFilters();
+      return this.selectedStipe;
     },
-    handleColour(selectedColour) {
-      console.log("handle colour function");
-      if (this.selectedColour == selectedColour) {
-        this.selectedColour = "";
+    handleStipeColour(selectedStipeColour) {
+      if (this.selectedStipeColour == selectedStipeColour) {
+        this.selectedStipeColour = "";
       } else {
-        this.selectedColour = selectedColour;
-        console.log("handle colour:" + selectedColour);
+        this.selectedStipeColour = selectedStipeColour;
       }
       this.applyAllFilters();
+      return this.selectedStipeColour;
     },
-    handleSeason(selectedSeason) {
-      if (this.selectedSeason == selectedSeason) {
-        this.selectedSeason = "";
+    handleCapColour(selectedCapColour) {
+      if (this.selectedCapColour == selectedCapColour) {
+        this.selectedCapColour = "";
       } else {
-        this.selectedSeason = selectedSeason;
+        this.selectedCapColour = selectedCapColour;
       }
       this.applyAllFilters();
+      return this.selectedCapColour;
+    },
+    handleMonth(selectedMonth) {
+      if (selectedMonth == "") {
+        this.selectedMonth = "";
+      } else {
+        console.log("handle month function" + selectedMonth);
+        this.selectedMonth = selectedMonth;
+      }
+      this.applyAllFilters();
+      return this.selectedMonth;
     },
     //generic size filter event handler
     handleSizeFilter(filterData) {
-      this.stipeLen = filterData.stipeLen;
-      this.stipeDiam = filterData.stipeDiam;
-      this.capDiam = filterData.capDiam;
-      this.capThick = filterData.capThick;
-      this.applyAllFilters();
+      let strRegex = new RegExp(/^[0-9]*$/i);
+      const result = [];
+	    result[0] = strRegex.test(filterData.stipeLen); 
+      result[1] = strRegex.test(filterData.stipeDiam); 
+      result[2] = strRegex.test(filterData.capDiam); 
+      result[3] = strRegex.test(filterData.capThick); 
+	    try {
+        for (var i=0;i<4;i++) {
+          if (!result[i]) throw "Non-numerical length";
+        }
+        this.stipeLen = filterData.stipeLen;
+        this.stipeDiam = filterData.stipeDiam;
+        this.capDiam = filterData.capDiam;
+        this.capThick = filterData.capThick;
+        this.applyAllFilters();
+        return this.filterData;
+	    }
+	    catch(err) {
+	    	console.log('Invalid user input: ' + err);
+        document.getElementById("inputerror").innerHTML = 'Invalid user input: Non-numerical length';
+	    }
     },
     //Open 
     openCarouselInputs() {
@@ -271,6 +393,8 @@ export default{
       if(this.capThick) activeFilters.push(`Cap Thickness: ${this.capThick}`);
       if(this.selectedEcology) activeFilters.push(`Ecology: ${this.selectedEcology}`);
       if(this.selectedStipe) activeFilters.push(`Stipe Type: ${this.selectedStipe}`);
+      if(this.selectedStipeColour) activeFilters.push(`Stipe Colour: ${this.selectedStipeColour}`)
+      if(this.selectedCapColour) activeFilters.push(`Cap Colour: ${this.selectedCapColour}`);
 
       // Log active filters or "No Filters" if none are active
       console.log(activeFilters.length > 0 ? `Active Filters: ${activeFilters.join(' | ')}` : 'No Filters');
