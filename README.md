@@ -73,6 +73,8 @@ The admin interface can be found on: `https://kloudsoft91.github.io/mushroom_db_
 
 The main app is hosted at: `https://kloudsoft91.github.io/mushroom_db_app/`
 
+![Screenshot of the main ui search controls](assets/images/ui_main_sesarch.png?raw=true "Main Search UI")
+
 
 ## Contributing
 
