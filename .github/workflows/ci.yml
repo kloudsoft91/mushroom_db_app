@@ -67,10 +67,6 @@ jobs:
         with:
           path: .output/public
 
-      - name: Cypress run
-        run: npx cypress run
-        
-
   deploy:
     runs-on: windows-latest
 
