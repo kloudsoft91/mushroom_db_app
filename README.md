@@ -1,6 +1,8 @@
 # Mushroom DB App
 
 This project was the result of a Capstone Project run through Massey University. It is a webapp designed using NuxtJS to easily identify the different variety of mushrooms and fungi that grow in Aotearoa New Zealand.
+
+
 ## Authors
 
 - [Adam Norman](https://github.com/AdamN2424)
@@ -8,6 +10,8 @@ This project was the result of a Capstone Project run through Massey University.
 - [Joel Yap](https://github.com/joel-yap)
 - [Karan Nayak](https://github.com/kloudsoft91)
 - [Rosie Hall](https://github.com/DiscountHomebrand)
+
+
 ## Installation
 
 This project uses npm as the package manager. Follow this process to install the project locally:
@@ -26,6 +30,8 @@ Install the dependencies
 ```bash
   npm install
 ```
+
+
 ## Run Locally
 
 Start the development server (`http://localhost:3000`)
@@ -53,6 +59,8 @@ The deployment step in the GitHub Action is:
       id: deployment
       uses: actions/deploy-pages@v2
 ```
+
+
 ## Documentation
 
 ### Admin User Interface
@@ -64,6 +72,8 @@ The admin interface can be found on: `https://kloudsoft91.github.io/mushroom_db_
 ### End User
 
 The main app is hosted at: `https://kloudsoft91.github.io/mushroom_db_app/`
+
+
 ## Contributing
 
 Contributions are always welcome!
