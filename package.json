@@ -16,7 +16,7 @@
     "@babel/preset-typescript": "^7.22.11",
     "@jest/globals": "^29.6.4",
     "@nuxt/devtools": "latest",
-    "@nuxt/image-edge": "^1.0.0-rc.1-28180077.d51e794",
+    "@nuxt/image-edge": "1.0.0-rc.3-28282346.a10323e",
     "@nuxtjs/tailwindcss": "^6.8.0",
     "@types/jest": "^29.5.4",
     "@types/node": "^18.17.1",
