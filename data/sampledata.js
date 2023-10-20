@@ -1281,7 +1281,7 @@ export default [
       "diameter_max": 10,
       "thickness_min": null,
       "thickness_max": null,
-      "shape": "Bundle of branches"
+      "shape": "irregular"
     },
     "environment": "Dead, decaying wood",
     "ecology": "saprotrophic",
