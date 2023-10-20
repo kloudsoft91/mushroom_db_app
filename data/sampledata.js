@@ -755,7 +755,6 @@ export default [
             "MushroomCards/Oyster1_pk8ykc.jpg"
         ]
     },
-
     {
         "id": 10,
         "stipe_features": {
