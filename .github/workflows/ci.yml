@@ -68,9 +68,7 @@ jobs:
           path: .output/public
 
       - name: Cypress run
-        uses: cypress-io/github-action@v6  
-        with:
-          run: npx cypress run
+        run: npx cypress run
         
 
   deploy:
