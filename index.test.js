@@ -558,7 +558,7 @@ describe('Index', () => {
 
   it('should handle and store all incoming emit parameters', () => {
     const handledFunct = wrapper.vm.handleSearch("bolete");
-    expect(handledFunct).toBe(["bolete"]);
+    expect(handledFunct).toBe("bolete");
     
     const handledFunct2 = wrapper.vm.handleTags("poisonous");
     expect(handledFunct2).toBe("poisonous");
