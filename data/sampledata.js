@@ -58,7 +58,7 @@ export default [
         "lookalikes": [
             null
         ],
-        "lookalikes_description": "The mushroom can sometimes be confused with the Magpie Fungus which is poisonous (Aus). Coprinopsis Atramentaria (the Common Ink Cap) is similar, and contains \\\\     coprine and can induce coprine poisoning, particularly when consumed with alcohol (NZ). Desert Shaggy Mane is also similar (Aus).",
+        "lookalikes_description": "The mushroom can sometimes be confused with the Magpie Fungus which is poisonous (Aus). Coprinopsis Atramentaria (the Common Ink Cap) is similar, and contains coprine and can induce coprine poisoning, particularly when consumed with alcohol (NZ). Desert Shaggy Mane is also similar (Aus).",
         "links": [
             "https://www.inaturalist.org/taxa/47392-Coprinus-comatus",
             "https://en.wikipedia.org/wiki/Coprinus_comatus"
@@ -405,7 +405,7 @@ export default [
         "lookalikes": [
             null
         ],
-        "lookalikes_description": "Although there are many Cortinarius species with some degree of violet colour, C. violaceus and its close relatives are easily distinguished by their much \\     darker purple colour.  Cortinarius iodes of the southeastern United States has a slimy purple cap and paler violet stipe. The other species in the section Cortinarius are \\     dark purple and superficially similar, but can be differentiated based on host and geography as they do not occur in the same locations as C. violaceus.",
+        "lookalikes_description": "Although there are many Cortinarius species with some degree of violet colour, C. violaceus and its close relatives are easily distinguished by their much darker purple colour.  Cortinarius iodes of the southeastern United States has a slimy purple cap and paler violet stipe. The other species in the section Cortinarius are dark purple and superficially similar, but can be differentiated based on host and geography as they do not occur in the same locations as C. violaceus.",
         "links": [
             "https://inaturalist.nz/taxa/127053-Cortinarius-porphyroideus",
             "https://en.wikipedia.org/wiki/Cortinarius_porphyroideus"
@@ -510,7 +510,7 @@ export default [
         ],
         "genus": "Chlorophyllum",
         "description": "The shaggy parasol is a large and conspicuous agaric, with thick brown scales and protuberances on its fleshy white cap. It is fleshy, and a reddish, or maroon discoloration occurs and a pungent odour is evolved when it is cut.",
-        "lookalikes_description": "The shaggy parasol is similar in appearance to the similarly edible parasol mushroom, Macrolepiota procera. The latter grows considerably larger however, and \\     is more likely to be found in the open than C. rhacodes which prefers more shade and dislikes open pastures and fields. Another distinguishing feature is that C. rhacodes lacks \\     the brown bands that are on the stem of M. procera.",
+        "lookalikes_description": "The shaggy parasol is similar in appearance to the similarly edible parasol mushroom, Macrolepiota procera. The latter grows considerably larger however, and is more likely to be found in the open than C. rhacodes which prefers more shade and dislikes open pastures and fields. Another distinguishing feature is that C. rhacodes lacks the brown bands that are on the stem of M. procera.",
         "lookalikes": [
             null
         ],
@@ -1247,7 +1247,7 @@ export default [
         "lookalikes": [
             null
         ],
-        "lookalikes_description": "\"M. procera is a larger with broad caps up to 12 in (30 cm) in diameter, and the stipe surface is covered with brownish zigzag bands or scaly girdles on a \\     whitish background. The 'false parasol', Chlorophyllum molybdites, a toxic species that can be mistaken for M. konradii, also occurs in Australia (but not New Zealand). \\     It can be distinguished by its green spore print and gills that turn light green in age. Some deadly poisonous Lepiota species have a similar pattern of scales on the cap, \\     but their fruitbodies are smaller",
+        "lookalikes_description": "\"M. procera is a larger with broad caps up to 12 in (30 cm) in diameter, and the stipe surface is covered with brownish zigzag bands or scaly girdles on a whitish background. The 'false parasol', Chlorophyllum molybdites, a toxic species that can be mistaken for M. konradii, also occurs in Australia (but not New Zealand). It can be distinguished by its green spore print and gills that turn light green in age. Some deadly poisonous Lepiota species have a similar pattern of scales on the cap, but their fruitbodies are smaller",
         "links": [
             "https://www.inaturalist.org/taxa/354649-Macrolepiota-clelandii",
             "https://en.wikipedia.org/wiki/Macrolepiota_clelandii"
@@ -1346,11 +1346,11 @@ export default [
             "None"
         ],
         "genus": "Amanita",
-        "description": "A. phalloides is one of the most poisonous of all known mushrooms. It is estimated that as little as half a mushroom contains enough toxin to kill an \\     adult human. It has been involved in the majority of human deaths from mushroom poisonin. Young specimens first emerge from the ground resembling a white egg covered by \\     a universal veil, which then breaks, leaving the volva as a remnant.",
+        "description": "A. phalloides is one of the most poisonous of all known mushrooms. It is estimated that as little as half a mushroom contains enough toxin to kill an adult human. It has been involved in the majority of human deaths from mushroom poisonin. Young specimens first emerge from the ground resembling a white egg covered by a universal veil, which then breaks, leaving the volva as a remnant.",
         "lookalikes": [
             null
         ],
-        "lookalikes_description": "A. phalloides is similar to the edible paddy straw mushroom (Volvariella volvacea) and A. princeps, commonly known as 'white Caesar'. Some may mistake \\     juvenile death caps for edible puffballs or mature specimens for other edible Amanita species, such as A. lanei, so some authorities recommend avoiding the collecting \\     of Amanita species for the table altogether. The white form of A. phalloides may be mistaken for edible species of Agaricus, especially the young fruitbodies whose \\     unexpanded caps conceal the telltale white gills; all mature species of Agaricus have dark-colored gills.",
+        "lookalikes_description": "A. phalloides is similar to the edible paddy straw mushroom (Volvariella volvacea) and A. princeps, commonly known as 'white Caesar'. Some may mistake juvenile death caps for edible puffballs or mature specimens for other edible Amanita species, such as A. lanei, so some authorities recommend avoiding the collecting of Amanita species for the table altogether. The white form of A. phalloides may be mistaken for edible species of Agaricus, especially the young fruitbodies whose unexpanded caps conceal the telltale white gills; all mature species of Agaricus have dark-colored gills.",
         "links": [
             "https://www.inaturalist.org/taxa/52135-Amanita-phalloides",
             "https://en.wikipedia.org/wiki/Amanita_phalloides"
@@ -1376,16 +1376,88 @@ export default [
             "MushroomCards/DeathCap1_cawgjg.jpg"
         ]
     },
-    "nz_books": "A Field Guide to the Native Edible Plants of New Zealand",
-    "edibility": "Edible",
-    "stipe_features": {
-      "diameter_min": 1,
-      "diameter_max": 2,
-      "colour": ["white"],
-      "length_min": 3,
-      "length_max": 10,
-      "bruising_colour": "dingy reddish brown",
-      "type": "bare"
+    {
+        "id": 15,
+        "stipe_features": {
+            "description": "The stipe is usually cream coloured or brown with a thin ring.",
+            "diameter_min": 0,
+            "diameter_max": 0,
+            "colour": [
+                "cream",
+                "brown",
+                "purple"
+            ],
+            "length_min": 4,
+            "length_max": 7,
+            "bruising_colour": null,
+            "type": "ring"
+        },
+        "gills": {
+            "description": "White gills on the undercap, with an adnate attachment that becomes decurrent with age.",
+            "colour": [
+                "white"
+            ],
+            "attachment": "decurrent or adnate",
+            "spore_colour": "white"
+        },
+        "cap_features": {
+            "description": "The cap is brown or sometimes olive coloured. Usually moist and slimy but can also be scaly. Convex or flat in shape.",
+            "colour": [
+                "brown",
+                "olive"
+            ],
+            "diameter_min": null,
+            "diameter_max": null,
+            "thickness_min": null,
+            "thickness_max": null,
+            "texture": "Scaly, moist, slimy.",
+            "shape": [
+                "convex",
+                "flat"
+            ]
+        },
+        "tags": [
+            "edible"
+        ],
+        "latin_names": [
+            "Armillaria novae-zelandiae"
+        ],
+        "common_names": [
+            "Austral Honey Mushroom"
+        ],
+        "maori_names": [
+            "Harore"
+        ],
+        "genus": "Armillaria",
+        "description": "This plant pathogen species is one of three Armillaria species that have been identified in New Zealand (the others are A. limonea and A. hinnulea). Have a wide host range and can cause disease on a variety of tree species throughout New Zealand; particularly in plantations, home gardens, and parks. Armillaria novae-zelandiae occurs in indigenous forests as a decay fungus of dead trees, stumps, and logs. It causes butt rots in living trees as well",
+        "lookalikes": [
+            null
+        ],
+        "lookalikes_description": "In both New Zealand and Australia, there are various mushrooms with similar appearances to Armillaria species. For example, some Galerina species and Cortinarius species may resemble Armillaria mushrooms. Some of these lookalikes can be toxic.",
+        "links": [
+            "https://www.inaturalist.org/taxa/55930-Armillaria",
+            "https://en.wikipedia.org/wiki/Armillaria"
+        ],
+        "nz_books": [
+            "Field Guide to Fungi - Greta Stevenson",
+            "A Field guide to the native edible plants of new zealand - andrew crowe"
+        ],
+        "edibility": "Edible",
+        "ecology": "mycorrhizal and saprotrophic",
+        "environment": "Dead broad-leaved trees or on their fallen timber",
+        "time_of_year": [
+            "march",
+            "april",
+            "may",
+            "june",
+            "july",
+            "august"
+        ],
+        "native_or_introduced": "native",
+        "photos": [
+            "MushroomCards/AustralHoneyCard_wys1f8.jpg",
+            "MushroomCards/AustralHoney1_ovxlk3.jpg"
+        ]
     },
     "gills": {
       "colour": "initially pink, then red-brown and finally a dark brown",
@@ -1478,7 +1550,9 @@ export default [
         ],
         "native_or_introduced": "native",
         "photos": [
-            ""
+            "MushroomCards/BluePinkGillCard_vui16e.jpg",
+            "MushroomCards/BluePinkGill1_zolrjw.jpg",
+            "MushroomCards/BluePinkGill2_csngez.jpg"
         ],
         "lookalikes": [
             null
@@ -1559,7 +1633,9 @@ export default [
             "None"
         ],
         "photos": [
-            ""
+            "MushroomCards/AnemoneStinkhornCard_woj1jh.jpg",
+            "MushroomCards/AnemoneStinkhorn1_d5op5l.jpg",
+            "MushroomCards/AnemoneStinkhorn2_xtzpps.jpg"
         ],
         "lookalikes": [
             null
@@ -1639,7 +1715,10 @@ export default [
             "None"
         ],
         "photos": [
-            ""
+            "MushroomCards/WitchsHatCard_rycmud.jpg",
+            "MushroomCards/WitchsHat1_envklu.jpg",
+            "MushroomCards/WitchsHat2_i4wftg.jpg",
+            "MushroomCards/WitchsHat3_amddfo.jpg"
         ],
         "lookalikes": [
             null
@@ -1715,7 +1794,9 @@ export default [
             "edible"
         ],
         "photos": [
-            ""
+            "MushroomCards/LilacCoralFungusCard_rq2w0y.jpg",
+            "MushroomCards/LilacCoralFungus1_cqbzlh.jpg",
+            "MushroomCards/LilacCoralFungus2_kubatm.jpg"
         ],
         "lookalikes": [
             null
@@ -1798,7 +1879,11 @@ export default [
             "None"
         ],
         "photos": [
-            ""
+            "MushroomCards/JewelledAmanitaCard_hnfxfk.jpg",
+            "MushroomCards/JewelledAmanita1_tkkssu.jpg",
+            "MushroomCards/JewelledAmanita2_des5yn.jpg",
+            "MushroomCards/JewelledAmanita3_i4o84h.jpg",
+            "MushroomCards/JewelledAmanita4_cmjxo8.jpg"
         ],
         "lookalikes": [
             null
@@ -1873,7 +1958,10 @@ export default [
             "None"
         ],
         "photos": [
-            ""
+            "MushroomCards/UglyMilkcapCard_x6mvj7.jpg",
+            "MushroomCards/UglyMilkcap1_bsrubd.jpg",
+            "MushroomCards/UglyMilkcap2_vublsx.jpg",
+            "MushroomCards/UglyMilkcap3_xdxoyf.jpg"
         ],
         "lookalikes": [
             null
