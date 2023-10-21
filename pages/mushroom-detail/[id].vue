@@ -109,6 +109,24 @@
             </tbody>
           </table>
         </div>
+        <div class="overflow-x-auto">
+          <!-- Month data -->
+          <table class="w-full mb-4">
+            <tbody>
+              <tr>
+                <td v-for="(feature, featureName) in month" :key="featureName">
+                  <td class="font-semibold">{{ featureName }}:</td>
+                  <!-- Display each properties attributes -->
+                  <tr v-for="attribute in feature" :key="attribute.key">
+                    <td class="px-4 py-2" v-for="item in getValueFromData(mushroomData, attribute.key)">
+                      <nuxt-link :to="{path: '/', query: { label: attribute.key, item: item }}" class="small-link">{{ item }}</nuxt-link>
+                    </td>
+                  </tr>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
       </div>
     </div>
   </div>
@@ -157,6 +175,11 @@ export default {
           { label: 'Attachment', key: 'gills.attachment' },
         ],
         Spores:[{ label: 'Colour', key: 'spore_colour' }],
+      },
+      month: {
+        Month: [
+          {label: 'Month', key: "time_of_year" },
+        ]
       }
     };
   },
