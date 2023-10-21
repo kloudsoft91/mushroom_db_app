@@ -1,6 +1,6 @@
 <template>
   <div class="bg-gray-100 min-h-screen p-4">
-    <FooterBar @openCarouselInputs="openCarouselInputs" />
+    <FooterBar />
 
     <!-- Main content container -->
     <div class="z-0 bg-emerald-700 relative py-8 tablet:py-24 desktop:py-28 shadow-md">
