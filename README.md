@@ -67,13 +67,32 @@ The deployment step in the GitHub Action is:
 
 The admin interface can be found on: `https://kloudsoft91.github.io/mushroom_db_app/admin`
 
+![Screenshot of the Admin UI](assets/images/adminui_main.png?raw=true "Admin UI")
 
+The Admin UI is to be used by admins of the app to create meta data to add to the app's storage. The admin page is a simple form that allows admins to generate JSON data for mushrooms that are to be added to the app.
+
+Note: The ID must be updated before pushing the data into the app's storage. All other fields are initialised to either null or empty strings / arrays.
 
 ### End User
 
 The main app is hosted at: `https://kloudsoft91.github.io/mushroom_db_app/`
 
-![Screenshot of the main ui search controls](assets/images/ui_main_search.png?raw=true "Main Search UI")
+#### Searching for Mushrooms
+
+![Screenshot of the Main UI search controls](assets/images/ui_main_search.png?raw=true "Main Search UI - Search")
+
+- The top searchbox allows users to enter in names of known mushrooms, either common or latin names. Typing in data will dynamically filter the mushroom cards below, with a temporary red error message above if invalid user inputs are entered.
+- The length searchboxes below can also be used to find mushrooms based on the measured size of mushrooms found.
+- The Tag bar below the searchboxes can be used to find Edible, Gourmet, Poisonous, Psychoactive mushrooms as well as mushrooms with lookalikes.
+
+#### Filtering Mushrooms
+
+![Screenshot of the Main UI filter controls](assets/images/ui_main_filters.png?raw=true "Main Search UI - Filters")
+
+At the bottom left corner of the screen, the bottom green Filters button will expand out an accordion of filter bars.
+
+- Buttons can be clicked to apply filters or toggle them off
+- The filter accordion bars can be closed by clicking outside the filter window
 
 
 ## Contributing
