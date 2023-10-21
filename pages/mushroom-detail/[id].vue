@@ -88,7 +88,7 @@
                         <nuxt-link v-if="attribute.label != 'Description'"
                           :to="{ path: '/', query: { label: attribute.key, item: item } }" 
                           class="small-link">
-                          {{ item }}
+                          {{ attribute.size ? item + ' cm' : item }}
                         </nuxt-link>
                         <p v-else>
                           {{ item }}
@@ -128,11 +128,11 @@ export default {
       features: {
         Stipe: [
           { label: 'Description', key: 'stipe_features.description' },
-          { label: 'Minimum diameter', key: 'stipe_features.diameter_min' },
-          { label: 'Maximum diameter', key: 'stipe_features.diameter_max' },
+          { label: 'Minimum diameter', key: 'stipe_features.diameter_min', size: true},
+          { label: 'Maximum diameter', key: 'stipe_features.diameter_max', size: true },
           { label: 'Colour', key: 'stipe_features.colour' },
-          { label: 'Minimum length', key: 'stipe_features.length_min' },
-          { label: 'Maximum length', key: 'stipe_features.length_max' },
+          { label: 'Minimum length', key: 'stipe_features.length_min', size: true },
+          { label: 'Maximum length', key: 'stipe_features.length_max', size: true },
           { label: 'Bruising colour', key: 'stipe_features.bruising_colour' },
           { label: 'Type', key: 'stipe_features.type' },
         ],
@@ -140,10 +140,10 @@ export default {
           { label: 'Description', key: 'cap_features.description' },
           { label: 'Colour', key: 'cap_features.colour' },
           { label: 'Texture', key: 'cap_features.texture' },
-          { label: 'Minimum diameter', key: 'cap_features.diameter_min' },
-          { label: 'Maximum diameter', key: 'cap_features.diameter_max' },
-          { label: 'Minimum thickness', key: 'cap_features.thickness_min' },
-          { label: 'Maximum thickness', key: 'cap_features.thickness_max' },
+          { label: 'Minimum diameter', key: 'cap_features.diameter_min', size: true },
+          { label: 'Maximum diameter', key: 'cap_features.diameter_max', size: true },
+          { label: 'Minimum thickness', key: 'cap_features.thickness_min', size: true },
+          { label: 'Maximum thickness', key: 'cap_features.thickness_max', size: true },
           { label: 'Shape', key: 'cap_features.shape' },
         ],
         Gills: [
