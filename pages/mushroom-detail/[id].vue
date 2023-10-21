@@ -1,10 +1,11 @@
 <template>
   <div class="bg-gray-100 min-h-screen p-4">
-    <HeaderBar />
-    <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter" />
     <FooterBar @openCarouselInputs="openCarouselInputs" />
 
     <!-- Main content container -->
+    <div class="z-0 bg-emerald-700 relative py-8 tablet:py-24 desktop:py-28 shadow-md">
+      <h1 class="flex w-11/12 desktop:w-3/4 mx-auto tablet:-mt-12 desktop:-mt-20 font-bold text-white text-lg tablet:text-2xl laptop:text-3xl desktop:text-5xl">Mushroom Details</h1>
+    </div>
     <div class="container mx-auto mt-8">
       <div class="grid grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-2 desktop:grid-cols-2 ultra:grid-cols-2 gap-10 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto">
         <!-- Image carousel -->
