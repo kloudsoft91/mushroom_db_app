@@ -60,6 +60,12 @@
                 <p>Umbonate</p>
             </div>
         </Slide>
+        <Slide :key="11">
+            <div @click="emitCapShape('irregular')" class="mush-slide">
+                <img class="cap-image" src="./images/irregular.png" alt="Irregular" >
+                <p>Irregular</p>
+            </div>
+        </Slide>
         <!--<Carousel :items-to-show="10" :wrap-around="true">
             <Slide v-for="data in whateverData" :key="data.name">
                 ... other stuff using data in here i guess?

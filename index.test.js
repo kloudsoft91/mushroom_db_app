@@ -13,9 +13,9 @@ describe('Index', () => {
   
   it('should filter based on one selected tag', () => {
     const mockMushrooms = [
-      { id: 1, common_names: 'Mushroom 1', tags: ['edible'] },
-      { id: 2, common_names: 'Mushroom 2', tags: ['poisonous'] },
-      { id: 3, common_names: 'Mushroom 3', tags: ['edible'] },
+      { id: 1, common_names: ['Mushroom 1'], tags: ['edible'] },
+      { id: 2, common_names: ['Mushroom 2'], tags: ['poisonous'] },
+      { id: 3, common_names: ['Mushroom 3'], tags: ['edible'] },
     ];
 
     wrapper.vm.selectedTag = 'edible';
@@ -23,16 +23,16 @@ describe('Index', () => {
     const filteredMushrooms = wrapper.vm.filterByTags(mockMushrooms);
     
     expect(filteredMushrooms).toHaveLength(2);
-    expect(filteredMushrooms[0].common_names).toBe('Mushroom 1');
-    expect(filteredMushrooms[1].common_names).toBe('Mushroom 3');
+    expect(filteredMushrooms[0].id).toBe(1);
+    expect(filteredMushrooms[1].id).toBe(3);
   })
 
   
   it('should display all mushrooms when no tag is selected', () => {
     const mockMushrooms = [
-      { id: 1, common_names: 'Mushroom 1', tags: ['edible'] },
-      { id: 2, common_names: 'Mushroom 2', tags: ['poisonous'] },
-      { id: 3, common_names: 'Mushroom 3', tags: ['edible'] },
+      { id: 1, common_names: ['Mushroom 1'], tags: ['edible'] },
+      { id: 2, common_names: ['Mushroom 2'], tags: ['poisonous'] },
+      { id: 3, common_names: ['Mushroom 3'], tags: ['edible'] },
     ];
 
     wrapper.vm.selectedTag = '';
@@ -40,22 +40,22 @@ describe('Index', () => {
     const filteredMushrooms = wrapper.vm.filterByTags(mockMushrooms);
     
     expect(filteredMushrooms).toHaveLength(3);
-    expect(filteredMushrooms[0].common_names).toBe('Mushroom 1');
-    expect(filteredMushrooms[1].common_names).toBe('Mushroom 2');
-    expect(filteredMushrooms[2].common_names).toBe('Mushroom 3');
+    expect(filteredMushrooms[0].id).toBe(1);
+    expect(filteredMushrooms[1].id).toBe(2);
+    expect(filteredMushrooms[2].id).toBe(3);
   })
 
   it('should filter based on common name', () => {
     const mockMushrooms = [
       {
         id: 1,
-        common_names: 'Shaggy Mane',
-        latin_names: 'Coprinus comatus',
+        common_names: ['Shaggy Mane'],
+        latin_names: ['Coprinus comatus'],
       },
       {
         id: 2,
-        common_names: 'Fly Agaric',
-        latin_names: 'Amanita muscaria',
+        common_names: ['Fly Agaric'],
+        latin_names: ['Amanita muscaria'],
       }
     ];
 
@@ -64,20 +64,20 @@ describe('Index', () => {
     const filteredMushrooms = wrapper.vm.filterByName(mockMushrooms, wrapper.vm.searchInput);
 
     expect(filteredMushrooms).toHaveLength(1);
-    expect(filteredMushrooms[0].common_names).toBe('Shaggy Mane');
+    expect(filteredMushrooms[0].id).toBe(1);
   })
 
   it('should filter based on latin name', () => {
     const mockMushrooms = [
       {
         id: 1,
-        common_names: 'Shaggy Mane',
-        latin_names: 'Coprinus comatus',
+        common_names: ['Shaggy Mane'],
+        latin_names: ['Coprinus comatus'],
       },
       {
         id: 2,
-        common_names: 'Fly Agaric',
-        latin_names: 'Amanita muscaria',
+        common_names: ['Fly Agaric'],
+        latin_names: ['Amanita muscaria'],
       }
     ];
 
@@ -86,20 +86,20 @@ describe('Index', () => {
     const filteredMushrooms = wrapper.vm.filterByName(mockMushrooms, wrapper.vm.searchInput);
 
     expect(filteredMushrooms).toHaveLength(1);
-    expect(filteredMushrooms[0].latin_names).toBe('Amanita muscaria');
+    expect(filteredMushrooms[0].id).toBe(2);
   })
 
   it('should display none if unexpected character in name', () => {
     const mockMushrooms = [
       {
         id: 1,
-        common_names: 'Shaggy Mane',
-        latin_names: 'Coprinus comatus',
+        common_names: ['Shaggy Mane'],
+        latin_names: ['Coprinus comatus'],
       },
       {
         id: 2,
-        common_names: 'Fly Agaric',
-        latin_names: 'Amanita muscaria',
+        common_names: ['Fly Agaric'],
+        latin_names: ['Amanita muscaria'],
       }
     ];
 
@@ -115,13 +115,13 @@ describe('Index', () => {
       {
         id: 1,
         tags: ['edible'],
-        common_names: 'Shaggy Mane',
-        latin_names: 'Coprinus comatus',
+        common_names: ['Shaggy Mane'],
+        latin_names: ['Coprinus comatus'],
       },
       {
         id: 2,
-        common_names: 'Fly Agaric',
-        latin_names: 'Amanita muscaria',
+        common_names: ['Fly Agaric'],
+        latin_names: ['Amanita muscaria'],
       }
     ];
 
@@ -136,9 +136,9 @@ describe('Index', () => {
 
   it('should filter mushrooms based on selected cap shape', () => {
     const mockMushrooms = [
-      { id: 1, common_names: 'Mushroom 1', cap_features: { shape: 'convex' } },
-      { id: 2, common_names: 'Mushroom 2', cap_features: { shape: 'flat' } },
-      { id: 3, common_names: 'Mushroom 3', cap_features: { shape: 'convex' } },
+      { id: 1, common_names: ['Mushroom 1'], cap_features: { shape: 'convex' } },
+      { id: 2, common_names: ['Mushroom 2'], cap_features: { shape: 'flat' } },
+      { id: 3, common_names: ['Mushroom 3'], cap_features: { shape: 'convex' } },
     ];
     
     wrapper.vm.selectedCapShape = 'convex';
@@ -146,15 +146,15 @@ describe('Index', () => {
     const filteredMushrooms = wrapper.vm.filterByCapShape(mockMushrooms);
 
     expect(filteredMushrooms).toHaveLength(2);
-    expect(filteredMushrooms[0].common_names).toBe('Mushroom 1');
-    expect(filteredMushrooms[1].common_names).toBe('Mushroom 3');
+    expect(filteredMushrooms[0].id).toBe(1);
+    expect(filteredMushrooms[1].id).toBe(3);
   });
 
   it('should return all mushrooms when selected cap shape is null', () => {
     const mockMushrooms = [
-      { id: 1, common_names: 'Mushroom 1', cap_features: { shape: 'convex' } },
-      { id: 2, common_names: 'Mushroom 2', cap_features: { shape: 'flat' } },
-      { id: 3, common_names: 'Mushroom 3', cap_features: { shape: 'convex' } },
+      { id: 1, common_names: ['Mushroom 1'], cap_features: { shape: 'convex' } },
+      { id: 2, common_names: ['Mushroom 2'], cap_features: { shape: 'flat' } },
+      { id: 3, common_names: ['Mushroom 3'], cap_features: { shape: 'convex' } },
     ];
 
 
@@ -289,22 +289,22 @@ describe('Index', () => {
       { 
         id: 1, 
         tags: ['edible'],
-        common_names: 'Mushroom 1',
-        latin_names: 'Mushroomus Maximus',
+        common_names: ['Mushroom 1'],
+        latin_names: ['Mushroomus Maximus'],
         cap_features: {shape: 'flat'},
       },
       { 
         id: 2, 
         tags: ['edible'],
-        common_names: 'Fungus 1',
-        latin_names: 'Fungus Fleshius',
+        common_names: ['Fungus 1'],
+        latin_names: ['Fungus Fleshius'],
         cap_features: {shape: 'convex'},
       },
       { 
         id: 3, 
         tags: ['edible'],
-        common_names: 'Mushroom 2',
-        latin_names: 'Magicus',
+        common_names: ['Mushroom 2'],
+        latin_names: ['Magicus'],
         cap_features: {shape: 'convex'},
       }
     ];
@@ -314,21 +314,20 @@ describe('Index', () => {
     wrapper.vm.searchInput = 'Mushroom';
     wrapper.vm.selectedCapShape = 'convex';
 
+    //create dummy HTML alert element for applyAllFilters alert reset line
+    document.body.innerHTML =
+    '<div>' +
+    '  <span id="inputerror" />' +
+    '</div>';
+
     // Trigger applyAllFilters method
     wrapper.vm.applyAllFilters();
 
     expect(wrapper.vm.filteredMushrooms).toHaveLength(1);
-    expect(wrapper.vm.filteredMushrooms[0].common_names).toBe('Mushroom 2');
+    expect(wrapper.vm.filteredMushrooms[0].id).toBe(3);
   }); 
-
   
-/**
- * 
- * THESE METHODS AREN'T YET IMPLEMENTED IN INDEX.VUE SO WILL BE SKIPPED IN TEST FOR NOW
- * 
-*/
-  
-  xit('should display all if no stipe colour is provided', () => {
+  it('should display all if no stipe colour is provided', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -345,7 +344,7 @@ describe('Index', () => {
     ];
 
     // Set search inputs
-    wrapper.vm.stipeColour = "";
+    wrapper.vm.selectedStipeColour = "";
 
     // Trigger filterByStipeColour method
     const filteredMushrooms = wrapper.vm.filterByStipeColour(mockMushrooms);
@@ -356,7 +355,7 @@ describe('Index', () => {
     expect(filteredMushrooms[2].id).toBe(3);
   })
 
-  xit('should filter based on stipe colour', () => {
+  it('should filter based on stipe colour', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -373,7 +372,7 @@ describe('Index', () => {
     ];
 
     // Set search inputs
-    wrapper.vm.stipeColour = 'White';
+    wrapper.vm.selectedStipeColour = 'White';
 
     // Trigger filterByStipeColour method
     const filteredMushrooms = wrapper.vm.filterByStipeColour(mockMushrooms);
@@ -383,7 +382,7 @@ describe('Index', () => {
     expect(filteredMushrooms[1].id).toBe(2);
   })
 
-  xit('should display none found with stipe colour provided', () => {
+  it('should display none found with stipe colour provided', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -400,7 +399,7 @@ describe('Index', () => {
     ];
 
     // Set search inputs
-    wrapper.vm.stipeColour = 'Yellow';
+    wrapper.vm.selectedStipeColour = 'Yellow';
 
     // Trigger filterByStipeColour method
     const filteredMushrooms = wrapper.vm.filterByStipeColour(mockMushrooms);
@@ -408,7 +407,7 @@ describe('Index', () => {
     expect(filteredMushrooms).toHaveLength(0);
   })
 
-  xit('should display all if no cap colour is provided', () => {
+  it('should display all if no cap colour is provided', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -425,7 +424,7 @@ describe('Index', () => {
     ];
 
     // Set search inputs
-    wrapper.vm.capColour = "";
+    wrapper.vm.selectedCapColour = "";
 
     // Trigger filterByCapColour method
     const filteredMushrooms = wrapper.vm.filterByCapColour(mockMushrooms);
@@ -436,7 +435,7 @@ describe('Index', () => {
     expect(filteredMushrooms[2].id).toBe(3);
   })
 
-  xit('should filter based on cap colour', () => {
+  it('should filter based on cap colour', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -453,7 +452,7 @@ describe('Index', () => {
     ];
 
     // Set search inputs
-    wrapper.vm.capColour = 'White';
+    wrapper.vm.selectedCapColour = 'White';
 
     // Trigger filterByCapColour method
     const filteredMushrooms = wrapper.vm.filterByCapColour(mockMushrooms);
@@ -463,7 +462,7 @@ describe('Index', () => {
     expect(filteredMushrooms[1].id).toBe(2);
   })
 
-  xit('should display none found with cap colour provided', () => {
+  it('should display none found with cap colour provided', () => {
     const mockMushrooms = [
       { 
         id: 1, 
@@ -480,7 +479,7 @@ describe('Index', () => {
     ];
 
     // Set search inputs
-    wrapper.vm.capColour = 'Yellow';
+    wrapper.vm.selectedCapColour = 'Yellow';
 
     // Trigger filterByCapColour method
     const filteredMushrooms = wrapper.vm.filterByCapColour(mockMushrooms);
@@ -488,7 +487,7 @@ describe('Index', () => {
     expect(filteredMushrooms).toHaveLength(0);
   }) 
 
-  xit('should return correct integer for the given month', () => {
+  it('should return correct integer for the given month', () => {
     expect(wrapper.vm.monthToInt('january')).toBe(1);
     expect(wrapper.vm.monthToInt('february')).toBe(2);
     expect(wrapper.vm.monthToInt('march')).toBe(3);
@@ -496,89 +495,94 @@ describe('Index', () => {
     expect(wrapper.vm.monthToInt('may')).toBe(5);
     expect(wrapper.vm.monthToInt('june')).toBe(6);
     expect(wrapper.vm.monthToInt('july')).toBe(7);
-    expect(wrapper.vm.monthToInt('August')).toBe(8);
+    expect(wrapper.vm.monthToInt('august')).toBe(8);
     expect(wrapper.vm.monthToInt('september')).toBe(9);
     expect(wrapper.vm.monthToInt('october')).toBe(10);
     expect(wrapper.vm.monthToInt('november')).toBe(11);
     expect(wrapper.vm.monthToInt('december')).toBe(12);
   });
 
-  xit('should return undefined for an invalid month', () => {
+  it('should return undefined for an invalid month', () => {
     expect(wrapper.vm.monthToInt('invalid')).toBeUndefined();
   });
 
 
-  xit('should filter based on season', () => {
+  it('should filter based on month', () => {
     const mockMushrooms = [
       {
         id: 1,
-        common_names: 'Mushroom 1',
+        common_names: ['Mushroom 1'],
         time_of_year: 'Late spring to autumn (October to April in the Southern Hemisphere)'
       },
       {
         id: 2,
-        common_names: 'Mushroom 2',
+        common_names: ['Mushroom 2'],
         time_of_year: 'Late summer (March to June in the Southern Hemisphere)'
       }
     ];
 
     // Set search inputs
-    wrapper.vm.seasonSearch = "Autumn";
+    wrapper.vm.selectedMonth = "October";
 
     // Trigger filterBySeason method
-    const filteredMushrooms = wrapper.vm.filterBySeason(mockMushrooms);
+    const filteredMushrooms = wrapper.vm.filterByMonth(mockMushrooms);
 
     expect(filteredMushrooms).toHaveLength(1);
     expect(filteredMushrooms[0].id).toBe(1);
   })
 
-  xit('should filter based on month', () => {
+  it('should filter based on month within range', () => {
     const mockMushrooms = [
       {
         id: 1,
-        common_names: 'Mushroom 1',
+        common_names: ['Mushroom 1'],
         time_of_year: 'Late spring to autumn (October to April in the Southern Hemisphere)'
       },
       {
         id: 2,
-        common_names: 'Mushroom 2',
+        common_names: ['Mushroom 2'],
         time_of_year: 'Late summer (March to June in the Southern Hemisphere)'
       }
     ];
 
     // Set search inputs
-    wrapper.vm.seasonSearch = "October";
-
-    // Trigger filterBySeason method
-    const filteredMushrooms = wrapper.vm.filterBySeason(mockMushrooms);
-
-    expect(filteredMushrooms).toHaveLength(1);
-    expect(filteredMushrooms[0].id).toBe(1);
-  })
-
-  xit('should filter based on month within range', () => {
-    const mockMushrooms = [
-      {
-        id: 1,
-        common_names: 'Mushroom 1',
-        time_of_year: 'Late spring to autumn (October to April in the Southern Hemisphere)'
-      },
-      {
-        id: 2,
-        common_names: 'Mushroom 2',
-        time_of_year: 'Late summer (March to June in the Southern Hemisphere)'
-      }
-    ];
-
-    // Set search inputs
-    wrapper.vm.seasonSearch = "April";
+    wrapper.vm.selectedMonth = "April";
 
     // Trigger filterByName method
-    const filteredMushrooms = wrapper.vm.filterBySeason(mockMushrooms);
+    const filteredMushrooms = wrapper.vm.filterByMonth(mockMushrooms);
 
     expect(filteredMushrooms).toHaveLength(2);
     expect(filteredMushrooms[0].id).toBe(1);
     expect(filteredMushrooms[1].id).toBe(2);
+  })
+
+  it('should handle and store all incoming emit parameters', () => {
+    const handledFunct = wrapper.vm.handleSearch("bolete");
+    expect(handledFunct).toBe("bolete");
+    
+    const handledFunct2 = wrapper.vm.handleTags("poisonous");
+    expect(handledFunct2).toBe("poisonous");
+    
+    const handledFunct3 = wrapper.vm.handleCapShape("convex");
+    expect(handledFunct3).toBe("convex");
+    
+    const handledFunct4 = wrapper.vm.handleGills("adnate");
+    expect(handledFunct4).toBe("adnate");
+    
+    const handledFunct5 = wrapper.vm.handleEcology("saprotrophic");
+    expect(handledFunct5).toBe("saprotrophic");
+    
+    const handledFunct6 = wrapper.vm.handleStipe("ring");
+    expect(handledFunct6).toBe("ring");
+    
+    const handledFunct7 = wrapper.vm.handleStipeColour("red");
+    expect(handledFunct7).toBe("red");
+    
+    const handledFunct8 = wrapper.vm.handleCapColour("white");
+    expect(handledFunct8).toBe("white");
+    
+    const handledFunct9 = wrapper.vm.handleMonth("january");
+    expect(handledFunct9).toBe("january");
   })
 
 

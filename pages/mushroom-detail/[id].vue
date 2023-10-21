@@ -19,7 +19,7 @@
           </carousel>
           <!-- Information table -->
           <div class="bg-white rounded-lg shadow-lg p-4">
-            <h1 class="text-3xl font-semibold my-4">{{ mushroomData.common_names.split(',').map(name => name.trim()).join(' / ') }}</h1>
+            <h1 class="text-3xl font-semibold my-4">{{ mushroomData.common_names.join(' / ') }}</h1>
             <table class="w-full mb-4">
               <tbody>
                 <tr v-for="attribute in informationAttributes" :key="attribute.key">
