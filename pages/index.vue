@@ -72,6 +72,9 @@ export default{
         case "gills.attachment":
           this.handleGills(this.item);
           break;
+        case "time_of_year":
+          this.handleMonth(this.item);
+          break;
         default:
           this.applyAllFilters();
       }
@@ -256,11 +259,12 @@ export default{
     //Season filter
     filterByMonth(data){
       //check if defined
+      //console.log("testing filterByMonth" + data);
       if (!this.selectedMonth) {
         return data;
       }
-      return data.filter(d =>
-        this.filterByMonthInt(this.selectedMonth.toLowerCase(), d.time_of_year.toLowerCase())
+      return data.filter((d) =>
+        d.time_of_year.includes(this.selectedMonth.toLowerCase())
       );
     },
 
