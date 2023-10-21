@@ -88,11 +88,12 @@
                         <nuxt-link v-if="attribute.label != 'Description'"
                           :to="{ path: '/', query: { label: attribute.key, item: item } }" 
                           class="small-link">
-                          {{ attribute.size ? item + ' cm' : item }}
+                          {{ item }}
                         </nuxt-link>
                         <p v-else>
                           {{ item }}
                         </p>
+                        <span class="small-link">{{ attribute.size ? ' cm' : '' }}</span>
                       </span>
                     </td>
                   </tr>
