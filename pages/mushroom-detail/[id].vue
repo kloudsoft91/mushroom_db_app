@@ -60,8 +60,8 @@
                 <tr class="px-4 py-2 font-semibold">Description:</tr> 
                 <td class="px-4 py-2">{{ mushroomData.description }}</td>
                 <tr class="px-4 py-2 font-semibold">Lookalikes:</tr> 
-                <td class="px-4 py-2">{{ mushroomData.lookalikes }}</td> 
-                <tr class="px-4 py-2 font-semibold"></tr> 
+                <!-- <td class="px-4 py-2">{{ mushroomData.lookalikes}}</td> 
+                <tr class="px-4 py-2 font-semibold"></tr> -->
                 <td class="px-4 py-2">{{ mushroomData.lookalikes_description === null || mushroomData.lookalikes_description === "" ? 'No lookalikes known in NZ' : mushroomData.lookalikes_description }}</td>
               </tbody>
             </table>
@@ -69,63 +69,35 @@
         </div>
       </div>
 
-      <!-- Feature tables -->
-      <div class="bg-white rounded-lg shadow-lg p-4 mt-8 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto mb-12">
-        <h2 class="text-2xl font-semibold mb-2">Features</h2>
-        <div class="overflow-x-auto">
-          <!-- Stipe and Cap data -->
-          <table class="w-full mb-4">
-            <tbody>
-              <tr>
-                <td v-for="(feature, featureName) in features" :key="featureName">
-                  <td class="py-2 font-semibold">{{ featureName }}:</td>
+      <div class="grid grid-cols-1 gap-10 justify-stretch justify-items-center w-11/12 desktop:w-3/4 mx-auto">
+        <!-- Feature tables -->
+        <div class="bg-white rounded-lg shadow-lg p-4 mt-8 mb-20">
+          <h2 class="text-2xl font-semibold mb-2">Features</h2>
+          <div class="overflow-x-auto">
+            <table>
+              <tbody>
+                <tr v-for="(feature, featureName) in features" :key="featureName">
+                  <tr class="font-semibold">{{ featureName }}:</tr>
                   <tr v-for="attribute in feature" :key="attribute.key">
-                    {{ attribute.label }}:
-                    <span class="px-4 py-2" v-for="item in getValueFromData(mushroomData, attribute.key)" :key="item">
-                      <nuxt-link :to="{ path: '/', query: { label: attribute.key, item: item } }" class="small-link">{{ item }}</nuxt-link> 
-                    </span>
-                  </tr>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="overflow-x-auto">
-          <!-- Gill and Spore data -->
-          <table class="w-full mb-4">
-            <tbody>
-              <tr>
-                <td v-for="(feature, featureName) in other" :key="featureName">
-                  <td class="font-semibold">{{ featureName }}:</td>
-                  <!-- Display each properties attributes -->
-                  <tr v-for="attribute in feature" :key="attribute.key">
+                    <td v-if="getValueFromData(mushroomData, attribute.key) && getValueFromData(mushroomData, attribute.key)[0] !=null">
+                      {{ attribute.label }}:
+                    </td>
                     <td v-for="item in getValueFromData(mushroomData, attribute.key)">
-                      {{ attribute.label }}: 
-                      <nuxt-link :to="{path: '/', query: { label: attribute.key, item: item }}" class="small-link">{{ item }}</nuxt-link>
+                      <nuxt-link v-if="attribute.label != 'Description'"
+                        :to="{ path: '/', query: { label: attribute.key, item: item } }" 
+                        class="small-link">
+                        {{ item }}
+                      </nuxt-link>
+                      <p v-else>
+                        {{ item }}
+                      </p>
                     </td>
                   </tr>
-                </td>
-              </tr>
-            </tbody>
-          </table>
-        </div>
-        <div class="overflow-x-auto">
-          <!-- Month data -->
-          <table class="w-full mb-4">
-            <tbody>
-              <tr>
-                <td v-for="(feature, featureName) in month" :key="featureName">
-                  <td class="font-semibold">{{ featureName }}:</td>
-                  <!-- Display each properties attributes -->
-                  <tr v-for="attribute in feature" :key="attribute.key">
-                    <td class="px-4 py-2" v-for="item in getValueFromData(mushroomData, attribute.key)">
-                      <nuxt-link :to="{path: '/', query: { label: attribute.key, item: item }}" class="small-link">{{ item }}</nuxt-link>
-                    </td>
-                  </tr>
-                </td>
-              </tr>
-            </tbody>
-          </table>
+                  <br>
+                </tr>
+              </tbody>
+            </table>
+          </div>
         </div>
       </div>
     </div>
@@ -142,6 +114,7 @@ export default {
       mushroomData: null,
       informationAttributes: [
         { label: 'Latin names', key: 'latin_names' },
+        { label: 'Maori names', key: 'maori_names' },
         { label: 'Genus', key: 'genus' },
         { label: 'Edibility', key: 'edibility' },
         { label: 'Environment', key: 'environment' },
@@ -151,6 +124,7 @@ export default {
       ],
       features: {
         Stipe: [
+          { label: 'Description', key: 'stipe_features.description' },
           { label: 'Minimum diameter', key: 'stipe_features.diameter_min' },
           { label: 'Maximum diameter', key: 'stipe_features.diameter_max' },
           { label: 'Colour', key: 'stipe_features.colour' },
@@ -160,6 +134,7 @@ export default {
           { label: 'Type', key: 'stipe_features.type' },
         ],
         Cap: [
+          { label: 'Description', key: 'cap_features.description' },
           { label: 'Colour', key: 'cap_features.colour' },
           { label: 'Texture', key: 'cap_features.texture' },
           { label: 'Minimum diameter', key: 'cap_features.diameter_min' },
@@ -168,19 +143,16 @@ export default {
           { label: 'Maximum thickness', key: 'cap_features.thickness_max' },
           { label: 'Shape', key: 'cap_features.shape' },
         ],
-      },
-      other: {
         Gills: [
+          { label: 'Description', key: 'gills.description' },
           { label: 'Colour', key: 'gills.colour' },
           { label: 'Attachment', key: 'gills.attachment' },
+          { label: 'Spore colour', key: 'gills.spore_colour' },
         ],
-        Spores:[{ label: 'Colour', key: 'spore_colour' }],
-      },
-      month: {
         Month: [
           {label: 'Month', key: "time_of_year" },
         ]
-      }
+      },
     };
   },
   methods: {
