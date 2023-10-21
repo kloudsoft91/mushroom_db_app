@@ -58,13 +58,13 @@ export default{
       //are some handlers outdated? Sizefilter handler takes 4-part object so manually adding lengths instead
       switch(this.label) {
         case "stipe_features.colour":
-          this.handleColour(this.item);
+          this.handleStipeColour(this.item);
           break;
         case "stipe_features.type":
           this.handleStipe(this.item);
           break;
         case "cap_features.colour":
-          this.handleColour(this.item);
+          this.handleCapColour(this.item);
           break;
         case "cap_features.shape":
           this.handleCapShape(this.item);

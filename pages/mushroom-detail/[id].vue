@@ -19,12 +19,19 @@
           </carousel>
           <!-- Information table -->
           <div class="bg-white rounded-lg shadow-lg p-4">
-            <h1 class="text-3xl font-semibold my-4">{{ mushroomData.common_names.split(',').map(name => name.trim()).join(' / ') }}</h1>
+            <h1 class="text-3xl font-semibold my-4">{{ mushroomData.common_names.join(', ') }}</h1>
             <table class="w-full mb-4">
               <tbody>
                 <tr v-for="attribute in informationAttributes" :key="attribute.key">
                   <td class="px-4 py-2 font-semibold">{{ attribute.label }}:</td>
-                  <td class="px-4 py-2">{{ mushroomData[attribute.key] }}</td>
+                  <td class="px-4 py-2">
+                    <span v-if="Array.isArray(mushroomData[attribute.key])">
+                      {{ mushroomData[attribute.key].join(', ') }}
+                    </span>
+                    <span v-else>
+                      {{ mushroomData[attribute.key] }}
+                    </span>
+                  </td>
                 </tr>
               </tbody>
             </table>
@@ -33,12 +40,12 @@
             <div class="space-y-2">
               <!-- Links section -->
               <h3 class="text-xl font-semibold mb-2">Links</h3>
-              <div v-for="(link, linkName) in mushroomData.links" :key="linkName">
-                <a :href="link" target="_blank" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ linkName }}</a>
+              <div v-for="(link, index) in mushroomData.links" :key="index">
+                <a :href="link" target="_blank" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ link }}</a>
               </div>
               <!-- Books section -->
               <h3 class="text-xl font-semibold mb-2">Books</h3>
-              <p class="text-gray-600">{{ mushroomData.nz_books }}</p>
+              <p class="text-gray-600">{{ mushroomData.nz_books[0] === null || mushroomData.nz_books[0] === "" ? 'Unknown' : mushroomData.nz_books  }}</p>
             </div>
         </div>
       </div>
@@ -53,7 +60,9 @@
                 <tr class="px-4 py-2 font-semibold">Description:</tr> 
                 <td class="px-4 py-2">{{ mushroomData.description }}</td>
                 <tr class="px-4 py-2 font-semibold">Lookalikes:</tr> 
-                <td class="px-4 py-2">{{ mushroomData.lookalikes }}</td>  
+                <td class="px-4 py-2">{{ mushroomData.lookalikes }}</td> 
+                <tr class="px-4 py-2 font-semibold"></tr> 
+                <td class="px-4 py-2">{{ mushroomData.lookalikes_description === null || mushroomData.lookalikes_description === "" ? 'No lookalikes known in NZ' : mushroomData.lookalikes_description }}</td>
               </tbody>
             </table>
           </div>
