@@ -85,15 +85,20 @@ export default{
 
     //filters results by name based on search input (name)
     filterByName(data, searchInput) {
-    //if no input - no data change
-    if (!searchInput) {
-      return data;
-    }
-    //otherwise filter data by input against latin & common names
-    return data.filter(d =>
-      d.common_names.toLowerCase().includes(searchInput.toLowerCase()) ||
-      d.latin_names.toLowerCase().includes(searchInput.toLowerCase())
-    );
+      //if no input - no data change
+      if (!searchInput) {
+        return data;
+      }
+      //otherwise filter data by input against latin, common or maori names
+      try {
+        return data.filter(d =>
+          d.common_names.concat(d.latin_names).concat(d.maori_names).join(' ').toLowerCase().includes(searchInput.trim().toLowerCase())
+        );
+      } catch(err) {
+        return data.filter(d =>
+        d.common_names.concat(d.latin_names).join(' ').toLowerCase().includes(searchInput.trim().toLowerCase())
+        );
+      }
     },
 
     //Carousel Filters

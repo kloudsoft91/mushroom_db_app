@@ -47,7 +47,7 @@
             <img class="cap-image" src="./images/bare.png" alt="Bare Stipe">
             <p>Bare</p>
         </div>
-        <div class="mush-slide">
+        <div @click="emitStipe('ring')" class="mush-slide">
             <img class="cap-image" src="./images/ring.png" alt="Ring Stipe">
             <p>Ring</p>
         </div>
