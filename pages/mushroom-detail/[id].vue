@@ -74,23 +74,25 @@
         <div class="bg-white rounded-lg shadow-lg p-4 mt-8 mb-20">
           <h2 class="text-2xl font-semibold mb-2">Features</h2>
           <div class="overflow-x-auto">
-            <table>
+            <table class="w-full mb-4">
               <tbody>
                 <tr v-for="(feature, featureName) in features" :key="featureName">
-                  <tr class="font-semibold">{{ featureName }}:</tr>
+                  <tr class="font-semibold underline">{{ featureName }}:</tr>
                   <tr v-for="attribute in feature" :key="attribute.key">
-                    <td v-if="getValueFromData(mushroomData, attribute.key) && getValueFromData(mushroomData, attribute.key)[0] !=null">
+                    <td class="px-4 py-2" v-if="getValueFromData(mushroomData, attribute.key) && getValueFromData(mushroomData, attribute.key)[0] !=null">
                       {{ attribute.label }}:
                     </td>
-                    <td v-for="item in getValueFromData(mushroomData, attribute.key)">
-                      <nuxt-link v-if="attribute.label != 'Description'"
-                        :to="{ path: '/', query: { label: attribute.key, item: item } }" 
-                        class="small-link">
-                        {{ item }}
-                      </nuxt-link>
-                      <p v-else>
-                        {{ item }}
-                      </p>
+                    <td>
+                      <span v-for="item in getValueFromData(mushroomData, attribute.key)" class="mr-2">
+                        <nuxt-link v-if="attribute.label != 'Description'"
+                          :to="{ path: '/', query: { label: attribute.key, item: item } }" 
+                          class="small-link">
+                          {{ item }}
+                        </nuxt-link>
+                        <p v-else>
+                          {{ item }}
+                        </p>
+                      </span>
                     </td>
                   </tr>
                   <br>
