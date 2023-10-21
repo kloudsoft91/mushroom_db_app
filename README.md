@@ -97,8 +97,12 @@ At the bottom left corner of the screen, the bottom green Filters button will ex
 
 ## Contributing
 
-Contributions are always welcome!
-
 See `contributing.md` for ways to get started.
 
-Please adhere to this project's `code of conduct`.
+
+## Acknowledgements
+
+ - [Manawa Technologies](https://www.manawa.tech/) for sponsoring this project
+ - [Massey University](https://www.massey.ac.nz/) for setting up the capstone project
+ - [Steve Pavarno](https://github.com/pavarnos) from Manawa Technologies for mentoring the team during the project
+ - [Amjed Tahir](https://github.com/amjedtahir) from Massey University for mentoring the team and being our supervisor during the project
