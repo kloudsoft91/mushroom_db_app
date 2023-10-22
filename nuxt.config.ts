@@ -5,7 +5,14 @@ export default {
     baseURL: '/mushroom_db_app/', // baseURL: '/<repository_name>/'
     buildAssetsDir: 'assets',
   },
-  // devtools: { enabled: true },
+  devtools: { enabled: false },
+  css: ['~/assets/css/tailwind.css'],
+  postcss: {
+    plugins: {
+      tailwindcss: {},
+      autoprefixer: {},
+    },
+  },
   ssr: false, //disable ssr
   colorMode: {
     preference: 'light'
@@ -22,11 +29,6 @@ export default {
       component: 'pages/about.vue'
     },
     {
-      name: 'mushroom-detail',
-      path: '/mushrooms',
-      component: '~/pages/mushroom-detail.vue'
-    },
-    {
       name: 'contact',
       path: '/contact',
       component: 'pages/contact.vue'
@@ -36,13 +38,11 @@ export default {
       path: '/news',
       component: 'pages/news.vue'
     },
-    // for generating page based on mushroom ID, we will implement later
-    /*
     {
-      name: 'mushroom-detail',
-      path: '/mushrooms/:id',
-      component: '~/pages/mushroom-detail.vue'
-    },*/
+      name: 'admin',
+      path: '/admin',
+      component: 'pages/admin.vue'
+    },
   ],
   modules: [
     '@nuxt/ui',

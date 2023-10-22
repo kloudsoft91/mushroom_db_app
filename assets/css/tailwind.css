@@ -19,10 +19,17 @@
         @apply w-20 h-20 border-double border-4 border-emerald-700 rounded-full;
     }
 
-
     .quick-link {
         @apply flex flex-col items-center text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700;
-      }
+    }
+
+    .form-input {
+        @apply mb-2 border border-slate-200 flex w-full h-10 rounded-md dark:text-black;
+    }
+
+    .small-link {
+        @apply text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700;
+    }
 
     @screen tablet {
         .button {
