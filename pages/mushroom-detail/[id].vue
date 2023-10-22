@@ -1,7 +1,7 @@
 <template>
+  <HeaderBar />
+  <FooterBar />
   <div class="bg-gray-100 min-h-screen p-4">
-    <FooterBar />
-
     <!-- Main content container -->
     <div class="z-0 bg-emerald-700 relative py-8 tablet:py-24 desktop:py-28 shadow-md">
       <h1 class="flex w-11/12 desktop:w-3/4 mx-auto tablet:-mt-12 desktop:-mt-20 font-bold text-white text-lg tablet:text-2xl laptop:text-3xl desktop:text-5xl">{{mushroomData.common_names[0]}} Details</h1>
