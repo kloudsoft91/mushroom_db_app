@@ -12,6 +12,15 @@ This project was the result of a Capstone Project run through Massey University.
 - [Rosie Hall](https://github.com/DiscountHomebrand)
 
 
+## Tech Stack
+
+**Client:** [TailwindCSS](`https://tailwindcss.com/`)
+
+**Server:** [NuxtJS](`https://nuxt.com/`), [Jest Unit Testing](`https://jestjs.io/`), [Cypress End-to-End Testing](`https://www.cypress.io/`)
+
+**APIs:** [Cloudinary Image Hosting](`https://cloudinary.com/`), [Google Vertex VQA AI](`https://cloud.google.com/vertex-ai/docs/generative-ai/image/visual-question-answering`)
+
+
 ## Installation
 
 This project uses npm as the package manager. Follow this process to install the project locally:
