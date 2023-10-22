@@ -142,7 +142,10 @@ export default [
         ],
         "genus": "Amanita",
         "description": "Amanita muscaria is a striking and iconic mushroom with a bright red to orange cap covered in white to yellow warts. The cap is usually convex, but it flattens with age. The gills are white, and the stipe is white with a distinctive ring.",
-        "lookalikes": [],
+        "lookalikes": [
+            14,
+            20
+        ],
         "lookalikes_description": "No known lookalikes in New Zealand. In Australia, the introduced fly agaric may be confused with the native vermilion grisette (Amanita xanthocephala), which grows in association with eucalypts. The species generally lacks the white warts of A. muscaria and bears no ring.",
         "links": [
             "https://www.inaturalist.org/taxa/48715-Amanita-muscaria",
@@ -1131,7 +1134,8 @@ export default [
         "genus": "Amanita",
         "description": "A. phalloides is one of the most poisonous of all known mushrooms. It is estimated that as little as half a mushroom contains enough toxin to kill an adult human. It has been involved in the majority of human deaths from mushroom poisonin. Young specimens first emerge from the ground resembling a white egg covered by a universal veil, which then breaks, leaving the volva as a remnant.",
         "lookalikes": [
-            null
+            2,
+            20
         ],
         "lookalikes_description": "A. phalloides is similar to the edible paddy straw mushroom (Volvariella volvacea) and A. princeps, commonly known as 'white Caesar'. Some may mistake juvenile death caps for edible puffballs or mature specimens for other edible Amanita species, such as A. lanei, so some authorities recommend avoiding the collecting of Amanita species for the table altogether. The white form of A. phalloides may be mistaken for edible species of Agaricus, especially the young fruitbodies whose unexpanded caps conceal the telltale white gills; all mature species of Agaricus have dark-colored gills.",
         "links": [
@@ -1647,7 +1651,8 @@ export default [
             "MushroomCards/JewelledAmanita4_cmjxo8.jpg"
         ],
         "lookalikes": [
-            null
+            2,
+            14
         ],
         "lookalikes_description": "",
         "nz_books": [
