@@ -14,7 +14,7 @@ This project was the result of a Capstone Project run through Massey University.
 
 ## Tech Stack
 
-**Client:** [TailwindCSS](https://tailwindcss.com/)
+**Client:** [TailwindCSS](https://tailwindcss.com/), [Vue 3 Carousel](https://nuxt.com/modules/vue3-carousel-nuxt)
 
 **Server:** [NuxtJS](https://nuxt.com/), [Jest Unit Testing](https://jestjs.io/), [Cypress End-to-End Testing](https://www.cypress.io/)
 
