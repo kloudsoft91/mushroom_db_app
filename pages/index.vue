@@ -83,7 +83,7 @@ export default{
     //currently called on filter button press, tag select, and when typing in Name search
     applyAllFilters() {
       let results = this.mushrooms;
-      document.getElementById("inputerror").innerHTML = "";
+      //document.getElementById("inputerror").innerHTML = "";
       //pull results from each filter function
       results = this.filterByTags(results);
       results = this.filterByName(results, this.searchInput);
@@ -444,10 +444,10 @@ export default{
     this.mushrooms = mushroomData;
     //display all results initially
     this.filteredMushrooms = this.mushrooms;
-    if(this.query){
-      if(this.$route.query.label) {
-        this.fetchData();
-      }
+    if(this.$route.query){
+
+      this.fetchData();
+
     }
   },
 };
