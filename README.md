@@ -43,7 +43,7 @@ Install the dependencies
 
 ## Run Locally
 
-Start the development server (`http://localhost:3000`)
+Start the development server `http://localhost:3000/mushroom_db_app`
 ```bash
   npm run dev
 ```
