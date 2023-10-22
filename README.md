@@ -14,11 +14,11 @@ This project was the result of a Capstone Project run through Massey University.
 
 ## Tech Stack
 
-**Client:** [TailwindCSS](`https://tailwindcss.com/`)
+**Client:** [TailwindCSS](https://tailwindcss.com/)
 
-**Server:** [NuxtJS](`https://nuxt.com/`), [Jest Unit Testing](`https://jestjs.io/`), [Cypress End-to-End Testing](`https://www.cypress.io/`)
+**Server:** [NuxtJS](https://nuxt.com/), [Jest Unit Testing](https://jestjs.io/), [Cypress End-to-End Testing](https://www.cypress.io/)
 
-**APIs:** [Cloudinary Image Hosting](`https://cloudinary.com/`), [Google Vertex VQA AI](`https://cloud.google.com/vertex-ai/docs/generative-ai/image/visual-question-answering`)
+**APIs:** [Cloudinary Image Hosting](https://cloudinary.com/), [Google Vertex VQA AI](https://cloud.google.com/vertex-ai/docs/generative-ai/image/visual-question-answering)
 
 
 ## Installation
@@ -114,17 +114,17 @@ If you add a new page, remember to add a route for the page in the `nuxt.config.
 
 ### Styling and TailWind CSS
 
-The Tailwind CSS module was set up using the instructions here: [TailWind Setup](`https://tailwindcss.com/docs/guides/nuxtjs#3`).
+The Tailwind CSS module was set up using the instructions here: [TailWind Setup](https://tailwindcss.com/docs/guides/nuxtjs#3).
 
-Components are styled with simple directives in the class. See TailWind CSS documentation here: [TailWind Styling Basics](`https://tailwindcss.com/docs/utility-first`).
+Components are styled with simple directives in the class. See TailWind CSS documentation here: [TailWind Styling Basics](https://tailwindcss.com/docs/utility-first).
 
 ### Scripts, JavaScript and TypeScript
 
 #### Admin UI
 
-The Admin UI uses Session based App State variables to pass the mushroom metadata around components. See: [State Management](`https://nuxt.com/docs/getting-started/state-management`).
+The Admin UI uses Session based App State variables to pass the mushroom metadata around components. See: [State Management](https://nuxt.com/docs/getting-started/state-management).
 
-It also uses Watcher functions (part of the Composition API) to check the state variable and write back to the form fields (for when the end-user is editing existing metadata). See: [Watchers](`https://vuejs.org/guide/essentials/watchers.html`)
+It also uses Watcher functions (part of the Composition API) to check the state variable and write back to the form fields (for when the end-user is editing existing metadata). See: [Watchers](https://vuejs.org/guide/essentials/watchers.html)
 
 #### Main UI
 
