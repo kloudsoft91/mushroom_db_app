@@ -1,12 +1,26 @@
-import { mount } from '@vue/test-utils';
+import { mount} from '@vue/test-utils';
 import Index from 'pages/index.vue';
 
 
 describe('Index', () => {
+  const $route = {
+    query: {
+      label: "",
+      item: ""
+    },
+  };
+
   let wrapper;
 
+
   beforeEach(() => {
-    wrapper = mount(Index);
+    wrapper = mount(Index, {
+      global: {
+        mocks: {
+          $route,
+        },
+      }
+    });
     jest.mock('./assets/images/mushy.jpg', () => 'Photo by Egor Kamelev from Pexels: https://www.pexels.com/photo/brown-mushroom-on-ground-1685650/');
 
   });
