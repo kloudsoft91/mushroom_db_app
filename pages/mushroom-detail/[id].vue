@@ -42,7 +42,7 @@
               <!-- Links section -->
               <h3 class="text-xl font-semibold mb-2">Links</h3>
               <div v-for="(link, index) in mushroomData.links" :key="index">
-                <a :href="link" target="_blank" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700">{{ link }}</a>
+                <a :href="link" target="_blank" class="text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700" data-cy="external-link">{{ link }}</a>
               </div>
               <!-- Books section -->
               <h3 class="text-xl font-semibold mb-2">Books</h3>
@@ -88,7 +88,8 @@
                       <span v-for="item in getValueFromData(mushroomData, attribute.key)" class="mr-2">
                         <nuxt-link v-if="attribute.label != 'Description'"
                           :to="{ path: '/', query: { label: attribute.key, item: item } }" 
-                          class="small-link">
+                          class="small-link"
+                          data-cy="attribute-link">
                           {{ item }}
                         </nuxt-link>
                         <p v-else>

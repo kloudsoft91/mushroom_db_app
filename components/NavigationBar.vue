@@ -18,6 +18,31 @@
           <button @click="search()" class="bg-emerald-500 text-white text-sm tablet:text-base rounded-lg px-3 py-1 tablet:px-2 tablet:py-1 desktop:px-3 desktop:py-2 font-thin desktop:font-semibold desktop:tracking-wide" data-cy="search-button">Search</button>
         </div>
     </div>
+      <!--Size Search Bar Row-->
+      <div class="z-10 grid grid-cols-2 tablet:grid-cols-4 gap-2 w-11/12 px-2 desktop:w-3/4 mx-auto mt-7 tablet:-mt-16 tablet:mb-3 laptop:mt-[-60px] desktop:mt-[-70px] relative">
+        <!--Stipe Length-->
+        <input v-model="stipeLen" @input="sizeFilter()" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Stipe Length"/>
+
+        <!--Stipe Diameter-->
+        <input v-model="stipeDiam" @input="sizeFilter()" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Stipe Width"  data-cy="stipe-text"/>
+
+        <!--Cap Diameter-->
+        <input v-model="capDiam" @input="sizeFilter()" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Cap Diameter" />
+
+        <!--Cap Thickness-->
+        <input v-model="capThick" @input="sizeFilter()" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Cap Thickness" />
+      </div>  
+      <!--Edibility Quick Filter-->
+      <div class="z-20 tablet:bg-white desktop:bg-white rounded-lg w-11/12 desktop:w-3/4 desktop:p-2 desktop:mt-4 mx-auto tablet:shadow-md desktop:shadow-md relative">
+          <div class="flex flex-wrap gap-2 desktop:gap-0 tablet:gap-0 p-2 desktop:p-0 tablet:p-2 w-full">
+            <button class="button tag-button" @click="tagFilter('edible')">Edible</button>
+            <button class="button tag-button" @click="tagFilter('gourmet')">Gourmet</button>
+            <button class="button tag-button" @click="tagFilter('poisonous')">Poisonous</button>
+            <button class="button tag-button" @click="tagFilter('psychoactive')">Psychoactive</button>
+            <button class="button tag-button" @click="tagFilter('lookalike')">Lookalike</button>
+          </div>
+      </div>
+  </div>
 </template>
 
 <script>
