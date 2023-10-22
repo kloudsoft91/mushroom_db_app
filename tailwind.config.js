@@ -5,7 +5,11 @@ const defaultTheme = require('tailwindcss/defaultTheme')
 
 module.exports = {
   content: [
-    
+    "./components/**/*.{js,vue,ts}",
+    "./layouts/**/*.vue",
+    "./pages/**/*.vue",
+    "./plugins/**/*.{js,ts}",
+    "./app.vue",
   ],
   theme: {
     screens: {
@@ -21,7 +25,14 @@ module.exports = {
       'ultra': '1280px',
       // => @media (min-width: 1280px) { ... } 
     },
-    extend: {},
+    extend: {
+      margin: {
+        '5%': '5%',
+      },
+      width: {
+        '90%': '90%'
+      }
+    },
   },
   plugins: [
     
