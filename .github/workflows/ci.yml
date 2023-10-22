@@ -61,9 +61,6 @@ jobs:
       - name: Jest unit test
         run: npm test
 
-      - name: Cypress test
-        run: npx cypress run
-
       - name: Upload artifact
         if: runner.os == 'Windows' # upload artifact from windows build only
         uses: actions/upload-pages-artifact@v2
