@@ -143,7 +143,7 @@ describe('Index', () => {
     
     wrapper.vm.selectedCapShape = 'convex';
    
-    const filteredMushrooms = wrapper.vm.filterByCapShape(mockMushrooms);
+    const filteredMushrooms = wrapper.vm.filterByCapShape(mockMushrooms, wrapper.vm.selectedCapShape);
 
     expect(filteredMushrooms).toHaveLength(2);
     expect(filteredMushrooms[0].id).toBe(1);
@@ -512,12 +512,12 @@ describe('Index', () => {
       {
         id: 1,
         common_names: ['Mushroom 1'],
-        time_of_year: 'Late spring to autumn (October to April in the Southern Hemisphere)'
+        time_of_year: ['october', 'november', 'december']
       },
       {
         id: 2,
         common_names: ['Mushroom 2'],
-        time_of_year: 'Late summer (March to June in the Southern Hemisphere)'
+        time_of_year: ['march', 'june']
       }
     ];
 
@@ -529,31 +529,6 @@ describe('Index', () => {
 
     expect(filteredMushrooms).toHaveLength(1);
     expect(filteredMushrooms[0].id).toBe(1);
-  })
-
-  it('should filter based on month within range', () => {
-    const mockMushrooms = [
-      {
-        id: 1,
-        common_names: ['Mushroom 1'],
-        time_of_year: 'Late spring to autumn (October to April in the Southern Hemisphere)'
-      },
-      {
-        id: 2,
-        common_names: ['Mushroom 2'],
-        time_of_year: 'Late summer (March to June in the Southern Hemisphere)'
-      }
-    ];
-
-    // Set search inputs
-    wrapper.vm.selectedMonth = "April";
-
-    // Trigger filterByName method
-    const filteredMushrooms = wrapper.vm.filterByMonth(mockMushrooms);
-
-    expect(filteredMushrooms).toHaveLength(2);
-    expect(filteredMushrooms[0].id).toBe(1);
-    expect(filteredMushrooms[1].id).toBe(2);
   })
 
   it('should handle and store all incoming emit parameters', () => {
