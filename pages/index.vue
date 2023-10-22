@@ -444,9 +444,8 @@ export default{
     //display all results initially
     this.filteredMushrooms = this.mushrooms;
     if(this.$route.query){
-
+      //if query returned from mushroom-detail page
       this.fetchData();
-
     }
   },  
 };
