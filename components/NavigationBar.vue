@@ -22,10 +22,10 @@
       <!--Size Search Bar Row-->
       <div class="z-10 grid grid-cols-2 tablet:grid-cols-4 gap-2 w-11/12 px-2 desktop:w-3/4 mx-auto mt-7 tablet:-mt-16 tablet:mb-3 laptop:mt-[-60px] desktop:mt-[-70px] relative">
         <!--Stipe Length-->
-        <input v-model="stipeLen" @input="sizeFilter()" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Stipe Length" />
+        <input v-model="stipeLen" @input="sizeFilter()" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Stipe Length"/>
 
         <!--Stipe Diameter-->
-        <input v-model="stipeDiam" @input="sizeFilter()" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Stipe Width" />
+        <input v-model="stipeDiam" @input="sizeFilter()" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Stipe Width"  data-cy="stipe-text"/>
 
         <!--Cap Diameter-->
         <input v-model="capDiam" @input="sizeFilter()" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2" type="text" placeholder="Cap Diameter" />

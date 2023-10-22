@@ -32,7 +32,7 @@
         </Slide>
         <Slide :key="6">
             <div @click="emitCapColour('yellow')" class="mush-slide">
-                <div class="cap-image" style="background-color: #ebee3c;"></div>
+                <div class="cap-image" style="background-color: #ebee3c;" data-cy="filter-cap-colour"></div>
                 <p>Yellow</p>
             </div>
         </Slide>
