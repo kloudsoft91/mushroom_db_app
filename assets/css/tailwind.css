@@ -27,6 +27,10 @@
         @apply mb-2 border border-slate-200 flex w-full h-10 rounded-md dark:text-black;
     }
 
+    .small-link {
+        @apply text-emerald-500 stroke-emerald-500 hover:stroke-emerald-700 hover:text-emerald-700;
+    }
+
     @screen tablet {
         .button {
             @apply text-base;

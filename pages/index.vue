@@ -42,22 +42,55 @@ export default{
       capDiam: '',
       capThick: '',
       openCar: '',
+      label: null,
+      item: null,
     };
   },
 
   methods:{
+    //method to fetch data if the user has clicked on a mushroom attribute
+    //in the mushroom-detail page.
+    fetchData() {
+      const query = this.$route.query;
+      this.label = query.label;
+      this.item = query.item;
+      console.log("Label & Item: ", this.label , this.item);
+      //are some handlers outdated? Sizefilter handler takes 4-part object so manually adding lengths instead
+      switch(this.label) {
+        case "stipe_features.colour":
+          this.handleStipeColour(this.item);
+          break;
+        case "stipe_features.type":
+          this.handleStipe(this.item);
+          break;
+        case "cap_features.colour":
+          this.handleCapColour(this.item);
+          break;
+        case "cap_features.shape":
+          this.handleCapShape(this.item);
+          break;
+        case "gills.attachment":
+          this.handleGills(this.item);
+          break;
+        case "time_of_year":
+          this.handleMonth(this.item);
+          break;
+        default:
+          this.applyAllFilters();
+      }
+    },
     //Apply all of the Filters (Have to decide when this is called
     //currently called on filter button press, tag select, and when typing in Name search
     applyAllFilters() {
       let results = this.mushrooms;
-      document.getElementById("inputerror").innerHTML = "";
+      //document.getElementById("inputerror").innerHTML = "";
       //pull results from each filter function
       results = this.filterByTags(results);
       results = this.filterByName(results, this.searchInput);
-      results = this.filterByCapShape(results);
-      results = this.filterByGillAttach(results);
+      results = this.filterByCapShape(results, this.selectedCapShape);
+      results = this.filterByGillAttach(results, this.selectedGillAttach);
       results = this.filterByEcology(results);
-      results = this.filterByStipe(results);
+      results = this.filterByStipe(results, this.selectedStipe);
       //results = this.filterByColour(results);
       results = this.filterByStipeColour(results);
       results = this.filterByCapColour(results);
@@ -70,7 +103,7 @@ export default{
       //assign results to filteredMushrooms array
       this.filteredMushrooms = results;
       //debug log 
-      this.logSelectedFilters();
+      //this.logSelectedFilters();
       console.log('Results After Filtering:', results.length);
     },
 
@@ -103,19 +136,18 @@ export default{
 
     //Carousel Filters
     //Cap Shape Filter
-    filterByCapShape(data){
+    filterByCapShape(data, selectedCapShape){
       //check if defined
-      if (!this.selectedCapShape) {
+      if (!selectedCapShape) {
         return data;
       }
-      //console.log("Filtering (Index) cap shape by: ", this.selectedCapShape);
       return data.filter((mushroom) => 
       mushroom.cap_features.shape.includes(this.selectedCapShape));
     },
 
     //Gill Attachment Filter
-    filterByGillAttach(data){
-      if(!this.selectedGillAttach){
+    filterByGillAttach(data, selectedGillAttach){
+      if(!selectedGillAttach){
         return data;
       }
       return data.filter((mushroom) =>
@@ -132,9 +164,9 @@ export default{
     },
 
     //Stipe Type filter
-    filterByStipe(data){
+    filterByStipe(data, selectedStipe){
       //check if defined
-      if (!this.selectedStipe) {
+      if (!selectedStipe) {
         return data;
       }
       return data.filter((mushroom) => 
@@ -227,11 +259,12 @@ export default{
     //Season filter
     filterByMonth(data){
       //check if defined
+      //console.log("testing filterByMonth" + data);
       if (!this.selectedMonth) {
         return data;
       }
-      return data.filter(d =>
-        this.filterByMonthInt(this.selectedMonth.toLowerCase(), d.time_of_year.toLowerCase())
+      return data.filter((d) =>
+        d.time_of_year.includes(this.selectedMonth.toLowerCase())
       );
     },
 
@@ -281,6 +314,7 @@ export default{
     },
     //receives cap shape button events
     handleCapShape(selectedCapShape) {
+      console.log("selected, then this.sele", selectedCapShape,)
       if (this.selectedCapShape == selectedCapShape) {
         this.selectedCapShape = "";
       } else {
@@ -384,33 +418,37 @@ export default{
       }
     },
     //Helper function to log all currently selected Filters:
-    logSelectedFilters() {
-      const activeFilters = [];
+    // logSelectedFilters() {
+    //   const activeFilters = [];
+    //   // Add filters with values to the activeFilters array
+    //   if(this.selectedTag) activeFilters.push(`Tags: ${this.selectedTag}`);
+    //   if(this.searchInput) activeFilters.push(`Search: ${this.searchInput}`);
+    //   if(this.selectedCapShape) activeFilters.push(`Cap Shape: ${this.selectedCapShape}`);
+    //   if(this.selectedGillAttach) activeFilters.push(`Gill Attachment: ${this.selectedGillAttach}`);
+    //   if(this.stipeLen) activeFilters.push(`Stipe Length: ${this.stipeLen}`);
+    //   if(this.stipeDiam) activeFilters.push(`Stipe Diameter: ${this.stipeDiam}`);
+    //   if(this.capDiam) activeFilters.push(`Cap Diameter: ${this.capDiam}`);
+    //   if(this.capThick) activeFilters.push(`Cap Thickness: ${this.capThick}`);
+    //   if(this.selectedEcology) activeFilters.push(`Ecology: ${this.selectedEcology}`);
+    //   if(this.selectedStipe) activeFilters.push(`Stipe Type: ${this.selectedStipe}`);
+    //   if(this.selectedStipeColour) activeFilters.push(`Stipe Colour: ${this.selectedStipeColour}`)
+    //   if(this.selectedCapColour) activeFilters.push(`Cap Colour: ${this.selectedCapColour}`);
 
-      // Add filters with values to the activeFilters array
-      if(this.selectedTag) activeFilters.push(`Tags: ${this.selectedTag}`);
-      if(this.searchInput) activeFilters.push(`Search: ${this.searchInput}`);
-      if(this.selectedCapShape) activeFilters.push(`Cap Shape: ${this.selectedCapShape}`);
-      if(this.selectedGillAttach) activeFilters.push(`Gill Attachment: ${this.selectedGillAttach}`);
-      if(this.stipeLen) activeFilters.push(`Stipe Length: ${this.stipeLen}`);
-      if(this.stipeDiam) activeFilters.push(`Stipe Diameter: ${this.stipeDiam}`);
-      if(this.capDiam) activeFilters.push(`Cap Diameter: ${this.capDiam}`);
-      if(this.capThick) activeFilters.push(`Cap Thickness: ${this.capThick}`);
-      if(this.selectedEcology) activeFilters.push(`Ecology: ${this.selectedEcology}`);
-      if(this.selectedStipe) activeFilters.push(`Stipe Type: ${this.selectedStipe}`);
-      if(this.selectedStipeColour) activeFilters.push(`Stipe Colour: ${this.selectedStipeColour}`)
-      if(this.selectedCapColour) activeFilters.push(`Cap Colour: ${this.selectedCapColour}`);
-
-      // Log active filters or "No Filters" if none are active
-      console.log(activeFilters.length > 0 ? `Active Filters: ${activeFilters.join(' | ')}` : 'No Filters');
-    },
+    //   // Log active filters or "No Filters" if none are active
+    //   console.log(activeFilters.length > 0 ? `Active Filters: ${activeFilters.join(' | ')}` : 'No Filters');
+    // },
   },
   //Load data
   mounted() {
     this.mushrooms = mushroomData;
     //display all results initially
     this.filteredMushrooms = this.mushrooms;
-  },
+    if(this.$route.query){
+
+      this.fetchData();
+
+    }
+  },  
 };
 </script>
   
