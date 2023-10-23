@@ -50,7 +50,7 @@
                 placeholder="Cap Thickness" />
 
             <!--ML Image File Upload Control-->
-            <label>Upload Image to preselect Colour and basic Mushroom Size: </label>
+            <label>Upload Image to pre-select Colour:</label>
             <input v-on:change="mlAPICall()" class="text-sm tablet:text-base text-gray-400 outline-none px-1 tablet:px-2"
                 type="file" />
         </div>
