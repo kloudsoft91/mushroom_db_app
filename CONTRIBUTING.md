@@ -34,7 +34,7 @@ The Main UI uses the Options API which is more reminiscent of object oriented pa
 
 ## Updating Mushroom MetaData JSON
 
-This is rather simple, use the Admin UI page to generate metadata. Then copy the metadata into the `./data/sampledata.js`. See [Admin User Interface](#admin-user-interface)
+This is rather simple, use the Admin UI page to generate metadata. Then copy the metadata into the `./data/sampledata.js`. See [Admin User Interface](README.m#admin-user-interface)
 
 ## Routes, App, Hosting and other topics
 
@@ -42,4 +42,4 @@ New pages can be added to the routes section of `nuxt.config.ts` file. See exist
 
 The app entry in `nuxt.config.ts` defines the first section of the app URL. This can be customised, as well as a custom domain can be used with GitHub Pages. See [Custom Domains](https://docs.github.com/en/pages/configuring-a-custom-domain-for-your-github-pages-site/about-custom-domains-and-github-pages)
 
-The app is deployed to GitHub Pages by the GitHub Actions pipeline, see the [Deployment](#deployment) section.
+The app is deployed to GitHub Pages by the GitHub Actions pipeline, see the [Deployment](README.md#deployment) section.
