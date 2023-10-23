@@ -1,4 +1,14 @@
 <template>
+  <teleport to="head">
+    <component :is="'script'" type="application/ld+json">
+      {"@context": "https://schema.org",
+        "@type": "WebPage",
+        "name": "Discover Mushroom Species - Mushroom Identification Tool",
+        "description": "Explore a comprehensive database of mushroom species found in New Zealand. Use filters to identify mushrooms based on physical characteristics. \
+        Gain insights into edible and poisonous varieties",
+        "url": "https://kloudsoft91.github.io/mushroom_db_app/",}
+    </component>
+  </teleport>
   <HeaderBar />
   <!--Alert for invalid user inputs-->
   <p id="inputerror" style="color:red; text-align: center;"></p>
@@ -15,6 +25,13 @@
     @selectedStipeColour="handleStipeColour" @selectedCapColour="handleCapColour"
     @openCarouselInputs="openCarouselInputs" />
 </template>
+
+<script setup>
+useSeoMeta({
+  title: 'Mushy Match: Home',
+  description: 'This is the home page. You can search, filter and read all about the various mushrooms found in New Zealand on this page.',
+})
+</script>
 
 <script>
 import mushroomData from '~/data/sampledata.js'

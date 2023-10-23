@@ -7,6 +7,13 @@
     </div>
 </template>
 
+<script setup>
+useSeoMeta({
+  title: 'Mushy Match: Contact',
+  description: 'This is our contact page.',
+})
+</script>
+
 <script>
 import { reactive, toRefs } from 'vue'
 

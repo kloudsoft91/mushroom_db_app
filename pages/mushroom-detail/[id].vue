@@ -191,5 +191,14 @@ export default {
   created() {
     this.fetchData();
   },
+  head() {
+    return {
+      title: this.mushroomData.common_names[0],
+      meta: [
+        { hid: 'description', name: 'description', content: this.mushroomData.description },
+        { hid: 'keywords', name: 'keywords', content: this.mushroomData.common_names.concat(this.mushroomData.latin_names).concat(this.mushroomData.maori_names).concat(this.mushroomData.tags).join(', ') + ' mushroom' }
+      ]
+    }
+  }
 };
 </script>
