@@ -1,4 +1,5 @@
 <template>
+    <!-- Cap form set component (contains all the elements for mushroom cap features) -->
     <fieldset class="mb-2 border border-slate-200 px-2" id="mush_cap_fset">
         <legend>Cap Features</legend>
         <label for="mush_cap_desc">Cap Description</label>
@@ -118,6 +119,7 @@ const capThcMax = ref()
 const capTexture = ref("")
 const capShape = ref("")
 
+// this function is called on input element changes and stores the value into the app state mushJSON
 const addMushKey = (key, val, subKey = "") => {
     if (["stipe_features", "gills", "cap_features"].includes(key) && subKey != "") {
         mushJSON.value[key][subKey] = val;
@@ -126,6 +128,7 @@ const addMushKey = (key, val, subKey = "") => {
     }
 }
 
+// this function is a nuxt ref watcher, if end user is editing existing JSON, it writes the entered JSON back into the input fields
 watch(mushJSON, async (newMushJSON, oldMushJSON) => {
     if (mushJSON.value['cap_features']['description']) {
         capDescription.value = mushJSON.value['cap_features']['description']

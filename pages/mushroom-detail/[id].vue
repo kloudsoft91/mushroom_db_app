@@ -61,7 +61,8 @@
                 <tr class="px-4 py-2 font-semibold">Description:</tr> 
                 <td class="px-4 py-2">{{ mushroomData.description }}</td>
                 <tr class="px-4 py-2 font-semibold">Lookalikes:</tr> 
-                <!-- <td class="px-4 py-2">{{ mushroomData.lookalikes}}</td> 
+                <!-- Commented out as there is no current lookalike data in our database
+                <td class="px-4 py-2">{{ mushroomData.lookalikes}}</td> 
                 <tr class="px-4 py-2 font-semibold"></tr> -->
                 <td class="px-4 py-2">{{ mushroomData.lookalikes_description === null || mushroomData.lookalikes_description === "" ? 'No lookalikes known in NZ' : mushroomData.lookalikes_description }}</td>
               </tbody>
@@ -124,7 +125,6 @@ export default {
         { label: 'Edibility', key: 'edibility' },
         { label: 'Environment', key: 'environment' },
         { label: 'Ecology', key: 'ecology' },
-        { label: 'Time of year', key: 'time_of_year' },
         { label: 'Origin', key: 'native_or_introduced' },
       ],
       features: {
