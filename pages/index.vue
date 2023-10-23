@@ -14,6 +14,13 @@
   <BottomFrame ref="bottomFrame" @selectedCapShape="handleCapShape" @selectedGillAttach="handleGills" @selectedEcology="handleEcology" @selectedStipe="handleStipe" @selectedMonth="handleMonth" @selectedStipeColour="handleStipeColour" @selectedCapColour="handleCapColour" @openCarouselInputs="openCarouselInputs"/>
 </template>
 
+<script setup>
+useSeoMeta({
+  title: 'Mushy Match: Home',
+  description: 'This is the home page. You can search, filter and read all about the various mushrooms found in New Zealand on this page.',
+})
+</script>
+
 <script>
 import mushroomData from '~/data/sampledata.js'
 import ResultCards from '~/components/ResultCards.vue';
