@@ -1,12 +1,7 @@
 describe('Homepage testing', () => {
   context('test on desktop', () => {
-    beforeEach(() => {
-      /**
-       * UPDATE
-       * this should be cy.visit('https://kloudsoft91.github.io/mushroom_db_app/') when everything is merged
-       *  
-       * */ 
-      cy.visit('http://localhost:3000/mushroom_db_app/')
+    beforeEach(() => { 
+      cy.visit('https://kloudsoft91.github.io/mushroom_db_app/')
       // run these tests as if in a desktop browser
       cy.viewport(1025, 768)
     })
@@ -58,12 +53,7 @@ describe('Homepage testing', () => {
 
   context('test on mobile', () => {
     beforeEach(() => {
-      /**
-       * UPDATE
-       * this should be cy.visit('https://kloudsoft91.github.io/mushroom_db_app/') when everything is merged
-       *  
-       * */ 
-      cy.visit('http://localhost:3000/mushroom_db_app/')
+      cy.visit('https://kloudsoft91.github.io/mushroom_db_app/')
       // run these tests as if in an iphone-6
       cy.viewport(375, 667)
     })
