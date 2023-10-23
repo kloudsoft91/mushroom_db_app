@@ -34,7 +34,7 @@ The Main UI uses the Options API which is more reminiscent of object oriented pa
 
 ## Updating Mushroom MetaData JSON
 
-This is rather simple, use the Admin UI page to generate metadata. Then copy the metadata into the `./data/sampledata.js`. See [Admin User Interface](README.m#admin-user-interface)
+This is rather simple, use the Admin UI page to generate metadata. Then copy the metadata into the `./data/sampledata.js`. See [Admin User Interface](README.md#admin-user-interface)
 
 ## Routes, App, Hosting and other topics
 
