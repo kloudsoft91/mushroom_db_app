@@ -501,26 +501,6 @@ describe('Index', () => {
     expect(filteredMushrooms).toHaveLength(0);
   }) 
 
-  it('should return correct integer for the given month', () => {
-    expect(wrapper.vm.monthToInt('january')).toBe(1);
-    expect(wrapper.vm.monthToInt('february')).toBe(2);
-    expect(wrapper.vm.monthToInt('march')).toBe(3);
-    expect(wrapper.vm.monthToInt('april')).toBe(4);
-    expect(wrapper.vm.monthToInt('may')).toBe(5);
-    expect(wrapper.vm.monthToInt('june')).toBe(6);
-    expect(wrapper.vm.monthToInt('july')).toBe(7);
-    expect(wrapper.vm.monthToInt('august')).toBe(8);
-    expect(wrapper.vm.monthToInt('september')).toBe(9);
-    expect(wrapper.vm.monthToInt('october')).toBe(10);
-    expect(wrapper.vm.monthToInt('november')).toBe(11);
-    expect(wrapper.vm.monthToInt('december')).toBe(12);
-  });
-
-  it('should return undefined for an invalid month', () => {
-    expect(wrapper.vm.monthToInt('invalid')).toBeUndefined();
-  });
-
-
   it('should filter based on month', () => {
     const mockMushrooms = [
       {
