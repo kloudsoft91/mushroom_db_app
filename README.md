@@ -60,12 +60,14 @@ To run Jest unit tests, run the following command
 
 ### Cypress End-to-End Tests
 
-- To run Cypress end-to-end tests in a CLI, run the following command
+To run Cypress end-to-end tests in a CLI:
+- Run the following command:
 ```bash
   npx cypress run
 ```
 
-- To run Cypress end-to-end tests in the Cypress application, run the following command
+To run Cypress end-to-end tests in the Cypress application:
+- Run the following command:
 ```bash
   npx cypress open
 ```

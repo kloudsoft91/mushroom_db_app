@@ -1,4 +1,5 @@
 <template>
+    <!-- Stipe form set component (contains all the elements for mushroom stipe features) -->
     <fieldset class="mb-2 border border-slate-200 px-2" id="mush_stipe_fset">
         <legend>Stipe Features</legend>
         <label for="mush_stipe_desc">Stipe Description</label>
@@ -131,6 +132,7 @@ const stipeHgtMax = ref()
 const stipeBruiseColour = ref("")
 const stipeattachment = ref("")
 
+// this function is called on input element changes and stores the value into the app state mushJSON
 const addMushKey = (key, val, subKey = "") => {
     if (["stipe_features", "gills", "cap_features"].includes(key) && subKey != "") {
         mushJSON.value[key][subKey] = val;
@@ -139,6 +141,7 @@ const addMushKey = (key, val, subKey = "") => {
     }
 }
 
+// this function is a nuxt ref watcher, if end user is editing existing JSON, it writes the entered JSON back into the input fields
 watch(mushJSON, async (newMushJSON, oldMushJSON) => {
     if (mushJSON.value['stipe_features']['description']) {
         stipeDescription.value = mushJSON.value['stipe_features']['description']

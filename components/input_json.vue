@@ -1,4 +1,5 @@
 <template>
+    <!-- Modal component for adding existing JSON to the admin ui -->
     <div class="z-10 fixed flex inset-x-0 inset-y-0 justify-center bg-gray-700/80" @click="$emit('close-loadJSONModal')">
         <div class="text-center h-4/5 w-1/2 mt-5% pt-2 bg-white dark:bg-black rounded-3xl" @click.stop>
             <h2 class="indent-5 font-semibold text-black dark:text-white text-3xl">Add your existing JSON MetaData here</h2>
@@ -16,6 +17,7 @@ const emit = defineEmits([
     'close-loadJSONModal'
 ])
 
+// parse the input text into JSON and store it in app state mushJSON
 const addJSON = (inputText) => {
     mushJSON.value = JSON.parse(inputText)
 }

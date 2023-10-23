@@ -1,4 +1,5 @@
 <template>
+    <!-- Tags form set component (contains all the elements for mushroom tags) -->
     <fieldset class="mb-2 grid grid-cols-4 border border-slate-200 px-2 py-1" id="mush_tags_fset">
         <legend>Mushroom Tags</legend>
         <div class="px-2 col-start-1 justify-self-center">
@@ -45,6 +46,7 @@ import { ref } from 'vue'
 const mushJSON = useState('mushJSON')
 const tags = ref([])
 
+// this function is called on input element changes and stores the value into the app state mushJSON
 const addMushKey = (key, val, subKey = "") => {
     if (["stipe_features", "gills", "cap_features"].includes(key) && subKey != "") {
         mushJSON.value[key][subKey] = val;
@@ -53,6 +55,7 @@ const addMushKey = (key, val, subKey = "") => {
     }
 }
 
+// this function is a nuxt ref watcher, if end user is editing existing JSON, it writes the entered JSON back into the input fields
 watch(mushJSON, async (newMushJSON, oldMushJSON) => {
     if (mushJSON.value['tags']) {
         tags.value = mushJSON.value['tags']
