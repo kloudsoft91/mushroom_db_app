@@ -51,10 +51,28 @@ Start the development server `http://localhost:3000/mushroom_db_app`
 
 ## Running Tests
 
-To run tests, run the following command
+### Jest Unit Tests
+
+To run Jest unit tests, run the following command
 ```bash
   npm run test
 ```
+
+### Cypress End-to-End Tests
+
+- To run Cypress end-to-end tests in a CLI, run the following command
+```bash
+  npx cypress run
+```
+
+- To run Cypress end-to-end tests in the Cypress application, run the following command
+```bash
+  npx cypress open
+```
+- Select E2E testing
+- Choose preferred browser and click Start E2E Testing 
+- Choose the test file you want to run, `spec.cy.ts` in this case
+- The tests will now run automatically
 
 
 ## Deployment
@@ -102,6 +120,13 @@ At the bottom left corner of the screen, the bottom green Filters button will ex
 
 - Buttons can be clicked to apply filters or toggle them off
 - The filter accordion bars can be closed by clicking outside the filter window
+
+
+## Contributing
+
+Contributions are always welcome!
+
+See [contributing.md](CONTRIBUTING.md) for ways to get started.
 
 
 ## Acknowledgements
