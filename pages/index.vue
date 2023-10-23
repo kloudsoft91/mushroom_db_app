@@ -192,64 +192,9 @@ export default {
         mushroom.cap_features.colour.includes(this.selectedCapColour));
     },
 
-    monthToInt(month) {
-      switch (month) {
-        case "january":
-          return 1;
-        case "february":
-          return 2;
-        case "march":
-          return 3;
-        case "april":
-          return 4;
-        case "may":
-          return 5;
-        case "june":
-          return 6;
-        case "july":
-          return 7;
-        case "august":
-          return 8;
-        case "september":
-          return 9;
-        case "october":
-          return 10;
-        case "november":
-          return 11;
-        case "december":
-          return 12;
-      }
-    },
-
-    filterByMonthInt(selectedMonth, jsonString) {
-      var str1 = jsonString.split('(')[1];
-      console.log("str1 " + str1);
-      var str2a = str1.split(' to ')[0];
-      console.log("str2a " + str2a);
-      var str2b = str1.split(' to ')[1];
-      console.log("str2b " + str2b);
-      var str3 = str2b.split(' ')[0];
-      console.log("str3 " + str3);
-      var str4 = str3.split(')')[0];
-      console.log("str4 " + str4);
-      if ((this.monthToInt(selectedMonth) >= this.monthToInt(str2a)) && (this.monthToInt(selectedMonth) <= this.monthToInt(str4))) {
-        console.log("Found matching date range");
-        return true;
-      }
-      if (this.monthToInt(str2a) > this.monthToInt(str4)) {
-        if (((this.monthToInt(selectedMonth) >= this.monthToInt(str2a)) && (this.monthToInt(selectedMonth) <= 12)) || ((this.monthToInt(selectedMonth) <= this.monthToInt(str4)) && (this.monthToInt(selectedMonth) > 0))) {
-          console.log("Found matching date range 2");
-          return true;
-        }
-      }
-      console.log("No matching date range");
-      return false;
-    },
-
     //Season filter
     filterByMonth(data) {
       //check if defined
-      //console.log("testing filterByMonth" + data);
       if (!this.selectedMonth) {
         return data;
       }
@@ -288,7 +233,6 @@ export default {
         return this.searchInput;
       }
       catch (err) {
-        console.log('Invalid user input: ' + err);
         document.getElementById("inputerror").innerHTML = 'Invalid user input: Non-alphabetical name';
       }
     },
@@ -401,7 +345,6 @@ export default {
         return this.filterData;
       }
       catch (err) {
-        console.log('Invalid user input: ' + err);
         document.getElementById("inputerror").innerHTML = 'Invalid user input: Non-numerical length';
       }
     },
