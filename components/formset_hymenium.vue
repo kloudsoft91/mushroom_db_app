@@ -1,6 +1,7 @@
 <template>
+    <!-- Gills form set component (contains all the elements for mushroom gill features) -->
     <fieldset class="mb-2 border border-slate-200 px-2" id="mush_gills_fset">
-        <legend>Hymenium Features</legend>
+        <legend>Gill Features</legend>
         <label for="mush_gills_desc">Gills Description</label>
         <input
             type="text"
@@ -94,6 +95,7 @@ const hymeniumColour = ref("")
 const hymeniumAttachment = ref("")
 const hymeniumSporeColour = ref("")
 
+// this function is called on input element changes and stores the value into the app state mushJSON
 const addMushKey = (key, val, subKey = "") => {
     if (["stipe_features", "gills", "cap_features"].includes(key) && subKey != "") {
         mushJSON.value[key][subKey] = val;
@@ -102,6 +104,7 @@ const addMushKey = (key, val, subKey = "") => {
     }
 }
 
+// this function is a nuxt ref watcher, if end user is editing existing JSON, it writes the entered JSON back into the input fields
 watch(mushJSON, async (newMushJSON, oldMushJSON) => {
     if (mushJSON.value['gills']['description']) {
         hymeniumDescription.value = mushJSON.value['gills']['description']
