@@ -7,6 +7,7 @@
           v-for="(mushroom, index) in filteredMushrooms"
           :key="index"
           class=" rounded-lg bg-gray-200 tablet:shadow-md desktop:shadow-md flex flex-col overflow-hidden"
+          data-cy="card"
         >
           <div class="relative overflow-hidden bg-cover bg-no-repeat">
             <nuxt-img class="rounded-t-lg" provider="cloudinary" :src="`ar_3:4,c_fill,h_1024,w_768/${mushroom.photos[0]}`" alt="Mushroom Image"></nuxt-img>

@@ -4,7 +4,7 @@
   <p id="inputerror" style="color:red; text-align: center;"></p>
   <NavigationBar @search="handleSearch" @tagFilter="handleTags" @sizeFilter="handleSizeFilter"/>
   <FooterBar @openCarouselInputs="openCarouselInputs"/>
-  <ResultCards :filteredMushrooms="filteredMushrooms"/>
+  <ResultCards :filteredMushrooms="filteredMushrooms" data-cy="filtered"/>
   
 
   <!--Slideover for big screens only-->
