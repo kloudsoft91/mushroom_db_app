@@ -9,7 +9,7 @@ This project was the result of a Capstone Project run through Massey University.
 - [Emily Ferguson](https://github.com/EmilyClare4)
 - [Joel Yap](https://github.com/joel-yap)
 - [Karan Nayak](https://github.com/kloudsoft91)
-- [Rosie Hall](https://github.com/DiscountHomebrand)
+- [Rosie Hall](https://github.com/rosiehall)
 
 
 ## Tech Stack
